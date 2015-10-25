@@ -25,5 +25,9 @@ function urlsApi() {
 
         // DELETE
         //'del_tab_id' => $root . '/' . $del . '/' . $tab . '/',
+
+        //TEST
+        'get_test' => $root . '/' . 'get/test',
+        'post_test' => $root . '/' . 'post/test',
     );
 }

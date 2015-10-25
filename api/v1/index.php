@@ -49,10 +49,23 @@ $app->configureMode('development', function () use ($app) {
     //$app->post('/get/table/:idTable', /*'mw1',*/ 'setTable');
 // DELETE
     //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
+//TEST
+    $app->get('/get/test', /*'mw1',*/ 'getTest');
+    $app->post('/post/test', /*'mw1',*/ 'postTest');
 $app->run();
 
 //Functions
-
+//TEST
+    function getTest() {
+        $today = date('o-m-d H:i:s');
+        $array = array('date' => $today);
+        echo changeArrayIntoJSON('propa', $array);
+    }
+    function postTest() {
+        $array = array('process' => 'ok');
+        //echo changeArrayIntoJSON('propa', $array);
+        echo "string";
+    }
 /*
   ----------------------------------------------------------------------------
   General Helper Methods

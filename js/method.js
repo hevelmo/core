@@ -61,3 +61,16 @@
         },
         docHead:document.getElementsByTagName("head")[0]
     }
+/* ------------------------------------------------------ *\
+ [Methods] Home
+\* ------------------------------------------------------ */
+    //This group of methods will be not used it's only example, remove it later
+    var demoMethods = {
+        changeLan : function (event) {
+            var lan, date, newDate;
+            lan = PRO.getValue($(this));
+            date = $(domEl.h3_demo_date).data('date');
+            newDate = PRO.momentToRoman(date, lan);
+            $(domEl.h3_demo_date).text(newDate);
+        }
+    }

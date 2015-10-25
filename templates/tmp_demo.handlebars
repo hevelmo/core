@@ -1,0 +1,15 @@
+{{!-- It will not be used in the ral project, romove it later and compile handlebars --}}
+<br />
+<div align='center'>
+	<select id='lan-demo'>
+		<option value='es'>Español</option>
+		<option value='en'>English</option>
+	</select>
+	<h3 id='demo-date' data-date='{{propa.date}}'><h3>
+</div>
+<script>
+	var date;
+	date = $('h3#demo-date').data('date');
+	newDate = PRO.momentToRoman(date, 'es');
+	$('h3#demo-date').text(newDate);
+</script>
