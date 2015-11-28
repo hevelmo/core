@@ -1,16 +1,49 @@
-/*
-    Here are functions and methods that are models whose performance is used in all the project
-    to invoke some of this models it's necessary to call with the prefix, and then te name of the
-    model and its arguments, for example PRO.momentToHuman(date, language);
-    Each method has a large explanation.
+/* ################################################################################################### *\
 
-    NOTE: the prefix PRO will change depends on the specific project.
+    Project Name: core models
+    Proyect Version: 1.0
+    Author: *******
+    Update: hevelmo
 
-    For the correct performance of almost all of the methods
-    it's necesary to includ JQuery library
- **/
+    CONTENT MODELS
+        [MODELS] Moment Español
+        [MODELS] MOMENT's Models
+            [FUNCTION] momentToRoman(date, language)
+            [FUNCTION] momentToHuman(date, language)
+        [MODELS] Handlebars's Models
+            [FUNCTION] loadTemplate(name, wrapper, filler)
+        [MODELS] DOM's Models
+            [FUNCTION] getValue(domElement)
+            [FUNCTION] setValue(domElement, new_value)
+            [FUNCTION] exist(domElement)
+            [FUNCTION] trimValue(domElement)
+            [FUNCTION] getHTML(domElement)
+            [FUNCTION] setHTML(domElement, information)
+            [FUNCTION] cryptElement(domElement)
+            [FUNCTION] appendOne(domElement, new_el_type, new_el_attributes, new_el_content, hasClosingTag)
+            [FUNCTION] appendMulti(domElement, elements)
+        [MODELS] DATE TIME PICKER's Models
+            [FUNCTION] setDateTPCalendar (wrapper, futureDays, hasMinDate)
+        [MODELS] FORMS's Models
+            [FUNCTION] validFormFull(entered_inputs, required_inputs_names)
+            [FUNCTION] validFormEmpty(entered_inputs, required_inputs_names)
+            [FUNCTION] resetForm(form)
+        [MODELS] AJAX's Models
+            [FUNCTION] postalService(custom_url, json)
+            [FUNCTION] getInternalJSON(url)
+        [MODELS] OBJECTS's Models
+            [FUNCTION] filterArrayObjByKey(arrayObj, key, value, equal)
+            [FUNCTION] sumArrayObjByKey(arrayObj, numKey)
+            [FUNCTION] renameArrayObjKeys(arrayObj, renameKeys)
+            [FUNCTION] withoutArrayObjAND(arrayObj, withoutObj)
+            [FUNCTION] withoutArrayObjOR(arrayObj, withoutObj)
+        [MODELS] NUMBER FORMATS's Models
+            [FUNCTION] currencyFormat(number)
+        [MODELS] OTHER Models
+            [FUNCTION] randomString(name)
+        [MODELS] Returning all Models
 
-
+\* ################################################################################################### */
 //[Models] Modelos
 var PRO = {};
 
