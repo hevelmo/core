@@ -613,13 +613,20 @@
 /* ------------------------------------------------------ *\
  [Methods] compiler_phpobjectjs_method
 \* ------------------------------------------------------ */
+    var compilerCamcar_v1_sitio, compilerCamcar_v1_intranet, compilerCamcar_v1_admin,
+        compilerCamcar_v2_sitio, compilerCamcar_v2_intranet, compilerCamcar_v2_admin;
+    var ihidden;
+    compilerCamcar_v1_sitio = '../../camcar/sitio/phpobjectjs/';
+    compilerCamcar_v1_intranet = '../../camcar/intranet/phpobjectjs/';
+    compilerCamcar_v1_admin = '../../camcar/intranet/admin/phpobjectjs/';
+    compilerCamcar_v2_sitio = '../../camcar-v2.0/sitio/phpobjectjs/';
+    compilerCamcar_v2_intranet = '../../camcar-v2.0/intranet/phpobjectjs/';
+    compilerCamcar_v2_admin = '../../camcar-v2.0/intranet/admin/phpobjectjs/';
     var compiler_phpobjectjs_method = {
-        compiler_phpobjectjs_camcar_v2: function(event) {
-            var btnSubmitSite, comiler_phpobjectjs_sitio, ihidden;
-            compiler_phpobjectjs_sitio = '../../camcar-v2.0/sitio/phpobjectjs/';
+        proCamcarV1Sitio: function(event) {
             event.preventDefault();
             $.ajax({
-                url: compiler_phpobjectjs_sitio,
+                url: compilerCamcar_v1_sitio,
                 type: 'post',
                 data: {ihidden: ihidden},
                 beforeSend: compiler_phpobjectjs_method.funcBeforeSend
@@ -627,12 +634,54 @@
             .done(compiler_phpobjectjs_method.funcDone)
             .always(compiler_phpobjectjs_method.funcAlways)
         },
-        compiler_phpobjectjs_camcar_v1: function(event) {
-            var btnSubmitSite, comiler_phpobjectjs_sitio, ihidden;
-            compiler_phpobjectjs_sitio = '../../camcar/sitio/phpobjectjs/';
+        proCamcarV1Intranet: function(event) {
             event.preventDefault();
             $.ajax({
-                url: compiler_phpobjectjs_sitio,
+                url: compilerCamcar_v1_intranet,
+                type: 'post',
+                data: {ihidden: ihidden},
+                beforeSend: compiler_phpobjectjs_method.funcBeforeSend
+            })
+            .done(compiler_phpobjectjs_method.funcDone)
+            .always(compiler_phpobjectjs_method.funcAlways)
+        },
+        proCamcarV1Admin: function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: compilerCamcar_v1_admin,
+                type: 'post',
+                data: {ihidden: ihidden},
+                beforeSend: compiler_phpobjectjs_method.funcBeforeSend
+            })
+            .done(compiler_phpobjectjs_method.funcDone)
+            .always(compiler_phpobjectjs_method.funcAlways)
+        },
+        proCamcarV2Sitio: function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: compilerCamcar_v2_sitio,
+                type: 'post',
+                data: {ihidden: ihidden},
+                beforeSend: compiler_phpobjectjs_method.funcBeforeSend
+            })
+            .done(compiler_phpobjectjs_method.funcDone)
+            .always(compiler_phpobjectjs_method.funcAlways)
+        },
+        proCamcarV2Intranet: function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: compilerCamcar_v2_intranet,
+                type: 'post',
+                data: {ihidden: ihidden},
+                beforeSend: compiler_phpobjectjs_method.funcBeforeSend
+            })
+            .done(compiler_phpobjectjs_method.funcDone)
+            .always(compiler_phpobjectjs_method.funcAlways)
+        },
+        proCamcarV2Admin: function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: compilerCamcar_v2_admin,
                 type: 'post',
                 data: {ihidden: ihidden},
                 beforeSend: compiler_phpobjectjs_method.funcBeforeSend

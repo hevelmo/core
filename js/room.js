@@ -9,7 +9,7 @@
         },
         load: function(bindings) {
             //addText.addTexto();
-            viewSectionHomeMethod.viewSectionHome();
+            //viewSectionHomeMethod.viewSectionHome();
         },
         unload: function(bindings) {
             section = "";

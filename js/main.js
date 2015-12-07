@@ -35,7 +35,11 @@ $(document).ready(function() {
     //$(domEl.div_recurrent).on('change', domEl.select_lan_demo, demoMethods.changeLan);
     //$('body').on('click', '#addScnt', addText.appendTagInput);
     //$('body').on('click', '#remScnt', addText.removeTagInpput);
-    $('body').on('click', '#main-compiler-camcar-v1 form', compiler_phpobjectjs_method.compiler_phpobjectjs_camcar_v1);
-    $('body').on('click', '#main-compiler-camcar-v2 form', compiler_phpobjectjs_method.compiler_phpobjectjs_camcar_v2);
-    
+    $('body').on('click', '#main-compiler-camcar-v1-sitio form', compiler_phpobjectjs_method.proCamcarV1Sitio);
+    $('body').on('click', '#main-compiler-camcar-v1-intranet form', compiler_phpobjectjs_method.proCamcarV1Intranet);
+    $('body').on('click', '#main-compiler-camcar-v1-admin form', compiler_phpobjectjs_method.proCamcarV1Admin);
+    $('body').on('click', '#main-compiler-camcar-v2 form', compiler_phpobjectjs_method.proCamcarV2Sitio);
+    $('body').on('click', '#main-compiler-camcar-v2-intranet form', compiler_phpobjectjs_method.proCamcarV2Intranet);
+    $('body').on('click', '#main-compiler-camcar-v2-admin form', compiler_phpobjectjs_method.proCamcarV2Admin);
+
 });
