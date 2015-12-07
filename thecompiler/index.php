@@ -16,9 +16,11 @@
         <meta class="temp" name="robots" content="index, follow">
         <link class="temp" rel="alternate" hreflang="es" href="http://url" />
 
-        <title>THE COMPILER PHP-OBJECT-JS</title>
+        <title>Thecompiler - phpobjectjs</title>
 
         <link href="../css/import.css" rel="stylesheet" type="text/css" />
+
+        <link rel="shortcut icon" href="../img/ico/thecompiler.ico">
 
         <script>
             var nav = navigator.appName;
