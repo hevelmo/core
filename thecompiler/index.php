@@ -4,21 +4,21 @@
 <!--[if IE 8]>         <html lang="es" class="no-js lt-ie10 lt-ie9"> <![endif]-->
 <!--[if IE 9]>         <html lang="es" class="no-js lt-ie10"> <![endif]-->
 <html class="no-js" lang="es">
-	<head>
+    <head>
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta http-equiv='cache-control' content='no-cache' />
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
         <meta name='viewport' content='width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0' />
 
-		<meta class="temp" name="description" content="meta-content"/>
-		<meta class="temp" name="copyright"content="© Copyright year CORE">
-		<meta class="temp" name="robots" content="index, follow">
-		<link class="temp" rel="alternate" hreflang="es" href="http://url" />
+        <meta class="temp" name="description" content="meta-content"/>
+        <meta class="temp" name="copyright"content="© Copyright year CORE">
+        <meta class="temp" name="robots" content="index, follow">
+        <link class="temp" rel="alternate" hreflang="es" href="http://url" />
 
-		<title>Core</title>
+        <title>THE COMPILER PHP-OBJECT-JS</title>
 
-        <link href="css/import.css" rel="stylesheet" type="text/css" />
+        <link href="../css/import.css" rel="stylesheet" type="text/css" />
 
         <script>
             var nav = navigator.appName;
@@ -53,54 +53,65 @@
                 }
             }
         </script>
-	</head>
-	<body>
+    </head>
+    <body>        
+        <!-- Auxiliar Temporal Inputs's DIV -->
+        <div id='hidden-inputs-session'></div>
+        <!-- Auxiliar Temporal Inputs's DIV -->
+        <div id='hidden-inputs-temporal'></div>
+        <!--Templates's DIV-->
+        <div class="wrapper_content_interactive" id='content-temporal-interactive'></div>
+        <label for="">Camcar v1</label>
+        <div id="main-compiler-camcar-v1">
+            <form name="form-compiler" method="post" accept-charset="utf-8">
+                <input type="hidden" name="execute_site_camcar_v1" value="execute">
+                <input type="submit" name="execute_site_camcar_v1" id="execute_site" value="Compilar">
+            </form>
+        </div>
+        <br>
+        <label for="">Camcar v2</label>
+        <div id="main-compiler-camcar-v2">
+            <form name="form-compiler" method="post" accept-charset="utf-8">
+                <input type="hidden" name="execute_site_camcar_v2" value="execute">
+                <input type="submit" name="execute_site_camcar_v2" id="execute_site" value="Compilar">
+            </form>
+        </div>
+        <div id="status"></div>
+        <div id="data"></div>
 
-        <!--<h2><a href="#" id="addScnt">Add Another Input Box</a></h2>
 
-        <div id="p_scents">
-            <p>
-                <label for="p_scnts"><input type="text" id="p_scnt" size="20" name="p_scnt" value="" placeholder="Input Value" /></label>
-            </p>
-        </div>-->
+        <!-- MAIN -->
+        <script src="../lib/jquery.js"></script>
+        <script src="../lib/modernizr.js"></script>
+        <script src="../lib/bootstrap.js"></script>
 
-        <a href="thecompiler/" title="...">The Compiler</a>
-        
-		<!-- Auxiliar Temporal Inputs's DIV -->
-    	<div id='hidden-inputs-session'></div>
-    	<!-- Auxiliar Temporal Inputs's DIV -->
-    	<div id='hidden-inputs-temporal'></div>
-    	<!--Templates's DIV-->
-    	<div class="wrapper_content_interactive" id='content-temporal-interactive'></div>
+        <!-- CORE -->
+        <script src="../lib/jquery.gdb.js"></script>
+        <script src="../lib/jquery-ui.js"></script>
+        <script src="../lib/underscore.js"></script>
+        <script src="../lib/moment.js"></script>
+        <script src="../lib/accounting.js"></script>
+        <script src="../lib/finch.js"></script>
 
-		<!-- MAIN -->
-		<script src="lib/jquery.js"></script>
-		<script src="lib/modernizr.js"></script>
-		<script src="lib/bootstrap.js"></script>
-		<!-- CORE -->
-		<script src="lib/jquery.gdb.js"></script>
-		<script src="lib/jquery-ui.js"></script>
-		<script src="lib/underscore.js"></script>
-		<script src="lib/moment.js"></script>
-		<script src="lib/accounting.js"></script>
-		<script src="lib/finch.js"></script>
-		<!-- HANDLEBARS -->
-		<script src="lib/handlebars.runtime.js"></script>
-		<!-- TEMPLATES -->
-		<script src='templates/min/templates.min.js'></script>
-		<!-- FORMS -->
-		<script src="lib/forms.js"></script>
-		<script src="lib/sha512.js"></script>
-		<!-- PLUGINS -->
-		<!-- CORE JS -->
+        <!-- HANDLEBARS -->
+        <script src="../lib/handlebars.runtime.js"></script>
+        <!-- TEMPLATES -->
+        <script src='../templates/min/templates.min.js'></script>
+        <!-- FORMS -->
+        <script src="../lib/forms.js"></script>
+        <script src="../lib/sha512.js"></script>
+
+        <!-- CORE JS -->
         <?php /*
-		<script src='js/min/core.min.js'></script>
+        <script src='../js/min/core.min.js'></script>
         */ ?>
-	    <script src='js/objects.js'></script>
-	    <script src='js/method.js'></script>
-	    <script src='js/model.js'></script>
-	    <script src='js/room.js'></script>
-	    <script src='js/main.js'></script>
-	</body>
+        <script src='../js/objects.js'></script>
+        <script src='../js/method.js'></script>
+        <script src='../js/model.js'></script>
+        <script src='../js/room.js'></script>
+        <script src='../js/main.js'></script>
+    </body>
 </html>
+
+
 

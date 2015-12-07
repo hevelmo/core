@@ -11,6 +11,10 @@
     offset = 300;
     offset_opacity = 1200;
     scroll_top_duration = 700;
+
+    var scntDiv, i; 
+    scntDiv = $('#p_scents');
+    i = $('#p_scents p').size() + 1;
 /* ------------------------------------------------------ *\
     [functions] Alert Custom
 \* ------------------------------------------------------ */
@@ -317,6 +321,7 @@
 \* ------------------------------------------------------ */
     var cleanStylesForSectionMethod = {
         cleanStylesForSection: function() {
+            cleanStylesForSectionMethod.cleanStylesSection_home();
         },
         cleanStylesSection_home: function() {
         }
@@ -337,6 +342,7 @@
 \* ------------------------------------------------------ */
     var removeRecurrentsMethod = {
         removeRecurrents: function() {
+            removeRecurrentsMethod.removeRecurrents_home();
         },
         removeRecurrents_home: function() {
         }
@@ -513,16 +519,66 @@
         }
     }
 
+    var addText = {
+        appendTagInput: function(event) {
+            $('<p><label for="p_scnts"><input type="text" id="p_scnt" size="20" name="p_scnt_' + i +'" value="" placeholder="Input Value" /></label> <a href="#" id="remScnt">Remove</a></p>').appendTo(scntDiv);
+            i++;
+            return false;
+        },
+        removeTagInpput: function(event) {
+            if( i > 2 ) {
+                $(this).parents('p').remove();
+                i--;
+            }
+            return false;
+        }
+    }
+
 /* ------------------------------------------------------ *\
- [Methods] Home
+ [Methods] compiler_phpobjectjs_method
 \* ------------------------------------------------------ */
-    //This group of methods will be not used it's only example, remove it later
-    var demoMethods = {
-        changeLan : function (event) {
-            var lan, date, newDate;
-            lan = PRO.getValue($(this));
-            date = $(domEl.h3_demo_date).data('date');
-            newDate = PRO.momentToRoman(date, lan);
-            $(domEl.h3_demo_date).text(newDate);
+    var compiler_phpobjectjs_method = {
+        compiler_phpobjectjs_camcar_v2: function(event) {
+            var btnSubmitSite, comiler_phpobjectjs_sitio, ihidden;
+            compiler_phpobjectjs_sitio = '../../camcar-v2.0/sitio/phpobjectjs/';
+            event.preventDefault();
+            $.ajax({
+                url: compiler_phpobjectjs_sitio,
+                type: 'post',
+                data: {ihidden: ihidden},
+                beforeSend: compiler_phpobjectjs_method.funcBeforeSend
+            })
+            .done(compiler_phpobjectjs_method.funcDone)
+            .always(compiler_phpobjectjs_method.funcAlways)
+        },
+        compiler_phpobjectjs_camcar_v1: function(event) {
+            var btnSubmitSite, comiler_phpobjectjs_sitio, ihidden;
+            compiler_phpobjectjs_sitio = '../../camcar/sitio/phpobjectjs/';
+            event.preventDefault();
+            $.ajax({
+                url: compiler_phpobjectjs_sitio,
+                type: 'post',
+                data: {ihidden: ihidden},
+                beforeSend: compiler_phpobjectjs_method.funcBeforeSend
+            })
+            .done(compiler_phpobjectjs_method.funcDone)
+            .always(compiler_phpobjectjs_method.funcAlways)
+        },
+        funcBeforeSend: function() {
+            $('#status').html('<img src="loading.gif" />');
+            $('#data').html('Compilando: phpobjectjs');
+        },
+        funcDone: function() {
+            setTimeout(function() {
+                $('#data').html('<i class="icon ion-md-checkmark"></i> compilado: phpobjectjs');
+            }, 3900);
+        },
+        funcAlways: function() {
+            setTimeout(function() {
+                $('#status').html('');
+            }, 4700);
+            setTimeout(function() {
+                $('#data').html('');
+            }, 7700);            
         }
     }
