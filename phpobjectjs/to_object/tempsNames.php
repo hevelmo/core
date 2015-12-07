@@ -2,6 +2,6 @@
 
 function tempsNames() {
     return array(
-    	'tmp_demo' => 'tmp_demo'
+    	'app_thecompiler' => 'tmp_app_thecompiler',
     );
 }
