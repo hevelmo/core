@@ -625,6 +625,15 @@
     var compiler_phpobjectjs_method = {
         proCamcarV1Sitio: function(event) {
             event.preventDefault();
+            dataProjects = [
+                ['div', {'id':'compiler'}, '', 1],
+            ]
+            COR.appendMulti('#main-compiler-camcar-v1-sitio', dataProjects);
+            dataProCamcarV1SitioAttributes = [
+                ['div', {'id':'status'}, '', 1],
+                ['div', {'id':'data'}, '', 1],
+            ];
+            COR.appendMulti('#compiler', dataProCamcarV1SitioAttributes);
             $.ajax({
                 url: compilerCamcar_v1_sitio,
                 type: 'post',
@@ -636,6 +645,15 @@
         },
         proCamcarV1Intranet: function(event) {
             event.preventDefault();
+            dataProjects = [
+                ['div', {'id':'compiler'}, '', 1],
+            ]
+            COR.appendMulti('#main-compiler-camcar-v1-intranet', dataProjects);
+            dataProCamcarV1IntranetAttributes = [
+                ['div', {'id':'status'}, '', 1],
+                ['div', {'id':'data'}, '', 1],
+            ];
+            COR.appendMulti('#compiler', dataProCamcarV1IntranetAttributes);
             $.ajax({
                 url: compilerCamcar_v1_intranet,
                 type: 'post',
@@ -647,6 +665,15 @@
         },
         proCamcarV1Admin: function(event) {
             event.preventDefault();
+            dataProjects = [
+                ['div', {'id':'compiler'}, '', 1],
+            ]
+            COR.appendMulti('#main-compiler-camcar-v1-admin', dataProjects);
+            dataProCamcarV1AdminAttributes = [
+                ['div', {'id':'status'}, '', 1],
+                ['div', {'id':'data'}, '', 1],
+            ];
+            COR.appendMulti('#compiler', dataProCamcarV1AdminAttributes);
             $.ajax({
                 url: compilerCamcar_v1_admin,
                 type: 'post',
@@ -658,6 +685,15 @@
         },
         proCamcarV2Sitio: function(event) {
             event.preventDefault();
+            dataProjects = [
+                ['div', {'id':'compiler'}, '', 1],
+            ]
+            COR.appendMulti('#main-compiler-camcar-v2', dataProjects);
+            dataProCamcarV2SitioAttributes = [
+                ['div', {'id':'status'}, '', 1],
+                ['div', {'id':'data'}, '', 1],
+            ];
+            COR.appendMulti('#compiler', dataProCamcarV2SitioAttributes);
             $.ajax({
                 url: compilerCamcar_v2_sitio,
                 type: 'post',
@@ -669,6 +705,15 @@
         },
         proCamcarV2Intranet: function(event) {
             event.preventDefault();
+            dataProjects = [
+                ['div', {'id':'compiler'}, '', 1],
+            ]
+            COR.appendMulti('#main-compiler-camcar-v2-intranet', dataProjects);
+            dataProCamcarV2IntranetAttributes = [
+                ['div', {'id':'status'}, '', 1],
+                ['div', {'id':'data'}, '', 1],
+            ];
+            COR.appendMulti('#compiler', dataProCamcarV2IntranetAttributes);
             $.ajax({
                 url: compilerCamcar_v2_intranet,
                 type: 'post',
@@ -680,6 +725,15 @@
         },
         proCamcarV2Admin: function(event) {
             event.preventDefault();
+            dataProjects = [
+                ['div', {'id':'compiler'}, '', 1],
+            ]
+            COR.appendMulti('#main-compiler-camcar-v2-admin', dataProjects);
+            dataProCamcarV2AdminAttributes = [
+                ['div', {'id':'status'}, '', 1],
+                ['div', {'id':'data'}, '', 1],
+            ];
+            COR.appendMulti('#compiler', dataProCamcarV2AdminAttributes);
             $.ajax({
                 url: compilerCamcar_v2_admin,
                 type: 'post',
@@ -696,6 +750,9 @@
         funcDone: function() {
             setTimeout(function() {
                 $('#data').html('<i class="icon ion-md-checkmark"></i> compilado: phpobjectjs');
+                setTimeout(function() {
+                    $('#compiler').remove();
+                }, 4100);
             }, 3900);
         },
         funcAlways: function() {

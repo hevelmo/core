@@ -110,9 +110,6 @@
                 <input type="submit" name="execute_site_camcar_v2_admin" id="compilerCamcar_v2_admin" value="Compilar">
             </form>
         </div>
-        <div id="status"></div>
-        <div id="data"></div>
-
 
         <!-- MAIN -->
         <script src="../lib/jquery.js"></script>
