@@ -1,3 +1,14 @@
+/*
+    Here are functions and methods that are models whose performance is used in all the Project
+    to invoke some of this models it's necessary to call with the prefix, and then te name of the
+    model and its arguments, for example COR.momentToHuman(date, language);
+    Each method has a large explanation.
+
+    NOTE: the prefix COR will change depends on the specific Project.
+
+    For the correct performance of almost all of the methods
+    it's necesary to includ JQuery library
+ **/
 /* ################################################################################################### *\
 
     Project Name: core models
@@ -39,6 +50,9 @@
             [FUNCTION] withoutArrayObjOR(arrayObj, withoutObj)
         [MODELS] NUMBER FORMATS's Models
             [FUNCTION] currencyFormat(number)
+            [FUNCTION] roundNDecimalFormat(number, nDecimals)
+        [MODELS] STRING Models
+            [FUNCTION] replaceAll(string, found, replace)
         [MODELS] OTHER Models
             [FUNCTION] randomString(name)
         [MODELS] Returning all Models
@@ -723,11 +737,130 @@ COR = (function() {
                 formattedAuantity = accounting.formatMoney(number);
                 return formattedAuantity;
             }
+        /*
+         *This function transfors a numeric value in money format
+         *
+         *PARAMS:
+         *   number: Is a number which value will be changed into a ceil rounded format,
+                     whitn an especific number of decimals
+         *   nDecimals: Is the number of decimals that the number will have
+         *
+         *RETURN: number
+         *   With the raounde number
+         *
+        **/
+            function roundNDecimalFormat(number, nDecimals) {
+                var numberParts, integerPart, decimalPart, decimalPartDiv,
+                    divisor, roundedNumber, extra0s;
+
+                roundedNumber = NaN;
+
+                if(!isNaN(number)) {
+
+                    //Convert the number value in a String
+                    number = '' + number;
+
+                    //Separate in Integer and Decimal Part
+                    numberParts = number.split('.');
+                    //There will alway be an integer part, the first in the array
+                    integerPart = numberParts[0];
+
+                    //By default the decimal part is 0
+                    decimalPart = '0';
+
+                    //If there is not a decimal part
+                    if(numberParts.length === 2) {
+
+                        //The decimal part is taken, the second one in the array
+                        decimalPart = numberParts[1];
+
+                        //Whe need the nDecimals first digits to be the integer and the rest to remain decimal
+                        divisor = Math.pow(10, decimalPart.length - nDecimals);
+                        decimalPartDiv = +decimalPart / divisor;
+
+                        //The new decimal part is rounded ceil
+                        decimalPart = Math.ceil(decimalPartDiv);
+
+                        //Now this new decimal part y converted to a string
+                        decimalPart = '' + decimalPart;
+
+                        //If the length of the new decimal part is necessary to complete with 0s at the begining
+                        for(idx = 0; idx < nDecimals - decimalPart.length; idx ++) {
+                            decimalPart = '0' + decimalPart;
+                        }
+
+                    }
+
+                    //The next step is joining the integer and the decimal part, in order to get a string with the new number
+                    roundedNumber = integerPart + '.' + decimalPart;
+                    //The is necessary to transform the value ina number
+                    roundedNumber = +roundedNumber;
+                    //Now the number is fixed with the number of decimals
+                    roundedNumber = roundedNumber.toFixed(nDecimals);
+                }
+
+                //Thhe new formatted number is returnd
+                return roundedNumber;
+            }
+    /*
+     ###################################################################################################
+     STRING Models
+     ###################################################################################################
+    */
+        /*
+         *This function replaces all the ocurrences in a string with a new value
+         *
+         *PARAMS:
+         *   string: The string with the original value.
+         *   found: A string with the found value.
+         *   replace: A string with the new value to replace the found value
+         *
+         *RETURN: string
+         *   With number in money format
+         *
+         *SPECIAL REQUIREMENTS:
+         *   It's necesary to include 'sha512.js' library before including 'model.js'
+        **/
+            function replaceAll(string, found, replace) {
+                expReg = new RegExp(found, 'g');
+                return string.replace(expReg, replace);
+            }
     /*
      ###################################################################################################
      OTHER Models
      ###################################################################################################
     */
+            function picturesLoader(domElement, barElement, urlHandler, urlApi) {
+                'use strict';
+                $(domElement).fileupload({
+                    url: urlHandler,
+                    dataType: 'json',
+                    done: function (e, data) {
+                        var picPromise, files;
+                        files = data.result.files;
+                        picPromise = postalService(urlApi, files);
+
+                        picPromise.success( function (data) {
+                            $.each(files, function (index, file) {
+                                $('<p/>').text(file.name).appendTo('#files');
+                            });
+                        });
+
+                    },
+                    progressall: function (e, data) {
+                        var progress = parseInt(data.loaded / data.total * 100, 10);
+                        $(barElement).css(
+                            'width', progress + '%',
+                            'background-color', '#5cb85c'
+                        );
+                    }
+                });
+
+                /*
+                $(domElement).prop('disabled', !$.support.fileInput)
+                    .parent().addClass($.support.fileInput ? undefined : 'disabled');
+                */
+            }
         /*
          *This function
          *
@@ -775,6 +908,9 @@ COR = (function() {
          withoutArrayObjAND : withoutArrayObjAND,
           withoutArrayObjOR : withoutArrayObjOR,
              currencyFormat : currencyFormat,
-               randomString : randomString
+        roundNDecimalFormat : roundNDecimalFormat,
+                 replaceAll : replaceAll,
+               randomString : randomString,
+             picturesLoader : picturesLoader
     }
 }());
