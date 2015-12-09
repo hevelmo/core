@@ -56,31 +56,60 @@
             }
         </script>
     </head>
-    <body>        
+    <body>
         <!-- Auxiliar Temporal Inputs's DIV -->
         <div id='hidden-inputs-session'></div>
         <!-- Auxiliar Temporal Inputs's DIV -->
         <div id='hidden-inputs-temporal'></div>
         <!--Templates's DIV-->
         <div class="wrapper_content_interactive" id='content-temporal-interactive'></div>
-        <label for="">Camcar v1</label>
-        <div id="main-compiler-camcar-v1">
+        <label for="">Camcar v1 Sitio</label>
+        <div id="main-compiler-camcar-v1-sitio">
             <form name="form-compiler" method="post" accept-charset="utf-8">
-                <input type="hidden" name="execute_site_camcar_v1" value="execute">
-                <input type="submit" name="execute_site_camcar_v1" id="execute_site" value="Compilar">
+                <input type="hidden" name="execute_site_camcar_v1_sitio" value="execute">
+                <input type="submit" name="execute_site_camcar_v1_sitio" id="compilerCamcar_v1_sitio" value="Compilar">
             </form>
         </div>
         <br>
-        <label for="">Camcar v2</label>
+        <label for="">Camcar v1 Intranet</label>
+        <div id="main-compiler-camcar-v1-intranet">
+            <form name="form-compiler" method="post" accept-charset="utf-8">
+                <input type="hidden" name="execute_site_camcar_v1_intranet" value="execute">
+                <input type="submit" name="execute_site_camcar_v1_intranet" id="compilerCamcar_v1_intranet" value="Compilar">
+            </form>
+        </div>
+        <br>
+        <label for="">Camcar v1 Admin</label>
+        <div id="main-compiler-camcar-v1-admin">
+            <form name="form-compiler" method="post" accept-charset="utf-8">
+                <input type="hidden" name="execute_site_camcar_v1_admin" value="execute">
+                <input type="submit" name="execute_site_camcar_v1_admin" id="compilerCamcar_v1_admin" value="Compilar">
+            </form>
+        </div>
+        <br>
+        <label for="">Camcar v2 Sitio</label>
         <div id="main-compiler-camcar-v2">
             <form name="form-compiler" method="post" accept-charset="utf-8">
                 <input type="hidden" name="execute_site_camcar_v2" value="execute">
-                <input type="submit" name="execute_site_camcar_v2" id="execute_site" value="Compilar">
+                <input type="submit" name="execute_site_camcar_v2" id="compilerCamcar_v2_sitio" value="Compilar">
             </form>
         </div>
-        <div id="status"></div>
-        <div id="data"></div>
-
+        <br>
+        <label for="">Camcar v2 Intranet</label>
+        <div id="main-compiler-camcar-v2-intranet">
+            <form name="form-compiler" method="post" accept-charset="utf-8">
+                <input type="hidden" name="execute_site_camcar_v2_intranet" value="execute">
+                <input type="submit" name="execute_site_camcar_v2_intranet" id="compilerCamcar_v2_intranet" value="Compilar">
+            </form>
+        </div>
+        <br>
+        <label for="">Camcar v2 Admin</label>
+        <div id="main-compiler-camcar-v2-admin">
+            <form name="form-compiler" method="post" accept-charset="utf-8">
+                <input type="hidden" name="execute_site_camcar_v2_admin" value="execute">
+                <input type="submit" name="execute_site_camcar_v2_admin" id="compilerCamcar_v2_admin" value="Compilar">
+            </form>
+        </div>
 
         <!-- MAIN -->
         <script src="../lib/jquery.js"></script>
@@ -108,10 +137,10 @@
         <script src='../js/min/core.min.js'></script>
         */ ?>
         <script src='../js/objects.js'></script>
-        <script src='../js/method.js'></script>
+        <script src='js/method.js'></script>
         <script src='../js/model.js'></script>
         <script src='../js/room.js'></script>
-        <script src='../js/main.js'></script>
+        <script src='js/main.js'></script>
     </body>
 </html>
 

@@ -1,16 +1,15 @@
 var domEl, tempsNames, urlsApi;
 domEl = {
+	"_main_compiler_app":"content-main-compiler-projects",
+	"_main_compiler_app_name":"#content-main-compiler-projects",
 	"div_hidden_inputs_session":"div#hidden-inputs-session",
 	"div_hidden_inputs_temporal":"div#hidden-inputs-temporal",
 	"div_recurrent":"div#content-temporal-interactive",
-	"h1_demo_hello":"h1#demo-hello",
-	"h3_demo_date":"h3#demo-date",
 	"recurrent_body":"body",
-	"recurrent_head":"head",
-	"select_lan_demo":"select#lan-demo"
+	"recurrent_head":"head"
 };
 tempsNames = {
-	"tmp_demo":"tmp_demo"
+	"app_thecompiler":"tmp_app_thecompiler"
 };
 urlsApi = {
 	"get_test":"api/v1/get/test",

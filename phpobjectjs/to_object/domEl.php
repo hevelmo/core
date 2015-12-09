@@ -1,6 +1,7 @@
 <?php
 
 function domEl() {
+    $main_compiler_app = 'content-main-compiler-projects';
     return array(
         'recurrent_head' => 'head',
         'recurrent_body' => 'body',
@@ -8,9 +9,8 @@ function domEl() {
         'div_hidden_inputs_session' => 'div#hidden-inputs-session',
         'div_hidden_inputs_temporal' => 'div#hidden-inputs-temporal',
         'div_recurrent' => 'div#content-temporal-interactive',
-        //DEMO ELEMENTS
-    	'select_lan_demo' => 'select#lan-demo',
-    	'h1_demo_hello' => 'h1#demo-hello',
-    	'h3_demo_date' => 'h3#demo-date'
+        //
+        '_main_compiler_app' => $main_compiler_app,
+        '_main_compiler_app_name' => '#' . $main_compiler_app,
     );
 }
