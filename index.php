@@ -63,8 +63,6 @@
                 <label for="p_scnts"><input type="text" id="p_scnt" size="20" name="p_scnt" value="" placeholder="Input Value" /></label>
             </p>
         </div>-->
-
-        <a href="thecompiler/" title="...">The Compiler</a>
         
 		<!-- Auxiliar Temporal Inputs's DIV -->
     	<div id='hidden-inputs-session'></div>
