@@ -63,7 +63,7 @@
                 <label for="p_scnts"><input type="text" id="p_scnt" size="20" name="p_scnt" value="" placeholder="Input Value" /></label>
             </p>
         </div>-->
-        
+
 		<!-- Auxiliar Temporal Inputs's DIV -->
     	<div id='hidden-inputs-session'></div>
     	<!-- Auxiliar Temporal Inputs's DIV -->
