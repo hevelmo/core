@@ -70,6 +70,11 @@
     	<div id='hidden-inputs-temporal'></div>
     	<!--Templates's DIV-->
     	<div class="wrapper_content_interactive" id='content-temporal-interactive'></div>
+        <div id="one"></div>
+<div id="two"></div>
+<div id="three"></div>
+<div id="four"></div>
+<div id="five"></div>
 
 		<!-- MAIN -->
 		<script src="lib/jquery.js"></script>
@@ -90,6 +95,7 @@
 		<script src="lib/forms.js"></script>
 		<script src="lib/sha512.js"></script>
 		<!-- PLUGINS -->
+        <script src="lib/plugins/matchMedia.js"></script>
 		<!-- CORE JS -->
         <?php /*
 		<script src='js/min/core.min.js'></script>

@@ -1100,7 +1100,7 @@ COR = (function() {
             roundNDecimalFormat : roundNDecimalFormat,
                    advancedTrim : advancedTrim,
                      replaceAll : replaceAll,
-                        ucWords : ucFirst,
+                        ucWords : ucWords,
                         ucFirst : ucFirst,
                    randomString : randomString,
                  picturesLoader : picturesLoader

@@ -8,6 +8,7 @@
             section = "home";
         },
         load: function(bindings) {
+            //matchMediaMethod.mediaquery();
             //addText.addTexto();
             //viewSectionHomeMethod.viewSectionHome();
         },

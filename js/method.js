@@ -2,8 +2,8 @@
     [Variables] 'Zone'
 \* ------------------------------------------------------ */
     var section;
-    var IS_MOBILE, mediaquery, mqMW320, mqMW360, mqMW375, mqMW384, mqMW400, mqMW412, mqMW414, mqMW480, mqMW600, mqMW640,  mqMW768,  mqMW800, mqMW1024,  mqMW1200,  mqMW1280,  mqMW1366, mqMW1440, mqMW1600, mqMW1601;
-    mediaquery = window.matchMedia("(max-width: 768px)");
+    var IS_MOBILE, mediaquery;
+
     // Browser supports HTML5 multiple file?
     var multipleSupport, isIE;
     multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
@@ -17,6 +17,24 @@
     //var scntDiv, i;
     //scntDiv = $('#p_scents');
     //i = $('#p_scents p').size() + 1;
+    var queries, newQuery, query;
+    queries = [
+        '400', '480', '640', '768', '1024'
+    ];
+
+/* ------------------------------------------------------ *\
+    [functions] handleOrientationChange
+\* ------------------------------------------------------ */
+    function handleOrientationChange(mediaquery) {
+            if (mediaquery.matches) {
+                // mediaquery es 768px
+                //console.log('mediaquery es: ' + mq + 'px');
+            } else {
+                // mediaquery no es 768px
+                //console.log('mediaquery no es: ' + mq + 'px');
+            }
+        }
+    }
 /* ------------------------------------------------------ *\
     [functions] DETEC MOBILE
 \* ------------------------------------------------------ */
@@ -86,12 +104,8 @@
     [Methods] MATCHMEDIA
 \* ------------------------------------------------------ */
     var matchMediaMethod = {
-        mediaquery: function() {
-            if (mediaquery.matches) {
-                // mediaquery es 768px
-            } else {
-                // mediaquery no es 768px
-            }
+        mediaquery: function(mediaquery) {
+            //handleOrientationChange(mediaquery);
         }
     }
 /* ------------------------------------------------------ *\
