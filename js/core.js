@@ -3,3 +3,4 @@
 //@prepros-append model.js
 //@prepros-append room.js
 //@prepros-append main.js
+//@prepros-append validate.js

@@ -1,18 +1,59 @@
 /* ################################################################################################### *\
 
-	Template Name: Parking
-	Template Version: 1.0
-	Author: hevelmo
+	Project Name: Landings
+	Proyect Version: 2.0
+	Author: *******
+	Update: hevelmo
 
-	CONTENT
+	CONTENT STYLES LOGIN PAGE
 
-		[styles] ''
+	[styles] bootstrap
+	[styles] webfonts
+	[styles] googlefonts
+	[styles] plugins
+	[styles] custom
+	[styles] main
+	[styles] responsive
 
 \* ################################################################################################### */
 	/* ------------------------------------------------------ *\
-		[styles] ''
+		[styles] bootstrap
 	\* ------------------------------------------------------ */
-		@import url(iconfonts/ionicons/ionicons.css);
+		@import url(styles/bootstrap.css);
+	/* ------------------------------------------------------ *\
+		[styles] webfonts
+	\* ------------------------------------------------------ */
+		@import url(webfonts/font-awesome/font-awesome.css);
+		@import url(webfonts/iconfont/iconfont.css);
+		@import url(webfonts/pe-icon-7-stroke/pe-icon-7-stroke.css);
+	/* ------------------------------------------------------ *\
+		[styles] googlefonts
+	\* ------------------------------------------------------ */
+		@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900,900italic,700italic,400italic,300italic,100italic);
+	/* ------------------------------------------------------ *\
+		[styles] plugins
+	\* ------------------------------------------------------ */
+		@import url(styles/magnific-popup.css);
+		@import url(styles/owl.carousel.css);
+		@import url(styles/loaders.css);
+		@import url(styles/animate.css);
+		@import url(styles/jquery.chosen/chosen.css);
+		@import url(styles/forms-leads.css);
+		@import url(styles/margin.css);
+		@import url(styles/padding.css);
+		@import url(styles/basscss.css);
+	/* ------------------------------------------------------ *\
+		[styles] custom
+	\* ------------------------------------------------------ */
+		@import url(styles/style.css);
+	/* ------------------------------------------------------ *\
+		[styles] main
+	\* ------------------------------------------------------ */
+		@import url(styles/main.css);
+	/* ------------------------------------------------------ *\
+		[styles] responsive
+	\* ------------------------------------------------------ */
+		@import url(styles/responsive.css);
 /* ################################################################################################### *\
 	END CONTENT
 \* ################################################################################################### */

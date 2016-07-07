@@ -28,5 +28,9 @@ $(document).ready(function() {
     /* ------------------------------------------------------ *\
         EVENT CONTROL
     \* ------------------------------------------------------ */
-
+    // GENERAL CLICK RADIO & CHECKBOX
+    $(domEl.div_recurrent).on('change', ":checkbox", changeInputsMethods.clickChangeCheckbox);
+    $(domEl.div_recurrent).on('click', ".label-radio", changeInputsMethods.clcikChangeRadio);
+    // VALIDATEION MESSAGE
+    $(domEl.div_recurrent).on('focusout', domEl.validate_required, validateMethods.validate_input);
 });

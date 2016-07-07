@@ -26,13 +26,12 @@
     [functions] handleOrientationChange
 \* ------------------------------------------------------ */
     function handleOrientationChange(mediaquery) {
-            if (mediaquery.matches) {
-                // mediaquery es 768px
-                //console.log('mediaquery es: ' + mq + 'px');
-            } else {
-                // mediaquery no es 768px
-                //console.log('mediaquery no es: ' + mq + 'px');
-            }
+        if (mediaquery.matches) {
+            // mediaquery es 768px
+            //console.log('mediaquery es: ' + mq + 'px');
+        } else {
+            // mediaquery no es 768px
+            //console.log('mediaquery no es: ' + mq + 'px');
         }
     }
 /* ------------------------------------------------------ *\
@@ -410,10 +409,8 @@
 \* ------------------------------------------------------ */
     var viewSectionHomeMethod = {
         loadTemplatesSectionHome: function() {
-            var nameproject;
-            nameproject = projectsData.name;
-            $('#label-name-project').html(nameproject);
-            COR.loadTemplate(tempsNames.app_thecompiler, domEl._main_compiler_app_name);
+            COR.loadTemplate(tempsNames._content_form_leads, domEl.div_recurrent);
+            set_form_leads_method.refreshForm();
         },
         recurrentSecionHome: function() {
             dataMainCompilerProjectsAttributes = [
@@ -422,10 +419,84 @@
             COR.appendMulti(domEl.div_recurrent, dataMainCompilerProjectsAttributes);
         },
         viewSectionHome: function() {
-            viewSectionHomeMethod.recurrentSecionHome();
+            //viewSectionHomeMethod.recurrentSecionHome();
             viewSectionHomeMethod.loadTemplatesSectionHome();
         }
     }
+/* ------------------------------------------------------ *\
+    [Methods] set_form_leads_method
+\* ------------------------------------------------------ */
+    var set_form_leads_method = {
+        refreshForm: function() {
+            COR.loadTemplate(tempsNames.start_site_form_leads, domEl._content_form_leads);
+            $('.seleccionar').chosen();
+        },
+        validate_fields_keyup: function() {
+            set_form_leads_method.fillingControl();
+        }
+    }
+/* ------------------------------------------------------ *\
+    [Methods] changeInputsMethods
+\* ------------------------------------------------------ */
+    var changeInputsMethods = {
+        clickChangeCheckbox : function(event) {
+            if ($(".label-checkbox").length) {
+                $('.label-checkbox input:checked').each(function(){
+                    $(this).parent('label').addClass('checkbox-checked');
+                });
+            }
+            if ($(this).is(':checked')) {
+                $(this).parent('.label-checkbox').find(':checkbox').attr('checked', true);
+                $(this).parent('.label-checkbox').addClass('checkbox-checked');
+                $(this).val('1');
+                $('#contact_subscription').val('Activado');
+                $('#test_drive_model_subscription').val('Activado');
+            } else {
+                $(this).parent('label').find(':checkbox').attr('checked', false);
+                $(this).parent('label').removeClass('checkbox-checked');
+                $(this).val('0');
+                $('#contact_subscription').val('Desactivado');
+                $('#test_drive_model_subscription').val('Desactivado');
+            }
+        },
+        clcikChangeRadio : function(event) {
+            if ($(".label-radio").length) {
+                $('.label-radio input:checked').each(function(){
+                    //$(this).parent('label').addClass('radio-checked');
+                });
+            }
+            if ($(this).hasClass('radio-checked')) {
+                $(this).find(':radio').attr('checked', true);
+                $(this).addClass("radio-checked");
+            } else {
+                $(".label-radio").removeClass("radio-checked");
+                $(".label-radio").find(':radio').attr('checked', false);
+                $(this).find(':radio').attr('checked', true);
+                $(this).addClass("radio-checked");
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ------------------------------------------------------ *\
     [Methods] removeRecurrentsMethod
 \* ------------------------------------------------------ */

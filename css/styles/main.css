@@ -1,0 +1,641 @@
+.cur-hover {
+	cursor: pointer;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+
+.content-image-logo-white {
+    height: auto;
+    padding: 25px 22px 25px 35px;
+}
+.content-image-logo-white.posa {
+	position: absolute;
+    top: 0;
+}
+.content-image-logo-white a {
+	padding: 0;
+}
+
+.autos	{
+    bottom: 0;
+    height: auto;
+    left: 0;
+    position: relative;
+    width: 100%;
+    top: 275px;	
+}
+.auto.col-1,
+.autolast.col-1 {
+	width: 60%;
+}
+.auto.col-2,
+.autolast.col-2 {
+	width: 45%;
+}
+.auto.col-3,
+.autolast.col-3 {
+	width: 31%;
+}
+.auto.col-1,
+.autolast.col-1,
+.auto.col-2,
+.autolast.col-2,
+.auto.col-3,
+.autolast.col-3 {
+	float: left;
+}
+.autos > .auto.col-1 {
+	position: relative;
+	left: 20%;
+}
+.auto,
+.autolast	{
+	background: rgba(255, 255, 255, 0.8);
+	height: auto;
+	display: inline-block;
+	float: left;
+	line-height: 1.2;
+	margin-right: 13px;
+	padding: 12px;
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 0;
+	box-shadow: -2px -2px 6px 0 rgba(0,0,0,.1);
+	/*background-color: #525e6c;
+	background-color: rgba(0, 0, 0, 0.4);*/
+}
+.auto	{
+}
+.autolast	{
+}
+.auto span.image-model, .autolast span.image-model {
+	display: block;
+}
+.auto span.image-model img, .autolast span.image-model img {
+	width: 100%;
+}
+.auto span.nombre, .autolast span.nombre	{
+	color: #000000;
+	/*font-family: NissanAGBold, Helvetica, Arial, sans-serif;*/
+	font-size: 24px;
+}
+.auto span.version, .autolast span.version	{
+	color: #CB252C;
+	/*font-family: NissanAGRegular, Helvetica, Arial, sans-serif;*/
+	font-size: 14px;
+}
+.auto div.precio, .autolast div.precio	{
+	background: #ffffff;
+	color: #707070;
+	/*font-family: NissanAGRegular, Helvetica, Arial, sans-serif;*/
+	font-size: 14px;
+	margin-top: 12px;
+	padding: 8px;
+}
+.auto div.precio span, .autolast div.precio span	{
+	color: #CB252C;
+	/*font-family: NissanAGBold, Helvetica, Arial, sans-serif;*/
+	font-size: 22px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+fieldset .label-radio, fieldset .label-checkbox {
+    padding:5px 0 0 35px;
+    height:24px;
+    cursor:pointer;
+    background:url("../../img/check-radio.png") no-repeat;
+    background-position:0 -98px;
+    position:relative;
+    font-weight:normal;
+    margin-bottom: 0;
+}
+fieldset .label-radio {
+    margin-right: 20px;
+}
+fieldset .label-radio input, fieldset .label-checkbox input {
+    position:absolute;
+    left:-9999px;
+}
+fieldset .label-checkbox {
+    background-position:0 -32px;
+}
+fieldset .radio-checked {
+    background-position:0 -66px;
+}
+fieldset .checkbox-checked {
+    background-position:0 0;
+}
+fieldset i {
+    position:absolute;
+    z-index:2;
+    left:15px;
+    top:30px;
+    font-family: entypo;
+    font-size:16px;
+    color:inherit;
+}
+fieldset .invalid-message {
+    width:245px;
+    padding:7px 10px;
+    margin-top:-5px;
+    background-color:#e1251b;
+    color:#fff;
+    font-size:14px;
+    position:absolute;
+    display:none;
+    z-index: 2;
+}
+fieldset .invalid-message span {
+    position:absolute;
+    top:-10px;
+    right:30px;
+    width:0;
+    height:0;
+    border-left:7px solid transparent;
+    border-right:7px solid transparent;
+    border-bottom:10px solid #e1251b;
+}
+.financing_elements.form-group {
+    /*margin-bottom: 10px;*/
+}
+
+.fieldset-radio-checkbox {
+	display: inline-block;
+	margin: 0;
+    padding: 10px 0 0px;
+    float: none;
+    width: auto;
+    margin-right: 0px;
+}
+
+#funding_resume {
+    display: none;
+}
+.funding-resume,
+.form-loader {
+    position: relative;
+    top: 0;
+    background: rgba(255,255,255,0);
+    left: -45%;
+}
+#funding_resume #resume-message {
+    float:left;
+    width:400px;
+}
+#funding_resume #resume-message.funding-by-model-resume-message {
+    float:none;
+    width:100%;
+    display: block;
+}
+#funding_resume #resume-message h4 {
+    margin-top:0;
+    padding-top:0;
+}
+#funding_resume .resume {
+    float:left;
+    margin-left:60px;
+    width:150px;
+}
+#funding_resume .resume h4, #funding_resume .resume p {
+    margin:0;
+    padding:0;
+}
+#financing-loader .loader {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin: 0px auto;
+  width: 100%;
+  height: 158px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.78);
+}
+#financing-loader .loader .loader-wrap {
+    top: -11%;
+    left: -40%;
+}
+#financing-loader .loader .loader-wrap {
+    position: absolute;
+    top: -60%;
+    left: 15%;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: translate(100%,260%);
+    -ms-transform: translate(100%,260%);
+    -o-transform: translate(100%,260%);
+    transform: translate(100%,260%);
+}
+#financing-loader .loader .loader-wrap .loader-item {
+  border: 2px solid rgba(23, 22, 23, 0.25);
+  border-bottom-color: #e1251b;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-transition: all .9s ease-in-out;
+  -o-transition: all .9s ease-in-out;
+  transition: all .9s ease-in-out;
+  /*-webkit-font-smoothing: antialiased!important;
+  -webkit-animation: spin 1.7s linear infinite;
+  -o-animation: spin 1.7s linear infinite;
+  animation: spin 1.7s linear infinite;*/
+}
+#financing-loader .loader .loader-wrap:before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url(../../img/logo/loader-logo-suzuki-02.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+#financing-loader .loader .loader-wrap:after {
+    position: fixed;
+    content: 'PROCESANDO';
+    color: #000;
+    left: -14px;
+    right: 0;
+    top: -25px;
+}
+#financing-loader .loader .loader-wrap .loader-item {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+#financing-loader .loader .loader-wrap .loader-item {
+  -webkit-animation: spin 1s infinite steps(8);
+  animation: spin 1s infinite steps(8);
+}
+
+
+
+.top-scroll-bar {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    bottom: 30px;
+    z-index: 1001;
+}
+.scroll-down {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    position: relative;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    border: #003f87 2px solid;
+    background: rgba(0,0,0,.0);
+}
+.scroll-down i {
+    width: 56px;
+    height: 56px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 2em;
+    color: #003f87;
+}
+
+/* NAV AGENCIES */
+nav.tabs a.current {
+    background: #ededed;
+    color: rgba(0, 0, 0, 0.5);
+}
+nav.cl-effect-14 a {
+    position: relative;
+    display: inline-block;
+    margin: 15px 0px;
+    outline: none;
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 1.15em;
+}
+
+/* Effect 14: border switch */
+.cl-effect-14 a {
+  padding: 0 10px;
+  height: 45px;
+  line-height: 45px;
+}
+
+.cl-effect-14 a::before,
+.cl-effect-14 a::after {
+  position: absolute;
+  width: 43px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.5);
+  content: '';
+  opacity: 0.2;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.cl-effect-14 a::before {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.cl-effect-14 a::after {
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 100% 0;
+  -moz-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.cl-effect-14 a:hover::before,
+.cl-effect-14 a.current::before,
+.cl-effect-14 a:hover::after,
+.cl-effect-14 a.current::after,
+.cl-effect-14 a:focus::before,
+.cl-effect-14 a:focus::after,
+.cl-effect-14 a.current::after {
+  opacity: 1;
+}
+
+.cl-effect-14 a:hover::before,
+.cl-effect-14 a:focus::before,
+.cl-effect-14 a.current::before {
+  left: 50%;
+  -webkit-transform: rotate(0deg) translateX(-50%);
+  -moz-transform: rotate(0deg) translateX(-50%);
+  transform: rotate(0deg) translateX(-50%);
+}
+
+.cl-effect-14 a:hover::after,
+.cl-effect-14 a:focus::after,
+.cl-effect-14 a.current::after {
+  right: 50%;
+  -webkit-transform: rotate(0deg) translateX(50%);
+  -moz-transform: rotate(0deg) translateX(50%);
+  transform: rotate(0deg) translateX(50%);
+}
+
+/* Effect 21: borders slight translate */
+.cl-effect-21 a {
+  padding: 10px;
+  color: #237546;
+  font-weight: 700;
+  text-shadow: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.cl-effect-21 a::before,
+.cl-effect-21 a::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #337ab7;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.cl-effect-21 a::before {
+  top: 0;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.cl-effect-21 a::after {
+  bottom: 0;
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+.cl-effect-21 a:hover,
+.cl-effect-21 a:focus,
+.cl-effect-21 a.active {
+  color: #337ab7;
+}
+
+.cl-effect-21 a:hover::before,
+.cl-effect-21 a:focus::before,
+.cl-effect-21 a.active::before,
+.cl-effect-21 a:hover::after,
+.cl-effect-21 a:focus::after,
+.cl-effect-21 a.active::after {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+
+.map-canvas {
+  width:100%;
+  height:410px;
+}
+
+.map-canvas.h500 {
+  height:410px;
+}
+
+#google_map {width: 90%; height: 500px;margin-top:0px;margin-left:auto;margin-right:auto;}
+
+i.agn_icono {
+font-size: 2em;
+}
+span.agn_span {
+  font-size: 1.2em;  
+}
+span.agn_span {
+  width: 85%;
+}
+i.agn_icono, span.agn_span {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: normal;
+  padding: 15px;
+}
+
+.loader {
+  position: relative;
+  top: -25px;
+  bottom: 0;
+  left: 80%;
+  margin: 0;
+  width: 0%;
+  height: auto;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0);
+}
+.form-loader.loader-short .loader {
+  left: -145%;
+}
+.loader-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    -webkit-transform: translate(25%,125%);
+    -ms-transform: translate(25%,125%);
+    -o-transform: translate(25%,125%);
+    transform: translate(25%,125%);
+}
+.loader-item {
+  border: 2px solid rgba(23, 22, 23, 0.25);
+  border-bottom-color: #e1251b;
+  width: 40px;
+  height: 40px;
+  margin-left: 17px;
+  border-radius: 50%;
+  -webkit-transition: all .9s ease-in-out;
+  -o-transition: all .9s ease-in-out;
+  transition: all .9s ease-in-out;
+  /*-webkit-font-smoothing: antialiased!important;
+  -webkit-animation: spin 1.7s linear infinite;
+  -o-animation: spin 1.7s linear infinite;
+  animation: spin 1.7s linear infinite;*/
+}
+.loader-wrap:before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    content: '';
+    width: 40px;
+    height: 40px;
+    /*background-image: url(../../img/logo/loader-logo-suzuki-02.png);*/
+    background-size: 75%;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+.loader-wrap:after {
+    position: fixed;
+    content: 'PROCESANDO';
+    color: #000;
+    left: -14px;
+    right: 0;
+    top: -25px;
+    font-weight: bold;
+}
+.loader-item {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+.loader-item {
+  -webkit-animation: spin 1s infinite steps(8);
+  animation: spin 1s infinite steps(8);
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.form-thanks {
+  text-align: center;
+  width: 100%;
+  height: 697px;
+  margin-top: 30px;
+  position: relative;
+}
+.form-thanks.thanks-short {
+  width: 100%;
+}
+.form-thanks .agradecimiento_titulo {
+  color:#003751;
+  font-size:25px;
+  font-weight:400;
+}
+.form-thanks .agradecimiento_titulo2 {
+  font-size:16px;
+  font-weight:400;
+}
+.form-thanks .agradecimiento_titulo3 {
+  color:#000000;
+  font-size:14px;
+  font-weight:300;
+  font-style:italic;
+}
+.form-thanks hr {
+  border:0;
+  width:100%;
+  color:#f00;
+  background-color:#dfdfdf;
+  height:1px;
+}
+.form-thanks .arrow {
+  position:absolute;
+  bottom:-65px;
+  right:-61px;
+  z-index:9;
+}
+
+.msg{
+  color: white;
+  font-weight: bold;
+  height: 49px;
+  line-height: 49px;
+  padding: 0 10px;
+  position: absolute;
+  right: 280px;
+  text-transform: uppercase;
+  min-width: 0;
+  text-align: center;
+}
+.msg.msg-short {
+  right: 0;
+}
+.msg-short.msg_ok,
+.msg-short.msg_error {
+  width: 200px;
+}
+.msg_ok,
+.msg_error {
+  width: 48%;
+}
+.msg_ok{
+  background: #3BB873;
+}
+.msg_error{
+  background: red;
+}

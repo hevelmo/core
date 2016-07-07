@@ -1,0 +1,217 @@
+<div id="form-wrapper">
+    <form class="text-dark" id="form_leads" onsubmit="$.submit_leads_form(); return false;">
+        <h5 class="center-md text-center uppercase">EN JUNIO PAPÁ DICE: <br> ¡YO MANEJO!.</h5>
+        {{!--
+        <p class="center-md m-b-md">¡Solicita un plan de financiamiento a tu medida!.</p>
+        <!-- Notifications -->
+        <p class="success qf"><i class="fa fa-check"></i> <strong>Your quote has successfully been sent.</strong></p>
+        <p class="failed qf"><i class="fa fa-exclamation-circle"></i><strong> Something went wrong!</strong></p>
+        --}}
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_concessionaire">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Selecciona concesionaria
+                    </label>
+                    <select id="leads_concessionaire" type="dropdown" name="concesionaria" class="seleccionar validate-required validate_select" style="width: 100%;" data-validation-data="required">
+                        <option label="Selecccionar Concesionaria..." selected="selected" disabled="disabled" value="">Selecciona Concesionaria</option>
+                        <option value="suzuki-gdl-lopez-mateos">Suzuki GDL López Mateos</option>
+                        <option value="suzuki-gdl-av-vallarta">Suzuki GDL Av. Vallarta</option>
+                        <option value="suzuki-colima">Suzuki Colima</option>
+                        <option value="suzuki-manzanillo">Suzuki Manzanillo</option>
+                        <option value="suzuki-morelia">Suzuki Morelia</option>
+                    </select>
+                    <p class="invalid-message" id="error_concessionaire">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_model">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Selecciona Modelo
+                    </label>
+                    <select id="leads_model" type="dropdown" name="modelo" class="seleccionar validate-required validate_select" style="width: 100%;" data-validation-data="required">
+                        <option label="Selecccionar Modelo..." selected="selected" disabled="disabled" value="">Selecciona Modelo</option>
+                        <option value="swift-glx">Swift GLX</option>
+                        <option value="swift-sport">Swift Sport</option>
+                        <option value="s-cross">S-Cross</option>
+                        {{!--
+                        <option value="ciaz">Ciaz</option>
+                        <option value="nueva-vitara">Nueva Vitara</option>
+                        --}}
+                    </select>
+                    <p class="invalid-message" id="error_model">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_name">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Nombre
+                    </label>
+                    <input
+                        type="text"
+                        id="leads_name"
+                        name="nombre"
+                        class="validate-required"
+                        placeholder="Nombre"
+                        data-validation-data="required|name">
+                    <p class="invalid-message" id="error_name">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_lastname">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Apellidos
+                    </label>
+                    <input
+                        type="text"
+                        id="leads_lastname"
+                        name="apellidos"
+                        class="validate-required"
+                        placeholder="Apellidos"
+                        data-validation-data="required|name">
+                    <p class="invalid-message" id="error_lastname">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_email">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Correo electrónico
+                    </label>
+                   <input
+                        type="email"
+                        id="leads_email"
+                        name="correo"
+                        class="validate-required input icon email"
+                        placeholder="Correo electrónico"
+                        data-validation-data="required|email">
+                   <p class="invalid-message" id="error_email">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_phone">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Número de celular
+                    </label>
+                    <input
+                        type="tel"
+                        id="leads_phone"
+                        name="telefono"
+                        class="validate-required"
+                        maxlength="13"
+                        placeholder="Número de celular"
+                        data-validation-data="required|phone">
+                    <p class="invalid-message" id="error_phone">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <fieldset>
+                    <label style="display: none;" for="leads_message">
+                        <span style="color: red;" class="fa fa-asterisk"></span> Mensaje
+                    </label>
+                    <textarea
+                        name="mensaje"
+                        class="escribir2 validate-required"
+                        id="leads_message"
+                        data-validation-data="required|address" placeholder="Escribe tus necesidades, tenemos un plan para tí"></textarea>
+                    <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+                <p>¿Te gustaría manejarlo?</p>
+                <fieldset class="fieldset-radio-checkbox" id="fieldset-radio-checkbox-yes">
+                    <label for="leads_test_drive_yes" class="label-radio">Sí
+                        <input
+                            type="radio"
+                            id="leads_test_drive_yes"
+                            name="test_drive"
+                            class="validate_radio"
+                            value="Sí deseas manejarlo">
+                    </label>
+                </fieldset>
+                <fieldset class="fieldset-radio-checkbox" id="fieldset-radio-checkbox-no">
+                    <label for="leadsl_test_drive_no" class="label-radio radio-checked">No
+                        <input
+                            type="radio"
+                            id="leadsl_test_drive_no"
+                            name="test_drive"
+                            class="validate_radio"
+                            value="No deseas manejarlo"
+                            checked="checked">
+                    </label>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element ab">
+               <fieldset class="fieldset-radio-checkbox" id="checkbox-news">
+                    <label for="leads_newsletter" class="label-checkbox">
+                        <input
+                            type="checkbox"
+                            id="leads_newsletter"
+                            name="newsletter"
+                            class="validate_checkbox"
+                            value=""> Deseo recibir noticias y promociones.
+                    </label>
+                </fieldset>
+            </div>
+        </div>
+        <div class="financing_elements form-group clearfix">
+            <div class="financing_element a">
+                <fieldset>
+                    <div id="loader_send_icon" class="form-loader" style="display: none;">
+                        <div class="loader">
+                            <div class="loader-wrap">
+                                <div class="loader-item"></div>
+                            </div>
+                        </div>
+                    </div>             
+                </fieldset>
+            </div>
+            <div class="financing_element b">
+                <fieldset>
+                    <div class="msg"></div>
+                    <button type="submit" name="submit" id="submit" class="btn btn-blue-dark send_contact_form">Enviar</button>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+    <div class="financing_elements form-group clearfix">
+        <div class="financing_element ab">
+            <fieldset>
+                <p id="revisa_aviso" class="text-center">
+                    Tus datos están a salvo.<br>
+                    Para mayor información revisa nuestro <br> 
+                    <a id="go-privacy-notice" href="http://suzukigdl.com.mx/#/aviso-de-privacidad" target="_blank" class="text-white cur-hover">Aviso de privacidad</a>
+                </p>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<div class="form-thanks" style="display: none;">
+    <h4 class="secondary-title">Gracias</h4>
+    <p>
+        Tu cotización ha sido enviada a tu correo electrónico:
+        <span id="funding_resume_email"></span>
+    </p>
+    <div class="funding-hidden-inputs">
+        Te hemos asignado un asesor Suzuki de la concesionaria
+        <a id="funding_resume_concessionaire"></a>
+        quien se pondrá en contacto contigo para confirmar tus datos y resolver cualquier duda
+        que puedas tener.
+    </div>
+</div>

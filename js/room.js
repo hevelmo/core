@@ -10,7 +10,7 @@
         load: function(bindings) {
             //matchMediaMethod.mediaquery();
             //addText.addTexto();
-            //viewSectionHomeMethod.viewSectionHome();
+            viewSectionHomeMethod.viewSectionHome();
         },
         unload: function(bindings) {
             section = "";

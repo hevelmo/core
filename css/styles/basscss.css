@@ -1,0 +1,378 @@
+/* BUTTON ADM MODELS */
+button,
+.button {
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.125rem;
+  height: auto;
+  padding: .5rem 1rem;
+  margin: 0;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  -webkit-appearance: none;
+}
+.button-file-upload {
+  margin: 4rem;
+  padding: 2rem;
+}
+
+button,
+button::after,
+button::before,
+.button,
+.button::after,
+.button::before {
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button:hover { text-decoration: none; }
+
+/* BUTTON OUTLINE */
+.button-outline {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid currentcolor;
+}
+
+.button-outline::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border: 1px solid transparent;
+  background-color: currentcolor;
+  border-radius: 3px;
+  opacity: 0;
+}
+
+.button-outline:hover {
+  box-shadow: none;
+}
+
+.button-outline:hover::before,
+.button-outline:focus::before {
+  opacity: .125;
+}
+
+.button-outline:focus {
+  outline: none;
+  border: 1px solid currentcolor;
+  box-shadow: 0 0 0 2px;
+}
+
+.button-outline:active,
+.button-outline.is-active {
+  box-shadow: none;
+  /*box-shadow: inset 0 1px 5px 0, 0 0 1px;*/
+}
+
+.button-outline:disabled,
+.button-outline.is-disabled {
+  opacity: .5;
+}
+
+/* BUTTON TRANSPARENT */
+.button-transparent {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+.button-transparent::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border: 1px solid transparent;
+  background-color: currentcolor;
+  opacity: 0;
+}
+
+.button-transparent:hover {
+  box-shadow: none;
+}
+
+.button-transparent:hover::before,
+.button-transparent:focus::before {
+  opacity: .09375;
+}
+
+.button-transparent:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px;
+}
+
+.button-transparent:active,
+.button-transparent.is-active {
+  box-shadow: none;
+}
+
+.button-transparent:active::before,
+.button-transparent.is-active::before {
+  opacity: .0625;
+}
+
+.button-transparent:disabled,
+.button-transparent.is-disabled {
+  opacity: .5;
+}
+
+/* BACKGROUND, BORDER & RADIUS */
+
+.bg-cover   { background-size: cover; }
+.bg-contain { background-size: contain; }
+
+.bg-center  { background-position: center; }
+.bg-top     { background-position: top; }
+.bg-right   { background-position: right; }
+.bg-bottom  { background-position: bottom; }
+.bg-left    { background-position: left; }
+
+.border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0,0,0,.125);
+}
+
+.border-top {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgba(0,0,0,.125);
+}
+
+.border-right {
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: rgba(0,0,0,.125);
+}
+
+.border-bottom {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0,0,0,.125);
+}
+
+.border-left {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: rgba(0,0,0,.125);
+}
+
+.rounded { border-radius: 3px; }
+.circle  { border-radius: 50%; }
+
+.rounded-top    { border-radius: 3px 3px 0 0; }
+.rounded-right  { border-radius: 0 3px 3px 0; }
+.rounded-bottom { border-radius: 0 0 3px 3px; }
+.rounded-left   { border-radius: 3px 0 0 3px; }
+
+.not-rounded { border-radius: 0; }
+
+/* COLORS CAMCAR */
+.black-camcar {color: #030303 !important;}
+.white-camcar {color: #fcfbfb !important;}
+.red-camcar {color: #b21117 !important;}
+.bg-facebook,
+.bg-twitter,
+.bg-youtube,
+.bg-instagram,
+.bg-linkedin {
+  font-weight: bold;
+}
+.bg-facebook {
+  background-color: #3b5998 !important;
+  color: #f7f7f7 !important;
+  font-size: larger;
+  letter-spacing: 2px;
+  text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+.bg-facebook:hover {
+  background-color: #2d4373 !important;
+  color: #ffffff !important;
+}
+.bg-twitter {
+  background-color: #55acee !important;
+  color: #f7f7f7 !important;
+    font-size: larger;
+  letter-spacing: 2px;
+  text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+.bg-twitter:hover {
+  background-color: #2795e9 !important;
+  color: #ffffff !important;
+}
+.bg-youtube {
+  background-color: #cc181e !important;
+  color: #f7f7f7 !important;
+    font-size: larger;
+  letter-spacing: 2px;
+  text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+.bg-youtube:hover {
+  background-color: #e62117 !important;
+  color: #ffffff !important;
+}
+.bg-instagram {
+  background-color: #125688 !important;
+  color: #f7f7f7 !important;
+  font-size: larger;
+  letter-spacing: 2px;
+  text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+.bg-instagram:hover {
+  background-color: #124788 !important;
+  color: #ffffff !important;
+}
+.bg-linkedin {
+  background-color: #287bbc !important;
+  color: #f7f7f7 !important;
+  font-size: larger;
+  letter-spacing: 2px;
+  text-align: center;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+}
+.bg-linkedin:hover {
+  background-color: #1b5480 !important;
+  color: #ffffff !important;
+}
+
+/*BUTTON COLOR CAMCAR */
+/* COLOR BLACK */
+.bg-black-camcar {
+  background-color: #030303 !important;
+  color: #fcfbfb !important;
+}
+.bg-active-black-camcar {
+  background-color: #030303 !important;
+  color: #fcfbfb !important;
+}
+.bg-black-camcar.disabled,
+.bg-black-camcar[disabled],
+.bg-black-camcar:disabled {
+  background-color: rgba(3, 3, 3, 0.5) !important;
+  color: rgba(252, 251, 251, 0.5) !important;
+}
+.bg-black-camcar:hover,
+.bg-black-camcar:focus,
+.bg-black-camcar:active {
+  background-color: #030303 !important;
+  color: #fcfbfb !important;
+}
+/* COLOR WHITE */
+.bg-white-camcar {
+  background-color: #fcfbfb !important;
+  color: #030303 !important;
+}
+.bg-active-white-camcar {
+  background-color: #fcfbfb !important;
+  color: #030303 !important;
+}
+.bg-white-camcar.disabled,
+.bg-white-camcar[disabled],
+.bg-white-camcar:disabled {
+  background-color: rgba(252, 251, 251, 0.5) !important;
+  color: rgba(3, 3, 3, 0.5) !important;
+}
+.bg-white-camcar:hover,
+.bg-white-camcar:focus,
+.bg-white-camcar:active {
+  background-color: #fcfbfb !important;
+  color: #030303 !important;
+}
+.bg-green-success-camcar {
+  background-color: #08633D !important;
+  color: #fcfbfb !important;
+  border-radius: 0px;
+}
+/* COLOR RED */
+.bg-red-camcar {
+  background-color: #b21117 !important;
+  border-color: #b21117;
+  color: #fcfbfb !important;
+  border-radius: 0px;
+}
+.bg-active-red-camcar {
+  background-color: #b21117 !important;
+  border-color: #b21117;
+  color: #fcfbfb !important;
+}
+.bg-red-camcar.disabled,
+.bg-red-camcar[disabled],
+.bg-red-camcar:disabled {
+  /*background-color: rgba(178, 17, 23, 0.5) !important;
+  color: rgba(252, 251, 251, 0.5) !important;*/
+  border-radius: 0px;
+}
+.bg-red-camcar:hover,
+.bg-red-camcar:active,
+.bg-red-camcar:focus {
+  background-color: #b21117 !important;
+  border-color: #b21117;
+  border-radius: 0px;
+  color: #fcfbfb !important;
+}
+/* TRANSITION BUTTONS COLOR CAMCAR */
+.bg-red-camcar::before,
+.bg-white-camcar::before,
+.bg-black-camcar::before,
+.bg-facebook::before,
+.bg-twitter::before,
+.bg-youtube::before,
+.bg-linkedin::before {
+  -webkit-transition: all .5s ease-in-out;
+     -moz-transition: all .5s ease-in-out;
+      -ms-transition: all .5s ease-in-out;
+       -o-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+}
+.bg-red-camcar:hover::before,
+.bg-red-camcar:focus::before,
+.bg-white-camcar:hover::before,
+.bg-white-camcar:focus::before,
+.bg-black-camcar:hover::before,
+.bg-black-camcar:focus::before,
+.bg-facebook:hover::before,
+.bg-facebook:focus::before,
+.bg-twitter:hover::before,
+.bg-twitter:focus::before,
+.bg-youtube:hover::before,
+.bg-youtube:focus::before,
+.bg-linkedin:focus::before {
+  -webkit-transition: all .5s ease-in-out;
+     -moz-transition: all .5s ease-in-out;
+      -ms-transition: all .5s ease-in-out;
+       -o-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+}
