@@ -427,12 +427,162 @@
     [Methods] set_form_leads_method
 \* ------------------------------------------------------ */
     var set_form_leads_method = {
+        data_max_leads_api: function() {
+            var dataApi, dataRenowned;
+            dataApi = $(domEl._form_leads).serializeFormJSON();
+            console.log('Guarda datos MAX.');
+            console.log(dataApi);
+
+            dataRenowned = COR.renameArrayObjKeys([dataApi], {
+                'name': 'nombre',
+                'lastname': 'apellidos' ,
+                'email': 'correo',
+                'phone': 'telefono',
+                'comment': 'mensaje',
+                'news': 'newsletter'
+            });
+            dataRenowned = dataRenowned[0];
+
+            dataRenowned['web_max'] = 'localhost/lp_suzuki/';
+            dataRenowned['business_max'] = '0';
+            dataRenowned['origen_type'] = '2';
+            dataRenowned['campaign_max'] = 'Capaña de prueba';
+            console.log(dataRenowned);
+
+            return COR.postalService('http://max-app.net/api/v1/remote/action', dataRenowned);
+        },
+        data_fiancing_by_model: function() {
+            var data, $model, urlApi, postApi;
+            data = $(domEl._form_leads).serializeFormJSON();
+            console.log('Envio correo.');
+            console.log(data);
+
+            $model = 'swift-sport';
+
+            urlApi = urlsApi.getFinancingByModel + $model;
+            postApi = COR.postalService(urlApi, data);
+            console.log(postApi);
+            return postApi;
+        },
+        fillingControl: function() {
+            var validFieldName, dataApi, isFull, isNoEmpty;
+            validFieldName = ['nombre', 'apellidos', 'correo', 'telefono', 'mensaje'];
+            dataApi = $(domEl._form_leads).serializeFormJSON();
+            console.log(dataApi);
+        },
         refreshForm: function() {
+            var $btnSend;
+            $btnSend = $('.send_contact_form');
+
             COR.loadTemplate(tempsNames.start_site_form_leads, domEl._content_form_leads);
             $('.seleccionar').chosen();
+            set_form_leads_method.set_input_hidden();
+
+            $btnSend.removeAttr('disabled');
         },
-        validate_fields_keyup: function() {
+        resetApi: function() {
+            var $btnSend;
+            $btnSend = $('.send_contact_form');
+
+            COR.resetForm(domEl._form_leads);
+
+            $('#loader_send_icon').css('display', 'none');
+
+            $('#leads_concessionaire_chosen a.chosen-single span').text('Selecciona Concesionaria');
+            $('#leads_model_chosen a.chosen-single span').text('Selecciona Modelo');
+            
+            $('#fieldset-radio-checkbox-yes label').removeClass('radio-checked');
+            $('#fieldset-radio-checkbox-yes label input').removeAttr('checked');
+
+            $('#fieldset-radio-checkbox-no label').addClass('radio-checked');
+            $('#fieldset-radio-checkbox-no label input').attr('checked');
+
+            $('#checkbox-news label').removeClass('checkbox-checked');
+            $('#checkbox-news label input').removeAttr('checked');
+            
+            $btnSend.removeAttr('disabled');
+        },
+        keyInput: function() {
             set_form_leads_method.fillingControl();
+        },
+        set_input_hidden: function() {
+            set_input_hidden = [
+                ['input', {'id' : 'leads_image_model', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'image_model', 'type' : 'hidden'}, '', 0],
+                ['input', {'id' : 'leads_name_model', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'name_model', 'type' : 'hidden'}, '', 0],
+                ['input', {'id' : 'leads_agencie', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'agencie', 'type' : 'hidden'}, '', 0]
+            ];
+            COR.appendMulti('#funding_fields_hidden', set_input_hidden);
+        },
+        send_form_leads: function() {
+            var $concessionaire, $model, $name, $lastname, $email, $phone, $message, $btnSend, form_errors;
+            form_errors = 0;
+            $concessionaire = $('#leads_concessionaire');
+            $model = $('#leads_model');
+            $name = $('#leads_name');
+            $lastname = $('#leads_lastname');
+            $email = $('#leads_email');
+            $phone = $('#leads_phone');
+            $message = $('#leads_message');
+            $btnSend = $('.send_contact_form');
+
+            $btnSend.removeAttr('disabled');
+
+            if ( !$.validate_input( $message )) {
+                form_errors++;
+                $message.focus();
+            }
+            if ( !$.validate_input( $phone )) {
+                form_errors++;
+                $phone.focus();
+            }
+            if ( !$.validate_input( $email )) {
+                form_errors++;
+                $email.focus();
+            }
+            if ( !$.validate_input( $lastname )) {
+                form_errors++;
+                $lastname.focus();
+            }
+            if ( !$.validate_input( $name )) {
+                form_errors++;
+                $name.focus();
+            }
+            /*if ( !$.validate_input( $model )) {
+                form_errors++;
+                //$model.change();
+                $model.focusout();
+            }
+            if ( !$.validate_input( $concessionaire )) {
+                form_errors++;
+                //$concessionaire.change();
+                $concessionaire.focusout();
+            }*/
+            if ( form_errors == 0 ) {
+                $btnSend.css('cursor', 'auto').prop('disabled', true);
+                $('#loader_send_icon').css('display', 'block');
+
+                apiPromise = set_form_leads_method.data_max_leads_api();
+                apiPromise.success( function (data) {
+                    console.log('guarda registro en max. promise');
+                    console.log(data);
+                    set_form_leads_method.fillingControl();
+                    set_form_leads_method.resetApi();
+
+                    sendFundingPromise = set_form_leads_method.data_fiancing_by_model();
+                    sendFundingPromise.success( function (data) {
+                        console.log('Envia correo. promise');
+                        console.log(data);
+                    });
+                    sendFundingPromise.error( function (data) {
+                        console.log(data);
+                        set_form_leads_method.resetApi();
+                    });
+                });
+                apiPromise.error( function (data) {
+                    console.log(data);
+                    set_form_leads_method.resetApi();
+                });
+            }
         }
     }
 /* ------------------------------------------------------ *\

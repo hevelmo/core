@@ -29,5 +29,8 @@ function urlsApi() {
         //TEST
         'get_test' => $root . '/' . 'get/test',
         'post_test' => $root . '/' . 'post/test',
+
+        // LEADS FINANCING 
+        'getFinancingByModel' => $root . '/post/financing/',
     );
 }

@@ -1,14 +1,9 @@
  <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-include '../../../incorporate/db_connect.php';
-include '../../../incorporate/functions.php';
-include '../../../incorporate/queryintojson.php';
-include '../../../incorporate/json-file-decode.class.php';
-include '../Mandrill.php';
 
-date_default_timezone_set('America/Mexico_City');
-setlocale(LC_MONETARY, 'en_US');
+include_once '../../incorporate/db_connect.php';
+include_once '../../incorporate/functions.php';
+include_once '../../incorporate/queryintojson.php';
+include_once '../Mandrill.php';
 
 /**
  *
@@ -52,6 +47,8 @@ $app->configureMode('development', function () use ($app) {
 //TEST
     $app->get('/get/test', /*'mw1',*/ 'getTest');
     $app->post('/post/test', /*'mw1',*/ 'postTest');
+
+    $app->post('/post/financing/:model', /*'mw1',*/ 'getFinancingByModel');
 $app->run();
 
 //Functions
@@ -136,6 +133,12 @@ $app->run();
             'tabId' => $idTable
         );
         echo changeQueryIntoJSON('campa', $structure, getConnection(), $sql, $params, 3, PDO::FETCH_ASSOC);
+    }
+
+    // GET FINANCING BY MODEL
+    function getFinancingByModel() {
+        $property = requestBody();
+        changeArrayIntoJSON('sukpa', array('process' => 'ok', $property));
     }
 /*
   ----------------------------------------------------------------------------

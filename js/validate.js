@@ -45,7 +45,6 @@ $(document).ready(function() {
 			$concessionaire.focusout();
 		}*/
 		if ( form_errors == 0 ) {
-			console.log('Entra despues de validar campos.');
 			$btnSend.css('cursor', 'auto').prop('disabled', true);
 			$('#loader_send_icon').css('display', 'block');
 
@@ -57,14 +56,42 @@ $(document).ready(function() {
             //modelo
             dataRenowned = COR.renameArrayObjKeys([dataApi], {
                 'name': 'nombre',
-                'lastname': 'apellidos',
+                'lastname': 'apellidos' ,
                 'email': 'correo',
                 'phone': 'telefono',
-                'comment': 'mensaje'
+                'comment': 'mensaje',
+                'news': 'newsletter'
             });
+            dataRenowned['web_max'] = 'localhost/lp_suzuki/';
             dataRenowned['business_max'] = '0';
             dataRenowned['origen_type'] = '2';
+            dataRenowned['campaign_max'] = 'Capaña de prueba';
             console.log(dataRenowned);
+
+            service_url = 'http://max-app.net/api/v1/remote/action';
+            $.ajax({
+                cache: false,
+                type: "POST",
+                contentType: "application/json",
+                url: service_url,
+                dataType: "json",
+                data: JSON.stringify(dataRenowned),
+                success: function(data) {
+                    console.log('enviado');
+                },
+                error: function(data) {
+                    console.log('no enviado');
+                }
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
 		}
 	}
 });

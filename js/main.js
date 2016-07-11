@@ -33,4 +33,9 @@ $(document).ready(function() {
     $(domEl.div_recurrent).on('click', ".label-radio", changeInputsMethods.clcikChangeRadio);
     // VALIDATEION MESSAGE
     $(domEl.div_recurrent).on('focusout', domEl.validate_required, validateMethods.validate_input);
+    // INPUTS ENVENTS
+    $(domEl.div_recurrent).on('keyup', '.lead-api-input', set_form_leads_method.keyInput);
+    // BUTTON FORM LEADS
+    $(domEl.div_recurrent).on('click', "#leads_api_save", set_form_leads_method.send_form_leads);
+
 });

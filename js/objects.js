@@ -17,6 +17,7 @@ tempsNames = {
 	"start_site_form_leads":"tmp_start_site_form_leads"
 };
 urlsApi = {
+	"getFinancingByModel":"api/v1/post/financing/",
 	"get_test":"api/v1/get/test",
 	"post_test":"api/v1/post/test"
 };

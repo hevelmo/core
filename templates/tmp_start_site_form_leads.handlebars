@@ -1,5 +1,5 @@
 <div id="form-wrapper">
-    <form class="text-dark" id="form_leads" onsubmit="$.submit_leads_form(); return false;">
+    <form class="text-dark" id="form_leads">
         <h5 class="center-md text-center uppercase">EN JUNIO PAPÁ DICE: <br> ¡YO MANEJO!.</h5>
         {{!--
         <p class="center-md m-b-md">¡Solicita un plan de financiamiento a tu medida!.</p>
@@ -13,7 +13,7 @@
                     <label style="display: none;" for="leads_concessionaire">
                         <span style="color: red;" class="fa fa-asterisk"></span> Selecciona concesionaria
                     </label>
-                    <select id="leads_concessionaire" type="dropdown" name="concesionaria" class="seleccionar validate-required validate_select" style="width: 100%;" data-validation-data="required">
+                    <select id="leads_concessionaire" type="dropdown" name="concesionaria" class="seleccionar validate-required validate_select lead-api-input" style="width: 100%;" data-validation-data="required">
                         <option label="Selecccionar Concesionaria..." selected="selected" disabled="disabled" value="">Selecciona Concesionaria</option>
                         <option value="suzuki-gdl-lopez-mateos">Suzuki GDL López Mateos</option>
                         <option value="suzuki-gdl-av-vallarta">Suzuki GDL Av. Vallarta</option>
@@ -31,7 +31,7 @@
                     <label style="display: none;" for="leads_model">
                         <span style="color: red;" class="fa fa-asterisk"></span> Selecciona Modelo
                     </label>
-                    <select id="leads_model" type="dropdown" name="modelo" class="seleccionar validate-required validate_select" style="width: 100%;" data-validation-data="required">
+                    <select id="leads_model" type="dropdown" name="modelo" class="seleccionar validate-required validate_select lead-api-input" style="width: 100%;" data-validation-data="required">
                         <option label="Selecccionar Modelo..." selected="selected" disabled="disabled" value="">Selecciona Modelo</option>
                         <option value="swift-glx">Swift GLX</option>
                         <option value="swift-sport">Swift Sport</option>
@@ -55,7 +55,7 @@
                         type="text"
                         id="leads_name"
                         name="nombre"
-                        class="validate-required"
+                        class="validate-required lead-api-input"
                         placeholder="Nombre"
                         data-validation-data="required|name">
                     <p class="invalid-message" id="error_name">Este campo es obligatorio<span>&nbsp;</span></p>
@@ -72,7 +72,7 @@
                         type="text"
                         id="leads_lastname"
                         name="apellidos"
-                        class="validate-required"
+                        class="validate-required lead-api-input"
                         placeholder="Apellidos"
                         data-validation-data="required|name">
                     <p class="invalid-message" id="error_lastname">Este campo es obligatorio<span>&nbsp;</span></p>
@@ -89,7 +89,7 @@
                         type="email"
                         id="leads_email"
                         name="correo"
-                        class="validate-required input icon email"
+                        class="validate-required input icon email lead-api-input"
                         placeholder="Correo electrónico"
                         data-validation-data="required|email">
                    <p class="invalid-message" id="error_email">Este campo es obligatorio<span>&nbsp;</span></p>
@@ -106,7 +106,7 @@
                         type="tel"
                         id="leads_phone"
                         name="telefono"
-                        class="validate-required"
+                        class="validate-required lead-api-input"
                         maxlength="13"
                         placeholder="Número de celular"
                         data-validation-data="required|phone">
@@ -123,7 +123,7 @@
                     </label>
                     <textarea
                         name="mensaje"
-                        class="escribir2 validate-required"
+                        class="escribir2 validate-required lead-api-input"
                         id="leads_message"
                         data-validation-data="required|address" placeholder="Escribe tus necesidades, tenemos un plan para tí"></textarea>
                     <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
@@ -168,28 +168,29 @@
                             value=""> Deseo recibir noticias y promociones.
                     </label>
                 </fieldset>
-            </div>
-        </div>
-        <div class="financing_elements form-group clearfix">
-            <div class="financing_element a">
-                <fieldset>
-                    <div id="loader_send_icon" class="form-loader" style="display: none;">
-                        <div class="loader">
-                            <div class="loader-wrap">
-                                <div class="loader-item"></div>
-                            </div>
-                        </div>
-                    </div>             
-                </fieldset>
-            </div>
-            <div class="financing_element b">
-                <fieldset>
-                    <div class="msg"></div>
-                    <button type="submit" name="submit" id="submit" class="btn btn-blue-dark send_contact_form">Enviar</button>
-                </fieldset>
+                <fieldset id="funding_fields_hidden"></fieldset>
             </div>
         </div>
     </form>
+    <div class="financing_elements form-group clearfix">
+        <div class="financing_element a">
+            <fieldset>
+                <div id="loader_send_icon" class="form-loader" style="display: none;">
+                    <div class="loader">
+                        <div class="loader-wrap">
+                            <div class="loader-item"></div>
+                        </div>
+                    </div>
+                </div>             
+            </fieldset>
+        </div>
+        <div class="financing_element b">
+            <fieldset>
+                <div class="msg"></div>
+                <button type="submit" name="submit" id="leads_api_save" class="btn btn-blue-dark send_contact_form">Enviar</button>
+            </fieldset>
+        </div>
+    </div>
     <div class="financing_elements form-group clearfix">
         <div class="financing_element ab">
             <fieldset>
