@@ -1,21 +1,28 @@
  <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include_once '../../incorporate/db_connect.php';
 include_once '../../incorporate/functions.php';
 include_once '../../incorporate/queryintojson.php';
+include_once '../../incorporate/json-file-decode.class.php';
 include_once '../Mandrill.php';
+
+date_default_timezone_set('America/Mexico_City');
+setlocale(LC_MONETARY, 'en_US');
 
 /**
  *
- * [Initial V 1.0]
+ * [Initial V 15.0]
  *
 **/
+
 require '../Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim(array(
     'mode' => 'development',
     'cookies.httponly' => true
 ));
+
 // Only invoked if mode is "production"
 $app->configureMode('production', function () use ($app) {
     $app->config(array(
@@ -23,6 +30,7 @@ $app->configureMode('production', function () use ($app) {
         'debug' => false
     ));
 });
+
 // Only invoked if mode is "development"
 $app->configureMode('development', function () use ($app) {
     $app->config(array(
@@ -30,39 +38,20 @@ $app->configureMode('development', function () use ($app) {
         'debug' => true
     ));
 });
+
 /**
  * [Routes Deep V 1.0]
 **/
-// POST route
-    //$app->post('/post/table', /*'mw1',*/ 'addTable');
-// INSERT
-    //$app->post('/new/table', /*'mw1',*/ 'addTable');
-// UPDATE
-    //$app->post('/set/table/:idTable', /*'mw1',*/ 'setTable');
-// GET route
-// SELECT
-    //$app->post('/get/table/:idTable', /*'mw1',*/ 'setTable');
-// DELETE
-    //$app->get('/del/table/:idTable', /*'mw1',*/ 'delTable');
-//TEST
-    $app->get('/get/test', /*'mw1',*/ 'getTest');
-    $app->post('/post/test', /*'mw1',*/ 'postTest');
 
+// POST route
     $app->post('/post/financing/:model', /*'mw1',*/ 'getFinancingByModel');
+
+// GET route
+
+// SELECT
+
 $app->run();
 
-//Functions
-//TEST
-    function getTest() {
-        $today = date('o-m-d H:i:s');
-        $array = array('date' => $today);
-        echo changeArrayIntoJSON('propa', $array);
-    }
-    function postTest() {
-        $array = array('process' => 'ok');
-        //echo changeArrayIntoJSON('propa', $array);
-        echo "string";
-    }
 /*
   ----------------------------------------------------------------------------
   General Helper Methods
@@ -82,6 +71,7 @@ $app->run();
             $app->halt(401, 'Token Requerido');
         }
     }
+
 /*
   ----------------------------------------------------------------------------
   General Post Methods
@@ -96,7 +86,7 @@ $app->run();
         $params = array(
             'field' => trim($property->field),
         );
-        echo changeQueryIntoJSON('campa', $structure, getConnection(), $sql, $params, 1, PDO::FETCH_ASSOC);
+        echo changeQueryIntoJSON('sukpa', $structure, getConnection(), $sql, $params, 1, PDO::FETCH_ASSOC);
     }
     // UPDATE
     function setTable($idTable) {
@@ -109,37 +99,30 @@ $app->run();
             'tabId' => $idTable,
             'field' => trim($property->field)
         );
-        echo changeQueryIntoJSON('campa', $structure, getConnection(), $sql, $params, 2, PDO::FETCH_ASSOC);
+        echo changeQueryIntoJSON('sukpa', $structure, getConnection(), $sql, $params, 2, PDO::FETCH_ASSOC);
     }
-/*
-  ----------------------------------------------------------------------------
-  General Get Methods
-  ----------------------------------------------------------------------------
-*/
-// SELECT
-    function getTable() {
-        $sql = "SELECT * FROM proTable tab";
-        $structure = array(
-            'alias' => 'TAB_Field'
-        );
-        $params = array();
-        echo changeQueryIntoJSON('propa', $structure, getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
-    }
-// DELETE
-    function delTable($idTable) {
-        $sql = "DELETE FROM camTable WHERE TAB_Id = :tabId";
-        $structure = array();
-        $params = array(
-            'tabId' => $idTable
-        );
-        echo changeQueryIntoJSON('campa', $structure, getConnection(), $sql, $params, 3, PDO::FETCH_ASSOC);
-    }
-
+    
     // GET FINANCING BY MODEL
     function getFinancingByModel() {
         $property = requestBody();
-        changeArrayIntoJSON('sukpa', array('process' => 'ok', $property));
+        
+        $concesionaria = $property->concesionaria;
+        $modelo = $property->modelo;
+        $nombre = $property->nombre;
+        $apellidos = $property->apellidos;
+        $correo = $property->correo;
+        $telefono = $property->telefono;
+        $mensaje = $property->mensaje;
+        $test_drive = $property->test_drive;
+        $newsletter = $property->newsletter;
+
+        echo changeArrayIntoJSON("sukpa", array('process'=>'ok', $property));
     }
+/*
+  ----------------------------------------------------------------------------
+    General Get Methods
+  ----------------------------------------------------------------------------
+*/
 /*
   ----------------------------------------------------------------------------
   General Get Mandril

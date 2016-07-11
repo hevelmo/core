@@ -1,10 +1,9 @@
 <?php
 /*
- * Copyright (C) 2013 Virbac México
- * Waxtotem, 2014.09.04
+ * Copyright (C) 2015 Medigraf
+ * Waxtotem, 2015.10.02
  * 
  */
-
 
 include_once 'pro_con_ini.php';
 include_once 'queryintojson.php';
@@ -12,63 +11,82 @@ include_once 'queryintojson.php';
 function getConnection() {
     $dbhost = HOST;
     $dbname = DATABASE;
-    $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", USER, PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")); 
+    $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", USER, PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbh;
 }
 
-function sec_session_start_gen() {
-    $session_name = 'MAXT';   // Set a custom session name
+function sec_session_start() {
+    //Set a custom session name
+    $sessionName = 'CAMCRM';
     $secure = SECURE;
 
-    // This stops JavaScript being able to access the session id.
+    //This stops JavaScript being able to access the session id.
     $httponly = true;
-    // Forces sessions to only use cookies.
+
+    //Forces sessions to only use cookies.
     if(ini_set('session.use_only_cookies', 1) === FALSE) {
-        header("Location: ../error.php?err=SoloGalletas");
+        header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
         exit();
     }
-    // Gets current cookies params.
+
+    //Gets current cookies params.
     $cookieParams = session_get_cookie_params();
     session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
-    // Sets the session name to the one set above.
-    session_name($session_name);
-    session_start();// Start the PHP session 
-    session_regenerate_id();// regenerated the session, delete the old one.
-}
 
-function sec_session_start() {
-    sec_session_start_gen();
-    $_SESSION['user_control'] = 0;
-}
+    //Sets the session name to the one set above.
+    session_name($sessionName);
 
-function sec_session_start_api() {
-    sec_session_start_gen();
-    if(!isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'])) {
-        $_SESSION['client_id'] = 0;
-        $_SESSION['client_status'] = 0;
-    }
+    //Start the PHP session
+    session_start();
+    //regenerated the session, delete the old one.
+    session_regenerate_id();
+
 }
 
 function login($mail, $password) {
     $mail = trim($mail);
 
-    $sql = "SELECT * 
-            FROM m1ton_usuarios
-            WHERE correo_principal = :mail
+    $sql = "SELECT usr.USR_Id,
+                   usr.USR_NumeroEmpleado,
+                   usr.USR_Username,
+                   CONCAT(USR_ApellidoPaterno, ' ', USR_ApellidoMaterno, ' ', USR_Nombres) USR_NombreCompleto,
+                   usr.USR_Mail,
+                   usr.USR_AGN_Id,
+                   COALESCE(agn.AGN_Nombre, 'Administrador') AGN_Nombre,
+                   COALESCE(agn.AGN_Logo1, 'admin.png') AGN_Logo1,
+                   COALESCE(agn.AGN_Logo2, 'admin.png') AGN_Logo2,
+                   usr.USR_Tipo,
+                   usr.USR_Password,
+                   usr.USR_Salt,
+                   COALESCE(agn.AGN_Header, '') AGN_Header,
+                   USR_AdminAccess
+            FROM camUsuarios usr
+            LEFT JOIN camAgencias agn
+            ON usr.USR_AGN_Id = agn.AGN_Id
+            WHERE USR_Control = :control
+            AND USR_Mail = :mail
             LIMIT 1";
 
     $structure = array(
-        'user_id' => 'usuario_id',
-        'username' => 'correo_principal',
-        'password' => 'password',
-        'salt' => 'salt',
-        'status' => 'status',
-        'tipo_usuario' => 'tipo_usuario',
+        'usr_id' => 'USR_Id',
+        'usr_no_empleado' => 'USR_NumeroEmpleado',
+        'usr_username' => 'USR_Username',
+        'usr_nombre_completo' => 'USR_NombreCompleto',
+        'usr_mail' => 'USR_Mail',
+        'usr_agn_id' => 'USR_AGN_Id',
+        'usr_agn_name' => 'AGN_Nombre',
+        'usr_agn_logo1' => 'AGN_Logo1',
+        'usr_agn_logo2' => 'AGN_Logo2',
+        'usr_type' => 'USR_Tipo',
+        'usr_password' => 'USR_Password',
+        'usr_salt' => 'USR_Salt',
+        'usr_agn_header' => 'AGN_Header',
+        'usr_adm_access' => 'USR_AdminAccess',
     );
 
     $params = array(
-        //'control' => 1,
+        'control' => 1,
         'mail' => $mail
     );
 
@@ -76,13 +94,20 @@ function login($mail, $password) {
 
     if(count($result)) {
         if(rightResult($result)) {
-            $userId = $result[0]['user_id'];
-            $clientId = $userId;
-            $status = $result[0]['status'];
-            $userType = $result[0]['tipo_usuario'];
-            $username = $result[0]['username'];
-            $userSalt = $result[0]['salt'];
-            $dbPassword = $result[0]['password'];
+            $userId = $result[0]['usr_id'];
+            $noEmpleado = $result[0]['usr_no_empleado'];
+            $username = $result[0]['usr_username'];
+            $nombreCompleto = $result[0]['usr_nombre_completo'];
+            $email = $result[0]['usr_mail'];
+            $agnId = $result[0]['usr_agn_id'];
+            $agency = $result[0]['usr_agn_name'];
+            $agnLogo1 = $result[0]['usr_agn_logo1'];
+            $agnLogo2 = $result[0]['usr_agn_logo2'];
+            $type = $result[0]['usr_type'];
+            $dbPassword = $result[0]['usr_password'];
+            $userSalt = $result[0]['usr_salt'];
+            $agnHeader = $result[0]['usr_agn_header'];
+            $adminAccess = $result[0]['usr_adm_access'];
 
             //If the user exists we check if the account is locked
             //from too many login attempts
@@ -111,26 +136,33 @@ function login($mail, $password) {
                     $_SESSION['user_id'] = $userId;
 
                     //XSS protection as we might print this value
-                    $clientId = preg_replace("/[^0-9]+/", "", $clientId);
-                    $_SESSION['client_id'] = $clientId;
+                    $agnId = preg_replace("/[^0-9]+/", "", $agnId);
+                    $_SESSION['usr_agn_id'] = $agnId;
 
                     //XSS protection as we might print this value
-                    $status = preg_replace("/[^0-9]+/", "", $status);
-                    $_SESSION['client_status'] = $status;
+                    $type = preg_replace("/[^0-9]+/", "", $type);
+                    $_SESSION['usr_type'] = $type;
 
                     //XSS protection as we might print this value
-                    $userType = preg_replace("/[^0-9]+/", "", $userType);
-                    $_SESSION['user_type'] = $userType;
-
+                    $adminAccess = preg_replace("/[^0-9]+/", "", $adminAccess);
+                    $_SESSION['usr_adm_access'] = $adminAccess;
+                    
                     //---------- UTF8 STRINGS ----------
+
+                    $agency = utf8_encode($agency);
+                    $_SESSION['usr_agn_nombre'] = $agency;
 
                     //---------- EMAIL ----------
                     
-                    // XSS protection as we might print this value
-                    $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
-                    $_SESSION['username'] = $username;
+                    $_SESSION['email'] = $email;
 
                     //------------- STRINGS -------------
+
+                    $_SESSION['usr_no_empleado'] = $noEmpleado;
+                    $_SESSION['usr_agn_logo1'] = $agnLogo1;
+                    $_SESSION['usr_agn_logo2'] = $agnLogo2;
+                    $_SESSION['usr_agn_header'] = $agnHeader;
+                    $_SESSION['usr_nombre_completo'] = $nombreCompleto;
 
                     //---------- LOGIN STRINGS ----------
                     
@@ -143,19 +175,16 @@ function login($mail, $password) {
                     //We record this attempt in the database
                     $now = time();
                     $sql_i = 
-                        "INSERT INTO m1ton_login_attempts(
-                            user_id,
-                            user_type,
-                            time
+                        "INSERT INTO camAttempts(
+                            ATT_USR_Id,
+                            ATT_Time
                          ) VALUES (
-                            :user_id,
-                            :user_type,
+                            :usr_id,
                             :time
                          )";
                     $structure_i = array();
                     $params_i = array(
-                        'user_id' => $userId,
-                        'user_type' => 0,
+                        'usr_id' => $userId,
                         'time' => $now
                     );
                     $result = restructureQuery($structure_i, getConnection(), $sql_i, $params_i, 1, PDO::FETCH_ASSOC);
@@ -175,31 +204,48 @@ function login($mail, $password) {
 
 function login_check() {
     if(isset(
-        $_SESSION['user_id'],
-        $_SESSION['username'],
-        $_SESSION['user_type'],
-        $_SESSION['login_string']
+            $_SESSION['user_id'],
+            $_SESSION['usr_no_empleado'],
+            //$_SESSION['username'],
+            $_SESSION['usr_nombre_completo'],
+            $_SESSION['email'],
+            $_SESSION['usr_agn_id'],
+            $_SESSION['usr_agn_nombre'],
+            //$_SESSION['usr_agn_logo1'],
+            //$_SESSION['usr_agn_logo2'],
+            $_SESSION['usr_type'],
+            $_SESSION['login_string'],
+            $_SESSION['usr_adm_access']
         )
     ) {
         $loginString = $_SESSION['login_string'];
         $userId = $_SESSION['user_id'];
-        $username = $_SESSION['username'];
-        $userType = $_SESSION['user_type'];
+        $noEmpleado = $_SESSION['usr_no_empleado'];
+        //$username = $_SESSION['username'];
+        $nombreCompleto = $_SESSION['usr_nombre_completo'];
+        $email = $_SESSION['email'];
+        $agnId = $_SESSION['usr_agn_id'];
+        $type = $_SESSION['usr_type'];
+        $agency = $_SESSION['usr_agn_nombre'];
+        $agnLogo1 = $_SESSION['usr_agn_logo1'];
+        $agnLogo2 = $_SESSION['usr_agn_logo2'];
+        $agnHeader = $_SESSION['usr_agn_header'];
+        $adminAccess = $_SESSION['usr_adm_access'];
 
         //Get the user-agent string of the user.
         $userBrowser = $_SERVER['HTTP_USER_AGENT'];
 
-        $sql = "SELECT password
-                FROM m1ton_usuarios
-                WHERE usuario_id = :user_id
+        $sql = "SELECT USR_Password
+                FROM camUsuarios
+                WHERE USR_Id = :usr_id
                 LIMIT 1";
 
         $structure = array(
-            'password' => 'password'
+            'password' => 'USR_Password'
         );
 
         $params = array(
-            'user_id' => $userId
+            'usr_id' => $userId
         );
 
         $result = restructureQuery($structure, getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
@@ -235,31 +281,20 @@ function login_check() {
     }
 }
 
-function user_check() {
-    $nameSession = session_name();
-    $loginString = $_SESSION['login_string'];
-    $userBrowser = $_SERVER['HTTP_USER_AGENT'];
-    $loginCheck = hash('sha512', $nameSession . $userBrowser);
-    if($loginCheck == $loginString) {
-       return true;
-    } else {
-       return false;
-    }
-}
-
 function checkbrute($userId) {
     //Get timestamp of current time
     $now = time();
     //All login attempts are counted from the past 2 hours.
     $validAttempts = $now - (2 * 60 * 60);
-    $sql = "SELECT time
-            FROM m1ton_login_attempts
-            WHERE user_id = :user_id
-            AND user_type = :user_type
-            AND time > :valid_attempts";
+    $sql = "SELECT ATT_Time
+            FROM camAttempts
+            WHERE ATT_USR_Id = :usr_id
+            AND ATT_Time > :valid_attempts";
+    $structure = array(
+        'password' => 'DIS_Password'
+    );
     $params = array(
-        'user_id' => $userId,
-        'user_type' => 0,
+        'usr_id' => $userId,
         'valid_attempts' => $validAttempts
     );
     $result = generalQuery(getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
@@ -280,88 +315,10 @@ function checkbrute($userId) {
     return false;
 }
 
-function new_user($mail, $password) {
-    $sql = "SELECT *
-            FROM m1ton_usuarios
-            WHERE status = :status
-            AND correo_principal = :mail
-            AND password = :password
-            AND salt = :salt
-            LIMIT 1";
-
-    $structure = array(
-        'user_id' => 'usuario_id',
-        'username' => 'correo_principal',
-        'password' => 'password',
-        'salt' => 'salt',
-        'status' => 'status'
-    );
-
-    $params = array(
-        'status' => 2,
-        'mail' => $mail,
-        'password' => $password,
-        'salt' => $password
-    );
-
-    $result = restructureQuery($structure, getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
-
-    if(count($result)) {
-        if(rightResult($result)) {
-            if(count($result) == 1) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-
-}
-
-function restore_user_pass($mail, $password) {
-    //$passwordSha = hash('sha512', $password);
-    $passwordSha = $password;
-    $randomSalt = hash('sha512', uniqid(mt_rand(), TRUE));
-    $passFinal = hash('sha512', $passwordSha . $randomSalt);
-
-    $sql = "UPDATE m1ton_usuarios
-            SET password = :password,
-                salt = :salt,
-                status = :new_status
-            WHERE status = :old_status
-            AND correo_principal = :mail
-            LIMIT 1";
-
-    $structure = array();
-
-    $params = array(
-        'password' => $passFinal,
-        'salt' => $randomSalt,
-        'new_status' => 1,
-        'old_status' => 2,
-        'mail' => $mail
-    );
-
-    $result = generalQuery(getConnection(), $sql, $params, 2, PDO::FETCH_ASSOC);
-
-    if(count($result)) {
-        if(!array_key_exists('error', $result)) {
-            if(count($result) == 1) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-
+function admin_access_check() {
+    $adminAccess = isset($_SESSION['usr_adm_access']) ? $_SESSION['usr_adm_access'] : 0;
+    $adminAccess = intval($adminAccess);
+    return ($adminAccess > 0);
 }
 
 function esc_url($url) {
@@ -376,7 +333,7 @@ function esc_url($url) {
     $url = (string) $url;
 
     $count = 1;
-    while ($count) {
+    while($count) {
         $url = str_replace($strip, '', $url, $count);
     }
 
@@ -393,86 +350,7 @@ function esc_url($url) {
     } else {
         return $url;
     }
-}
-
-function own_array_column($array, $column) {
-    $myFunction = function($interlnalArray, $internalColumn) {
-        $internalValues = array();
-        foreach($interlnalArray as $current) {
-            $internalValues[] = $current[$internalColumn];
-        }
-        $internalValues = array_values($internalValues);
-        return $internalValues;
-    };
-    $version = phpversion();
-    $elements = explode('.', $version);
-    $first = (integer)($elements[0]);
-    if($first === 5) {
-        $count = count($elements);
-        switch($count) {
-            case 1:
-                $proyectos_values = $myFunction($array, $column);
-                break;
-            case 2:
-                $second = (integer)($elements[1]);
-                if($second === 5) {
-                    $proyectos_values = $myFunction($array, $column);
-                } else if($second > 5) {
-                    $proyectos_values = array_column($array, $column);
-                } else {
-                    $proyectos_values = $myFunction($array, $column); 
-                }
-                break;
-            case 3:
-            default:
-                $second = (integer)($elements[1]);
-                $third = (integer)($elements[2]);
-                if($second === 5) {
-                    if($third >= 0) {
-                        $proyectos_values = array_column($array, $column);
-                    } else {
-                        $proyectos_values = $myFunction($array, $column); 
-                    }
-                } else if($second > 5) {
-                    $proyectos_values = array_column($array, $column);
-                } else {
-                    $proyectos_values = $myFunction($array, $column); 
-                }
-
-        }
-    } else if($first > 5) {
-        $proyectos_values = array_column($array, $column);
-    } else {
-        $proyectos_values = $myFunction($array, $column);
-    }
-    $proyectos_values = array_values($proyectos_values);
-    return $proyectos_values;
-}
-
-/*
- * Function taken from:
- * http://php.net/manual/es/function.array-filter.php
- * Adapted and customized by Javier Corona, Medigraf, 2015-10-27
- */
-
-function filterByValue($array, $index, $value, $equal) {
-    $newArray = array();
-    if(is_array($array) && count($array) > 0) {
-        foreach(array_keys($array) as $key) {
-            $temp[$key] = $array[$key][$index];
-            if($equal) {
-                if($temp[$key] == $value) {
-                    $newArray[$key] = $array[$key];
-                }
-            } else {
-                if($temp[$key] != $value) {
-                    $newArray[$key] = $array[$key];
-                }
-            }
-        }
-    }
-    return $newArray;
-}
+} 
 
 /*
  *Gottten from http://php.net/manual/es/function.checkdate.php
@@ -480,4 +358,95 @@ function filterByValue($array, $index, $value, $equal) {
 function validateDate($date, $format = 'Y-m-d H:i:s') {
     $d = DateTime::createFromFormat($format, $date);
     return $d && $d->format($format) == $date;
+}
+
+function registerCode($email) {
+    $validate = false;
+    $email = trim($email);
+    if($email !== '') {
+        $sql_s = "SELECT * 
+                  FROM camUsuarios
+                  WHERE USR_Control <> :control
+                  AND USR_Mail = :email";
+        $structure_s = array(
+            'id' => 'USR_Id',
+            'no_empleado' => 'USR_NumeroEmpleado',
+            'correo' => 'USR_Mail',
+            'usercontrol' => 'USR_Control'
+        );
+        $params_s = array(
+            'control' => 0,
+            'email' => $email 
+        );
+        $result_s = restructureQuery($structure_s, getConnection(), $sql_s, $params_s, 0, PDO::FETCH_ASSOC);
+        if(rightResult($result_s)) {
+            if(count($result_s)) {
+                $control = (int)($result_s[0]['usercontrol']);
+                //if($control !== 1) {
+                    $validate = true;
+                //}
+            }
+        }
+    }
+    return $validate;
+}
+
+function validatePassUrl($iur, $email) {
+    $sql = "SELECT USR_Id, USR_NumeroEmpleado, USR_Mail, USR_Password USR_Iur
+            FROM camUsuarios
+            WHERE USR_Control = :control
+            AND USR_Mail = :email
+            AND USR_Password = :password
+            AND USR_Salt = :salt
+            LIMIT 1";
+    $params = array(
+        'control' => 3,
+        'email' => $email,
+        'password' => $iur,
+        'salt' => $iur,
+    );
+    $result = generalQuery(getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
+    $valid = false;
+    if(rightResult($result)) {
+        if(count($result)) {
+            $valid = true;
+        }
+    }
+    return $valid;
+}
+
+function restoreUserPass($mail, $password, $iur) {
+    //$passwordSha = hash('sha512', $password);
+    $passwordSha = $password;
+    $randomSalt = hash('sha512', uniqid(mt_rand(), TRUE));
+    $passFinal = hash('sha512', $passwordSha . $randomSalt);
+    $sql = "UPDATE camUsuarios
+            SET USR_Password = :new_password,
+                USR_Salt = :new_salt,
+                USR_Control = :new_control
+            WHERE USR_Control = :old_control
+            AND USR_Mail = :mail
+            AND USR_Password = :old_password
+            AND USR_Salt = :old_salt
+            LIMIT 1";
+    $structure = array();
+    $params = array(
+        'new_password' => $passFinal,
+        'new_salt' => $randomSalt,
+        'new_control' => 1,
+        'old_control' => 3,
+        'mail' => $mail,
+        'old_password' => $iur,
+        'old_salt' => $iur
+    );
+    $result = generalQuery(getConnection(), $sql, $params, 2, PDO::FETCH_ASSOC);
+    $success = false;
+    if(count($result)) {
+        if(!array_key_exists('error', $result)) {
+            if(count($result) == 1) {
+                $success = true;
+            }
+        }
+    }
+    return $success;
 }

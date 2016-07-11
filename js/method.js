@@ -454,7 +454,6 @@
         data_fiancing_by_model: function() {
             var data, $model, urlApi, postApi;
             data = $(domEl._form_leads).serializeFormJSON();
-            console.log('Envio correo.');
             console.log(data);
 
             $model = 'swift-sport';
@@ -507,10 +506,10 @@
         },
         set_input_hidden: function() {
             set_input_hidden = [
-                ['input', {'id' : 'leads_image_model', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'image_model', 'type' : 'hidden'}, '', 0],
-                ['input', {'id' : 'leads_name_model', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'name_model', 'type' : 'hidden'}, '', 0],
-                ['input', {'id' : 'leads_agencie', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'agencie', 'type' : 'hidden'}, '', 0]
+                ['input', {'id' : 'leads_image_model', 'class' : 'set_input_hidden', 'value' : 'swift-sport.png', 'name' : 'image_model', 'type' : 'hidden'}, '', 0],
+                ['input', {'id' : 'leads_name_model', 'class' : 'set_input_hidden', 'value' : 'Swift Sport', 'name' : 'name_model', 'type' : 'hidden'}, '', 0]
             ];
+                //['input', {'id' : 'leads_agencie', 'class' : 'set_input_hidden', 'value' : '', 'name' : 'agencie', 'type' : 'hidden'}, '', 0]
             COR.appendMulti('#funding_fields_hidden', set_input_hidden);
         },
         send_form_leads: function() {
@@ -563,22 +562,24 @@
 
                 apiPromise = set_form_leads_method.data_max_leads_api();
                 apiPromise.success( function (data) {
-                    console.log('guarda registro en max. promise');
+                    console.log('guarda registro en max, promise success');
                     console.log(data);
-                    set_form_leads_method.fillingControl();
-                    set_form_leads_method.resetApi();
 
                     sendFundingPromise = set_form_leads_method.data_fiancing_by_model();
                     sendFundingPromise.success( function (data) {
-                        console.log('Envia correo. promise');
+                        console.log('Entra promise success');
                         console.log(data);
+                        set_form_leads_method.fillingControl();
+                        set_form_leads_method.resetApi();
                     });
                     sendFundingPromise.error( function (data) {
+                        console.log('Entra promise error');
                         console.log(data);
                         set_form_leads_method.resetApi();
                     });
                 });
                 apiPromise.error( function (data) {
+                    console.log('no guarda registro en max, promise error');
                     console.log(data);
                     set_form_leads_method.resetApi();
                 });
