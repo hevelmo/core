@@ -1,0 +1,184 @@
+{
+	"campa": [
+		{
+			"ban_id": "1",
+			"ban_slide_nombre": "Suzuki",
+			"ban_banner_650_277": "banner_suzuki_650x277.jpg",
+			"ban_banner_900_586": "banner_suzuki_900x586.jpg",
+			"ban_banner_1600_900": "banner_suzuki_1600x900.jpg",
+			"ban_content_title": "SUZUKI",
+			"ban_content": {
+				"ban_content_subtitle_01": "CONÓCELA ANTES QUE NADIE",
+				"ban_content_subtitle_02": "5 DE NOVIEMBRE A LAS 20:00 HRS",
+				"ban_content_subtitle_03": "ERIA GREEN CITY",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "http://suzukigdl.com.mx/nueva-vitara-2016",
+				"ban_link_title": "Suzuki GDL"
+			}
+		},
+		{
+			"ban_id": "2",
+			"ban_slide_nombre": "Jaguar Land Rover León",
+			"ban_banner_650_277": "banner_JLR_650x277.jpg",
+			"ban_banner_900_586": "banner_JLR_900x586.jpg",
+			"ban_banner_1600_900": "banner_JLR_1600x900.jpg",
+			"ban_content_title": "JAGUAR LAND ROVER LEÓN",
+			"ban_content": {
+				"ban_content_subtitle_01": "APERTURA DE NUEVAS INSTALACIONES",
+				"ban_content_subtitle_02": "DISTRIBUIDORA JAGUAR LAND ROVER LEON",
+				"ban_content_subtitle_03": "",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "#/noticias/jaguar-land-rover-leon/nuevas-instalaciones",
+				"ban_link_title": "VER NOTICIA"
+			}
+		},
+		{
+			"ban_id": "3",
+			"ban_slide_nombre": "Jaguar Land Rover",
+			"ban_banner_650_277": "banner_JLR2_650x277.jpg",
+			"ban_banner_900_586": "banner_JLR2_900x586.jpg",
+			"ban_banner_1600_900": "banner_JLR2_1600x900.jpg",
+			"ban_content_title": "JAGUAR LAND ROVER",
+			"ban_content": {
+				"ban_content_subtitle_01": "SAVE THE DATE",
+				"ban_content_subtitle_02": "12 DE NOVIEMBRE 2015,",
+				"ban_content_subtitle_03": "A LAS 20:00 HRS.",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "#/noticias/jaguar-land-rover/save-the-date",
+				"ban_link_title": "VER NOTICIA"
+			}
+		},
+		{
+			"ban_id": "4",
+			"ban_slide_nombre": "VW",
+			"ban_banner_650_277": "banner_VW_650x277.jpg",
+			"ban_banner_900_586": "banner_VW_900x586.jpg",
+			"ban_banner_1600_900": "banner_VW_1600x900.jpg",
+			"ban_content_title": "VW JETTA 2016",
+			"ban_content": {
+				"ban_content_subtitle_01": "DESDE $204,900.",
+				"ban_content_subtitle_02": "BUEN FIN VOLKSWAGEN",
+				"ban_content_subtitle_03": "DEL 13 - 16 DE NOVIEMBRE.",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "http://www.vw-euroalemana.com.mx/Promociones/",
+				"ban_link_title": "IR AL SITIO"
+			}
+		},
+		{
+			"ban_id": "5",
+			"ban_slide_nombre": "Volvo",
+			"ban_banner_650_277": "banner_volvo_650x277.jpg",
+			"ban_banner_900_586": "banner_volvo_900x586.jpg",
+			"ban_banner_1600_900": "banner_volvo_1600x900.jpg",
+			"ban_content_title": "VOLVO",
+			"ban_content": {
+				"ban_content_subtitle_01": "BONOS DE HASTA $80,000 ",
+				"ban_content_subtitle_02": "+ TASA DEL 8.5%",
+				"ban_content_subtitle_03": "Ó 36 MESES SIN INTERESES.",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "#/agencias/nuevos/volvo",
+				"ban_link_title": "VER AGENCIAS"
+			}
+		},
+		{
+			"ban_id": "6",
+			"ban_slide_nombre": "Lincoln",
+			"ban_banner_650_277": "banner_lincoln_650x277.jpg",
+			"ban_banner_900_586": "banner_lincoln_900x586.jpg",
+			"ban_banner_1600_900": "banner_lincoln_1600x900.jpg",
+			"ban_content_title": "LINCOLN",
+			"ban_content": {
+				"ban_content_subtitle_01": "MKC 2015",
+				"ban_content_subtitle_02": "18 MESES + TASA 0%",
+				"ban_content_subtitle_03": "ó BONO DE $ 20,000.",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "http://lincolngdl.com.mx/",
+				"ban_link_title": "IR AL SITIO"
+			}
+		},
+		{
+			"ban_id": "7",
+			"ban_slide_nombre": "SYC Motors",
+			"ban_banner_650_277": "banner_syc_650x277.jpg",
+			"ban_banner_900_586": "banner_syc_900x586.jpg",
+			"ban_banner_1600_900": "banner_syc_1600x900.jpg",
+			"ban_content_title": "TOWN & COUNTRY",
+			"ban_content": {
+				"ban_content_subtitle_01": "DESCUENTO PROMOCIONAL ",
+				"ban_content_subtitle_02": "DE HASTA $45,000.",
+				"ban_content_subtitle_03": "",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "http://www.syc-motors.com.mx/",
+				"ban_link_title": "IR AL SITIO"
+			}
+		},
+		{
+			"ban_id": "8",
+			"ban_slide_nombre": "Mitsubishi",
+			"ban_banner_650_277": "banner_mitsubishi_650x277.jpg",
+			"ban_banner_900_586": "banner_mitsubishi_900x586.jpg",
+			"ban_banner_1600_900": "banner_mitsubishi_1600x900.jpg",
+			"ban_content_title": "NUEVA MITSUBISHI OUTLANDER 2016",
+			"ban_content": {
+				"ban_content_subtitle_01": "MÁS DE 100 CAMBIOS EN EQUIPAMIENTO Y DISEÑO.",
+				"ban_content_subtitle_02": "",
+				"ban_content_subtitle_03": "",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "http://mitsubishicentrogdl.com.mx/",
+				"ban_link_title": "IR AL SITIO"
+			}
+		},
+		{
+			"ban_id": "9",
+			"ban_slide_nombre": "Ford Cavsa",
+			"ban_banner_650_277": "banner_ford_650x277.jpg",
+			"ban_banner_900_586": "banner_ford_900x586.jpg",
+			"ban_banner_1600_900": "banner_ford_1600x900.jpg",
+			"ban_content_title": "FORD CAVSA",
+			"ban_content": {
+				"ban_content_subtitle_01": "FORD FOCUS",
+				"ban_content_subtitle_02": "24 MESES SIN INTERESES",
+				"ban_content_subtitle_03": "Y SEGURO DE $5,000.",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "http://www.fordcavsa.com.mx/Cotizador/",
+				"ban_link_title": "COTIZACIÓN"
+			}
+		},
+		{
+			"ban_id": "10",
+			"ban_slide_nombre": "PEUGEOT LEÓN",
+			"ban_banner_650_277": "banner_peugeot_650x277.jpg",
+			"ban_banner_900_586": "banner_peugeot_900x586.jpg",
+			"ban_banner_1600_900": "banner_peugeot_1600x900.jpg",
+			"ban_content_title": "PEUGEOT LEÓN",
+			"ban_content": {
+				"ban_content_subtitle_01": "PRÓXIMAMENTE",
+				"ban_content_subtitle_02": "",
+				"ban_content_subtitle_03": "",
+				"ban_content_subtitle_04": ""
+			},
+			"ban_content_link": {
+				"bann_link_url": "",
+				"ban_link_title": ""
+			}
+		}
+	]
+}

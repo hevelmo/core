@@ -1,0 +1,24 @@
+<div class="container">
+	<ul class="grid filter times-three basic" id="{{campa.0.agnid}}">
+		{{#each campa}}
+		<!-- AGENCY Nº {{agnid}} -->
+		<li class="grid-item animation-fadeIn" id="{{agnid}}">
+			<div class="grid-project" title="{{agnnombre}}">
+				<!-- project image -->
+				<a class="go-action-agencie-news" id="go-action-agencie-news-{{agnid}}" data-agn-news-agencie='{{agpshort}}' data-agn-news-name='{{agnnombre}}' data-agn-news-url='{{agnurl}}' data-agn-news-id='{{agnid}}' title="{{agnnombre}}">
+					<div class="img-box">
+						<img src="../img/sitio/agencias/small/{{agnsmall}}" alt="{{agnnombre}}" class="zoom-on-hover">
+					</div>
+					<div class="project-info">
+						<!-- folio single link -->
+						<h1 class="grid-title">{{agnnombre}}</h1>
+					</div>
+				</a>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+	<!-- clear floats -->
+	<div class="clear">
+	</div>
+</div>

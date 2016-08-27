@@ -1,0 +1,151 @@
+<!-- Search Form -->
+<div class="search-form">
+    <div class="search-form-inner">
+        <div class="row">
+            <form class='' id='get-sen-filters'>
+                <div class="col-sm-12 col-md-12">
+                    <label id="close-panel" class="fa-lg" style="float: right">
+                        Cerrar <i class="fa fa-times fa-fw"></i>
+                    </label>
+                </div>
+                <div class='form-group col-sm-12 col-md-12'>
+                    <label for='sen-filter-search' class='control-label'>
+                        <lablel>
+                            Búsqueda
+                        </label>
+                    </label>
+                    <div>
+                        <input class='form-control m-bot15' id='sen-filter-search' name='sen_search' type='text' />
+                    </div>
+                </div>
+                <div class='form-group col-sm-12 col-md-12 text-center floated'>
+                    <a class="search-advanced-trigger">
+                        Búsqueda Avanzada <i class="fa fa-chevron-down"></i>
+                    </a>
+                    <div class="row advanced-search-row">
+                        <div class='form-group col-sm-12 col-md-12'>
+                            <div class='form-group col-sm-3 col-md-3'
+                                 id='div-sen-filter-agency-container'>
+                                <label for='sen-filter-agency' class='control-label'>
+                                    <lablel>
+                                        Agencia
+                                    </label>
+                                </label>
+                                <div id='div-select-sen-filter-agency'>
+                                    {{!--
+                                    <select class='form-control m-bot15' id='sen-filter-agency' name='sen_agency'>
+                                        <option value=''> - Todas las Agencias - </option>
+                                        {{#each camadpa}}
+                                        <option value='{{id}}'>{{nombre}}</option>
+                                        {{/each}}
+                                    </select>
+                                    --}}
+                                </div>
+                            </div>
+                            <div class='form-group col-sm-3 col-md-3'>
+                                <label for='sen-filter-category' class='control-label'>
+                                    <lablel>
+                                        Categoría
+                                    </label>
+                                </label>
+                                <div id='div-select-sen-filter-category'>
+                                    {{!--
+                                    <select class='form-control m-bot15' id='sen-filter-category' name='sen_category'>
+                                        <option value=''> - Todas las Categorías - </option>
+                                        {{#each camadpa}}
+                                        <option value='{{id}}'>{{nombre}}</option>
+                                        {{/each}}
+                                    </select>
+                                    --}}
+                                </div>
+                            </div>
+                            <div class='form-group col-sm-3 col-md-3'>
+                                <label for='sen-filter-brand' class='control-label'>
+                                    <lablel>
+                                        Marca
+                                    </label>
+                                </label>
+                                <div id='div-select-sen-filter-brand'>
+                                    {{!--
+                                    <select class='form-control m-bot15' id='sen-filter-brand' name='sen_brand'>
+                                        <option value=''> - Todas las Marcas - </option>
+                                        {{#each camadpa}}
+                                        <option value='{{id}}'>{{nombre}}</option>
+                                        {{/each}}
+                                    </select>
+                                    --}}
+                                </div>
+                            </div>
+                            <div class='form-group col-sm-3 col-md-3'>
+                                <label for='sen-filter-model' class='control-label'>
+                                    <lablel>
+                                        Modelo
+                                    </label>
+                                </label>
+                                <div id='div-select-sen-filter-model'>
+                                    {{!--
+                                    <select class='form-control m-bot15' id='sen-filter-model' name='sen_model'>
+                                        <option value=''> - Todas los Modelos - </option>
+                                        {{#each camadpa}}
+                                        <option value='{{id}}'>{{nombre}}</option>
+                                        {{/each}}
+                                    </select>
+                                    --}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class='form-group col-sm-12 col-md-12'>
+                            <div class='form-group col-sm-6 col-md-6'>
+                                <label for='sen-sorter' class='control-label'>
+                                    <lablel>
+                                        Ordenar por
+                                    </label>
+                                </label>
+                                <div>
+                                    <select class='form-control selectpicker m-bot15' id='sen-sorter' name='sen_sorter'>
+                                        <option value='des'>Descripción</option>
+                                        <option value='agn'>Agencia</option>
+                                        <option value='cat'>Categoría</option>
+                                        <option value='mar'>Marca</option>
+                                        <option value='mod'>Modelo</option>
+                                        <option value='anio'>Año</option>
+                                        <option value='pri'>Precio</option>
+                                        <option value='cil'>Cilindraje</option>
+                                        <option value='tra'>Transmisión</option>
+                                        <option value='col'>Color</option>
+                                        <option value='int'>Interior</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class='form-group col-sm-6 col-md-6'>
+                                <div class='col-sm-6 col-md-6'>
+                                    <div class="block-items">
+                                        <label class="csscheckbox csscheckbox-camcar">
+                                            <input type="radio" class="form-control m-bot15 sen-sort radio" name="sen_sort" value="ASC" checked>
+                                            <span class="span_radio"></span>
+                                            <span class="tra-lbl-money-accumulated span_label">Ascendente</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class='col-sm-6 col-md-6'>
+                                    <div class="block-items">
+                                        <label class="csscheckbox csscheckbox-camcar">
+                                            <input type="radio" class="form-control m-bot15 sen-sort radio" name="sen_sort" value="DESC" checked>
+                                            <span class="span_radio"></span>
+                                            <span class="tra-lbl-money-accumulated span_label">Descendente</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class='form-group col-sm-12 col-md-12 col-md-offset-3'>
+                <button class='button button-outline bg-white-camcar white-camcar col-sm-6 col-md-6 col-md-offset-3' id='sen-filters-clean' style="padding: 1em;">
+                    Limpiar Búsqueda
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

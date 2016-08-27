@@ -1,0 +1,18 @@
+@media (max-width: 49.231em) {
+	.dir-contacts td.dir-contact-list {
+	}
+	.button-resp {
+      width: 100%;
+      display: block;
+      margin-bottom: 5px;
+    }	
+}
+@media (max-width: 30em) {
+	.dir-contacts td.dir-contact-list {
+	}
+	.button-resp {
+      width: 100%;
+      display: block;
+      margin-bottom: 5px;
+    }
+}

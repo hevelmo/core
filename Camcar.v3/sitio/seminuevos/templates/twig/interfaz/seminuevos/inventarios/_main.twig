@@ -1,0 +1,94 @@
+{% extends "seminuevos/_main.twig" %}
+{% block content_recurrent %}
+    {{ parent() }}
+    <div id="content-start-body-main" class="about-content">
+        <div class="main" role="main">
+            <div id="content" class="content-results full">
+                <div class="container">
+                    <div class="row">
+                        {# Listing Results #}
+                        <div class="col-md-12 results-container">
+                            <div class="results-container-in">
+                                <div class="view-results-list" id="content-start-views-results-list">
+                                    <div id="results-holder" class="results-grid-view">
+                                        {# Result Item #}
+                                        {% for auto in seminuevos %}
+                                            {% block result_auto %}
+                                                <div class="result-item format-standard equal-height"
+                                                     id="result-item-col"
+                                                     data-sen-car="{{ auto.id }}">
+                                                    <a href="{{ _seminuevos }}detalles/{{ auto.marca.nombre_short }}/{{ auto.modelo.nombre_short }}/{{ auto.id }}"
+                                                       class="views-details views-details-size bg-views-details views-details-transition visible-lg-block" 
+                                                       data-mar-nombre-short="{{ auto.marca.nombre_short }}"
+                                                       data-mdo-nombre-short="{{ auto.modelo.nombre_short }}"
+                                                       data-sen-id="{{ auto.id }}">
+                                                    <span>ver detalles</span>
+                                                    </a>
+                                                    <div class="result-item-image">
+                                                        <a class="media-box"
+                                                           data-mar-nombre-short="{{ auto.marca.nombre_short }}"
+                                                           data-mdo-nombre-short="{{ auto.modelo.nombre_short }}"
+                                                           data-sen-id="{{ auto.id }}">
+                                                        <img src="{{ _admin }}cdn/img/seminuevos/{{ auto.thm_folder }}/{{ auto.thm_nombre }}"
+                                                             alt="{{ auto.modelo.nombre }}">
+                                                        </a>
+                                                        <div class="result-item-labels clearfix">
+                                                            <span class="label label-default vehicle-age" 
+                                                                  id="sem_year">{{ auto.anio }}</span>
+                                                            <span class="label label-success premium-listing">{{ auto.agencia.nombre }}</span>
+                                                        </div>
+                                                        <div class="result-item-view-details-resp visible-xs clearfix">
+                                                            <a href="{{ _seminuevos }}detalles/{{ auto.marca.nombre_short }}/{{ auto.modelo.nombre_short }}/{{ auto.id }}"
+                                                               class="view-details-resp col-md-12 col-xs-12"
+                                                               data-mar-nombre-short="{{ auto.marca.nombre_short }}"
+                                                               data-mdo-nombre-short="{{ auto.modelo.nombre_short }}"
+                                                               data-sen-id="{{ auto.id }}">
+                                                            ver detalles
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="result-item-in">
+                                                        <h4 class="result-item-title">
+                                                            <a data-mar-nombre-short="{{ auto.marca.nombre_short }}"
+                                                               data-mdo-nombre-short="{{ auto.modelo.nombre_short }}"
+                                                               data-sen-id="{{ auto.id }}">
+                                                            {{ auto.marca.nombre }} - {{ auto.modelo.nombre }}
+                                                            </a>
+                                                        </h4>
+                                                        <div class="result-item-cont">
+                                                            <div class="result-item-block col1">
+                                                                <p>
+                                                                    {{ auto.descripcion }}
+                                                                </p>
+                                                            </div>
+                                                            <div class="result-item-block col2">
+                                                                <div class="result-item-pricing">
+                                                                    <div class="price">
+                                                                        <span class="multiple">
+                                                                        ${{ auto.precio|number_format(2, '.', ',') }}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="result-item-features">
+                                                            <ul class="inline">
+                                                                <li>Cilindros: {{ auto.cilindros }}</li>
+                                                                <li>Transmisión: {{ auto.transmision }}</li>
+                                                                <li>Color: {{ auto.color }}</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endblock %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

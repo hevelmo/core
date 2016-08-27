@@ -1,0 +1,9 @@
+{% extends "super.twig" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content_recurrent %}
+    {% embed "seminuevos/utility_bar.twig" %}{% endembed %}
+    {% embed "seminuevos/action_bar.twig" %}{% endembed %}
+{% endblock %}
+{% block load_scripts %}
+    equalHeightsMethods.equalHeightsLoad();
+{% endblock %}

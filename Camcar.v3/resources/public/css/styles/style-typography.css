@@ -1,0 +1,128 @@
+@import url(webfont/font-avenir.css);
+@import url(webfont/font-land-rover.css);
+/*!
+// 4. Typography
+// --------------------------------------------------*/
+  p {
+    font-family: 'font-avenir','Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #656461;
+  }
+  p.lead {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+  p:last-child {
+    margin-bottom: 0px;
+  }
+  p.super-lead {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 36px;
+    color: #333333;
+    font-family: 'font-avenir','Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  p strong {
+    font-weight: 500;
+  }
+  @media all and (max-width: 767px) {
+    p.super-lead {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  @media all and (max-width: 768px) {
+    p.super-lead br {
+      display: none;
+    }
+  }
+  span.title {
+    font-size: 18px;
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  span.sub {
+    font-size: 16px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #656461;
+    margin-top: 0px;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  h2 {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 32px;
+  }
+  h3 {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 24px;
+    color: #0054a6;
+  }
+  h4 {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  h5 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 24px;
+    line-height: 28px;
+    font-family: 'font-avenir','Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  @media all and (max-width: 767px) {
+    h1 {
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 24px;
+      max-width: 100%;
+    }
+    h2 {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 24px;
+    }
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 24px;
+    }
+    h4 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+  .alt-font {
+    font-family: 'font_name_landrover_demi', 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .contrast-h1 {
+    color: #bbb !important;
+  }
+  .contrast-h1 strong {
+    color: #333333 !important;
+    font-weight: 300;
+  }
+/**/

@@ -1,0 +1,30 @@
+<div class="col-md-8">
+    <div class="tabs vehicle-details-tabs">
+        <ul class="nav nav-tabs"></ul>
+        <div class="tab-content">
+            <div id="vehicle-location" class="tab-pane fade in active no_print">
+                <div id="content_wrapper_map">
+                    {% block mapa_wrapper %}
+                        <div id="map-canvas-detalle" class="map-canvas h500"
+                             data-sen-id="{{ sen_id }}"
+                             data-longitud="{{ mapas[0].longitud }}"
+                             data-latitud="{{ mapas[0].latitud }}"
+                             data-agencia="{{ detalle.agencia.nombre }}"
+                             data-direccion="{{ detalle.agencia.direccion }}"
+                             data-imagen="{{ _host }}img/sitio/agencias/logos/{{ detalle.agencia.logo }}"
+                             data-icon="{{ _host }}img/sitio/pin_camcar_2.png">
+                                {% block mapa_locations %}{% endblock %}
+                    </div>
+                    {% endblock %}
+                </div>
+            </div>
+            <a href="{{ mapas[0].url }}"
+               class="btn btn-default btn_default visible-xs"
+               title="VIEW MAP"
+               target="_blank">
+                <i class="icon icon-geolocalizator"></i>
+                <span>VER MAPA</span>
+            </a>
+        </div>
+    </div>
+</div>

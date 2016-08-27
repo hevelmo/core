@@ -1,0 +1,26 @@
+{% set modeloSel = modelo %}
+<div id="div-get-models" 
+     class="col-md-4 field-filter-resp">
+    <select name="sen_mdo" 
+            id="sen-get-model" 
+            class="selectpicker btn-default form-control sel-modelo" 
+            style="display: none;">
+        <option value="0" 
+                class="filter-action-mdo" 
+                id="filter-action-mdo-" 
+                data-name-short="">
+            Modelo
+        </option>
+        {% for currentModelo in modelos %}
+            {% block modelos %}
+                <option value="{{ currentModelo.id }}" 
+                        class="filter-action-mdo" 
+                        id="filter-action-mdo-{{ currentModelo.id }}" 
+                        data-name-short="{{ currentModelo.nombre_short }}" 
+                        {{ (modeloSel == currentModelo.nombre_short) ? "selected" : "" }} >
+                    {{ currentModelo.nombre }}
+                </option>
+            {% endblock %}
+        {% endfor %}
+    </select>
+</div>

@@ -1,0 +1,6 @@
+<select name="sem-category" id="select-fil-category" class="selectpicker btn-default form-control sel-categoria">
+    <option value='0' class="filter-action-cat" id="filter-action-cat-" data-filter-action-cat-id="">Categoría</option>
+    {{#each campa}}
+        <option value='{{id_cat}}' class="filter-action-cat" id="filter-action-cat-{{id_cat}}" data-filter-action-cat-id="{{id_cat}}">{{categoria}}</option>
+    {{/each}}
+</select>

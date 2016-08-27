@@ -1,0 +1,226 @@
+<div class="widget widget-shadow text-center" id="widgetUserList">
+    <div class="widget-header cover overlay height-275 background-image-holder">
+        <img class="cover-image height-200 background-image" src="../../img/dashboard/cumpleanos-940x640.jpg" alt="...">        
+        <div class="overlay-panel vertical-align">
+            <div class="vertical-align-middle">
+                <a class="avatar avatar-150">
+                    <img src="../../img/dashboard/birthday.png" class="avatar-img birthday" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="widget-content padding-horizontal-20 text-left">
+        <h3 class="panel-title" style="padding: 20px 0 0; border-bottom: 1px solid #e4eaec;">
+            <i class="navi-nav-icons-birthday-v1 fa-2x" aria-hidden="true" style="vertical-align: middle;"></i>
+            CUMPLEAÑOS
+            <div class="pull-right font-size-14 grey-500">
+                <time id="todat-birthday" class="date-roman-h" datetime="2016-04-12">
+                    2016-04-12
+                </time>
+            </div>
+        </h3>
+        <h4 class="panel-body-title text-center">FELICIDADES</h4>
+        {{#if webservice.length}}
+        <ul class="list-group list-group-dividered list-group-full">
+            {{#each webservice}}
+            <li class="list-group-item">
+                <div class="media">
+                    <div class="media-left">
+                        <a class="avatar avatar-online" href="javascript:void(0)">
+                            <img src="../../img/portraits/default-v2.png" class="avatar-img" alt="">
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        {{#if correo}}
+                        <div class="pull-right waves-init">
+                            <button type="button" class="btn btn-block btn-primary btn-pulse btn-sm bg-red-camcar call-modal-overlay birthday"
+                                data-name-to="{{apellido_paterno}} {{apellido_materno}} {{nombres}}"
+                                data-email-to="{{correo}}">
+                                <i class="navi-nav-icons-birthday-v1 fa-fw fa-lg"></i>
+                                Felicítalo
+                            </button>
+                        </div>
+                        {{/if}}
+                        <div><span><b>{{nombres}} {{apellido_paterno}} {{apellido_materno}}</b></span></div>
+                        {{!--
+                        <small>{{edad}} años</small>
+                        <br>
+                        --}}
+                        <small>{{agencia}}</small>
+                        <br>
+                        <small>{{ciudad}}, {{estado}}</small>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <h4 class="panel-body-title panel-body-title-else">NO HAY COMPLEAÑOS EL DÍA DE HOY</h4>
+        {{/if}}
+    </div>
+</div>
+
+
+{{!--
+<!-- Panel Cumpleaños -->
+<div class="panel panel-bordered" id="followers">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="site-panel-icon navi-nav-icons-birthday-v1 fa-2x" aria-hidden="true"></i>
+            <span class="site-panel-span">CUMPLEAÑOS</span>
+        </h3>
+        <div class="ribbon ribbon-vertical ribbon-bookmark ribbon-reverse ribbon-red-camcar">
+            <span class="ribbon-inner">
+                <span class="ribbon-inner-month month-abrev">feb</span>
+                <span class="ribbon-inner-day day-long">28</span>
+            </span>
+        </div>
+    </div>
+    <div class="panel-body birthday-section">
+        {{#if webservice.length}}
+        <h4 class="panel-body-title">FELICIDADES</h4>
+        <ul class="list-group list-group-dividered list-group-full">
+            {{#each webservice}}
+            <li class="list-group-item">
+                <div class="media">
+                    <div class="media-left">
+                        <a class="avatar avatar-online" href="javascript:void(0)">
+                            <img src="../../img/portraits/default-v2.png" class="avatar-img" alt="">
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-right waves-init">
+                            <button type="button" class="btn btn-block btn-primary btn-pulse btn-sm bg-red-camcar call-modal-overlay birthday">
+                                <i class="navi-nav-icons-birthday-v1 fa-fw fa-lg"></i>
+                                Felicitalo
+                            </button>
+                        </div>
+                        <div><span><b>{{nombres}} {{apellido_paterno}} {{apellido_materno}}</b></span></div>
+                        <small>{{edad}} años</small>
+                        <br>
+                        <small>{{agencia}}</small>
+                        <br>
+                        <small>{{ciudad}}, {{estado}}</small>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <h4 class="panel-body-title panel-body-title-else">NO HAY COMPLEAÑOS EL DÍA DE HOY</h4>
+        {{/if}}
+    </div>
+</div>
+<!-- End Panel Cumpleaños -->
+<h1>CUMPLEAÑOS</h1>
+{{#if webservice.length}}
+<h3>
+    FELICIDADES
+</h3>
+{{#each webservice}}
+<br>
+{{edad}} años - {{nombres}} {{apellido_paterno}} {{apellido_materno}}
+{{/each}}
+{{else}}
+NO HAY COMPLEAÑOS EL DÍA DE HOY
+{{/if}}
+<!-- Panel Cumpleaños -->
+<div class="panel" id="followers">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            CUMPLEAÑOS
+        </h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group list-group-dividered list-group-full">
+            <li class="list-group-item">
+                <div class="media">
+                    <div class="media-left">
+                        <a class="avatar avatar-online" href="javascript:void(0)">
+                            <img src="../../img/portraits/9.jpg" class="avatar-img" alt="">
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-outline btn-default btn-sm">
+                                Follow
+                            </button>
+                        </div>
+                        <div>
+                            <span>Willard Wood</span>
+                        </div>
+                        <small>@heavybutterfly920</small>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="media">
+                    <div class="media-left">
+                        <a class="avatar avatar-away" href="javascript:void(0)">
+                            <img src="../../img/portraits/10.jpg" class="avatar-img" alt="">
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-success btn-default btn-sm">
+                                <i class="icon wb-check" aria-hidden="true"></i>Following
+                            </button>
+                        </div>
+                        <div>
+                            <span>Ronnie Ellis</span>
+                        </div>
+                        <small>@kingronnie24</small>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="media">
+                    <div class="media-left">
+                        <a class="avatar avatar-busy" href="javascript:void(0)">
+                            <img src="../../img/portraits/11.jpg" class="avatar-img" alt="">
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-outline btn-default btn-sm">
+                                Follow
+                            </button>
+                        </div>
+                        <div>
+                            <span>Gwendolyn Wheeler</span>
+                        </div>
+                        <small>@perttygirl66</small>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="media">
+                    <div class="media-left">
+                        <a class="avatar avatar-off" href="javascript:void(0)">
+                            <img src="../../img/portraits/12.jpg" class="avatar-img" alt="">
+                            <i></i>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-outline btn-default btn-sm">
+                                Follow
+                            </button>
+                        </div>
+                        <div>
+                            <span>Daniel Russell</span>
+                        </div>
+                        <small>@danieltiger08</small>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End Panel Cumpleaños -->
+--}}

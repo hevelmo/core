@@ -1,0 +1,1 @@
+//$('button#goF').attr('disabled', true);

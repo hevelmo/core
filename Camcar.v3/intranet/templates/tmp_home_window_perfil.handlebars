@@ -1,0 +1,167 @@
+<div class="widget widget-shadow text-center">
+    <div class="widget-header cover overlay height-275 background-image-holder" style="">
+        <img class="cover-image background-image" src="../../img/dashboard/bg-profile-user.jpg" alt="..." style="height: 100%;">
+        <div class="overlay-panel vertical-align">
+            <div class="vertical-align-middle">
+                <a class="avatar avatar-100 img-bordered profile margin-bottom-10 img-bordered" href="javascript:void(0)">
+                    <img src="../../img/portraits/default-v2.png" class="avatar-img" alt="">
+                </a>
+                <div class="font-size-20 fz-19x profile-user break-word" id="profile-emp-name">
+                    <span class="ucwords">
+                    {{#if webservice.0.nombre_completo}}
+                        {{webservice.0.nombre_completo}}
+                    {{else}}
+                        EMPLEADO
+                    {{/if}}
+                    </span>
+                </div>
+                <div class="font-size-14 grey-400 margin-bottom-0 text-nowrap">
+                    <span class="text-break ucwords" id="profile-emp-job">
+                        {{#if webservice.0.cargo}}
+                            {{webservice.0.cargo}}
+                        {{else}}
+                            CARGO
+                        {{/if}}
+                    </span>
+                    /
+                    <span class="text-break ucwords" id="profile-emp-agency">
+                        {{#if webservice.0.agencia}}
+                            {{webservice.0.agencia}}
+                        {{else}}
+                            AGENCIA
+                        {{/if}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!--<div class="widget-footer padding-horizontal-30 padding-vertical-20 height-100">
+        <div class="row no-space">
+            <div class="col-xs-4">
+                <div class="counter">
+                    <div class="counter-label">Followers</div>
+                    <span class="counter-number">11.2K</span>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="counter">
+                    <div class="counter-label">Following</div>
+                    <span class="counter-number">683</span>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="counter">
+                    <div class="counter-label">Tweets</div>
+                    <span class="counter-number">326</span>
+                </div>
+            </div>
+        </div>
+    </div>--}}
+</div>
+<!-- Panel Web Perfil -->
+{{!--<div class="widget" id="widgetUserList">
+    <!--
+    <div class="widget-header cover overlay">
+    -->
+    <div class="widget-header cover overlay background-image-holder">
+        <img class="cover-image height-200 background-image" src="../../img/dashboard/abstract-wallpaper-STAY019.jpg" alt="...">
+        <!--
+        <img class="cover-image height-200 background-image" src="../../img/dashboard/dashboard-header.jpg" alt="...">
+        -->
+  		<div class="overlay-panel vertical-align overlay-background">
+            <div class="vertical-align-middle">
+              	<a class="avatar avatar-100 img-bordered pull-left margin-right-20" href="javascript:void(0)">
+                	<img src="../../img/portraits/default-v2.png" class="avatar-img" alt="">
+              	</a>
+              	<div class="pull-left">
+                	<div class="fz-19x profile-user break-word" id="profile-emp-name">
+                        <span class="ucwords">
+                        {{#if webservice.0.nombres}}
+                            {{webservice.0.nombres}}
+                        {{else}}
+                            EMPLEADO
+                        {{/if}}
+                        </span>
+                	</div>
+    				<p class="margin-bottom-0 text-nowrap" id="profile-emp-job">
+          				<span class="text-break">
+	          				{{#if webservice.0.cargo}}
+								{{webservice.0.cargo}}
+							{{else}}
+								CARGO
+							{{/if}}
+          				</span>
+    				</p>
+                    <p class="margin-bottom-0 text-nowrap" id="profile-emp-agency">
+                        <span class="text-break">
+                            {{#if webservice.0.agencia}}
+                                {{webservice.0.agencia}}
+                            {{else}}
+                                AGENCIA
+                            {{/if}}
+                        </span>
+                    </p>
+            		<!--<div class="text-nowrap font-size-18">
+              			<a href="" class="white margin-right-10">
+                    		<i class="icon bd-twitter"></i>
+                  		</a>
+                  		<a href="" class="white margin-right-10">
+                    		<i class="icon bd-facebook"></i>
+                  		</a>
+                  		<a href="" class="white">
+                    		<i class="icon bd-dribbble"></i>
+                  		</a>
+                	</div>-->
+              	</div>
+            </div>
+  		</div>
+	</div>--}}
+    {{!--<div class="widget-content padding-horizontal-20">
+      	<ul class="list-group list-group-full list-group-dividered">
+        	<li class="list-group-item">
+              	<div class="media">
+                	<div class="media-left">
+                  		<a class="avatar avatar-lg" href="javascript:void(0)">
+                    		<img class="img-responsive" src="../../global/portraits/1.jpg" alt="...">
+                  		</a>
+                	</div>
+                	<div class="media-body">
+                  		<h4 class="media-heading">Herman Beck</h4>
+                  		<small>San Francisco</small>
+                	</div>
+              	</div>
+            </li>
+            <li class="list-group-item">
+              	<div class="media">
+                	<div class="media-left">
+                  		<a class="avatar avatar-lg" href="javascript:void(0)">
+                    		<img class="img-responsive" src="../../global/portraits/2.jpg" alt="...">
+                  		</a>
+                	</div>
+                	<div class="media-body">
+                  		<h4 class="media-heading">Mary Adams</h4>
+                  		<small>Salt Lake City, Utah</small>
+            		</div>
+              	</div>
+            </li>
+            <li class="list-group-item">
+              	<div class="media">
+                	<div class="media-left">
+                  		<a class="avatar avatar-lg" href="javascript:void(0)">
+                    		<img class="img-responsive" src="../../global/portraits/3.jpg" alt="...">
+                  		</a>
+                	</div>
+                	<div class="media-body">
+                  		<h4 class="media-heading">Caleb Richards</h4>
+                  		<small>Basking Ridge, NJ</small>
+                	</div>
+              	</div>
+            </li>
+  		</ul>
+      	<button type="button" class="btn-raised btn btn-danger btn-floating waves-effect waves-light">
+        	<i class="icon md-plus" aria-hidden="true"></i>
+      	</button>
+    </div>--}}
+</div>
+<!-- End Panel Web Perfil -->
+

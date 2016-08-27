@@ -1,0 +1,141 @@
+.search-filters{
+	position:relative;
+	top:-8px;
+	font-size:13px;
+}
+.filters-sidebar{
+	width:245px;
+}
+.filters-sidebar h3 {
+	color: #000;
+	font-size: 30px;
+	font-family: 'font_name_landrover_bold';
+}
+.search-filters .form-inline:before, .search-filters .form-inline:after{
+	content:" ";
+	display:table;
+}
+.search-filters .form-inline:after{
+	clear:both;
+}
+.search-filters .form-inline{
+}
+.search-filters .selectpicker, .search-filters .bootstrap-select.form-control{
+	margin-bottom:10px!important;
+}
+.search-filters .form-inline .form-group{
+	float:left;
+	max-width:49%;
+	margin-right:2%;
+}
+.search-filters .form-inline .form-group.last-child{
+	margin-right:0;
+}
+.search-filters .panel{
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+.search-filters .accordion{
+	border:0;
+	margin-bottom:30px;
+}
+.search-filters .accordion-heading .accordion-toggle{
+	border:0;
+	padding:10px 0;
+	font-size:13px;
+	text-transform:uppercase;
+	letter-spacing:0;
+}
+.search-filters .accordion-heading .accordion-toggle{
+	color:#777;
+	font-family: 'font_avenir_heavy';
+}
+.search-filters .accordion-group a{
+	color:#777;
+}
+.search-filters .accordion-heading.accordionize .accordion-toggle i, .search-filters .accordion-heading.togglize .accordion-toggle i{
+	right:0;
+}
+.search-filters .accordion-group{
+	margin-bottom:0;
+}
+.search-filters .accordion-group{
+	border-bottom:1px solid #eee;
+	background: none;
+	width: 85%;
+}
+.search-filters .accordion-heading.accordionize .accordion-toggle.active, .search-filters .accordion-heading.togglize .accordion-toggle.active, .search-filters .accordion-heading .accordion-toggle.active, .search-filters .accordion-heading:hover .accordion-toggle.active, .search-filters .accordion-heading:hover .accordion-toggle.active:hover{
+	color:#666;
+	background:none;
+}
+.search-filters .accordion-heading.accordionize .accordion-toggle.active i, .search-filters .accordion-heading.togglize .accordion-toggle.active i{
+	color:#777;
+}
+.search-filters .accordion-inner{
+	border:0;
+	background: none;
+}
+.search-filters .accordion-inner{
+	padding:2px 0 12px;
+}
+.filter-options-list.list-group{
+	margin:0;
+	list-style-type:none;
+	padding:0;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+	border:0;
+}
+.filter-options-list li{
+	padding:0;
+	border:0;
+	background: none;
+}
+.filter-options-list li .badge{
+}
+.filter-options-list li i{
+	color:#000;
+}
+.filter-options-list.color-options .badge{
+	width:15px;
+	height:15px;
+	display:block;
+	margin-top:3px;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
+}
+.color-options .badge.car-color-white{
+	background:#fff;
+	border:1px solid #eee;
+}
+.color-options .badge.car-color-black{
+	background:#000;
+}
+.color-options .badge.car-color-red{
+	background:#FF0004;
+}
+.color-options .badge.car-color-yellow{
+	background:#ECE50D;
+}
+.color-options .badge.car-color-brown{
+	background:#654C38;
+}
+.color-options .badge.car-color-grey{
+	background:#CECECE;
+}
+.color-options .badge.car-color-silver{
+	background:#EAEEF0;
+}
+.color-options .badge.car-color-gold{
+	background:#CAB134;
+}
+.color-options .badge.car-color-blue{
+	background:#148FE1;
+}
+.color-options .badge.car-color-green{
+	background:#90D541;
+}
+.color-options .badge.car-color-orange{
+	background:#F88E0E;
+}

@@ -1,0 +1,118 @@
+<div class="sidebar-widget widget no-print">
+    <div class="vehicle-enquiry-foot pull-left contact_main" style="width: 100%;">
+        <h6 class="widgettitle no-print">CONTACTO</h6>
+        <div class="vehicle-enquiry-in contact_content clearfix">
+            <div id="form-wrapper">
+                <form class="email-form-sem-premium-by-model" id="form_sem_premium_contact_by_model" data-id-sem="{{campa.0.id}}">
+                    <div class="contact_elements">
+                        <div class="contact_element ab">
+                            <fieldset>
+                                <input
+                                    type="text"
+                                    name="sem_premium_by_model_contact_name"
+                                    id="sem_premium_by_model_contact_name"
+                                    placeholder="Nombre"
+                                    class="input-standard validate-required no-print" style="font-size: 1.3em;"
+                                    data-validation-data="required|name">
+                                <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="contact_elements">
+                        <div class="contact_element ab">
+                            <fieldset>
+                                <input
+                                    type="email"
+                                    name="sem_premium_by_model_contact_email"
+                                    id="sem_premium_by_model_contact_email"
+                                    placeholder="Email"
+                                    class="input-standard validate-required validate-email no-print" style="font-size: 1.3em;"
+                                    data-validation-data="required|email">
+                                <p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="contact_elements">
+                        <div class="contact_element ab">
+                            <fieldset>
+                                <input
+                                    type="text"
+                                    name="sem_premium_by_model_contact_phone"
+                                    id="sem_premium_by_model_contact_phone"
+                                    placeholder="Telefono"
+                                    maxlength="13"
+                                    class="input-standard validate-required no-print" style="font-size: 1.3em;"
+                                    data-validation-data="required|phone">
+                                <p class="invalid-message" id="error_phone">Este campo es obligatorio<span>&nbsp;</span></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="contact_elements">
+                        <div class="contact_element ab">
+                            <fieldset>
+                                <textarea
+                                    name="sem_premium_by_model_contact_message"
+                                    id="sem_premium_by_model_contact_message"
+                                    class="input-standard validate-required no-print"
+                                    placeholder="Comentario" style="font-size: 1.3em;"
+                                    data-validation-data="required|address"></textarea>
+                                <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_send_email"
+                            id="sem_premium_by_model_contact_send_email"
+                            value="{{campa.0.email}}">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_concessionary"
+                            id="sem_premium_by_model_contact_concessionary"
+                            value="CAMCAR - {{campa.0.agencia}}">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_logo_seminuevos"
+                            id="sem_premium_by_model_contact_logo_seminuevos"
+                            value="camcar.png">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_logo_agencia"
+                            id="sem_premium_by_model_contact_logo_agencia"
+                            value="{{campa.0.logo}}">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_marc"
+                            id="sem_premium_by_model_contact_marc"
+                            value="{{campa.0.marca}}">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_model"
+                            id="sem_premium_by_model_contact_model"
+                            value="{{campa.0.modelo}}">
+                        <input type="hidden"
+                            name="sem_premium_by_model_contact_picture"
+                            id="sem_premium_by_model_contact_picture"
+                            value="{{campa.0.directorio}}/{{campa.0.foto}}">
+                    </div>
+                </form>
+                <div id="loader-by-model"></div>
+                <div class="linkContainer ctaContainer text-right">
+                    <input type="submit" name="sem_premium_contact_send_by_model" class="submit_contact" id="sem_premium_contact_send_by_model" value="Enviar" style="font-size: 1.3em;">
+                </div>
+            </div>
+            <div class="form-thanks clearfix" style="display: none;">
+                <p class="agradecimiento_titulo">Mensaje enviado</p>
+                <hr>
+                <p class="agradecimiento_titulo2">En breve responderemos tu mensaje al siguiente correo:<br /><span id="email-from">-</span></p>
+            </div>
+            <div class="form-error clearfix" style="display: none;">
+                <p class="agradecimiento_titulo">Hubo un error</p>
+                <hr>
+                <p class="agradecimiento_titulo2">Intentalo nuevamente</p>
+            </div>
+            <div class="form-loader clearfix" style="display: none;">
+                <div class="loader">
+                    <div class="loader-wrap">
+                        <div class="loader-item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

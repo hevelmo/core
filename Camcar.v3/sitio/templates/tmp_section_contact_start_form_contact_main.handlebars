@@ -1,0 +1,41 @@
+<form class="email-form-sem-premium" id="cam-form-contact-main">
+	<div class="contact_elements">
+		<div class="contact_element ab">
+			<fieldset>
+				<input class="input-standard validate-required" type="text"
+					name="contact_main_name"
+					id="cam-contact-main-name"
+					placeholder="Nombre"
+					data-validation-data="required|name">
+				<p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
+			</fieldset>
+		</div>
+	</div>
+	<div class="contact_elements">
+		<div class="contact_element ab">
+			<fieldset>
+				<input class="input-standard validate-required validate-email" type="text"
+					name="contact_main_email"
+					id="cam-contact-main-email"
+					placeholder="Correo"
+					data-validation-data="required|email">
+				<p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
+			</fieldset>
+		</div>
+	</div>
+	<div class="contact_elements">
+		<div class="contact_element ab">
+			<fieldset>
+				<textarea class="input-standard validate-required"
+					name="contact_main_message"
+					id="cam-contact-main-message"
+					placeholder="Mensaje" rows="4"
+					data-validation-data="required|address"></textarea>
+				<p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
+			</fieldset>
+		</div>
+	</div>
+</form>
+<div class="linkContainer text-right">
+	<button type="button" name="contact_main_send" style="font-size: 1.3em;" class="submit_contact" id="cam-contact-main-send">Enviar</button>
+</div>

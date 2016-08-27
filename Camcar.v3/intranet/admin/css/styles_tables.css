@@ -1,0 +1,2737 @@
+/* table-responsive */
+.block {
+margin: 0 0 10px;
+padding: 20px 15px 1px;
+}
+
+.button-abs-resp {
+font-size: 1.9em;
+}
+.button-abs-resp.button-abs-resp-esp,
+.button-abs-resp.button-abs-resp-en,
+.button-abs-resp.button-abs-resp-fra {
+top: 0px;
+right: -10px;
+padding: 0;
+position: relative;
+width: 35px;
+height: 43px;
+color: #D58F8D;
+background: rgba(255, 255, 255, 0);
+border: none;
+}
+.button-abs-resp.button-abs-resp-esp:hover,
+.button-abs-resp.button-abs-resp-en:hover,
+.button-abs-resp.button-abs-resp-fra:hover {
+top: 0px;
+right: -10px;
+padding: 0;
+position: relative;
+width: 35px;
+height: 43px;
+color: #d9534f;
+background: rgba(255, 255, 255, 0);
+border: none;
+}
+.button-abs-resp.button-abs-resp-esp:active,
+.button-abs-resp.button-abs-resp-en:active,
+.button-abs-resp.button-abs-resp-fra:active,
+.button-abs-resp.button-abs-resp-esp:focus,
+.button-abs-resp.button-abs-resp-en:focus,
+.button-abs-resp.button-abs-resp-fra:focus {
+top: 0px;
+right: -10px;
+padding: 0;
+position: relative;
+width: 35px;
+height: 43px;
+color: #BAA2A1;
+background: rgba(255, 255, 255, 0);
+border: none;
+}
+.button-abs-resp.button-abs-resp-esp:after,
+.button-abs-resp.button-abs-resp-en:after,
+.button-abs-resp.button-abs-resp-fra:after {
+color: gray;
+content: '';
+position: absolute;
+font-size: 0.5em;
+right: -50px;
+top: -12px;
+visibility: hidden;
+opacity: 0;
+-webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+     -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+}
+.button-abs-resp.button-abs-resp-esp:hover:after {
+color: gray;
+content: 'Eliminar';
+position: absolute;
+font-size: 0.5em;
+right: -50px;
+top: 12px;
+visibility: visible;
+opacity: 1;
+-webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+     -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+}
+.button-abs-resp.button-abs-resp-en:hover:after {
+color: gray;
+content: 'Delete';
+position: absolute;
+font-size: 0.5em;
+right: -50px;
+top: 12px;
+visibility: visible;
+opacity: 1;
+-webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+     -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+}
+.button-abs-resp.button-abs-resp-fra:hover:after {
+color: gray;
+content: 'Supprimer';
+position: absolute;
+font-size: 0.5em;
+right: -50px;
+top: 12px;
+visibility: visible;
+opacity: 1;
+-webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+     -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+}
+.page{
+max-width: 100%;
+margin: 0 auto;
+}
+
+table th,
+table td{
+text-align: left;
+}
+
+table.layout{
+width: 100%;
+border-collapse: collapse;
+}
+
+table.display{
+margin: 1em 0;
+}
+
+table.display th,
+table.display td{
+border: 0px solid #FFFFFF;
+padding: .5em 1em;
+}
+
+table.display th{ background: #ffffff; text-align: center;}
+table.display td{ background: #FFFFFF; }
+
+table.list-orders, table.list-products, table.details-order,
+table.list-sellers, table.list-customers, table.details-orders,
+table.products-deleted, table.address-list, table.product-listing {
+box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+table.list-orders td.label_code {
+padding-top: 10px
+}
+
+.input_search {
+border-radius: 0px;
+}
+.input_search:focus {
+border-radius: 0px;
+-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.search_products {
+position: absolute;
+z-index: 20;
+background: #fff;
+right: 15px;
+left: 15px;
+-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+-webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+     -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+}
+.pro-found > div {
+color: gray;
+padding: 5px;
+}
+
+a.pro-found:hover > .block_info{
+cursor: pointer;
+background: rgba(0,0,0,0.075);
+-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+box-shadow: 0 1px 1px rgba(0,0,0,0.075);
+-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+-webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+     -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+}
+a.pro-found:nth-child(odd) > .block_info{
+background: rgba(245, 244, 244, 0.05);
+}
+a.pro-found:nth-child(even) > .block_info{
+background: rgba(194, 189, 189, 0.05);
+}
+
+.th_box_none, .td_box_none {display: none;}
+.text_resp_none {opacity: 1;}
+/*-------------------------------------------------------------------------------
+    Tabla -> Detalles de Orden
+  -------------------------------------------------------------------------------*/
+
+    /* traduccion */
+    /* ESP */
+	table.details-orders.details-orders-esp tr.block_country_total td:nth-child(3):before {
+		padding-left: 80%;
+		content: 'Total por País';
+		font-weight: bold;
+	}
+	/**/
+	/* ENG */
+	table.details-orders.details-orders-en tr.block_country_total td:nth-child(3):before {
+		padding-left: 80%;
+		content: 'Country Total';
+		font-weight: bold;
+	}
+	/**/
+	/* FRA */
+	table.details-orders.details-orders-fra tr.block_country_total td:nth-child(3):before {
+		padding-left: 80%;
+		content: 'Total par Origine';
+		font-weight: bold;
+	}
+	/**/
+
+	table.details-orders tr.block_total td:nth-child(3):before {
+		padding-left: 95%;
+		content: 'Total';
+		font-weight: bold;
+	}
+/**/
+
+
+/* Responsive media queres */
+@media (max-width: 49.231em) {
+    /*-------------------------------------------------------------------------------
+        Tabla -> Reset Table
+      -------------------------------------------------------------------------------*/
+        .block {
+          margin: 0 auto;
+          padding: 1px;
+        }
+        .wrapper_content_interactive {
+          border-radius: 0;
+          padding: 0px;
+        }
+        .panel-body {
+          padding: 0px;
+        }
+        .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+        .button-abs-resp.button-abs-resp-esp:hover:after,
+        .button-abs-resp.button-abs-resp-en:hover:after,
+        .button-abs-resp.button-abs-resp-fra:hover:after {
+          visibility: hidden;
+          opacity: 0;
+        }
+        table.list-orders, table.list-products,
+        table.details-order, table.list-sellers,
+        table.list-customers, table.details-orders,
+        table.products-deleted, table.address-list,
+        table.product-listing {
+          box-shadow: none;
+        }
+        table.list-orders thead, table.list-products thead,
+        table.details-order thead, table.list-sellers thead,
+        table.list-customers thead, table.details-orders thead,
+        table.products-deleted thead, table.address-list thead,
+        table.product-listing thead {
+          display: none;
+        }
+        table.display th,
+        table.display td{
+          padding: .5em;
+        }
+        .text_resp_none {opacity: 0;}
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Ordenes
+      -------------------------------------------------------------------------------*/
+        /* traduccion */
+        /* ESP */
+        table.list-orders.list-orders-esp td:nth-child(1):before{ content: '# Orden'; }
+        table.list-orders.list-orders-esp td:nth-child(2):before{ content: 'Cliente'; }
+        table.list-orders.list-orders-esp td:nth-child(3):before{ content: 'Vendedor'; }
+        table.list-orders.list-orders-esp td:nth-child(4):before{ content: 'Fecha'; }
+        table.list-orders.list-orders-esp td:nth-child(5):before{ content: 'Fecha de Entrega Solicitada'; }
+        table.list-orders.list-orders-esp td:nth-child(7):before{ content: 'Situación'; }
+        /**/
+        /* ENG */
+        table.list-orders.list-orders-en td:nth-child(1):before{ content: '# Order'; }
+        table.list-orders.list-orders-en td:nth-child(2):before{ content: 'Customer'; }
+        table.list-orders.list-orders-en td:nth-child(3):before{ content: 'Vendor'; }
+        table.list-orders.list-orders-en td:nth-child(4):before{ content: 'Date'; }
+        table.list-orders.list-orders-en td:nth-child(5):before{ content: 'Requested Delivery Date'; }
+        table.list-orders.list-orders-en td:nth-child(7):before{ content: 'Status'; }
+        /**/
+        /* FRA */
+        table.list-orders.list-orders-fra td:nth-child(1):before{ content: '# Commande'; }
+        table.list-orders.list-orders-fra td:nth-child(2):before{ content: 'Client'; }
+        table.list-orders.list-orders-fra td:nth-child(3):before{ content: 'Vendeur'; }
+        table.list-orders.list-orders-fra td:nth-child(4):before{ content: 'Date'; }
+        table.list-orders.list-orders-fra td:nth-child(5):before{ content: 'Date souhaitée de livraison'; }
+        table.list-orders.list-orders-fra td:nth-child(7):before{ content: 'Statut'; }
+        /**/
+        table.list-orders td:nth-child(6):before{ content: ''; }
+        table.list-orders td:nth-child(8):before{ content: ''; }
+
+        table.list-orders td:nth-child(1), table.list-orders td:nth-child(2),
+        table.list-orders td:nth-child(3), table.list-orders td:nth-child(4),
+        table.list-orders td:nth-child(5), table.list-orders td:nth-child(6),
+        table.list-orders td:nth-child(7){ padding-left: 29%; }
+
+        table.list-orders td:nth-child(1):before, table.list-orders td:nth-child(2):before, table.list-orders td:nth-child(3):before,
+        table.list-orders td:nth-child(4):before, table.list-orders td:nth-child(5):before, table.list-orders td:nth-child(6):before,
+        table.list-orders td:nth-child(7):before, table.list-orders td:nth-child(8):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-orders tr,
+        table.list-orders td{
+            display: block;
+        }
+        table.list-orders tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        table.list-orders td{
+            border-top: none;
+        }
+
+        /* td etiqueta expand */
+        /*
+        table.list-orders td.label_code:nth-child(1) {
+          background-color: #f0ad4e;
+          color: #fff;
+        }
+
+        table.list-orders td.ord-status#ord-status-1:nth-child(6) {
+          background-color: #d9534f;
+          padding: 5px 0 5px 29%;
+          color: #fff;
+        }
+        table.list-orders td.ord-status#ord-status-2:nth-child(6) {
+          background-color: #5cb85c;
+          padding: 5px 0 5px 29%;
+          color: #fff;
+        }
+        table.list-orders td.ord-status#ord-status-3:nth-child(6) {
+          background-color: #5bc0de;
+          padding: 5px 0 5px 29%;
+          color: #fff;
+        }
+        */
+        table.list-orders td.btn_lage_resp:nth-child(8) .large-button {
+          border-radius: 0px;
+          width: 100%;
+          margin: 0px auto;
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Productos
+      -------------------------------------------------------------------------------*/
+        /*table.list-products tr.block-detail td:nth-child(10):after{ content: '$'; margin-top: -20px; padding-left: 10px; } */
+        /* traduccion */
+        /* ESP */
+        table.list-products.list-products-esp tr.block-detail td:nth-child(1):before{ content: 'Código'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(2):before{ content: 'Descripción'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(3):before{ content: 'Presentación'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(4):before{ content: 'Presentación (Inglés)'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(5):before{ content: 'Cantidad'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(6):before{ content: 'UMV'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(7):before{ content: 'Cantidad Ordenada'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(8):before{ content: 'Precio'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(9):before{ content: 'Total USD'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(10):before{ content: 'SubTotal USD'; }
+        /**/
+        /* ENG */
+        table.list-products.list-products-en tr.block-detail td:nth-child(1):before{ content: 'Code'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(2):before{ content: 'Description'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(3):before{ content: 'Appearance (Spanish)'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(4):before{ content: 'Appearance'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(5):before{ content: 'Quantity'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(6):before{ content: 'UMV'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(7):before{ content: 'Ordered Quantity'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(8):before{ content: 'Price'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(9):before{ content: 'Total USD'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(10):before{ content: 'SubTotal USD'; }
+        /**/
+        /* FRA */
+        table.list-products.list-products-fra tr.block-detail td:nth-child(1):before{ content: 'Code'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(2):before{ content: 'Description'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(3):before{ content: 'Présentation (Espagnol)'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(4):before{ content: 'Présentation (Anglais)'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(5):before{ content: 'Quantité'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(6):before{ content: 'UMV'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(7):before{ content: 'Quantité Commandée'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(8):before{ content: 'Prix'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(9):before{ content: 'Total USD'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(10):before{ content: 'SubTotal USD'; }
+        /**/
+
+        table.list-products tr.block-detail td:nth-child(1),
+        table.list-products tr.block-detail td:nth-child(2),
+        table.list-products tr.block-detail td:nth-child(3),
+        table.list-products tr.block-detail td:nth-child(4),
+        table.list-products tr.block-detail td:nth-child(5),
+        table.list-products tr.block-detail td:nth-child(6),
+        table.list-products tr.block-detail td:nth-child(7),
+        table.list-products tr.block-detail td:nth-child(8),
+        table.list-products tr.block-detail td:nth-child(9),
+        table.list-products tr.block-detail td:nth-child(10){ padding-left: 45%; }
+
+        table.list-products tr.block-detail td:nth-child(1):before,
+        table.list-products tr.block-detail td:nth-child(2):before,
+        table.list-products tr.block-detail td:nth-child(3):before,
+        table.list-products tr.block-detail td:nth-child(4):before,
+        table.list-products tr.block-detail td:nth-child(5):before,
+        table.list-products tr.block-detail td:nth-child(6):before,
+        table.list-products tr.block-detail td:nth-child(7):before,
+        table.list-products tr.block-detail td:nth-child(8):before,
+        table.list-products tr.block-detail td:nth-child(9):before,
+        table.list-products tr.block-detail td:nth-child(10):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-products tr,
+        table.list-products td{
+            display: block;
+        }
+        table.list-products tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table.list-products tr.tr_box_none {
+          display: none;
+        }
+        table.list-products tr.total_box {
+          border-bottom: none;
+        }/*
+        table.details-order tr.total_box td.td_box_none:nth-child(1){
+          position: absolute;
+          display: none;
+        }
+        table.list-products tr.total_box td:nth-child(2):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        table.list-products tr.total_box td:nth-child(3){ padding-left: 40%; }*/
+
+        table.list-products tr.total_box td.td_box_none:nth-child(1){
+          position: absolute;
+          display: none;
+        }
+        table.list-products tr.total_box td:nth-child(3):before{ content: ''; }
+
+        table.list-products tr.total_box td:nth-child(3){ padding-left: 40%; }
+        table.list-products tr.total_box td:nth-child(2):before,
+        table.list-products tr.total_box td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+
+        table.list-products td{
+            border-top: none;
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Orden Detalle
+      -------------------------------------------------------------------------------*/
+        /* Titulo Pais */
+        table.details-order td.country_caption:nth-child(1):before{ content: ''; }
+
+        /* Detalles */
+
+        /* traduccion */
+        /* ESP */
+        table.details-order.details-order-esp tr.block_detail td:nth-child(1):before{ content: 'Código'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(2):before{ content: 'Descripción'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(3):before{ content: 'Cantidad Ordenada'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(4):before{ content: 'Precio'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(5):before{ content: 'Total USD'; }
+        /**/
+        /* ENG */
+        table.details-order.details-order-en tr.block_detail td:nth-child(1):before{ content: 'Code'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(2):before{ content: 'Description'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(3):before{ content: 'Ordered Quantity'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(4):before{ content: 'Price'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(5):before{ content: 'Total USD'; }
+        /**/
+        /* FRA */
+        table.details-order.details-order-fra tr.block_detail td:nth-child(1):before{ content: 'Code'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(2):before{ content: 'Description'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(3):before{ content: 'Quantité Commandée'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(4):before{ content: 'Prix'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(5):before{ content: 'Total USD'; }
+        /**/
+
+        table.details-order tr.block_detail td:nth-child(1),
+        table.details-order tr.block_detail td:nth-child(2),
+        table.details-order tr.block_detail td:nth-child(3),
+        table.details-order tr.block_detail td:nth-child(4),
+        table.details-order tr.block_detail td:nth-child(5) { padding-left: 50%; }
+
+        table.details-order tr.block_detail td:nth-child(1):before,
+        table.details-order tr.block_detail td:nth-child(2):before,
+        table.details-order tr.block_detail td:nth-child(3):before,
+        table.details-order tr.block_detail td:nth-child(4):before,
+        table.details-order tr.block_detail td:nth-child(5):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-order tr.block_detail td.td_box_none:nth-child(6){
+          position: absolute;
+          display: none;
+        }
+
+        /* Total Country */
+        table.details-order tr.block_country_total td.td_box_none:nth-child(1){
+          position: absolute;
+          display: none;
+        }
+
+        table.details-order tr.block_country_total td:nth-child(2):before{ content: ''; }
+        table.details-order tr.block_country_total td:nth-child(3):before{ content: ''; }
+        table.details-order tr.block_country_total td:nth-child(4):before{ content: ''; }
+
+        table.details-order tr.block_country_total td:nth-child(3),
+        table.details-order tr.block_country_total td:nth-child(4){ padding-left: 50%; }
+
+
+
+        table.details-order tr.block_country_total td:nth-child(1):before,
+        table.details-order tr.block_country_total td:nth-child(2):before,
+        table.details-order tr.block_country_total td:nth-child(3):before,
+        table.details-order tr.block_country_total td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+
+        /* Total */
+        table.details-order tr.block_total td.td_box_none:nth-child(1),
+        table.details-order tr.block_total td.td_box_none:nth-child(2),
+        table.details-order tr.block_total td.td_box_none:nth-child(3){
+          position: absolute;
+          display: none;
+        }
+        table.details-order tr.block_total td:nth-child(4):before{ content: 'TOTAL'; }
+
+        table.details-order tr.block_total td:nth-child(4){ padding-left: 70%; }
+        table.details-order tr.block_total td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-order tr.tr_box_none {
+          display: none;
+        }
+
+        table.details-order tr,
+        table.details-order td{
+            display: block;
+        }
+        table.details-order tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Vendedores
+      -------------------------------------------------------------------------------*/
+
+        /* traduccion */
+        /* ESP */
+        table.list-sellers.list-sellers-esp td:nth-child(1):before{ content: 'Código'; }
+        table.list-sellers.list-sellers-esp td:nth-child(2):before{ content: 'Descripción'; }
+        /**/
+        /* ENG */
+        table.list-sellers.list-sellers-en td:nth-child(1):before{ content: 'Code'; }
+        table.list-sellers.list-sellers-en td:nth-child(2):before{ content: 'Description'; }
+        /**/
+        /* FRA */
+        table.list-sellers.list-sellers-fra td:nth-child(1):before{ content: 'Code'; }
+        table.list-sellers.list-sellers-fra td:nth-child(2):before{ content: 'Nom'; }
+        /**/
+        table.list-sellers td:nth-child(3):before{ content: ''; }
+
+        table.list-sellers td:nth-child(1),
+        table.list-sellers td:nth-child(2){ padding-left: 40%; }
+
+        table.list-sellers td:nth-child(1):before,
+        table.list-sellers td:nth-child(2):before,
+        table.list-sellers td:nth-child(3):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-sellers td:nth-child(3) > .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        table.list-sellers tr,
+        table.list-sellers td{
+            display: block;
+        }
+        table.list-sellers tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Clientes
+      -------------------------------------------------------------------------------*/
+        /* traduccion */
+        /* ESP */
+        table.list-customers td:nth-child(1):before{ content: 'Código'; }
+        table.list-customers td:nth-child(2):before{ content: 'Descripción'; }
+        /**/
+        /* ENG */
+        table.list-customers td:nth-child(1):before{ content: 'Code'; }
+        table.list-customers td:nth-child(2):before{ content: 'Description'; }
+        /**/
+        /* FRA */
+        table.list-customers td:nth-child(1):before{ content: 'Code'; }
+        table.list-customers td:nth-child(2):before{ content: 'Nom'; }
+        /**/
+        table.list-customers td:nth-child(3):before{ content: ''; }
+
+        table.list-customers td:nth-child(1),
+        table.list-customers td:nth-child(2){ padding-left: 40%; }
+
+        table.list-customers td:nth-child(1):before,
+        table.list-customers td:nth-child(2):before,
+        table.list-customers td:nth-child(3):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-customers td:nth-child(3) > .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra {
+          top: 5px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:hover,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:hover,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:hover {
+          top: 5px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:active,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:active,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:active,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:focus,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:focus,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:focus {
+          top: 5px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:before,
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:before,
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:hover:before {
+          color: gray;
+          content: 'Eliminar';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* ENG */
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* FRA */
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:hover:before {
+          color: gray;
+          content: 'Supprimer';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+
+        table.list-customers tr,
+        table.list-customers td{
+            display: block;
+        }
+        table.list-customers tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Detalles de Orden
+      -------------------------------------------------------------------------------*/
+
+        /* Detalles */
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(1):before{ content: '# Orden'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(2):before{ content: '# Vendedor'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(3):before{ content: 'Vendedor'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(4):before{ content: 'Fecha'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(5):before{ content: 'Fecha de Entrega Solicitada'; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(1):before{ content: '# Order'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(2):before{ content: '#Vendor'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(3):before{ content: 'Vendor'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(4):before{ content: 'Date'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(5):before{ content: 'Requested Delivery Date'; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(1):before{ content: '# Commande'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(2):before{ content: '# Vendeur'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(3):before{ content: 'Vendeur'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(4):before{ content: 'Date'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(5):before{ content: 'Date souhaitée de livraison'; }
+        /**/
+
+        table.details-orders tr.block_detail td:nth-child(1),
+        table.details-orders tr.block_detail td:nth-child(2),
+        table.details-orders tr.block_detail td:nth-child(3),
+        table.details-orders tr.block_detail td:nth-child(4),
+        table.details-orders tr.block_detail td:nth-child(5) { padding-left: 40%; }
+
+        table.details-orders tr.block_detail td:nth-child(1):before,
+        table.details-orders tr.block_detail td:nth-child(2):before,
+        table.details-orders tr.block_detail td:nth-child(3):before,
+        table.details-orders tr.block_detail td:nth-child(4):before,
+        table.details-orders tr.block_detail td:nth-child(5):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        table.details-orders tr.block_detail td.td_box_none:nth-child(5) {
+        	padding-bottom: 25px;
+        }
+        table.details-orders tr.block_detail td.td_box_none:nth-child(7){
+          position: absolute;
+          display: none;
+        }
+
+        /* Address */
+        table.details-orders tr.block_address td:nth-child(1):before{ content: ''; }
+        table.details-orders tr.block_address td:nth-child(2):before{ content: ''; }
+
+        table.details-orders tr.block_address td:nth-child(1),
+        table.details-orders tr.block_address td:nth-child(2){ padding: 5px; text-align: justify; }
+
+        table.details-orders tr.block_address td:nth-child(1):before,
+        table.details-orders tr.block_address td:nth-child(2):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        /* Comments */
+        table.details-orders tr.block_comments td:nth-child(1):before{ content: ''; }
+        table.details-orders tr.block_comments td:nth-child(2):before{ content: ''; }
+
+        table.details-orders tr.block_comments td:nth-child(1),
+        table.details-orders tr.block_comments td:nth-child(2){ padding: 5px; text-align: justify; }
+
+        table.details-orders tr.block_comments td:nth-child(1):before,
+        table.details-orders tr.block_comments td:nth-child(2):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        /* Country */
+        table.details-orders td.country_caption:nth-child(1):before{ content: ''; }
+
+        /* Detalle Producto */
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(1):before{ content: ''; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(2):before{ content: 'Código'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(3):before{ content: 'Descripción'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(4):before{ content: 'Presentación'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(5):before{ content: 'Presentación (Inglés)'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(6):before{ content: 'Precio'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(7):before{ content: 'Cantidad Ordenada	'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(8):before{ content: 'Total USD'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(9):before{ content: ''; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(1):before{ content: ''; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(2):before{ content: 'Product Code'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(3):before{ content: 'Description'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(4):before{ content: 'Appearance (Spanish)'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(5):before{ content: 'Appearance'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(6):before{ content: 'Price'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(7):before{ content: 'Ordered Quantity'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(8):before{ content: 'Total USD'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(9):before{ content: ''; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(1):before{ content: ''; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(2):before{ content: 'Code'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(3):before{ content: 'Description'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(4):before{ content: 'Présentation (Espagnol)'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(5):before{ content: 'Présentation (Anglais)'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(6):before{ content: 'Prix'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(7):before{ content: 'Quantité Commandée'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(8):before{ content: 'Total USD'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(9):before{ content: ''; }
+        /**/
+
+        table.details-orders tr.block_detail_product td:nth-child(1),
+        table.details-orders tr.block_detail_product td:nth-child(2),
+        table.details-orders tr.block_detail_product td:nth-child(3),
+        table.details-orders tr.block_detail_product td:nth-child(4),
+        table.details-orders tr.block_detail_product td:nth-child(5),
+        table.details-orders tr.block_detail_product td:nth-child(6),
+        table.details-orders tr.block_detail_product td:nth-child(7),
+        table.details-orders tr.block_detail_product td:nth-child(8),
+        table.details-orders tr.block_detail_product td:nth-child(9) { padding-left: 40%; }
+
+        table.details-orders tr.block_detail_product td:nth-child(1):before,
+        table.details-orders tr.block_detail_product td:nth-child(2):before,
+        table.details-orders tr.block_detail_product td:nth-child(3):before,
+        table.details-orders tr.block_detail_product td:nth-child(4):before,
+        table.details-orders tr.block_detail_product td:nth-child(5):before,
+        table.details-orders tr.block_detail_product td:nth-child(6):before,
+        table.details-orders tr.block_detail_product td:nth-child(7):before,
+        table.details-orders tr.block_detail_product td:nth-child(8):before,
+        table.details-orders tr.block_detail_product td:nth-child(9):before    {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-orders tr.block_detail_product td.td_box_none:nth-child(6){
+          position: absolute;
+          display: none;
+        }
+
+        table.details-orders td:nth-child(3) > .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) {
+          position: absolute;
+          border: none;
+          top: 0px;
+          background: none;
+          right: 0px;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:hover,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:hover,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp.fra:hover {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:active,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:active
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:active,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:focus,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:focus,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:focus {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:before,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:before,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:hover:before {
+          color: gray;
+          content: 'Eliminar';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* ENG */
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* FRA */
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:hover:before {
+          color: gray;
+          content: 'Supprimer';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+
+        /* Total Country */
+        table.details-orders tr.block_country_total td.td_box_none:nth-child(1),
+        table.details-orders tr.block_country_total td.td_box_none:nth-child(2){
+          position: absolute;
+          display: none;
+        }
+
+
+		/* traduccion */
+	    /* ESP */
+		table.details-orders.details-orders-esp tr.block_country_total td:nth-child(3):before {
+			padding-left: 40%;
+		}
+		/**/
+		/* ENG */
+		table.details-orders.details-orders-en tr.block_country_total td:nth-child(3):before {
+			padding-left: 40%;
+		}
+		/**/
+		/* FRA */
+		table.details-orders.details-orders-fra tr.block_country_total td:nth-child(3):before {
+			padding-left: 40%;
+		}
+		/**/
+
+
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_country_total td:nth-child(3):before{ content: 'Total por País'; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_country_total td:nth-child(3):before{ content: 'Country Total'; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_country_total td:nth-child(3):before{ content: 'Total par Origine'; }
+        /**/
+
+        table.details-orders tr.block_country_total td:nth-child(4):before{ content: ''; }
+        table.details-orders tr.block_country_total td:nth-child(5):before{ content: ''; }
+
+        table.details-orders tr.block_country_total td:nth-child(3){
+        	padding-bottom: 25px;
+        }
+        table.details-orders tr.block_country_total td:nth-child(3),
+        table.details-orders tr.block_country_total td:nth-child(4),
+        table.details-orders tr.block_country_total td:nth-child(5){ padding-left: 40%; }
+
+        table.details-orders tr.block_country_total td:nth-child(1):before,
+        table.details-orders tr.block_country_total td:nth-child(2):before,
+        table.details-orders tr.block_country_total td:nth-child(3):before,
+        table.details-orders tr.block_country_total td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        /* Total */
+        table.details-orders tr.block_total td.td_box_none:nth-child(1),
+        table.details-orders tr.block_total td.td_box_none:nth-child(2){
+          position: absolute;
+          display: none;
+        }
+        table.details-orders tr.block_total td:nth-child(3) {
+        	padding-bottom: 25px;
+        }
+
+		table.details-orders tr.block_total td:nth-child(3):before {
+			padding-left: 70%;
+		}
+
+
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_total td:nth-child(3):before{ content: 'TOTAL'; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_total td:nth-child(3):before{ content: 'TOTAL'; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_total td:nth-child(3):before{ content: 'TOTAL'; }
+        /**/
+        table.details-orders tr.block_total td:nth-child(3),
+        table.details-orders tr.block_total td:nth-child(4) { padding-left: 70%; }
+        table.details-orders tr.block_total td:nth-child(3):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-orders tr.tr_box_none {
+          display: none;
+        }
+
+        table.details-orders tr,
+        table.details-orders td{
+            display: block;
+        }
+        table.details-orders tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Productos Eliminados
+      -------------------------------------------------------------------------------*/
+        /* Titulo Pais */
+        table.table.products-deleted td.country_caption:nth-child(1):before{ content: ''; }
+
+        /* Detalles */
+        table.products-deleted tr.block_detail td:nth-child(1):before{ content: 'Product Code'; }
+        table.products-deleted tr.block_detail td:nth-child(2):before{ content: 'Description'; }
+        table.products-deleted tr.block_detail td:nth-child(3):before{ content: 'Appearance'; }
+        table.products-deleted tr.block_detail td:nth-child(4):before{ content: 'Appearance Eng'; }
+        table.products-deleted tr.block_detail td:nth-child(5):before{ content: 'Price'; }
+        table.products-deleted tr.block_detail td:nth-child(6):before{ content: 'Ordered Quantity'; }
+        table.products-deleted tr.block_detail td:nth-child(7):before{ content: 'Total USD'; }
+        table.products-deleted tr.block_detail td:nth-child(8):before{ content: ''; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.products-deleted tr.block_detail td:nth-child(1),
+        table.products-deleted tr.block_detail td:nth-child(2),
+        table.products-deleted tr.block_detail td:nth-child(3),
+        table.products-deleted tr.block_detail td:nth-child(4),
+        table.products-deleted tr.block_detail td:nth-child(5),
+        table.products-deleted tr.block_detail td:nth-child(6),
+        table.products-deleted tr.block_detail td:nth-child(7) { padding-left: 40%; }
+
+        table.products-deleted tr.block_detail td:nth-child(1):before,
+        table.products-deleted tr.block_detail td:nth-child(2):before,
+        table.products-deleted tr.block_detail td:nth-child(3):before,
+        table.products-deleted tr.block_detail td:nth-child(4):before,
+        table.products-deleted tr.block_detail td:nth-child(5):before,
+        table.products-deleted tr.block_detail td:nth-child(6):before,
+        table.products-deleted tr.block_detail td:nth-child(7):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.products-deleted tr.tr_box_none {
+          display: none;
+        }
+
+        table.products-deleted tr,
+        table.products-deleted td{
+            display: block;
+        }
+        table.products-deleted tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Direcciones
+      -------------------------------------------------------------------------------*/
+        /* Address */
+        table.address-list tr.block_address td:nth-child(1):before{ content: ''; }
+        table.address-list tr.block_address td:nth-child(2):before{ content: 'Codigo'; }
+        table.address-list tr.block_address td:nth-child(3):before{ content: ''; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.address-list tr.block_address td:nth-child(1),
+        table.address-list tr.block_address td:nth-child(2) { padding-left: 40%; }
+
+        table.address-list tr.block_address td:nth-child(1):before,
+        table.address-list tr.block_address td:nth-child(2):before,
+        table.address-list tr.block_address td:nth-child(3):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        table.address-list tr.block_address td:nth-child(3):before{ content: 'Dirección'; position: relative; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.address-list tr.block_address td:nth-child(3),
+        table.address-list tr.block_address td:nth-child(4){ padding: 5px; text-align: justify; }
+
+        table.address-list tr.block_address td:nth-child(4) > input {
+          height: 100px;
+          word-break: break-word;
+        }
+
+        table.address-list tr.block_address td:nth-child(5) {
+          position: absolute;
+          border: none;
+          top: 0px;
+          background: none;
+          right: 0px;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:hover {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:active,
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:focus {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.address-list tr,
+        table.address-list td{
+            display: block;
+        }
+        table.address-list tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Direcciones
+      -------------------------------------------------------------------------------*/
+
+        table.product-listing td:nth-child(2):before{ content: 'Codigo'; }
+        table.product-listing td:nth-child(3):before{ content: 'Descripción'; }
+        table.product-listing td:nth-child(4):before{ content: 'Presentación'; }
+        table.product-listing td:nth-child(5):before{ content: 'Presentación Eng'; }
+        table.product-listing td:nth-child(6):before{ content: 'Precio'; }
+        table.product-listing td:nth-child(7):before{ content: 'Tipo Moneda'; }
+        table.product-listing td:nth-child(8):before{ content: 'UMV'; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.product-listing td:nth-child(2),
+        table.product-listing td:nth-child(3),
+        table.product-listing td:nth-child(4),
+        table.product-listing td:nth-child(5),
+        table.product-listing td:nth-child(6),
+        table.product-listing td:nth-child(7),
+        table.product-listing td:nth-child(8){ padding-left: 40%; }
+
+        table.product-listing td:nth-child(2):before,
+        table.product-listing td:nth-child(3):before,
+        table.product-listing td:nth-child(4):before,
+        table.product-listing td:nth-child(5):before,
+        table.product-listing td:nth-child(6):before,
+        table.product-listing td:nth-child(7):before,
+        table.product-listing td:nth-child(8):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.product-listing td:nth-child(9), table.product-listing:hover td:nth-child(9),
+        table.product-listing:active td:nth-child(9), table.product-listing:focus td:nth-child(9) {
+          position: absolute;
+          border: none;
+          top: 0px;
+          background: none;
+          right: 0px;
+        }
+
+        table.product-listing td:nth-child(9) > .button-abs-resp {
+          top: 0px;
+          right: 9px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.product-listing td:nth-child(9) > .button-abs-resp:hover {
+          top: 0px;
+          right: 9px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.product-listing td:nth-child(9) > .button-abs-resp:active,
+        table.product-listing td:nth-child(9) > .button-abs-resp:focus {
+          top: 0px;
+          right: 9px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+        table.product-listing td:nth-child(9) > .button-abs-resp:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        table.product-listing td:nth-child(9) > .button-abs-resp:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.product-listing tr,
+        table.product-listing td{
+            display: block;
+        }
+        table.product-listing tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .icon_resp {
+
+        }
+        .mod_resp {
+          display: block;
+        }
+}
+@media (max-width: 30em) {
+    /*-------------------------------------------------------------------------------
+        Tabla -> Reset Table
+      -------------------------------------------------------------------------------*/
+        .block {
+          margin: 0 auto;
+          padding: 1px;
+        }
+        .wrapper_content_interactive {
+          border-radius: 0;
+          padding: 0px;
+        }
+        .panel-body {
+          padding: 0px;
+        }
+        .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+        .button-abs-resp.button-abs-resp-esp:hover:after,
+        .button-abs-resp.button-abs-resp-en:hover:after,
+        .button-abs-resp.button-abs-resp-fra:hover:after {
+          visibility: hidden;
+          opacity: 0;
+        }
+        table.list-orders, table.list-products,
+        table.details-order, table.list-sellers,
+        table.list-customers, table.details-orders,
+        table.products-deleted, table.address-list,
+        table.product-listing {
+          box-shadow: none;
+        }
+        table.list-orders thead, table.list-products thead,
+        table.details-order thead, table.list-sellers thead,
+        table.list-customers thead, table.details-orders thead,
+        table.products-deleted thead, table.address-list thead,
+        table.product-listing thead {
+          display: none;
+        }
+        table.display th,
+        table.display td{
+          padding: .5em;
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Ordenes
+      -------------------------------------------------------------------------------*/
+        /* traduccion */
+        /* ESP */
+        table.list-orders.list-orders-esp td:nth-child(1):before{ content: '# Orden'; }
+        table.list-orders.list-orders-esp td:nth-child(2):before{ content: 'Cliente'; }
+        table.list-orders.list-orders-esp td:nth-child(3):before{ content: 'Vendedor'; }
+        table.list-orders.list-orders-esp td:nth-child(4):before{ content: 'Fecha'; }
+        table.list-orders.list-orders-esp td:nth-child(5):before{ content: 'Fecha de Entrega Solicitada'; }
+        table.list-orders.list-orders-esp td:nth-child(7):before{ content: 'Situación'; }
+        /**/
+        /* ENG */
+        table.list-orders.list-orders-en td:nth-child(1):before{ content: '# Order'; }
+        table.list-orders.list-orders-en td:nth-child(2):before{ content: 'Customer'; }
+        table.list-orders.list-orders-en td:nth-child(3):before{ content: 'Vendor'; }
+        table.list-orders.list-orders-en td:nth-child(4):before{ content: 'Date'; }
+        table.list-orders.list-orders-en td:nth-child(5):before{ content: 'Requested Delivery Date'; }
+        table.list-orders.list-orders-en td:nth-child(7):before{ content: 'Status'; }
+        /**/
+        /* FRA */
+        table.list-orders.list-orders-fra td:nth-child(1):before{ content: '# Commande'; }
+        table.list-orders.list-orders-fra td:nth-child(2):before{ content: 'Client'; }
+        table.list-orders.list-orders-fra td:nth-child(3):before{ content: 'Vendeur'; }
+        table.list-orders.list-orders-fra td:nth-child(4):before{ content: 'Date'; }
+        table.list-orders.list-orders-fra td:nth-child(5):before{ content: 'Date souhaitée de livraison'; }
+        table.list-orders.list-orders-fra td:nth-child(7):before{ content: 'Statut'; }
+        /**/
+        table.list-orders td:nth-child(6):before{ content: ''; }
+        table.list-orders td:nth-child(8):before{ content: ''; }
+
+        table.list-orders td:nth-child(1), table.list-orders td:nth-child(2),
+        table.list-orders td:nth-child(3), table.list-orders td:nth-child(4),
+        table.list-orders td:nth-child(5), table.list-orders td:nth-child(6),
+        table.list-orders td:nth-child(7){ padding-left: 29%; }
+
+        table.list-orders td:nth-child(1):before, table.list-orders td:nth-child(2):before,
+        table.list-orders td:nth-child(3):before, table.list-orders td:nth-child(4):before,
+        table.list-orders td:nth-child(5):before, table.list-orders td:nth-child(6):before,
+        table.list-orders td:nth-child(7):before, table.list-orders td:nth-child(8):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-orders tr,
+        table.list-orders td{
+            display: block;
+        }
+        table.list-orders tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        table.list-orders td{
+            border-top: none;
+        }
+
+        /* td etiqueta expand */
+        /*
+        table.list-orders td.label_code:nth-child(1) {
+          background-color: #f0ad4e;
+          color: #fff;
+        }
+
+        table.list-orders td.ord-status#ord-status-1:nth-child(6) {
+          background-color: #d9534f;
+          padding: 5px 0 5px 29%;
+          color: #fff;
+        }
+        table.list-orders td.ord-status#ord-status-2:nth-child(6) {
+          background-color: #5cb85c;
+          padding: 5px 0 5px 29%;
+          color: #fff;
+        }
+        table.list-orders td.ord-status#ord-status-3:nth-child(6) {
+          background-color: #5bc0de;
+          padding: 5px 0 5px 29%;
+          color: #fff;
+        }
+        */
+        table.list-orders td.btn_lage_resp:nth-child(8) .large-button {
+          border-radius: 0px;
+          width: 100%;
+          margin: 0px auto;
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Productos
+      -------------------------------------------------------------------------------*/
+		/*table.list-products tr.block-detail td:nth-child(10):after{ content: '$'; margin-top: -20px; padding-left: 10px; } */
+        /* traduccion */
+        /* ESP */
+        table.list-products.list-products-esp tr.block-detail td:nth-child(1):before{ content: 'Código'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(2):before{ content: 'Descripción'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(3):before{ content: 'Presentación'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(4):before{ content: 'Presentación (Inglés)'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(5):before{ content: 'Cantidad'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(6):before{ content: 'UMV'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(7):before{ content: 'Cantidad Ordenada'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(8):before{ content: 'Precio'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(9):before{ content: 'Total USD'; }
+        table.list-products.list-products-esp tr.block-detail td:nth-child(10):before{ content: 'SubTotal USD'; }
+        /**/
+        /* ENG */
+        table.list-products.list-products-en tr.block-detail td:nth-child(1):before{ content: 'Code'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(2):before{ content: 'Description'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(3):before{ content: 'Appearance (Spanish)'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(4):before{ content: 'Appearance'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(5):before{ content: 'Quantity'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(6):before{ content: 'UMV'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(7):before{ content: 'Ordered Quantity'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(8):before{ content: 'Price'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(9):before{ content: 'Total USD'; }
+        table.list-products.list-products-en tr.block-detail td:nth-child(10):before{ content: 'SubTotal USD'; }
+        /**/
+        /* FRA */
+        table.list-products.list-products-fra tr.block-detail td:nth-child(1):before{ content: 'Code'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(2):before{ content: 'Description'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(3):before{ content: 'Présentation (Espagnol)'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(4):before{ content: 'Présentation (Anglais)'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(5):before{ content: 'Quantité'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(6):before{ content: 'UMV'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(7):before{ content: 'Quantité Commandée'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(8):before{ content: 'Prix'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(9):before{ content: 'Total USD'; }
+        table.list-products.list-products-fra tr.block-detail td:nth-child(10):before{ content: 'SubTotal USD'; }
+        /**/
+
+        table.list-products tr.block-detail td:nth-child(1),
+        table.list-products tr.block-detail td:nth-child(2),
+        table.list-products tr.block-detail td:nth-child(3),
+        table.list-products tr.block-detail td:nth-child(4),
+        table.list-products tr.block-detail td:nth-child(5),
+        table.list-products tr.block-detail td:nth-child(6),
+        table.list-products tr.block-detail td:nth-child(7),
+        table.list-products tr.block-detail td:nth-child(8),
+        table.list-products tr.block-detail td:nth-child(9),
+        table.list-products tr.block-detail td:nth-child(10){ padding-left: 45%; }
+
+        table.list-products tr.block-detail td:nth-child(1):before,
+        table.list-products tr.block-detail td:nth-child(2):before,
+        table.list-products tr.block-detail td:nth-child(3):before,
+        table.list-products tr.block-detail td:nth-child(4):before,
+        table.list-products tr.block-detail td:nth-child(5):before,
+        table.list-products tr.block-detail td:nth-child(6):before,
+        table.list-products tr.block-detail td:nth-child(7):before,
+        table.list-products tr.block-detail td:nth-child(8):before,
+        table.list-products tr.block-detail td:nth-child(9):before,
+        table.list-products tr.block-detail td:nth-child(10):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-products tr,
+        table.list-products td{
+            display: block;
+        }
+        table.list-products tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table.list-products tr.tr_box_none {
+          display: none;
+        }
+        table.list-products tr.total_box {
+          border-bottom: none;
+        }/*
+        table.details-order tr.total_box td.td_box_none:nth-child(1){
+          position: absolute;
+          display: none;
+        }
+        table.list-products tr.total_box td:nth-child(2):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        table.list-products tr.total_box td:nth-child(3){ padding-left: 40%; }*/
+
+        table.list-products tr.total_box td.td_box_none:nth-child(1){
+          position: absolute;
+          display: none;
+        }
+        table.list-products tr.total_box td:nth-child(3):before{ content: ''; }
+
+        table.list-products tr.total_box td:nth-child(3){ padding-left: 40%; }
+        table.list-products tr.total_box td:nth-child(2):before,
+        table.list-products tr.total_box td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+
+        table.list-products td{
+            border-top: none;
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Orden Detalle
+      -------------------------------------------------------------------------------*/
+        /* Titulo Pais */
+        table.details-order td.country_caption:nth-child(1):before{ content: ''; }
+
+        /* Detalles */
+
+        /* traduccion */
+        /* ESP */
+        table.details-order.details-order-esp tr.block_detail td:nth-child(1):before{ content: 'Código'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(2):before{ content: 'Descripción'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(3):before{ content: 'Cantidad Ordenada'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(4):before{ content: 'Precio'; }
+        table.details-order.details-order-esp tr.block_detail td:nth-child(5):before{ content: 'Total USD'; }
+        /**/
+        /* ENG */
+        table.details-order.details-order-en tr.block_detail td:nth-child(1):before{ content: 'Code'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(2):before{ content: 'Description'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(3):before{ content: 'Ordered Quantity'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(4):before{ content: 'Price'; }
+        table.details-order.details-order-en tr.block_detail td:nth-child(5):before{ content: 'Total USD'; }
+        /**/
+        /* FRA */
+        table.details-order.details-order-fra tr.block_detail td:nth-child(1):before{ content: 'Code'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(2):before{ content: 'Description'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(3):before{ content: 'Quantité Commandée'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(4):before{ content: 'Prix'; }
+        table.details-order.details-order-fra tr.block_detail td:nth-child(5):before{ content: 'Total USD'; }
+        /**/
+
+        table.details-order tr.block_detail td:nth-child(1),
+        table.details-order tr.block_detail td:nth-child(2),
+        table.details-order tr.block_detail td:nth-child(3),
+        table.details-order tr.block_detail td:nth-child(4),
+        table.details-order tr.block_detail td:nth-child(5) { padding-left: 50%; }
+
+        table.details-order tr.block_detail td:nth-child(1):before,
+        table.details-order tr.block_detail td:nth-child(2):before,
+        table.details-order tr.block_detail td:nth-child(3):before,
+        table.details-order tr.block_detail td:nth-child(4):before,
+        table.details-order tr.block_detail td:nth-child(5):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-order tr.block_detail td.td_box_none:nth-child(6){
+          position: absolute;
+          display: none;
+        }
+
+        /* Total Country */
+        table.details-order tr.block_country_total td.td_box_none:nth-child(1){
+          position: absolute;
+          display: none;
+        }
+
+        table.details-order tr.block_country_total td:nth-child(2):before{ content: ''; }
+        table.details-order tr.block_country_total td:nth-child(3):before{ content: ''; }
+        table.details-order tr.block_country_total td:nth-child(4):before{ content: ''; }
+
+        table.details-order tr.block_country_total td:nth-child(3),
+        table.details-order tr.block_country_total td:nth-child(4){ padding-left: 50%; }
+
+
+
+        table.details-order tr.block_country_total td:nth-child(1):before,
+        table.details-order tr.block_country_total td:nth-child(2):before,
+        table.details-order tr.block_country_total td:nth-child(3):before,
+        table.details-order tr.block_country_total td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+
+        /* Total */
+        table.details-order tr.block_total td.td_box_none:nth-child(1),
+        table.details-order tr.block_total td.td_box_none:nth-child(2),
+        table.details-order tr.block_total td.td_box_none:nth-child(3){
+          position: absolute;
+          display: none;
+        }
+        table.details-order tr.block_total td:nth-child(4):before{ content: 'TOTAL'; }
+
+        table.details-order tr.block_total td:nth-child(4){ padding-left: 70%; }
+        table.details-order tr.block_total td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-order tr.tr_box_none {
+          display: none;
+        }
+
+        table.details-order tr,
+        table.details-order td{
+            display: block;
+        }
+        table.details-order tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Vendedores
+      -------------------------------------------------------------------------------*/
+
+        /* traduccion */
+        /* ESP */
+        table.list-sellers.list-sellers-esp td:nth-child(1):before{ content: 'Código'; }
+        table.list-sellers.list-sellers-esp td:nth-child(2):before{ content: 'Descripción'; }
+        /**/
+        /* ENG */
+        table.list-sellers.list-sellers-en td:nth-child(1):before{ content: 'Code'; }
+        table.list-sellers.list-sellers-en td:nth-child(2):before{ content: 'Description'; }
+        /**/
+        /* FRA */
+        table.list-sellers.list-sellers-fra td:nth-child(1):before{ content: 'Code'; }
+        table.list-sellers.list-sellers-fra td:nth-child(2):before{ content: 'Nom'; }
+        /**/
+        table.list-sellers td:nth-child(3):before{ content: ''; }
+
+        table.list-sellers td:nth-child(1),
+        table.list-sellers td:nth-child(2){ padding-left: 40%; }
+
+        table.list-sellers td:nth-child(1):before,
+        table.list-sellers td:nth-child(2):before,
+        table.list-sellers td:nth-child(3):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-sellers td:nth-child(3) > .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        table.list-sellers tr,
+        table.list-sellers td{
+            display: block;
+        }
+        table.list-sellers tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Clientes
+      -------------------------------------------------------------------------------*/
+        /* traduccion */
+        /* ESP */
+        table.list-customers td:nth-child(1):before{ content: 'Código'; }
+        table.list-customers td:nth-child(2):before{ content: 'Descripción'; }
+        /**/
+        /* ENG */
+        table.list-customers td:nth-child(1):before{ content: 'Code'; }
+        table.list-customers td:nth-child(2):before{ content: 'Description'; }
+        /**/
+        /* FRA */
+        table.list-customers td:nth-child(1):before{ content: 'Code'; }
+        table.list-customers td:nth-child(2):before{ content: 'Nom'; }
+        /**/
+        table.list-customers td:nth-child(3):before{ content: ''; }
+
+        table.list-customers td:nth-child(1),
+        table.list-customers td:nth-child(2){ padding-left: 40%; }
+
+        table.list-customers td:nth-child(1):before,
+        table.list-customers td:nth-child(2):before,
+        table.list-customers td:nth-child(3):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.list-customers td:nth-child(3) > .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra {
+          top: 5px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:hover,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:hover,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:hover {
+          top: 5px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:active,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:active,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:active,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:focus,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:focus,
+		table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:focus {
+          top: 5px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:before,
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:before,
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-esp:hover:before {
+          color: gray;
+          content: 'Eliminar';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* ENG */
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-en:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* FRA */
+        table.list-customers td:nth-child(3) > .button-abs-resp.button-abs-resp-fra:hover:before {
+          color: gray;
+          content: 'Supprimer';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+
+        table.list-customers tr,
+        table.list-customers td{
+            display: block;
+        }
+        table.list-customers tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Detalles de Orden
+      -------------------------------------------------------------------------------*/
+
+        /* Detalles */
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(1):before{ content: '# Orden'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(2):before{ content: '# Vendedor'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(3):before{ content: 'Vendedor'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(4):before{ content: 'Fecha'; }
+        table.details-orders.details-orders-esp tr.block_detail td:nth-child(5):before{ content: 'Fecha de Entrega Solicitada'; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(1):before{ content: '# Order'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(2):before{ content: '#Vendor'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(3):before{ content: 'Vendor'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(4):before{ content: 'Date'; }
+        table.details-orders.details-orders-en tr.block_detail td:nth-child(5):before{ content: 'Requested Delivery Date'; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(1):before{ content: '# Commande'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(2):before{ content: '# Vendeur'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(3):before{ content: 'Vendeur'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(4):before{ content: 'Date'; }
+        table.details-orders.details-orders-fra tr.block_detail td:nth-child(5):before{ content: 'Date souhaitée de livraison'; }
+        /**/
+
+        table.details-orders tr.block_detail td:nth-child(1),
+        table.details-orders tr.block_detail td:nth-child(2),
+        table.details-orders tr.block_detail td:nth-child(3),
+        table.details-orders tr.block_detail td:nth-child(4),
+        table.details-orders tr.block_detail td:nth-child(5) { padding-left: 40%; }
+
+        table.details-orders tr.block_detail td:nth-child(1):before,
+        table.details-orders tr.block_detail td:nth-child(2):before,
+        table.details-orders tr.block_detail td:nth-child(3):before,
+        table.details-orders tr.block_detail td:nth-child(4):before,
+        table.details-orders tr.block_detail td:nth-child(5):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        table.details-orders tr.block_detail td.td_box_none:nth-child(5) {
+        	padding-bottom: 25px;
+        }
+        table.details-orders tr.block_detail td.td_box_none:nth-child(7){
+          position: absolute;
+          display: none;
+        }
+
+        /* Address */
+        table.details-orders tr.block_address td:nth-child(1):before{ content: ''; }
+        table.details-orders tr.block_address td:nth-child(2):before{ content: ''; }
+
+        table.details-orders tr.block_address td:nth-child(1),
+        table.details-orders tr.block_address td:nth-child(2){ padding: 5px; text-align: justify; }
+
+        table.details-orders tr.block_address td:nth-child(1):before,
+        table.details-orders tr.block_address td:nth-child(2):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        /* Comments */
+        table.details-orders tr.block_comments td:nth-child(1):before{ content: ''; }
+        table.details-orders tr.block_comments td:nth-child(2):before{ content: ''; }
+
+        table.details-orders tr.block_comments td:nth-child(1),
+        table.details-orders tr.block_comments td:nth-child(2){ padding: 5px; text-align: justify; }
+
+        table.details-orders tr.block_comments td:nth-child(1):before,
+        table.details-orders tr.block_comments td:nth-child(2):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        /* Country */
+        table.details-orders td.country_caption:nth-child(1):before{ content: ''; }
+
+        /* Detalle Producto */
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(1):before{ content: ''; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(2):before{ content: 'Código'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(3):before{ content: 'Descripción'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(4):before{ content: 'Presentación'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(5):before{ content: 'Presentación (Inglés)'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(6):before{ content: 'Precio'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(7):before{ content: 'Cantidad Ordenada	'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(8):before{ content: 'Total USD'; }
+        table.details-orders.details-orders-esp tr.block_detail_product td:nth-child(9):before{ content: ''; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(1):before{ content: ''; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(2):before{ content: 'Product Code'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(3):before{ content: 'Description'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(4):before{ content: 'Appearance (Spanish)'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(5):before{ content: 'Appearance'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(6):before{ content: 'Price'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(7):before{ content: 'Ordered Quantity'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(8):before{ content: 'Total USD'; }
+        table.details-orders.details-orders-en tr.block_detail_product td:nth-child(9):before{ content: ''; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(1):before{ content: ''; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(2):before{ content: 'Code'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(3):before{ content: 'Description'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(4):before{ content: 'Présentation (Espagnol)'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(5):before{ content: 'Présentation (Anglais)'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(6):before{ content: 'Prix'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(7):before{ content: 'Quantité Commandée'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(8):before{ content: 'Total USD'; }
+        table.details-orders.details-orders-fra tr.block_detail_product td:nth-child(9):before{ content: ''; }
+        /**/
+
+        table.details-orders tr.block_detail_product td:nth-child(1),
+        table.details-orders tr.block_detail_product td:nth-child(2),
+        table.details-orders tr.block_detail_product td:nth-child(3),
+        table.details-orders tr.block_detail_product td:nth-child(4),
+        table.details-orders tr.block_detail_product td:nth-child(5),
+        table.details-orders tr.block_detail_product td:nth-child(6),
+        table.details-orders tr.block_detail_product td:nth-child(7),
+        table.details-orders tr.block_detail_product td:nth-child(8),
+        table.details-orders tr.block_detail_product td:nth-child(9) { padding-left: 40%; }
+
+        table.details-orders tr.block_detail_product td:nth-child(1):before,
+        table.details-orders tr.block_detail_product td:nth-child(2):before,
+        table.details-orders tr.block_detail_product td:nth-child(3):before,
+        table.details-orders tr.block_detail_product td:nth-child(4):before,
+        table.details-orders tr.block_detail_product td:nth-child(5):before,
+        table.details-orders tr.block_detail_product td:nth-child(6):before,
+        table.details-orders tr.block_detail_product td:nth-child(7):before,
+        table.details-orders tr.block_detail_product td:nth-child(8):before,
+        table.details-orders tr.block_detail_product td:nth-child(9):before    {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-orders tr.block_detail_product td.td_box_none:nth-child(6){
+          position: absolute;
+          display: none;
+        }
+
+        table.details-orders td:nth-child(3) > .button-resp {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) {
+          position: absolute;
+          border: none;
+          top: 0px;
+          background: none;
+          right: 0px;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:hover,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:hover,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp.fra:hover {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:active,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:active
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:active,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:focus,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:focus,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:focus {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:before,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:before,
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-esp:hover:before {
+          color: gray;
+          content: 'Eliminar';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* ENG */
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-en:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+        /* FRA */
+        table.details-orders tr.block_detail_product td:nth-child(9) > .button-abs-resp.button-abs-resp-fra:hover:before {
+          color: gray;
+          content: 'Supprimer';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /**/
+
+        /* Total Country */
+        table.details-orders tr.block_country_total td.td_box_none:nth-child(1),
+        table.details-orders tr.block_country_total td.td_box_none:nth-child(2){
+          position: absolute;
+          display: none;
+        }
+
+
+		/* traduccion */
+	    /* ESP */
+		table.details-orders.details-orders-esp tr.block_country_total td:nth-child(3):before {
+			padding-left: 40%;
+		}
+		/**/
+		/* ENG */
+		table.details-orders.details-orders-en tr.block_country_total td:nth-child(3):before {
+			padding-left: 40%;
+		}
+		/**/
+		/* FRA */
+		table.details-orders.details-orders-fra tr.block_country_total td:nth-child(3):before {
+			padding-left: 40%;
+		}
+		/**/
+
+
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_country_total td:nth-child(3):before{ content: 'Total por País'; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_country_total td:nth-child(3):before{ content: 'Country Total'; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_country_total td:nth-child(3):before{ content: 'Total par Origine'; }
+        /**/
+
+        table.details-orders tr.block_country_total td:nth-child(4):before{ content: ''; }
+        table.details-orders tr.block_country_total td:nth-child(5):before{ content: ''; }
+
+        table.details-orders tr.block_country_total td:nth-child(3){
+        	padding-bottom: 25px;
+        }
+        table.details-orders tr.block_country_total td:nth-child(3),
+        table.details-orders tr.block_country_total td:nth-child(4),
+        table.details-orders tr.block_country_total td:nth-child(5){ padding-left: 40%; }
+
+        table.details-orders tr.block_country_total td:nth-child(1):before,
+        table.details-orders tr.block_country_total td:nth-child(2):before,
+        table.details-orders tr.block_country_total td:nth-child(3):before,
+        table.details-orders tr.block_country_total td:nth-child(4):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        /* Total */
+        table.details-orders tr.block_total td.td_box_none:nth-child(1),
+        table.details-orders tr.block_total td.td_box_none:nth-child(2){
+          position: absolute;
+          display: none;
+        }
+        table.details-orders tr.block_total td:nth-child(3) {
+        	padding-bottom: 25px;
+        }
+
+		table.details-orders tr.block_total td:nth-child(3):before {
+			padding-left: 70%;
+		}
+
+
+        /* traduccion */
+        /* ESP */
+        table.details-orders.details-orders-esp tr.block_total td:nth-child(3):before{ content: 'TOTAL'; }
+        /**/
+        /* ENG */
+        table.details-orders.details-orders-en tr.block_total td:nth-child(3):before{ content: 'TOTAL'; }
+        /**/
+        /* FRA */
+        table.details-orders.details-orders-fra tr.block_total td:nth-child(3):before{ content: 'TOTAL'; }
+        /**/
+        table.details-orders tr.block_total td:nth-child(3),
+        table.details-orders tr.block_total td:nth-child(4) { padding-left: 70%; }
+        table.details-orders tr.block_total td:nth-child(3):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.details-orders tr.tr_box_none {
+          display: none;
+        }
+
+        table.details-orders tr,
+        table.details-orders td{
+            display: block;
+        }
+        table.details-orders tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Productos Eliminados
+      -------------------------------------------------------------------------------*/
+        /* Titulo Pais */
+        table.table.products-deleted td.country_caption:nth-child(1):before{ content: ''; }
+
+        /* Detalles */
+        table.products-deleted tr.block_detail td:nth-child(1):before{ content: 'Product Code'; }
+        table.products-deleted tr.block_detail td:nth-child(2):before{ content: 'Description'; }
+        table.products-deleted tr.block_detail td:nth-child(3):before{ content: 'Appearance'; }
+        table.products-deleted tr.block_detail td:nth-child(4):before{ content: 'Appearance Eng'; }
+        table.products-deleted tr.block_detail td:nth-child(5):before{ content: 'Price'; }
+        table.products-deleted tr.block_detail td:nth-child(6):before{ content: 'Ordered Quantity'; }
+        table.products-deleted tr.block_detail td:nth-child(7):before{ content: 'Total USD'; }
+        table.products-deleted tr.block_detail td:nth-child(8):before{ content: ''; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.products-deleted tr.block_detail td:nth-child(1),
+        table.products-deleted tr.block_detail td:nth-child(2),
+        table.products-deleted tr.block_detail td:nth-child(3),
+        table.products-deleted tr.block_detail td:nth-child(4),
+        table.products-deleted tr.block_detail td:nth-child(5),
+        table.products-deleted tr.block_detail td:nth-child(6),
+        table.products-deleted tr.block_detail td:nth-child(7) { padding-left: 40%; }
+
+        table.products-deleted tr.block_detail td:nth-child(1):before,
+        table.products-deleted tr.block_detail td:nth-child(2):before,
+        table.products-deleted tr.block_detail td:nth-child(3):before,
+        table.products-deleted tr.block_detail td:nth-child(4):before,
+        table.products-deleted tr.block_detail td:nth-child(5):before,
+        table.products-deleted tr.block_detail td:nth-child(6):before,
+        table.products-deleted tr.block_detail td:nth-child(7):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.products-deleted tr.tr_box_none {
+          display: none;
+        }
+
+        table.products-deleted tr,
+        table.products-deleted td{
+            display: block;
+        }
+        table.products-deleted tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Direcciones
+      -------------------------------------------------------------------------------*/
+        /* Address */
+        table.address-list tr.block_address td:nth-child(1):before{ content: ''; }
+        table.address-list tr.block_address td:nth-child(2):before{ content: 'Codigo'; }
+        table.address-list tr.block_address td:nth-child(3):before{ content: ''; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.address-list tr.block_address td:nth-child(1),
+        table.address-list tr.block_address td:nth-child(2) { padding-left: 40%; }
+
+        table.address-list tr.block_address td:nth-child(1):before,
+        table.address-list tr.block_address td:nth-child(2):before,
+        table.address-list tr.block_address td:nth-child(3):before {
+          position: absolute; left: .5em; font-weight: bold;
+        }
+        table.address-list tr.block_address td:nth-child(3):before{ content: 'Dirección'; position: relative; }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.address-list tr.block_address td:nth-child(3),
+        table.address-list tr.block_address td:nth-child(4){ padding: 5px; text-align: justify; }
+
+        table.address-list tr.block_address td:nth-child(4) > input {
+          height: 100px;
+          word-break: break-word;
+        }
+
+        table.address-list tr.block_address td:nth-child(5) {
+          position: absolute;
+          border: none;
+          top: 0px;
+          background: none;
+          right: 0px;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:hover {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:active,
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:focus {
+          top: -2px;
+          right: 10px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        table.address-list tr.block_address td:nth-child(5) > .button-abs-resp:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.address-list tr,
+        table.address-list td{
+            display: block;
+        }
+        table.address-list tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    /*-------------------------------------------------------------------------------
+        Tabla -> Listado de Direcciones
+      -------------------------------------------------------------------------------*/
+
+        table.product-listing td:nth-child(2):before{ content: 'Codigo'; }
+        table.product-listing td:nth-child(3):before{ content: 'Descripción'; }
+        table.product-listing td:nth-child(4):before{ content: 'Presentación'; }
+        table.product-listing td:nth-child(5):before{ content: 'Presentación Eng'; }
+        table.product-listing td:nth-child(6):before{ content: 'Precio'; }
+        table.product-listing td:nth-child(7):before{ content: 'Tipo Moneda'; }
+        table.product-listing td:nth-child(8):before{ content: 'UMV'; }
+        /* traduccion */
+        /* ESP */
+        table.product-listing td:nth-child(2):before{ content: 'Codigo'; }
+        table.product-listing td:nth-child(3):before{ content: 'Descripción'; }
+        table.product-listing td:nth-child(4):before{ content: 'Presentación'; }
+        table.product-listing td:nth-child(5):before{ content: 'Presentación Eng'; }
+        table.product-listing td:nth-child(6):before{ content: 'Precio'; }
+        table.product-listing td:nth-child(7):before{ content: 'Tipo Moneda'; }
+        table.product-listing td:nth-child(8):before{ content: 'UMV'; }
+        /**/
+        /* ENG */
+        table.product-listing td:nth-child(2):before{ content: 'Codigo'; }
+        table.product-listing td:nth-child(3):before{ content: 'Descripción'; }
+        table.product-listing td:nth-child(4):before{ content: 'Presentación'; }
+        table.product-listing td:nth-child(5):before{ content: 'Presentación Eng'; }
+        table.product-listing td:nth-child(6):before{ content: 'Precio'; }
+        table.product-listing td:nth-child(7):before{ content: 'Tipo Moneda'; }
+        table.product-listing td:nth-child(8):before{ content: 'UMV'; }
+        /**/
+        /* FRA */
+        /**/
+
+        table.product-listing td:nth-child(2),
+        table.product-listing td:nth-child(3),
+        table.product-listing td:nth-child(4),
+        table.product-listing td:nth-child(5),
+        table.product-listing td:nth-child(6),
+        table.product-listing td:nth-child(7),
+        table.product-listing td:nth-child(8){ padding-left: 40%; }
+
+        table.product-listing td:nth-child(2):before,
+        table.product-listing td:nth-child(3):before,
+        table.product-listing td:nth-child(4):before,
+        table.product-listing td:nth-child(5):before,
+        table.product-listing td:nth-child(6):before,
+        table.product-listing td:nth-child(7):before,
+        table.product-listing td:nth-child(8):before{
+          position: absolute; left: .5em; font-weight: bold;
+        }
+
+        table.product-listing td:nth-child(9), table.product-listing:hover td:nth-child(9),
+        table.product-listing:active td:nth-child(9), table.product-listing:focus td:nth-child(9) {
+          position: absolute;
+          border: none;
+          top: 0px;
+          background: none;
+          right: 0px;
+        }
+
+        table.product-listing td:nth-child(9) > .button-abs-resp {
+          top: 0px;
+          right: 9px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #D58F8D;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.product-listing td:nth-child(9) > .button-abs-resp:hover {
+          top: 0px;
+          right: 9px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #d9534f;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+        table.product-listing td:nth-child(9) > .button-abs-resp:active,
+        table.product-listing td:nth-child(9) > .button-abs-resp:focus {
+          top: 0px;
+          right: 9px;
+          padding: 0;
+          position: absolute;
+          width: 35px;
+          height: 43px;
+          font-size: 2.3em;
+          color: #BAA2A1;
+          background: rgba(255, 255, 255, 0);
+          border: none;
+        }
+
+        table.product-listing td:nth-child(9) > .button-abs-resp:before {
+          color: gray;
+          content: '';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: -0px;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        table.product-listing td:nth-child(9) > .button-abs-resp:hover:before {
+          color: gray;
+          content: 'Delete';
+          position: absolute;
+          font-size: 0.5em;
+          right: 40px;
+          top: 9px;
+          visibility: visible;
+          opacity: 1;
+          -webkit-transition: all .1s ease-in-out;
+             -moz-transition: all .1s ease-in-out;
+              -ms-transition: all .1s ease-in-out;
+               -o-transition: all .1s ease-in-out;
+                  transition: all .1s ease-in-out;
+        }
+        /* traduccion */
+        /* ESP */
+        /**/
+        /* ENG */
+        /**/
+        /* FRA */
+        /**/
+
+        table.product-listing tr,
+        table.product-listing td{
+            display: block;
+        }
+        table.product-listing tr{
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .icon_resp {
+
+        }
+        .mod_resp {
+          display: block;
+        }
+
+        /* Menu */
+        .horizontal-menu .navbar-nav > li.hover_resp:hover > a {
+          border-radius: 0px;
+          -webkit-border-radius: 0px;
+          -webkit-transition: all .25s ease-in-out;
+             -moz-transition: all .25s ease-in-out;
+              -ms-transition: all .25s ease-in-out;
+               -o-transition: all .25s ease-in-out;
+                  transition: all .25s ease-in-out;
+        }
+
+
+}
+
+/*@media (max-width : 1680px) {
+  svg.resp_graph{
+    width: 980px;
+  }
+}*/
+/*@media (max-width : 320px) {
+  svg.resp_graph{
+    width: 338px;
+  }
+}*/
+/*
+svg.resp_graph{
+  max-width: 418px;
+}
+svg.resp_graph{
+  max-width: 578px;
+}
+svg.resp_graph{
+  max-width: 583px;
+}
+svg.resp_graph{
+  max-width: 742px;
+}
+*/

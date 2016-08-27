@@ -1,0 +1,2414 @@
+
+html.noScroll,html.noScroll body {
+	width: 100%;
+	overflow: hidden;
+}
+
+html.noScroll.touchCapability,html.noScroll.touchCapability body {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+
+.section {
+	margin: 0 auto;
+	width: 100%;
+	min-width: 200px;
+	overflow: hidden;
+}
+
+.el .section {
+	width: 100%;
+}
+
+.el {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+/*body .container {
+	padding: 0;
+	position: relative;
+	max-width: 2000px;
+	margin: 0 auto;
+}
+*/
+body.isFullscreen .container {
+	max-width: initial;
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+	.section {
+	width: 96%;
+}
+
+.el .section {
+	width: 100%;
+}
+
+
+}
+
+@media screen and (min-width:  740px) and (max-width:  899px) {
+	.section {
+	width: 100%;
+	min-width: 320px;
+}
+
+.el .section {
+	width: 100%;
+}
+
+body .el .el {
+	left: 0;
+	width: 100%;
+}
+
+
+}
+
+@media screen and (min-width:  901px) {
+	.section {
+	width: 100%;
+}
+
+.el .section {
+	width: 100%;
+}
+
+
+}
+
+/*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-khtml-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}*/
+
+.dark,.grey {
+	background-color: #484848;
+}
+
+.dark h1,.dark h2,.dark h3,.dark h4,.dark a,.dark .totals,.grey h1,.grey h2,.grey h3,.grey h4,.grey a,.grey .totals {
+	color: #fff;
+}
+
+.dark .primaryHeader,.dark .subHeading,.dark .subOverview,.dark .primaryHeading,.dark .secondaryHeading,.grey .primaryHeader,.grey .subHeading,.grey .subOverview,.grey .primaryHeading,.grey .secondaryHeading {
+	color: #fff;
+}
+
+.grey {
+	background-color: #393939;
+	background-image: url(../../img/texture-dark-grey.png);
+	background-repeat: repeat;
+}
+
+.light,.no-js .lightWhenNoJS {
+	background-color: #ddd;
+	background-image: url(../../img/texture-grey-mist.png);
+	background-repeat: repeat;
+	color: #333;
+}
+
+.light h1,.light h2,.light h3,.light h4,.light a,.light p,.light .totals,.no-js .lightWhenNoJS h1,.no-js .lightWhenNoJS h2,.no-js .lightWhenNoJS h3,.no-js .lightWhenNoJS h4,.no-js .lightWhenNoJS a,.no-js .lightWhenNoJS p,.no-js .lightWhenNoJS .totals {
+	color: #222;
+}
+
+.light .primaryHeader,.light .subHeading,.light .subOverview,.light .primaryHeading,.light .secondaryHeading,.no-js .lightWhenNoJS .primaryHeader,.no-js .lightWhenNoJS .subHeading,.no-js .lightWhenNoJS .subOverview,.no-js .lightWhenNoJS .primaryHeading,.no-js .lightWhenNoJS .secondaryHeading {
+	color: #222;
+}
+
+.light.ArticleQuote,.no-js .lightWhenNoJS.ArticleQuote {
+	background: #fff;
+}
+
+#landrover .darkText {
+	color: #393939;
+}
+
+#landrover .darkText h1,#landrover .darkText h2,#landrover .darkText h3,#landrover .darkText h4,#landrover .darkText .primaryHeader,#landrover .darkText .subHeading,#landrover .darkText .subOverview,#landrover .darkText .primaryHeading,#landrover .darkText .secondaryHeading,#landrover .darkText .price,#landrover .darkText a,#landrover .darkText p {
+	color: #393939;
+}
+
+body {
+	/*font-family: 'jaguarregular',Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.02em;*/
+	-webkit-text-size-adjust: none;
+}
+
+/*h1,h2,h3,h4,h5,h6,p {
+	line-height: 1.4em;
+}*/
+
+h2 {
+	font-family: 'ProximaNovaSemibold',Arial,Helvetica,sans-serif;
+	font-size: 36px;
+}
+
+h1.wideCentred,h2.wideCentred,h3.wideCentred {
+	font-family: 'ProximaNovaBold',Arial,Helvetica,sans-serif;
+	font-size: 30px;
+	font-weight: 100;
+	letter-spacing: 0.4em;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	left: 6px;
+	line-height: 1.25;
+}
+
+h1.vehicleNameHeader,h2.vehicleNameHeader,h3.vehicleNameHeader {
+	font-weight: 500;
+}
+
+h1.avenir,h2.avenir,h3.avenir {
+	font-family: 'jaguarbold',Arial,Helvetica,sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	font-size: 16px;
+}
+
+h1.primaryHeading,h2.primaryHeading,h3.primaryHeading {
+	font-family: 'jaguarbold',Arial,Helvetica,sans-serif;
+	font-size: 32px;
+	line-height: 1.1em;
+	letter-spacing: 0.15em;
+	text-align: center;
+	font-weight: 500;
+	padding-bottom: 20px;
+}
+
+h1.secondaryHeading,h2.secondaryHeading,h3.secondaryHeading {
+	font-size: 32px;
+	line-height: 1.1em;
+	letter-spacing: 0.15em;
+	padding-bottom: 20px;
+	text-align: center;
+	font-weight: 100;
+}
+
+h1.tertiaryHeading,h2.tertiaryHeading,h3.tertiaryHeading {
+	font-family: 'jaguarbold',Arial,Helvetica,sans-serif;
+	font-size: 26px;
+	color: #393939;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+}
+
+h3 {
+	font-family: 'jaguarregular',Arial,Helvetica,sans-serif;
+	font-size: 34px;
+}
+
+h3.avenir {
+	font-family: 'jaguarregular',Arial,Helvetica,sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+h3,h4 {
+	font-size: 32px;
+}
+
+.heroContent-promo {
+	line-height: 16em;
+}
+.heroContent .primaryHeader {
+	font-family: 'jaguarbold',Arial,Helvetica,sans-serif;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 1.1em;
+	letter-spacing: 0.15em;
+	color: #fff;
+	text-transform: uppercase;
+}
+.heroContent-promo .primaryHeader.promo {
+	font-family: 'jaguarbold',Arial,Helvetica,sans-serif;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 1.1em;
+	letter-spacing: 0.15em;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.heroContent-promo p.promo-p {
+	font: 500 20px/1.5em 'ProximaNovaRegular',Arial,Helvetica,sans-serif;
+	letter-spacing: 0.12em;
+	color: #fff;
+	margin-top: 9px;
+	margin-bottom: 4px;
+	text-transform: uppercase;
+}
+
+.subHeading {
+	color: #cbcbce;
+	font-family: 'ProximaNovaRegular',Arial,Helvetica,sans-serif;
+	margin: 20px auto 0;
+	font-size: 14px;
+	text-align: center;
+	line-height: 18px;
+	word-wrap: break-word;
+	max-width: 80%;
+}
+
+.subOverview {
+	font-family: 'ProximaNovaRegular',Arial,Helvetica,sans-serif;
+	font-size: 20px;
+	line-height: 1.5em;
+	color: #c2c2c2;
+	letter-spacing: 0.12em;
+}
+
+/*p {
+	font-family: 'jaguarregular',Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	color: #c2c2c2;
+	letter-spacing: 0.015em;
+}*/
+
+p.darkGrey {
+	color: #393939;
+	padding-bottom: 14px;
+}
+
+b {
+	font-weight: 800;
+}
+
+small {
+	font-size: 11px;
+}
+
+.vehicleTagline {
+	font-size: 16px;
+	margin: 0 auto 45px auto;
+	max-width: 600px;
+}
+
+.unorderedList,.orderedList,.bulletedList {
+	display: inline-block;
+	margin: 40px 0 0 50px;
+	line-height: 1.6;
+	font-size: 16px;
+}
+
+.unorderedList:after,.orderedList:after,.bulletedList:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.unorderedList li,.orderedList li,.bulletedList li {
+	padding-left: 10px;
+	list-style-type: square;
+	margin-bottom: 20px;
+}
+
+.orderedList {
+	font-weight: bold;
+}
+
+.orderedList li {
+	list-style-type: decimal;
+}
+
+.orderedList li strong {
+	font-weight: normal;
+}
+
+dl {
+	width: 100%;
+	line-height: 1.6;
+}
+
+dl dt,dl dd {
+	width: 100%;
+	text-align: left;
+}
+
+dl dd {
+	margin-bottom: 20px;
+}
+
+dl dd: last-child {
+	margin-bottom: 0;
+}
+
+dl dt {
+	font-weight: 800;
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+
+}
+
+@media screen and (min-width:  901px) {
+	dd {
+	width: 40%;
+}
+
+
+}
+
+ul.bullets {
+	margin: 0 0 20px 40px;
+}
+
+ul.bullets li {
+	line-height: 1.6;
+	font-size: 14px;
+	list-style-type: square;
+}
+
+blockquote,.blockquote {
+	margin: 30px 0 20px 40px;
+	font-size: 20px;
+	line-height: 1.5em;
+	letter-spacing: 0.05em;
+}
+
+sub,sup {
+	font-size: 0.7em;
+	position: relative;
+}
+
+sub {
+	bottom: -2px;
+}
+
+sup {
+	top: -2px;
+}
+
+.fontSmooth {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+a, a:hover, a:focus {
+	color: rgba(255,255,255,0.8);
+	text-decoration: none;
+	outline: none;
+}
+
+.carousel .controls {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-top: solid 1px #4e4e4e;
+	height: 54px;
+	background-color: #393939;
+	background-image: url(../../img/texture-dark-grey.png);
+	background-repeat: repeat;
+}
+
+.carousel .controls .col1 {
+	float: left;
+	width: 100%;
+}
+
+.carousel .rsNav {
+	text-align: center;
+	margin-right: 116px;
+}
+
+.carousel .rsNav .rsNavItem {
+	display: inline-block;
+	margin: 0 5px;
+	padding: 26px 0;
+	background-image: url(../../img/transparent-1x1.png);
+}
+
+.carousel .rsNav .rsNavItem span {
+	display: block;
+	height: 5px;
+	width: 33px;
+	background-color: #fff;
+	line-height: 2px;
+	font-size: 1px;
+	text-indent: -99em;
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=20);
+	opacity: 0.2;
+	-webkit-transition: opacity 0.4s;
+	-webkit-transition-delay: ease;
+	-moz-transition: opacity 0.4s ease;
+	-o-transition: opacity 0.4s ease;
+	transition: opacity 0.4s ease;
+}
+
+.carousel .rsNav .rsNavItem span:hover {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+.carousel .rsNav .rsNavItem span.selected {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+.carousel .pagination {
+	text-align: center;
+	margin-right: 116px;
+}
+
+.carousel .pagination li {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.carousel .pagination li a {
+	padding: 26px 0;
+	display: block;
+	text-decoration: none;
+}
+
+.carousel .pagination li a span {
+	display: block;
+	height: 2px;
+	width: 33px;
+	background-color: #fff;
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=20);
+	opacity: 0.2;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 0.4s;
+	-khtml-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-ms-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-timing-function: ease;
+	-khtml-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	-ms-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	transition-timing-function: ease;
+	line-height: 2px;
+	font-size: 1px;
+	text-indent: -99em;
+}
+
+.carousel .pagination li:hover span {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+.carousel .pagination li.selected span {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+.carousel .alternativePagination {
+	display: none;
+	text-align: center;
+	margin-right: 116px;
+	margin-top: 23px;
+	color: #cbcbce;
+	font-size: 12px;
+}
+
+.carousel .navigation {
+	float: left;
+	margin-left: -116px;
+	width: 116px;
+}
+
+.carousel .navigation li {
+	border-left: solid 1px #4e4e4e;
+	float: left;
+}
+
+.carousel .navigation li a {
+	display: block;
+	width: 57px;
+	height: 54px;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 0 0 0;
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0);
+	opacity: 0.2;
+	-webkit-transition-duration: 0.4s;
+	-khtml-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-ms-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-timing-function: ease;
+	-khtml-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	-ms-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	transition-timing-function: ease;
+}
+
+.carousel .navigation li a i {
+	color: #fff;
+	font-size: 28px;
+}
+
+.carousel .navigation.notTouchDevice li a:hover {
+	opacity: 1;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.royalSlider {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	direction: ltr;
+}
+
+.royalSlider > * {
+	float: left;
+}
+
+.rsWebkit3d .rsSlide {
+	-webkit-transform: translateZ(0);
+}
+
+.rsWebkit3d .rsSlide,.rsWebkit3d .rsContainer,.rsWebkit3d .rsThumbs,.rsWebkit3d .rsPreloader,.rsWebkit3d img,.rsWebkit3d .rsOverflow,.rsWebkit3d .rsBtnCenterer,.rsWebkit3d .rsAbsoluteEl,.rsWebkit3d .rsABlock,.rsWebkit3d .rsLink {
+	-webkit-backface-visibility: hidden;
+}
+
+.rsFade.rsWebkit3d .rsSlide,.rsFade.rsWebkit3d img,.rsFade.rsWebkit3d .rsContainer {
+	-webkit-transform: none;
+}
+
+.rsOverflow {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rsVisibleNearbyWrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rsVisibleNearbyWrap .rsOverflow {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.rsContainer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rsArrow,.rsThumbsArrow {
+	cursor: pointer;
+}
+
+.rsThumb {
+	float: left;
+	position: relative;
+}
+
+.rsArrow,.rsNav,.rsThumbsArrow {
+	opacity: 1;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+.rsHidden {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+	-moz-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+	-o-transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+	transition: visibility 0s linear 0.3s,opacity 0.3s linear;
+}
+
+.rsGCaption {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+.royalSlider.rsFullscreen {
+	position: fixed !important;
+	height: auto !important;
+	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	z-index: 2147483647 !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+}
+
+.royalSlider .rsSlide.rsFakePreloader {
+	opacity: 1 !important;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+	-o-transition: 0s;
+	transition: 0s;
+	display: none;
+}
+
+.rsSlide {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+.royalSlider.rsAutoHeight,.rsAutoHeight .rsSlide {
+	height: auto;
+}
+
+.rsPreloader {
+	position: absolute;
+	z-index: 0;
+}
+
+.rsNav {
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.rsNavItem {
+	-webkit-tap-highlight-color: rgba(12, 18, 28, 1);
+}
+
+.rsThumbs {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	z-index: 22;
+}
+
+.rsTabs {
+	float: left;
+	background: none !important;
+}
+
+.rsTabs,.rsThumbs {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rsVideoContainer {
+	width: auto;
+	height: auto;
+	line-height: 0;
+	position: relative;
+}
+
+.rsVideoFrameHolder {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #141414;
+	opacity: 0;
+	-webkit-transition: 0.3s;
+}
+
+.rsVideoFrameHolder.rsVideoActive {
+	opacity: 1;
+}
+
+.rsVideoContainer iframe,.rsVideoContainer video,.rsVideoContainer embed,.rsVideoContainer .rsVideoObj {
+	position: absolute;
+	z-index: 50;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.rsVideoContainer.rsIOSVideo iframe,.rsVideoContainer.rsIOSVideo video,.rsVideoContainer.rsIOSVideo embed {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-right: 44px;
+}
+
+.rsABlock {
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 15;
+}
+
+img.rsImg {
+	max-width: none;
+}
+
+.grab-cursor {
+	cursor: move;
+	cursor: grab;
+}
+
+.grabbing-cursor {
+	cursor: move;
+	cursor: grabbing;
+}
+
+.rsNoDrag {
+	cursor: auto;
+}
+
+.rsLink {
+	left: 0;
+	top: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 20;
+	background: url(blank.gif);
+}
+
+.rsDefault,.rsDefault .rsOverflow,.rsDefault .rsSlide,.rsDefault .rsVideoFrameHolder,.rsDefault .rsThumbs {
+	background: #151515;
+	color: #FFF;
+}
+
+.rsDefault .rsArrow {
+	height: 100%;
+	width: 44px;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+	z-index: 21;
+}
+
+.rsDefault.rsVer .rsArrow {
+	width: 100%;
+	height: 44px;
+}
+
+.rsDefault.rsVer .rsArrowLeft {
+	top: 0;
+	left: 0;
+}
+
+.rsDefault.rsVer .rsArrowRight {
+	bottom: 0;
+	left: 0;
+}
+
+.rsDefault.rsHor .rsArrowLeft {
+	left: 0;
+	top: 0;
+}
+
+.rsDefault.rsHor .rsArrowRight {
+	right: 0;
+	top: 0;
+}
+
+.rsDefault .rsArrowIcn {
+	width: 32px;
+	height: 32px;
+	top: 50%;
+	left: 50%;
+	margin-top: -16px;
+	margin-left: -16px;
+	position: absolute;
+	cursor: pointer;
+	background: url('rs-default.png');
+	background-color: #0c121c;
+	background-color: rgba(0, 0, 0, 0.75);
+	*background-color: #0c121c;
+	border-radius: 2px;
+}
+
+.rsDefault .rsArrowIcn:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.rsDefault.rsHor .rsArrowLeft .rsArrowIcn {
+	background-position: -64px -32px;
+}
+
+.rsDefault.rsHor .rsArrowRight .rsArrowIcn {
+	background-position: -64px -64px;
+}
+
+.rsDefault.rsVer .rsArrowLeft .rsArrowIcn {
+	background-position: -96px -32px;
+}
+
+.rsDefault.rsVer .rsArrowRight .rsArrowIcn {
+	background-position: -96px -64px;
+}
+
+.rsDefault .rsArrowDisabled .rsArrowIcn {
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	*display: none;
+}
+
+.rsDefault .rsBullets {
+	position: absolute;
+	z-index: 35;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	background: #0c121c;
+	background: rgba(0, 0, 0, 0.75);
+	text-align: center;
+	line-height: 8px;
+	overflow: hidden;
+}
+
+.rsDefault .rsBullet {
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	padding: 6px 5px 6px;
+}
+
+.rsDefault .rsBullet span {
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #777;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.rsDefault .rsBullet.rsNavSelected span {
+	background-color: #FFF;
+}
+
+.rsDefault .rsThumbsHor {
+	width: 100%;
+}
+
+.rsDefault .rsThumbsVer {
+	width: 96px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.rsDefault.rsWithThumbsHor .rsThumbsContainer {
+	position: relative;
+	height: 100%;
+}
+
+.rsDefault.rsWithThumbsVer .rsThumbsContainer {
+	position: relative;
+	width: 100%;
+}
+
+.rsDefault .rsThumb {
+	float: left;
+	overflow: hidden;
+	width: 96px;
+	height: 72px;
+}
+
+.rsDefault .rsThumb img {
+	width: 100%;
+	height: 100%;
+}
+
+.rsDefault .rsThumb.rsNavSelected {
+	background: #02874a;
+}
+
+.rsDefault .rsThumb.rsNavSelected img {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
+.rsDefault .rsTmb {
+	display: block;
+}
+
+.rsDefault .rsTmb h5 {
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	line-height: 20px;
+	color: #FFF;
+}
+
+.rsDefault .rsTmb span {
+	color: #DDD;
+	margin: 0;
+	padding: 0;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.rsDefault .rsThumbsArrow {
+	height: 100%;
+	width: 20px;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+	z-index: 21;
+	background: #0c121c;
+	background: rgba(0, 0, 0, 0.75);
+}
+
+.rsDefault .rsThumbsArrow:hover {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.rsDefault.rsWithThumbsVer .rsThumbsArrow {
+	width: 100%;
+	height: 20px;
+}
+
+.rsDefault.rsWithThumbsVer .rsThumbsArrowLeft {
+	top: 0;
+	left: 0;
+}
+
+.rsDefault.rsWithThumbsVer .rsThumbsArrowRight {
+	bottom: 0;
+	left: 0;
+}
+
+.rsDefault.rsWithThumbsHor .rsThumbsArrowLeft {
+	left: 0;
+	top: 0;
+}
+
+.rsDefault.rsWithThumbsHor .rsThumbsArrowRight {
+	right: 0;
+	top: 0;
+}
+
+.rsDefault .rsThumbsArrowIcn {
+	width: 16px;
+	height: 16px;
+	top: 50%;
+	left: 50%;
+	margin-top: -8px;
+	margin-left: -8px;
+	position: absolute;
+	cursor: pointer;
+	background: url('rs-default.png');
+}
+
+.rsDefault.rsWithThumbsHor .rsThumbsArrowLeft .rsThumbsArrowIcn {
+	background-position: -128px -32px;
+}
+
+.rsDefault.rsWithThumbsHor .rsThumbsArrowRight .rsThumbsArrowIcn {
+	background-position: -128px -48px;
+}
+
+.rsDefault.rsWithThumbsVer .rsThumbsArrowLeft .rsThumbsArrowIcn {
+	background-position: -144px -32px;
+}
+
+.rsDefault.rsWithThumbsVer .rsThumbsArrowRight .rsThumbsArrowIcn {
+	background-position: -144px -48px;
+}
+
+.rsDefault .rsThumbsArrowDisabled {
+	display: none !important;
+}
+
+@media screen and (min-width:  0px) and (max-width:  800px) {
+	.rsDefault .rsThumb {
+	width: 59px;
+	height: 44px;
+}
+
+.rsDefault .rsThumbsVer {
+	width: 59px;
+}
+
+
+}
+
+.rsDefault .rsTabs {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	padding-top: 12px;
+	position: relative;
+}
+
+.rsDefault .rsTab {
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	height: auto;
+	width: auto;
+	color: #333;
+	padding: 5px 13px 6px;
+	min-width: 72px;
+	border: 1px solid #D9D9DD;
+	border-right: 1px solid #f5f5f5;
+	text-decoration: none;
+	background-color: #FFF;
+	background-image: -webkit-linear-gradient(top, #fefefe, #f4f4f4);
+	background-image: -moz-linear-gradient(top, #fefefe, #f4f4f4);
+	background-image: linear-gradient(to bottom, #fefefe, #f4f4f4);
+	-webkit-box-shadow: inset 1px 0 0 #fff;
+	box-shadow: inset 1px 0 0 #fff;
+	*display: inline;
+	*zoom: 1;
+}
+
+.rsDefault .rsTab:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.rsDefault .rsTab: last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-right: 1px solid #cfcfcf;
+}
+
+.rsDefault .rsTab: active {
+	border: 1px solid #D9D9DD;
+	background-color: #f4f4f4;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+}
+
+.rsDefault .rsTab.rsNavSelected {
+	color: #FFF;
+	border: 1px solid #999;
+	text-shadow: 1px 1px #838383;
+	box-shadow: 0 1px 9px rgba(102, 102, 102, 0.65) inset;
+	background: #ACACAC;
+	background-image: -webkit-linear-gradient(top, #ACACAC, #BBB);
+	background-image: -moz-llinear-gradient(top, #ACACAC, #BBB);
+	background-image: linear-gradient(to bottom, #ACACAC, #BBB);
+}
+
+.rsDefault .rsFullscreenBtn {
+	right: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	z-index: 22;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.rsDefault .rsFullscreenIcn {
+	display: block;
+	margin: 6px;
+	width: 32px;
+	height: 32px;
+	background: url('rs-default.png') 0 0;
+	background-color: #0c121c;
+	background-color: rgba(0, 0, 0, 0.75);
+	*background-color: #0c121c;
+	border-radius: 2px;
+}
+
+.rsDefault .rsFullscreenIcn:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.rsDefault.rsFullscreen .rsFullscreenIcn {
+	background-position: -32px 0;
+}
+
+.rsDefault .rsPlayBtn {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+	width: 64px;
+	height: 64px;
+	margin-left: -32px;
+	margin-top: -32px;
+	cursor: pointer;
+}
+
+.rsDefault .rsPlayBtnIcon {
+	width: 64px;
+	display: block;
+	height: 64px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	transition: 0.3s;
+	background: url(rs-default.png) no-repeat 0 -32px;
+	background-color: #0c121c;
+	background-color: rgba(0, 0, 0, 0.75);
+	*background-color: #0c121c;
+}
+
+.rsDefault .rsPlayBtn:hover .rsPlayBtnIcon {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.rsDefault .rsBtnCenterer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+.rsDefault .rsCloseVideoBtn {
+	right: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	z-index: 500;
+	position: absolute;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+}
+
+.rsDefault .rsCloseVideoBtn.rsiOSBtn {
+	top: -38px;
+	right: -6px;
+}
+
+.rsDefault .rsCloseVideoIcn {
+	margin: 6px;
+	width: 32px;
+	height: 32px;
+	background: url('rs-default.png') -64px 0;
+	background-color: #0c121c;
+	background-color: rgba(0, 0, 0, 0.75);
+	*background-color: #0c121c;
+}
+
+.rsDefault .rsCloseVideoIcn:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.rsDefault .rsPreloader {
+	width: 20px;
+	height: 20px;
+	background-image: url(../../preloaders/preloader-white.gif);
+	left: 50%;
+	top: 50%;
+	margin-left: -10px;
+	margin-top: -10px;
+}
+
+.rsDefault .rsGCaption {
+	position: absolute;
+	float: none;
+	bottom: 6px;
+	left: 6px;
+	text-align: left;
+	background: black;
+	background: rgba(0, 0, 0, 0.75);
+	color: #FFF;
+	padding: 2px 8px;
+	width: auto;
+	font-size: 12px;
+	border-radius: 2px;
+}
+
+
+
+.HeroCarousel {
+	width: 100%;
+	height: 250px;
+	min-height: 250px;
+	text-align: center;
+	position: relative;
+	background-color: #0c121c;
+	overflow: hidden;
+}
+.HeroCarousel.inner {
+	width: 100%;
+	height: 250px;
+	min-height: 250px;
+	max-height: 575px;
+	text-align: center;
+	position: relative;
+	background-color: #0c121c;
+	overflow: hidden;
+}
+.HeroCarousel, .HeroCarousel.inner {
+	background: #eeeeee url(../../img/loading.gif) center center no-repeat;
+}
+
+.HeroCarousel.loaded, .HeroCarousel.inner.loaded {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+.HeroCarousel .rsOverflow, .HeroCarousel.inner .rsOverflow {
+	min-height: 450px;
+}
+
+.HeroCarousel .carousel, .HeroCarousel.inner .carousel {
+	text-align: center;
+	overflow: hidden;
+	direction: ltr;
+}
+
+.HeroCarousel .carousel .rsSlide,
+.HeroCarousel.inner .carousel .rsSlide {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: table;
+}
+
+.HeroCarousel .carousel .heroItem,
+.HeroCarousel.inner .carousel .heroItem {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+
+.HeroCarousel .carousel .heroItem > span,
+.HeroCarousel .carousel .heroItem noscript > div,
+.HeroCarousel .carousel .heroItem .VideoPlayer > span,
+.HeroCarousel.inner .carousel .heroItem > span,
+.HeroCarousel.inner .carousel .heroItem noscript > div,
+.HeroCarousel.inner .carousel .heroItem .VideoPlayer > span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	z-index: -1;
+	-webkit-background-size: cover;
+	-khtml-background-size: cover;
+	-moz-background-size: cover;
+	-ms-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.HeroCarousel .carousel .heroItem > span,
+.HeroCarousel.inner .carousel .heroItem > span {
+	z-index: 0;
+}
+
+.HeroCarousel .carousel .heroItem .heroContent,
+.HeroCarousel.inner .carousel .heroItem .heroContent {
+	max-width: 640px;
+	display: inline-block;
+	text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-webkit-transform: translateZ(0);
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	position: relative;
+	z-index: 1;
+}
+
+.HeroCarousel .carousel .heroItem .heroContent p,
+.HeroCarousel.inner .carousel .heroItem .heroContent p {
+	font: 500 20px/1.5em 'jaguarregular',Arial,Helvetica,sans-serif;
+	letter-spacing: 0.12em;
+	color: #fff;
+	margin-top: 9px;
+	margin-bottom: 4px;
+}
+
+.HeroCarousel .carousel .heroItem .heroContent .price,
+.HeroCarousel.inner .carousel .heroItem .heroContent .price {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.HeroCarousel .carousel .heroItem .heroContent .linkContainer,
+.HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer {
+	white-space: pre-line;
+}
+
+.HeroCarousel .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle,
+.HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle {
+	text-shadow: none;
+}
+
+@media screen and (min-width:  741px) {
+	.HeroCarousel .carousel .heroItem .heroContent,
+	.HeroCarousel.inner .carousel .heroItem .heroContent {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+}
+
+
+}
+
+.HeroCarousel .carousel .heroItem .heroContent.visible,
+.HeroCarousel.inner .carousel .heroItem .heroContent.visible {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	-webkit-transition: opacity 0.8s;
+	-webkit-transition-delay: ease;
+	-moz-transition: opacity 0.8s ease;
+	-o-transition: opacity 0.8s ease;
+	transition: opacity 0.8s ease;
+}
+
+.HeroCarousel .carousel .heroItem.alignedText .heroContent,
+.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent {
+	max-width: 460px;
+}
+
+.HeroCarousel .carousel .heroItem.right,
+.HeroCarousel.inner .carousel .heroItem.right {
+	text-align: right;
+}
+
+.HeroCarousel .carousel .heroItem.right .heroContent,
+.HeroCarousel.inner .carousel .heroItem.right .heroContent {
+	margin-right: 50px;
+}
+
+.HeroCarousel .carousel .heroItem.right .heroContent .primaryHeader ,
+.HeroCarousel.inner .carousel .heroItem.right .heroContent .primaryHeader {
+	margin-right: -11px;
+}
+
+.HeroCarousel .carousel .heroItem.right .heroContent p,
+.HeroCarousel.inner .carousel .heroItem.right .heroContent p {
+	margin-right: -3px;
+}
+
+.HeroCarousel .carousel .heroItem.left,
+.HeroCarousel.inner .carousel .heroItem.left {
+	text-align: left;
+}
+
+.HeroCarousel .carousel .heroItem.left .heroContent,
+.HeroCarousel.inner .carousel .heroItem.left .heroContent {
+	margin-left: 50px;
+}
+
+.HeroCarousel .carousel .heroItem.left .heroContent .primaryHeader,
+.HeroCarousel.inner .carousel .heroItem.left .heroContent .primaryHeader {
+	margin-left: -3px;
+	margin-top: 50px;
+}
+
+.HeroCarousel .carousel .heroItem.darkText .primaryHeader,.HeroCarousel .carousel .heroItem.darkText p,.HeroCarousel .carousel .heroItem.darkText .price,
+.HeroCarousel.inner .carousel .heroItem.darkText .primaryHeader,.HeroCarousel.inner .carousel .heroItem.darkText p,.HeroCarousel.inner .carousel .heroItem.darkText .price {
+	color: #393939;
+	text-shadow: none;
+}
+
+.HeroCarousel .carousel .heroItem[data-audio="true"] .playButton,
+.HeroCarousel.inner .carousel .heroItem[data-audio="true"] .playButton {
+	display: block;
+	text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.HeroCarousel .carousel > .heroItem > span,
+.HeroCarousel.inner .carousel > .heroItem > span {
+	z-index: auto;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer,
+.HeroCarousel.inner .carousel .video .VideoPlayer {
+	position: static;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer.flash,
+.HeroCarousel.inner .carousel .video .VideoPlayer.flash {
+	width: 100%;
+	height: 100%;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer.flash embed,.HeroCarousel .carousel .video .VideoPlayer.flash object,
+.HeroCarousel.inner .carousel .video .VideoPlayer.flash embed,.HeroCarousel.inner .carousel .video .VideoPlayer.flash object {
+	position: absolute;
+	top: 0px;
+	left: 0;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer .mejs-video,
+.HeroCarousel.inner .carousel .video .VideoPlayer .mejs-video {
+	position: static;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer .mejs-video .mejs-controls,
+.HeroCarousel.inner .carousel .video .VideoPlayer .mejs-video .mejs-controls {
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
+	background-color: #4e4e4e;
+	width: 30%;
+	left: 30%;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer .mejs-layers,
+.HeroCarousel.inner .carousel .video .VideoPlayer .mejs-layers {
+	width: 100%;
+	height: 100%;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer video,
+.HeroCarousel.inner .carousel .video .VideoPlayer video {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	height: auto;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer video.is-horizontal,
+.HeroCarousel.inner .carousel .video .VideoPlayer video.is-horizontal {
+	left: 50% !important;
+	top: 0 !important;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer video.is-vertical,
+.HeroCarousel.inner .carousel .video .VideoPlayer video.is-vertical {
+	left: 0 !important;
+	top: 50% !important;
+}
+
+.HeroCarousel .carousel .video .heroContent,
+.HeroCarousel.inner .carousel .video .heroContent {
+	position: relative;
+}
+
+.HeroCarousel .carousel .video .VideoPlayer+span,
+.HeroCarousel.inner .carousel .video .VideoPlayer+span {
+	display: none;
+}
+
+.HeroCarousel .carousel .rsNav,
+.HeroCarousel.inner .carousel .rsNav {
+	float: none;
+	position: relative;
+	display: inline-block;
+	left: 0;
+	bottom: 96px;
+	width: 55%;
+	margin-right: 0;
+}
+
+.HeroCarousel .carousel .rsNav .rsNavItem,
+.HeroCarousel.inner .carousel .rsNav .rsNavItem {
+	cursor: pointer;
+}
+
+.HeroCarousel .carousel .rsNav .rsNavItem:hover span,
+.HeroCarousel.inner .carousel .rsNav .rsNavItem:hover span {
+	background-color: #fff;
+	opacity: 1;
+}
+
+.HeroCarousel .carousel .rsNav .rsNavItem span,
+.HeroCarousel.inner .carousel .rsNav .rsNavItem span {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.HeroCarousel .carousel .rsNav .rsNavSelected span,
+.HeroCarousel.inner .carousel .rsNav .rsNavSelected span {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	background-color: #fff;
+}
+
+.HeroCarousel .disable,
+.HeroCarousel.inner .disable {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 3;
+	background-color: #0c121c;
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+}
+
+.HeroCarousel .VideoPlayer .mejs-controls,.HeroCarousel .VideoPlayer .mejs-overlay-play,
+.HeroCarousel.inner .VideoPlayer .mejs-controls,.HeroCarousel.inner .VideoPlayer .mejs-overlay-play {
+	display: none !important;
+}
+
+@media screen and (min-width:  1px) and (max-width:  900px) {
+	.HeroCarousel, .HeroCarousel.inner {
+		min-height: 0;
+		height: 490px;
+	}
+
+	.HeroCarousel .rsOverflow,
+	.HeroCarousel.inner .rsOverflow {
+		min-height: 0;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent p,
+	.HeroCarousel.inner .carousel .heroItem .heroContent p {
+		font-size: 20px;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent .caveat,
+	.HeroCarousel.inner .carousel .heroItem .heroContent .caveat {
+		padding-bottom: 15px;
+	}
+
+	.HeroCarousel .carousel .heroItem.alignedText .heroContent,
+	.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent {
+		width: 280px;
+	}
+
+	.HeroCarousel .carousel .video .VideoPlayer {
+		display: none;
+	}
+
+	.HeroCarousel .carousel .video .VideoPlayer+span,.HeroCarousel .carousel .video > span,
+	.HeroCarousel.inner .carousel .video .VideoPlayer+span,.HeroCarousel.inner .carousel .video > span {
+		display: block;
+	}
+
+	.HeroCarousel .carousel .rsNav,
+	.HeroCarousel.inner .carousel .rsNav {
+		bottom: 50px;
+	}
+
+	.HeroCarousel .disable,
+	.HeroCarousel.inner .disable {
+		display: none;
+	}
+
+
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+	.HeroCarousel,
+	.HeroCarousel.inner {
+		background-color: #0c121c;
+		height: auto;
+		margin-top: 0px;
+
+	}
+
+	.HeroCarousel .carousel .rsOverflow,
+	.HeroCarousel.inner .carousel .rsOverflow {
+		height: auto !important;
+	}
+
+	.HeroCarousel .carousel .heroItem,.HeroCarousel .carousel .heroItem.alignedText,
+	.HeroCarousel.inner .carousel .heroItem,.HeroCarousel.inner .carousel .heroItem.alignedText {
+		display: block;
+	}
+
+	.HeroCarousel .carousel .heroItem span,.HeroCarousel .carousel .heroItem.alignedText span,
+	.HeroCarousel.inner .carousel .heroItem span,.HeroCarousel.inner .carousel .heroItem.alignedText span {
+		position: relative;
+		height: 250px;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent,.HeroCarousel .carousel .heroItem.alignedText .heroContent,
+	.HeroCarousel.inner .carousel .heroItem .heroContent,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent {
+		background: #0c121c;
+		margin: 0;
+		width: 100%;
+		max-width: none;
+		text-align: center;
+		padding: 30px 30px 0;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent .primaryHeader,.HeroCarousel .carousel .heroItem.alignedText .heroContent .primaryHeader,
+	.HeroCarousel.inner .carousel .heroItem .heroContent .primaryHeader,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .primaryHeader {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 7px;
+	}
+
+	.HeroCarousel .carousel .heroItem.left .heroContent .primaryHeader, .HeroCarousel.inner .carousel .heroItem.left .heroContent .primaryHeader {
+	  margin-top: 0px;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent p,.HeroCarousel .carousel .heroItem.alignedText .heroContent p,
+	.HeroCarousel.inner .carousel .heroItem .heroContent p,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent p {
+		font-size: 12px;
+		color: #cbcbce;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent p.price,.HeroCarousel .carousel .heroItem.alignedText .heroContent p.price,
+	.HeroCarousel.inner .carousel .heroItem .heroContent p.price,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent p.price {
+		color: #fff;
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent a,.HeroCarousel .carousel .heroItem.alignedText .heroContent a,
+	.HeroCarousel.inner .carousel .heroItem .heroContent a,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent a {
+		display: none;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent a:first-of-type,.HeroCarousel .carousel .heroItem.alignedText .heroContent a:first-of-type,
+	.HeroCarousel.inner .carousel .heroItem .heroContent a:first-of-type,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent a:first-of-type {
+		display: inline-block;
+		margin-bottom: 30px;
+	}
+
+	.HeroCarousel .carousel .heroItem .heroContent .linkContainer,.HeroCarousel .carousel .heroItem.alignedText .heroContent .linkContainer,
+	.HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer,.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer  {
+		padding-top: 15px;
+		white-space: normal;
+	}
+
+	.HeroCarousel .carousel .heroItem.darkText .primaryHeader,.HeroCarousel .carousel .heroItem.alignedText.darkText .primaryHeader,
+	.HeroCarousel.inner .carousel .heroItem.darkText .primaryHeader,.HeroCarousel.inner .carousel .heroItem.alignedText.darkText .primaryHeader {
+		color: #fff;
+	}
+
+	.HeroCarousel .carousel .heroItem.darkText .primaryLinkWithStyle,.HeroCarousel .carousel .heroItem.alignedText.darkText .primaryLinkWithStyle,
+	.HeroCarousel.inner .carousel .heroItem.darkText .primaryLinkWithStyle,.HeroCarousel.inner .carousel .heroItem.alignedText.darkText .primaryLinkWithStyle {
+		color: #fff;
+	}
+
+	.HeroCarousel .carousel .heroItem.darkText .primaryLinkWithStyle:hover,.HeroCarousel .carousel .heroItem.alignedText.darkText .primaryLinkWithStyle:hover,
+	.HeroCarousel.inner .carousel .heroItem.darkText .primaryLinkWithStyle:hover,.HeroCarousel.inner .carousel .heroItem.alignedText.darkText .primaryLinkWithStyle:hover {
+		color: #0c121c;
+	}
+
+	.HeroCarousel .carousel .rsNav,
+	.HeroCarousel.inner .carousel .rsNav {
+		position: absolute;
+		top: 205px;
+		width: 100%;
+		left: 0;
+		height: 54px;
+	}
+
+	.HeroCarousel .carousel .rsNav .rsNavItem span,
+	.HeroCarousel.inner .carousel .rsNav .rsNavItem span {
+		width: 26px;
+	}
+
+
+}
+
+@media screen and (min-width:  1px) and (max-width:  400px) {
+	.HeroCarousel .carousel .heroItem span,.HeroCarousel .carousel .heroItem.alignedText span,
+	.HeroCarousel.inner .carousel .heroItem span,.HeroCarousel.inner .carousel .heroItem.alignedText span {
+		height: 150px;
+	}
+
+	.HeroCarousel .carousel .rsNav,
+	.HeroCarousel.inner .carousel .rsNav {
+		top: 110px;
+	}
+
+
+}
+
+.ie10 #landrover .HeroCarousel .linkContainer,.lt-ie10 #landrover .HeroCarousel .linkContainer {
+	margin-top: 15px;
+}
+
+.lt-ie9 #landrover .HeroCarousel {
+	background-color: transparent;
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+.lt-ie9 #landrover .HeroCarousel .image {
+	background-position: center center !important;
+}
+
+.lt-ie9 #landrover .HeroCarousel .heroContent {
+	visibility: hidden;
+}
+
+.lt-ie9 #landrover .HeroCarousel .linkContainer {
+	margin-top: 0px;
+}
+
+.lt-ie9 #landrover .HeroCarousel .current .heroContent {
+	visibility: visible;
+}
+
+.lt-ie9 #landrover .HeroCarousel .carousel > .heroItem > .heroContent {
+	visibility: visible;
+}
+
+#landrover .HeroCarousel .heroContent .primaryLinkWithStyle,#landrover .HeroCarousel .heroContent .secondaryLinkWithStyle {
+	margin: 0 0 20px;
+}
+
+#landrover .HeroCarousel .heroContent .caveat {
+	margin-top: 0;
+}
+
+.ie .HeroCarousel.left .rsOverflow[style] {
+	cursor: url(../../img/cursor-left.cur),pointer !important;
+}
+
+.ie .HeroCarousel.left .rsOverflow[style] video {
+	cursor: url(../../img/cursor-left.cur),pointer !important;
+}
+
+.ie .HeroCarousel.right .rsOverflow[style] {
+	cursor: url(../../img/cursor-right.cur),pointer !important;
+}
+
+.ie .HeroCarousel.right .rsOverflow[style] video {
+	cursor: url(../../img/cursor-right.cur),pointer !important;
+}
+
+html:not(.ie) .HeroCarousel.left .rsOverflow {
+	cursor: url(../../img/cursor-left.png) 2 22,pointer !important;
+}
+
+html:not(.ie) .HeroCarousel.left .rsOverflow video {
+	cursor: url(../../img/cursor-left.png) 2 22,pointer !important;
+}
+
+html:not(.ie) .HeroCarousel.right .rsOverflow {
+	cursor: url(../../img/cursor-right.png) 24 22,pointer !important;
+}
+
+html:not(.ie) .HeroCarousel.right .rsOverflow video {
+	cursor: url(../../img/cursor-right.png) 24 22,pointer !important;
+}
+
+.HeroCarousel[data-total="1"] {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem {
+	display: none;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem:first-child {
+	display: block;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem .heroContent {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem.left .heroContent {
+	left: 0;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem.right .heroContent {
+	left: auto;
+	right: 0;
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+	.HeroCarousel[data-total="1"] .carousel > * {
+	float: none;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem span {
+	z-index: 1;
+}
+
+.HeroCarousel[data-total="1"] .carousel .heroItem .heroContent {
+	position: relative;
+	top: auto;
+	left: auto;
+}
+
+
+}
+
+html.no-js .HeroCarousel {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+}
+
+html.no-js .HeroCarousel .carousel {
+	display: table;
+}
+
+html.no-js .HeroCarousel .carousel > * {
+	float: none;
+}
+
+html.no-js .HeroCarousel .carousel .video .VideoPlayer+span {
+	display: block;
+}
+
+html.no-js .HeroCarousel .carousel span {
+	z-index: 1;
+}
+
+html.no-js .HeroCarousel .carousel .heroItem {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	display: none;
+	vertical-align: middle;
+	position: relative;
+	text-align: center;
+	height: 450px;
+}
+
+html.no-js .HeroCarousel .carousel .heroItem.left {
+	text-align: left;
+}
+
+html.no-js .HeroCarousel .carousel .heroItem.right {
+	text-align: right;
+}
+
+html.no-js .HeroCarousel .carousel .heroItem:first-child {
+	display: table-cell;
+}
+
+html.no-js .HeroCarousel .carousel .heroItem .heroContent {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	z-index: 1;
+	position: relative;
+	top: auto;
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+	html.no-js .HeroCarousel .carousel .heroItem:first-child {
+	display: block;
+}
+
+
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+	#landrover .HeroCarousel .VideoPlayer .mejs-video {
+	display: none;
+}
+
+#landrover .HeroCarousel .VideoPlayer .mejs-controls {
+	display: none !important;
+}
+
+#landrover .HeroCarousel .heroContent a {
+	display: none;
+}
+
+#landrover .HeroCarousel .heroContent a:first-of-type {
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+#landrover .HeroCarousel .darkText .primaryHeader,#landrover .HeroCarousel .darkText p,#landrover .HeroCarousel .darkText .price {
+	color: #fff;
+	text-shadow: none;
+}
+
+#landrover .HeroCarousel .primaryLinkWithStyle {
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #fff;
+	font-size: 9px;
+	line-height: 1em;
+	padding: 12px 18px;
+}
+
+#landrover .HeroCarousel .primaryLinkWithStyle:hover {
+	background-color: #fff;
+	color: #0c121c;
+}
+
+
+}
+@media screen and (min-width:  1px) and (max-width:  900px) {
+	.heroContent .primaryHeader {
+		font-size: 30px;
+		padding-bottom: 30px;
+		margin-top: 100px;
+	}
+
+
+}
+
+@media screen and (min-width:  1px) and (max-width:  740px) {
+	h1.wideCentred,h2.wideCentred {
+		font-size: 22px;
+		letter-spacing: 0.3em;
+		left: 0;
+	}
+
+	h1.primaryHeading,h2.primaryHeading {
+		font-size: 24px;
+	}
+
+	h1.secondaryHeading,h2.secondaryHeading {
+		font-size: 24px;
+	}
+
+	.heroContent .primaryHeader {
+		font-size: 20px;
+		padding-bottom: 35px;
+	}
+
+	#landrover .caveat {
+		font-size: 10px;
+	}
+
+
+}
+
+#landrover .primaryLinks,#landrover .darkText .primaryLinks {
+	text-align: left;
+}
+
+#landrover .primaryLinksCentre,#landrover .darkText .primaryLinksCentre {
+	text-align: center;
+}
+
+#landrover .primaryLinksRight,#landrover .darkText .primaryLinksRight {
+	text-align: right;
+}
+
+#landrover .primaryLinkWithStyle,#landrover .darkText .primaryLinkWithStyle {
+	background: none;
+	background-color: rgba(255, 255, 255, 0);
+	border: 1px solid #000;
+	color: #02260a;
+	line-height: 1.4em;
+	font-size: 10px;
+	font-family: 'ProximaNovaRegular',Arial,Helvetica,sans-serif;
+	font-weight: bold;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	letter-spacing: 0.3em;
+	padding: 13px 23px 11px;
+	min-width: 125px;
+	margin-top: 30px;
+	-webkit-transition-duration: 0.4s;
+	-khtml-transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-ms-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	-webkit-transition-timing-function: ease;
+	-khtml-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	-ms-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+	transition-timing-function: ease;
+	overflow: hidden;
+	*zoom: 1;
+	overflow: visible;
+}
+
+#landrover .primaryLinkWithStyle:hover,#landrover .primaryLinkWithStyle:focus,#landrover .darkText .primaryLinkWithStyle:hover,#landrover .darkText .primaryLinkWithStyle:focus {
+	background-color: #02260a;
+	color: #fff;
+	text-decoration: none;
+}
+
+#landrover .primaryLinkWithStyle.disabled,#landrover .darkText .primaryLinkWithStyle.disabled {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=20);
+	opacity: 0.2;
+}
+
+#landrover .primaryLinkWithStyle.disabled:hover,#landrover .primaryLinkWithStyle.disabled:focus,#landrover .darkText .primaryLinkWithStyle.disabled:hover,#landrover .darkText .primaryLinkWithStyle.disabled:focus {
+	background-color: transparent;
+	background-color: rgba(255, 255, 255, 0);
+	color: #02260a;
+	cursor: default;
+}
+
+#landrover .primaryLinkWithStyle[class^="icon-"],#landrover .primaryLinkWithStyle[class*=" icon-"],#landrover .darkText .primaryLinkWithStyle[class^="icon-"],#landrover .darkText .primaryLinkWithStyle[class*=" icon-"] {
+	padding-left: 40px !important;
+	position: relative;
+	text-align: left;
+}
+
+#landrover .primaryLinkWithStyle[class^="icon-"]:before,#landrover .primaryLinkWithStyle[class*=" icon-"]:before,#landrover .darkText .primaryLinkWithStyle[class^="icon-"]:before,#landrover .darkText .primaryLinkWithStyle[class*=" icon-"]:before {
+	font-size: 17px;
+	margin-right: 15px;
+	position: absolute;
+	top: 19px;
+	left: 10px;
+	line-height: 0;
+}
+
+@media screen and (min-width:  1px) and (max-width:  900px) {
+	#landrover .primaryLinkWithStyle[class^="icon-"]:before,#landrover .primaryLinkWithStyle[class*=" icon-"]:before,#landrover .darkText .primaryLinkWithStyle[class^="icon-"]:before,#landrover .darkText .primaryLinkWithStyle[class*=" icon-"]:before {
+	top: 17px;
+}
+
+
+}
+
+#landrover .primaryLinkWithStyle.icon-map-pin:before,#landrover .darkText .primaryLinkWithStyle.icon-map-pin:before {
+	font-size: 18px;
+}
+
+#landrover .primaryLinkWithStyle.icon-ignite-configure:before,#landrover .darkText .primaryLinkWithStyle.icon-ignite-configure:before {
+	font-size: 19px;
+}
+
+#landrover .primaryLinkWithStyle.icon-ignite-brochure:before,#landrover .darkText .primaryLinkWithStyle.icon-ignite-brochure:before {
+	font-size: 15px;
+}
+
+#landrover .primaryLinkWithStyle.icon-share:before,#landrover .darkText .primaryLinkWithStyle.icon-share:before {
+	font-size: 16px;
+}
+
+#landrover .primaryLinkWithStyle.icon-finance-calculator:before,#landrover .darkText .primaryLinkWithStyle.icon-finance-calculator:before {
+	font-size: 15px;
+}
+
+#landrover .primaryLinkWithStyle.icon-offers:before,#landrover .darkText .primaryLinkWithStyle.icon-offers:before {
+	font-size: 14px;
+}
+
+#landrover .primaryLinkWithStyle.icon-request-quote:before,#landrover .darkText .primaryLinkWithStyle.icon-request-quote:before {
+	font-size: 15px;
+}
+
+#landrover .primaryLinkWithStyle.icon-ignite-inform:before,#landrover .darkText .primaryLinkWithStyle.icon-ignite-inform:before {
+	top: 21px;
+}
+
+#landrover .primaryLinkWithStyle.icon-inventory:before,#landrover .darkText .primaryLinkWithStyle.icon-inventory:before {
+	top: 18px;
+}
+
+#landrover .primaryLinkWithStyle.icon-driveoffroad:before,#landrover .darkText .primaryLinkWithStyle.icon-driveoffroad:before {
+	top: 18px;
+}
+
+@media screen and (min-width:  1px) and (max-width:  900px) {
+	#landrover .primaryLinkWithStyle.icon-ignite-inform:before,#landrover .darkText .primaryLinkWithStyle.icon-ignite-inform:before {
+		top: 19px;
+	}
+
+	#landrover .primaryLinkWithStyle.icon-inventory:before,#landrover .darkText .primaryLinkWithStyle.icon-inventory:before {
+		top: 16px;
+	}
+
+	#landrover .primaryLinkWithStyle.icon-driveoffroad:before,#landrover .darkText .primaryLinkWithStyle.icon-driveoffroad:before {
+		top: 16px;
+	}
+
+
+}
+
+#landrover .plwsTransparentLight,#landrover .InPageDealerLocator .dark .primaryLinkWithStyle,#landrover .InPageDealerLocator .grey .primaryLinkWithStyle,#landrover .StackedBlocks.dark .moreResults,#landrover .StackedBlocks.grey .moreResults,#landrover .darkText .plwsTransparentLight,#landrover .darkText .InPageDealerLocator .dark .primaryLinkWithStyle,#landrover .darkText .InPageDealerLocator .grey .primaryLinkWithStyle,#landrover .darkText .StackedBlocks.dark .moreResults,#landrover .darkText .StackedBlocks.grey .moreResults {
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+#landrover .plwsTransparentLight:hover,#landrover .plwsTransparentLight:focus,#landrover .InPageDealerLocator .dark .primaryLinkWithStyle:hover,#landrover .InPageDealerLocator .dark .primaryLinkWithStyle:focus,#landrover .InPageDealerLocator .grey .primaryLinkWithStyle:hover,#landrover .InPageDealerLocator .grey .primaryLinkWithStyle:focus,#landrover .StackedBlocks.dark .moreResults:hover,#landrover .StackedBlocks.dark .moreResults:focus,#landrover .StackedBlocks.grey .moreResults:hover,#landrover .StackedBlocks.grey .moreResults:focus,#landrover .darkText .plwsTransparentLight:hover,#landrover .darkText .plwsTransparentLight:focus,#landrover .darkText .InPageDealerLocator .dark .primaryLinkWithStyle:hover,#landrover .darkText .InPageDealerLocator .dark .primaryLinkWithStyle:focus,#landrover .darkText .InPageDealerLocator .grey .primaryLinkWithStyle:hover,#landrover .darkText .InPageDealerLocator .grey .primaryLinkWithStyle:focus,#landrover .darkText .StackedBlocks.dark .moreResults:hover,#landrover .darkText .StackedBlocks.dark .moreResults:focus,#landrover .darkText .StackedBlocks.grey .moreResults:hover,#landrover .darkText .StackedBlocks.grey .moreResults:focus {
+	background-color: #fff;
+	color: #9e1b32;
+}
+
+#landrover .plwsTransparentLight.disabled:hover,#landrover .plwsTransparentLight.disabled:focus,#landrover .InPageDealerLocator .dark .primaryLinkWithStyle.disabled:hover,#landrover .InPageDealerLocator .dark .primaryLinkWithStyle.disabled:focus,#landrover .InPageDealerLocator .grey .primaryLinkWithStyle.disabled:hover,#landrover .InPageDealerLocator .grey .primaryLinkWithStyle.disabled:focus,#landrover .StackedBlocks.dark .moreResults.disabled:hover,#landrover .StackedBlocks.dark .moreResults.disabled:focus,#landrover .StackedBlocks.grey .moreResults.disabled:hover,#landrover .StackedBlocks.grey .moreResults.disabled:focus,#landrover .darkText .plwsTransparentLight.disabled:hover,#landrover .darkText .plwsTransparentLight.disabled:focus,#landrover .darkText .InPageDealerLocator .dark .primaryLinkWithStyle.disabled:hover,#landrover .darkText .InPageDealerLocator .dark .primaryLinkWithStyle.disabled:focus,#landrover .darkText .InPageDealerLocator .grey .primaryLinkWithStyle.disabled:hover,#landrover .darkText .InPageDealerLocator .grey .primaryLinkWithStyle.disabled:focus,#landrover .darkText .StackedBlocks.dark .moreResults.disabled:hover,#landrover .darkText .StackedBlocks.dark .moreResults.disabled:focus,#landrover .darkText .StackedBlocks.grey .moreResults.disabled:hover,#landrover .darkText .StackedBlocks.grey .moreResults.disabled:focus {
+	background-color: transparent;
+	background-color: rgba(255, 255, 255, 0);
+	color: #fff;
+}
+
+#landrover .plwsDark,#landrover .darkText .plwsDark {
+	border: none;
+	color: #fff;
+	background-color: #02260a;
+}
+
+#landrover .plwsDark:hover,#landrover .plwsDark:focus,#landrover .darkText .plwsDark:hover,#landrover .darkText .plwsDark:focus {
+	color: #02260a;
+	background-color: #fff;
+}
+
+#landrover .plwsDark.disabled:hover,#landrover .plwsDark.disabled:focus,#landrover .darkText .plwsDark.disabled:hover,#landrover .darkText .plwsDark.disabled:focus {
+	background-color: #02260a;
+	color: #fff;
+}
+
+#landrover .plwsLight,#landrover .darkText .plwsLight {
+	font-size: 0.99em;
+	border: none;
+	color: #9e1b32;
+	background-color: #fff;
+}
+
+#landrover .plwsLight:hover,#landrover .plwsLight:focus,#landrover .darkText .plwsLight:hover,#landrover .darkText .plwsLight:focus {
+	color: #fff;
+	background-color: #484848;
+}
+
+#landrover .plwsLight.disabled:hover,#landrover .plwsLight.disabled:focus,#landrover .darkText .plwsLight.disabled:hover,#landrover .darkText .plwsLight.disabled:focus {
+	background-color: #fff;
+	color: #02260a;
+}
+
+#landrover .plwsExtreme,#landrover .darkText .plwsExtreme {
+	border: none;
+	color: #fff;
+	background-color: #F2681D;
+}
+
+#landrover .plwsExtreme:hover,#landrover .darkText .plwsExtreme:hover {
+	color: #F2681D;
+	background-color: #fff;
+}
+
+#landrover .plwsExtreme.disabled:hover,#landrover .plwsExtreme.disabled:focus,#landrover .darkText .plwsExtreme.disabled:hover,#landrover .darkText .plwsExtreme.disabled:focus {
+	background-color: #F2681D;
+	color: #fff;
+}
+
+#landrover .secondaryLinkWithStyle,#landrover .darkText .secondaryLinkWithStyle {
+	font-size: 11px;
+	letter-spacing: 0.25em;
+	color: #02260a;
+	font-weight: bold;
+	text-decoration: none;
+	position: relative;
+	padding-left: 18px;
+	margin-top: 20px;
+	display: inline-block;
+	overflow: hidden;
+	*zoom: 1;
+	line-height: 1.25;
+}
+
+/*#landrover .secondaryLinkWithStyle:before,#landrover .darkText .secondaryLinkWithStyle:before {
+	content: '\e02f';
+	color: #4e4e4e;
+	position: absolute;
+	top: 1px;
+	left: -4px;
+	font-size: 10px;
+}*/
+
+#landrover .secondaryLinkWithStyle:hover,#landrover .secondaryLinkWithStyle:focus,#landrover .darkText .secondaryLinkWithStyle:hover,#landrover .darkText .secondaryLinkWithStyle:focus {
+	text-decoration: none;
+	color: #696868;
+}
+
+#landrover .secondaryLinkWithStyle:hover:before,#landrover .secondaryLinkWithStyle:focus:before,#landrover .darkText .secondaryLinkWithStyle:hover:before,#landrover .darkText .secondaryLinkWithStyle:focus:before {
+	color: #696868;
+}
+
+#landrover .secondaryLinkWithStyle.disabled,#landrover .darkText .secondaryLinkWithStyle.disabled {
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=20);
+	opacity: 0.2;
+}
+
+#landrover .slwsLight,#landrover .darkText .slwsLight {
+	color: #fff;
+}
+
+#landrover .slwsLight:before,#landrover .darkText .slwsLight:before {
+	color: #696868;
+}
+
+#landrover .slwsLight:hover,#landrover .slwsLight:focus,#landrover .darkText .slwsLight:hover,#landrover .darkText .slwsLight:focus {
+	color: #4e4e4e;
+}
+
+#landrover .slwsLight:hover:before,#landrover .slwsLight:focus:before,#landrover .darkText .slwsLight:hover:before,#landrover .darkText .slwsLight:focus:before {
+	color: #4e4e4e;
+}
+
+#landrover .slwsWhite,#landrover .darkText .slwsWhite {
+	color: #fff;
+}
+
+#landrover .slwsWhite:before,#landrover .darkText .slwsWhite:before {
+	color: #fff;
+}
+
+#landrover .slwsWhite:hover,#landrover .slwsWhite:focus,#landrover .darkText .slwsWhite:hover,#landrover .darkText .slwsWhite:focus {
+	color: #696868;
+}
+
+#landrover .slwsWhite:hover:before,#landrover .slwsWhite:focus:before,#landrover .darkText .slwsWhite:hover:before,#landrover .darkText .slwsWhite:focus:before {
+	color: #696868;
+}
+
+#landrover .slwsGrey,#landrover .darkText .slwsGrey {
+	color: #cbcbce;
+}
+
+#landrover .slwsGrey:before,#landrover .darkText .slwsGrey:before {
+	color: #696868;
+}
+
+#landrover .slwsGrey:hover,#landrover .slwsGrey:focus,#landrover .darkText .slwsGrey:hover,#landrover .darkText .slwsGrey:focus {
+	color: #696868;
+}
+
+#landrover .slwsGrey:hover:before,#landrover .slwsGrey:focus:before,#landrover .darkText .slwsGrey:hover:before,#landrover .darkText .slwsGrey:focus:before {
+	color: #696868;
+}
+
+#landrover .slwsBlack,#landrover .darkText .slwsBlack {
+	color: #02260a;
+}
+
+#landrover .slwsBlack:before,#landrover .darkText .slwsBlack:before {
+	color: #02260a;
+}
+
+#landrover .slwsBlack:hover,#landrover .slwsBlack:focus,#landrover .darkText .slwsBlack:hover,#landrover .darkText .slwsBlack:focus {
+	color: #4e4e4e;
+}
+
+#landrover .slwsBlack:hover:before,#landrover .slwsBlack:focus:before,#landrover .darkText .slwsBlack:hover:before,#landrover .darkText .slwsBlack:focus:before {
+	color: #4e4e4e;
+}
+
+#landrover .linkWithText,#landrover .darkText .linkWithText {
+	font-weight: bold;
+	text-decoration: underline;
+	color: inherit;
+}
+
+#landrover .linkWithText:hover,#landrover .linkWithText:focus,#landrover .darkText .linkWithText:hover,#landrover .darkText .linkWithText:focus {
+	color: #696868;
+}
+
+.ScrollDown {
+	display: inline-block;
+	position: relative;
+	bottom: 50px;
+	max-width: 100%;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 15px;
+	background: rgba(178, 17, 23, 1) !important;
+	background: #b21117;
+	font-size: 8px;
+	z-index: 5;
+	text-align: center;
+	text-decoration: none;
+	/* letter-spacing: 3px; */
+	-webkit-transition: background 0.5s;
+	-webkit-transition-delay: 0s;
+	-moz-transition: background 0.5s;
+	-o-transition: background 0.5s;
+	transition: background 0.5s;
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	color: #fff;
+}
+
+.ScrollDown:hover,.ScrollDown:focus {
+	background: rgba(12, 18, 28, 0.8);
+	color: #fff;
+}
+
+/*.ScrollDown:after {
+	font-size: 3em;
+	margin-left: 8px;
+	line-height: 47px;
+	height: 50px;
+	content: '\e008';
+}*/
+
+@media screen and (min-width:  1px) and (max-width:  900px) {
+	.ScrollDown {
+	display: none;
+}
+
+
+}

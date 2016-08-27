@@ -1,0 +1,19 @@
+<div class="col-md-8">
+    <div class="single-listing-images" id="content-vehicle-slider-details">
+        <section class="slider" data-slider-id="{{ imagenes[0].folder }}">
+            <div class="flexslider">
+                <ul class="slides">
+                    {% for picture in imagenes %}
+                        {% block imagenes %}
+                            <li data-thumb="{{ _admin }}cdn/img/seminuevos/{{ picture.folder }}/{{ picture.nombre }}"
+                                data-slider-pic_id="{{ picture.id }}">
+                                <img src="{{ _admin }}cdn/img/seminuevos/{{ picture.folder }}/{{ picture.nombre }}"
+                                     data-slider-pic_id="{{ picture.id }}">
+                            </li>
+                        {% endblock %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>

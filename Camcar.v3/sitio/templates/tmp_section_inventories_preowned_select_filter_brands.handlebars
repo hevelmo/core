@@ -1,0 +1,6 @@
+<select name="sem-marc" id="select-fil-brands" class="selectpicker btn-default form-control sel-marca">
+    <option value='0' class="filter-action-mrc" id="filter-action-mrc-" data-filter-action-mrc-id="">Marca</option>
+    {{#each campa}}
+        <option value='{{id_marc}}' class="filter-action-mrc" id="filter-action-mrc-{{id_marc}}" data-filter-action-mrc-id="{{id_marc}}">{{marca}}</option>
+    {{/each}}
+</select>

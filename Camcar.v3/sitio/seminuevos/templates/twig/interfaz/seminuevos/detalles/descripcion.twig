@@ -1,0 +1,78 @@
+<div class="col-md-4">
+    <div class="sidebar-widget widget">
+        <div id="content_specifications">
+            {% block especificaciones %}
+                <table class="table-specifications table table-striped table-hover">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="arrow_badge">Marca</span>
+                            </td>
+                            <td>{{ detalle.marca.nombre }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="arrow_badge">Modelo</span>
+                            </td>
+                            <td>{{ detalle.modelo.nombre }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="arrow_badge">Cilindros</span>
+                            </td>
+                            <td>{{ detalle.cilindros }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="arrow_badge">Año</span>
+                            </td>
+                            <td>{{ detalle.anio }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="arrow_badge">Interior</span>
+                            </td>
+                            <td>{{ detalle.interior }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="arrow_badge">Color</span>
+                            </td>
+                            <td>{{ detalle.color }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% endblock %}
+        </div>
+        {% block descripcion %}
+            <div class="vehicle-enquiry-foot pull-left">
+                <h6 class="widgettitle">
+                    DESCRIPCIÓN
+                </h6>
+                <strong class="address-description to_print">
+                    {{ detalle.descripcion }}
+                </strong>
+            </div>
+            <div class="vehicle-enquiry-foot pull-left">
+                <h6 class="widgettitle">
+                    {{ detalle.agencia.nombre }}
+                </h6>
+                <span class="vehicle-enquiry-foot-ico">
+                    <i class="fa fa-location-arrow"></i>
+                </span>
+                <strong class="address">
+                    {{ detalle.agencia.direccion }}
+                </strong>
+                <br>
+                <span class="vehicle-enquiry-foot-ico">
+                    <i class="fa fa-phone"></i>
+                </span>
+                {% if detalle.telefonos.ventas_tel_1|trim != "" %}
+                    <strong class="address">
+                        {{ detalle.telefonos.ventas_tel_1|trim }}
+                    </strong>
+                {% endif %}
+            </div>
+        {% endblock %}
+    </div>
+</div>

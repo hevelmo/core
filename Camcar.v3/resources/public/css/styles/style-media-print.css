@@ -1,0 +1,101 @@
+@media print {
+	.nav-1 {
+		background: rgba(255,255,255,0);
+	}
+    .nav-1 .logo {
+		max-height: 50px;
+		max-width: 100%;
+		/* margin-right: 64px; */
+		margin-top: 15px;
+	}
+	.flexslider .slides img:first-child {
+		width: 100%;
+		display: block;
+	}
+	.flexslider .slides img {
+		display: none;
+	}
+	.breadcrumb {
+		display: none;
+	}
+	.flex-control-thumbs {
+		display: none;
+	}
+	.single-vehicle-details .single-vehicle-title > h2 {
+		padding-top: 25px;
+	}
+	.arrow_badge {
+		padding: 0px;
+	}
+	.arrow_badge:before, .arrow_badge:after {
+		display: none;
+	}
+	.vehicle-details-tabs {
+		display: none;
+	}
+	.vehicle-details-tabs ul.nav-tabs li {
+		display: block;
+	}
+	#content_map{
+		display: none;
+	}
+	.footer-6 .container { display: none; }
+	#btn_return {
+		display: none;
+	}
+	.actions-bar{
+		border-bottom: none;
+  		padding: 0;
+  		height: 0;
+	}
+	.single-vehicle-details .post-title {
+		margin-top: 0px;
+	}
+	.flexslider {
+		margin: 0;
+	}
+	div.form-noPrint,
+	select.sel-categoria,
+	select.sel-marca,
+	select.sel-modelo,
+	input.sel-year,
+	input.sel-price,
+	button.finder-button {
+		display: none;
+		border: none;
+		height: 0;
+	}
+	.vehicle-enquiry-foot {
+		background: none;
+		padding: 15px 20px;
+		font-size: 11px;
+		border: none;
+	}
+	.vehicle-enquiry-foot form, .no-print{
+		display: none;
+	}
+	button.sem-style-button-resp.btn.btn-default,
+	button.sem-style-button-resp.btn.btn-default i {
+		box-shadow: none;
+		text-indent: -9999999px;
+		border: none;
+		height: 0;
+	}
+	button,
+	button.sem-style-button-resp.btn.btn-default,
+	button.sem-style-button-resp.btn.btn-default i,
+	#btn_return,
+	.single-vehicle-details .recent-vehicles,
+	.calculator-widget,
+	.seller-contact-widget,
+	.additional-images,
+	.single-listing-actions,
+	.badge-premium-listing,
+	.utility-bar,
+	.page-header,
+	.header-right,
+	.navbar,
+	.site-footer{
+		display:none;
+	}
+}

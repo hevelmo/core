@@ -1,0 +1,116 @@
+<header class="slidePanel-header slidePanel-header-resp overlay" 
+        style="background-image: url('../admin/cdn/img/convenios/{{caminpa.0.id}}/{{caminpa.0.panel_picture}}'); background-position: 50% 50%; background-size: cover;" 
+        data-method="scroll" 
+        data-min="50">
+    <div class="overlay-top overlay-panel overlay-background">
+        {{!--
+        <div class="slidePanel-actions btn-group hint--left" 
+             data-hint="CERRAR" 
+             aria-label="actions" 
+             role="group">
+            <button type="button" 
+                    class="btn btn-pure btn-inverse icon wb-chevron-left" 
+                    aria-hidden="true"></button>
+            <button type="button" 
+                    class="btn btn-pure btn-inverse icon wb-chevron-right" 
+                    aria-hidden="true"></button>
+            <button type="button" 
+                    class="btn btn-pure btn-inverse slidePanel-close icon wb-close slide-panel-wb-close-bg" 
+                    aria-hidden="true"></button>
+        </div>
+        --}}
+        <h3 class="mt-neg-5 mb-0">
+            <i class="bos bos-benefits-of-segment-print-advertising-01 fa-2x fa-lg fa-fw pt-0 pb-0 slide-panel-head-icon"></i>
+        </h3>
+    </div>
+</header>
+<div class="slidePanel-inner slidePanel-inner-resp">
+    <div class="media-header mt-25">
+        <div class="tags text-right">
+            <div class="col-md-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 mb-20">
+                        {{#if caminpa.0.preview_info}}
+                            <a data-modal-target="#{{caminpa.0.id}}" class="btn btn-primary bg-red-camcar col-md-12 col-xs-12 modal-preview-info preview-info-{{caminpa.0.id}}">Ver volante</a>
+                            <div id="{{caminpa.0.id}}" class="hidden">
+                                <span class="to-html">
+                                    {{caminpa.0.preview_info}}
+                                </span>
+                            </div>
+                        {{/if}}
+                    </div>
+                    <div class="col-md-6 col-xs-12 mb-20">
+                        {{#if caminpa.0.localidad}}
+                            <button type="button" class="btn btn-primary bg-red-camcar col-md-12 col-xs-12"><b>Localidad: </b> {{caminpa.0.localidad}}</button>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <section class="slidePanel-inner-section mt-0 pb-40">
+        <div class="media-header">
+            <div class="pull-right">
+                <div class="time">{{caminpa.0.titulo}}</div>
+            </div>
+            <h3>
+                <span class="name">{{caminpa.0.empresa}}</span>
+            </h3>
+        </div>
+        <div class="media-content">
+            <p>
+                {{caminpa.0.beneficio}}
+            </p>
+        </div>
+        {{#if caminpa.0.mecanicas}}
+        <div class="media-header">
+            <h3>
+                <span class="name">Mecánica</span>
+            </h3>
+        </div>
+        <div class="media-content">
+            <p>
+                {{caminpa.0.mecanicas}}
+            </p>
+        </div>
+        {{/if}}
+        {{#if caminpa.0.restricciones}}
+        <div class="media-header">
+            <h3>
+                <span class="name">Restricciones</span>
+            </h3>
+        </div>
+        <div class="media-content">
+            <p>
+                {{caminpa.0.restricciones}}
+            </p>
+        </div>
+        {{/if}}
+        {{#if caminpa.0.contacto}}
+        <div class="media-header">
+            <h3>
+                <span class="name">Contacto</span>
+            </h3>
+        </div>
+        <div class="media-content">
+            <p>
+                {{caminpa.0.contacto}}
+            </p>
+        </div>
+        {{/if}}
+        {{#if caminpa.0.vigencia_formato}}
+        <div class="media-header">
+            <h3>
+                <span class="name">Vigencia</span>
+            </h3>
+        </div>
+        <div class="media-content">
+            <p>
+                {{caminpa.0.vigencia_formato}}
+            </p>
+        </div>
+        {{else}}
+        {{/if}}
+    </section>
+</div>

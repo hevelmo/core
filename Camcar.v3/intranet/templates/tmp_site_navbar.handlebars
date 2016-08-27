@@ -1,0 +1,90 @@
+<div class="navbar-header">
+    <button type="button"
+            class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+            data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+    </button>
+    <button type="button"
+            class="navbar-toggle collapsed"
+            data-target="#site-navbar-collapse"
+            data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+    </button>
+    <div class="navbar-brand navbar-brand-center site-gridmenu-toggle">
+        <img class="navbar-brand-logo navbar-brand-site-logo"
+             id="navbar_brand_logo"
+             src="../../img/logos/logo-camcar-hor-white@2x.png"
+             title="Camcar Grupo Automotriz">
+    </div>
+</div>
+<div class="navbar-container container-fluid">
+    <div class="collapse navbar-collapse navbar-collapse-toolbar"
+         id="site-navbar-collapse">
+         <ul class="nav navbar-toolbar dp-header">
+            <li class="hidden-float"
+                id="toggleMenubar">
+                <a data-toggle="menubar" href="#" role="button" id="menubar">
+                    <i class="icon hamburger hamburger-arrow-left" id="menu_bar_toggle">
+                        <span class="sr-only">Toggle menubar</span>
+                        <span class="hamburger-bar"></span>
+                    </i>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+            <li>
+                <div class="toolbar-icon-social">
+                    <a class="icon-social bg-icon-color-facebook" href="https://www.facebook.com/CamcarMexico" target="_blank">
+                        <i class="icon-color fa fa-facebook"></i>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="toolbar-icon-social">
+                    <a class="icon-social bg-icon-color-twitter" href="https://twitter.com/CamcarMexico" target="_blank">
+                        <i class="icon-color fa fa-twitter"></i>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="toolbar-icon-social">
+                    <a class="icon-social bg-icon-color-youtube" href="https://youtube.com/c/CamcarMx" target="_blank">
+                        <i class="icon-color fa fa-youtube"></i>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="toolbar-icon-social">
+                    <a class="icon-social bg-icon-color-instagram" href="https://www.instagram.com/camcarmexico/" target="_blank">
+                        <i class="icon-color fa fa-instagram"></i>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a id="dd-menu-description"
+                   class="navbar-avatar dropdown-toggle hint--left ucwords"
+                   data-hint="{{webservice.0.fullname}}"
+                   data-toggle="dropdown"
+                   href="#"
+                   aria-expanded="false"
+                   data-animation="scale-up"
+                   role="button">
+                    <span class="avatar avatar-online">
+                        <img src="../../img/portraits/default-v2.png" alt="...">
+                        <i></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation">
+                        <a href='../logout/' role="menuitem">
+                            <i class="icon wb-power" aria-hidden="true"></i> Cerrar Sesión
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li></li>
+        </ul>
+    </div>
+</div>

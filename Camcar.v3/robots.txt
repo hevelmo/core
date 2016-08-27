@@ -1,0 +1,5 @@
+CAMCAR | Grupo Automotriz
+
+http://camcar.mx/sitio/
+
+Sitemap: http://camcar.mx/sitio/sitemap_location.xml

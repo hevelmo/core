@@ -1,0 +1,39 @@
+.icon-social {
+    color: rgba(178, 17, 23, 1);
+    padding: 15px 18px;
+    height: 25px;
+    max-height: 25px;
+    min-height: 25px;
+    width: 25px;
+    max-width: 25px;
+    min-width: 25px;
+    margin: 0 auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 0 0 1px rgba(178, 17, 23, 0.5);
+    -moz-box-shadow: inset 0 0 0 1px rgba(178, 17, 23, 0.5);
+    box-shadow: inset 0 0 0 1px rgba(178, 17, 23, 0.5);
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+    -webkit-box-sizing: border-content;
+    -moz-box-sizing: border-content;
+    box-sizing: border-content;
+    font-size: 25px;
+    text-decoration: none;
+    line-height: inherit;
+}
+.icon-social:hover {
+    -webkit-box-shadow: inset 0 0 0 30px rgba(255,255,255,1);
+    -moz-box-shadow: inset 0 0 0 30px rgba(255,255,255,1);
+    box-shadow: inset 0 0 0 30px rgba(255,255,255,1);
+    color: #000;
+}
+.icon-social i {
+    width: 23px;
+    text-align: center;
+    line-height: 1;
+}

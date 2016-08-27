@@ -1,0 +1,94 @@
+/* ################################################################################################### *\
+
+	Project Name: Camcar Sitio
+	Proyect Version: 2.0
+	Author: *******
+	Update: hevelmo
+
+	CONTENT STYLES LOGIN PAGE
+
+	[styles] bootstrap
+
+\* ################################################################################################### */
+	/* ------------------------------------------------------ *\
+		[styles] bootstrap
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/main/bootstrap.css);
+		@import url(styles/assets/main/bootstrap-theme.css);
+		@import url(styles/assets/main/bootstrap-extend.css);
+	/* ------------------------------------------------------ *\
+		[styles] alertify
+	\* ------------------------------------------------------ */
+		@import url(sitio/styles/alertify.boostrap-dist.css);
+		@import url(sitio/styles/alertify.boostrap.css);
+		@import url(sitio/styles/alertify.core.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark webfont
+	\* ------------------------------------------------------ */
+		@import url(webfonts/ionicons/ionicons.css);
+		@import url(webfonts/brand-icons/brand-icons.min.css);
+		@import url(webfonts/font-awesome/font-awesome.css);
+		@import url(webfonts/web-icons/web-icons.min.css);
+		@import url(webfonts/pe-icon-7-stroke/pe-icon-7-stroke.css);
+		@import url(webfonts/fullwidth-features/fullwidth-features.css);
+		@import url(webfonts/avenir/avenir.css);
+		@import url(webfonts/elegant-icons/elegant-icons.css);
+		@import url(webfonts/font-flexslider.css);
+		@import url(webfonts/type-file/type-file.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark fonts.googleApis
+	\* ------------------------------------------------------ */
+		@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,700,400italic,500%7CMontserrat:400,700);
+	/* ------------------------------------------------------ *\
+		[styles] remark extras
+	\* ------------------------------------------------------ */
+
+		@import url(sitio/styles/media-print.css);
+		@import url(styles/basscss.css);
+		@import url(sitio/styles/global-helper-sectio.css);
+		@import url(sitio/styles/integrity-light.css);
+		@import url(sitio/styles/section-colors.css);
+		@import url(sitio/styles/fullwidth-features.css	);
+		@import url(sitio/styles/main-sitio.css);
+		@import url(sitio/styles/main-navigation.css);
+		@import url(sitio/styles/typography.css);
+		@import url(sitio/styles/headers-slider-dividers.css);
+		@import url(sitio/herocarousel/herocarousel.css);
+		@import url(sitio/styles/media-box.css);
+		@import url(sitio/flexslider/flexslidernew.css);
+		/*
+
+		@import url(sitio/herocarousel/hero-carousel-animation.css);
+		*/
+		@import url(sitio/herocarousel/scrol-down.css);
+		@import url(sitio/herocarousel/inner.css);
+		@import url(sitio/styles/hero-carousel.css);
+		@import url(sitio/backtotop.css);
+		@import url(sitio/mobiletoggle.css);
+		@import url(sitio/animate.css);
+		@import url(sitio/animation.css);
+		@import url(sitio/styles/footer.css);
+		@import url(sitio/styles/contact.css);
+		@import url(sitio/styles/form-elements.css);
+		@import url(sitio/form-validation.css);
+		@import url(sitio/styles/video-strip.css);
+		@import url(sitio/styles/action-bar.css);
+		@import url(sitio/styles/results-items.css);
+		@import url(sitio/styles/single-listing-action.css);
+		/*@import url(sitio/styles/infobox.css);*/
+		@import url(sitio/social.css);
+		@import url(corp-medigraf.css);
+		@import url(styles/hint.css);
+		@import url(sitio/owl-carousel/owl.carousel.css);
+		@import url(sitio/owl-carousel/owl.theme.css);
+		@import url(sitio/owl-carousel/owl.transitions.css);
+		@import url(sitio/styles/fileupload.css);
+		@import url(styles/padding.css);
+/* ################################################################################################### *\
+	END CONTENT
+\* ################################################################################################### */
+#map { float:left; width:100%; height:600px; }
+#message { position:absolute; padding:10px; background:#555; color:#fff; width:75px; }
+#list { display: block; width:100%; background:#eee; list-style:none; padding:0; }
+#list li { padding:10px; display: inline-block; }
+#list li:hover { background:#555; color:#fff; cursor:pointer; cursor:hand; }

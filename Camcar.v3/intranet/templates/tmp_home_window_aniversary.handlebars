@@ -1,0 +1,139 @@
+<!-- Panel Aniversarios -->
+<div class="panel panel-bordered">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <i class="site-panel-icon navi-navicons-birthday-v1 fa-2x" aria-hidden="true"></i> ANIVERSARIOS
+        </h3>
+    </div>
+    <div class="panel-body">
+        {{#if webservice.length}}
+        <h4 class="panel-body-title">
+            FELICIDADES
+        </h4>
+        <ul class="list-group list-group-dividered list-group-full">
+            {{#each webservice}}
+            <li class="list-group-item">
+                {{!--
+                <small class="label label-round label-info pull-right">Completed</small>
+                --}}
+                <p>
+                    <span>{{nombres}} {{apellido_paterno}} {{apellido_materno}}</span>
+                    <span>{{aniversario}} años</span>
+                </p>
+                {{!--
+                <small>
+                    Opened by
+                    <a class="hightlight" href="javascript:void(0)">
+                        <span class="avatar avatar-xs">
+                            <img src="../../img/portraits/1.jpg" class="avatar-img" alt="">
+                        </span>
+                        <span>Herman Beck</span>
+                    </a>
+                    <time datetime="2015-07-01T08:55">2 hours ago</time>
+                </small>
+                --}}
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+        <h4 class="panel-body-title">
+            NO HAY ANIVERSARIOS EL DÍA DE HOY
+        </h4>
+        {{/if}}
+    </div>
+</div>
+<!-- End Panel Aniversarios -->
+{{!--
+<h1>
+    ANIVERSARIOS
+</h1>
+{{#if webservice.length}}
+<h3>
+    FELICIDADES
+</h3>
+{{#each webservice}}
+<br>
+{{aniversario}} años - {{nombres}} {{apellido_paterno}} {{apellido_materno}}
+{{/each}}
+{{else}}
+    NO HAY ANIVERSARIOS EL DÍA DE HOY
+{{/if}}
+<!-- Panel Aniversarios -->
+<div class="panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">ANIVERSARIOS</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group list-group-dividered list-group-full">
+            <li class="list-group-item">
+                <small class="label label-round label-info pull-right">Completed</small>
+                <p>
+                    <span>Server unavaible</span>
+                    <span>[13060]</span>
+                </p>
+                <small>
+                    Opened by
+                    <a class="hightlight" href="javascript:void(0)">
+                        <span class="avatar avatar-xs">
+                            <img src="../../img/portraits/1.jpg" class="avatar-img" alt="">
+                        </span>
+                        <span>Herman Beck</span>
+                    </a>
+                    <time datetime="2015-07-01T08:55">2 hours ago</time>
+                </small>
+            </li>
+            <li class="list-group-item">
+                <small class="label label-round label-warning pull-right">Pendening</small>
+                <p>
+                    <span>Mobile App Problem</span>
+                    <span>[13061]</span>
+                </p>
+                <small>
+                    Opened by
+                    <a class="hightlight" href="javascript:void(0)">
+                        <span class="avatar avatar-xs">
+                            <img src="../../img/portraits/2.jpg" class="avatar-img" alt="">
+                        </span>
+                        <span>Mary Adams</span>
+                    </a>
+                    <time datetime="2015-07-01T07:55">1 hour ago</time>
+                </small>
+            </li>
+            <li class="list-group-item">
+                <small class="label label-round label-primary pull-right">In progress</small>
+                <p>
+                    <span>IE8 problem</span>
+                    <span>[13062]</span>
+                </p>
+                <small>
+                    Opened by
+                    <a class="hightlight" href="javascript:void(0)">
+                        <span class="avatar avatar-xs">
+                            <img src="../../img/portraits/3.jpg" class="avatar-img" alt="">
+                        </span>
+                        <span>Caleb Richards</span>
+                    </a>
+                    <time datetime="2015-06-28T21:05">3 days ago</time>
+                </small>
+            </li>
+            <li class="list-group-item">
+                <small class="label label-round label-danger pull-right">Rejected</small>
+                <p>
+                    <span>Respoonsive problem</span>
+                    <span>[13063]</span>
+                </p>
+                <small>Opened by
+                    <a class="hightlight" href="javascript:void(0)">
+                        <span class="avatar avatar-xs">
+                            <img src="../../img/portraits/4.jpg" class="avatar-img" alt="">
+                        </span>
+                        <span>June Lane</span>
+                    </a>
+                    <time datetime="2015-06-27T13:05">4 days ago</time>
+                </small>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End Panel Aniversarios -->
+--}}

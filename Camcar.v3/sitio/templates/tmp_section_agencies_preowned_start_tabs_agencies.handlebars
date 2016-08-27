@@ -1,0 +1,17 @@
+<div class="client-section" id="Search-tabs" style="margin-top: 0px;">
+    <div class="clients-logo">
+        <ul class="tabs_agencias">
+            {{#each campa}}
+                <li class="agencia">
+                    <a class="go-action-agencie-preowned action-preowned-agn cur-hover" id="go-action-agencie-preowned-{{agnid}}" data-agn-preowned-name='{{agnnombre}}' data-agn-preowned-url='{{agnurl}}' data-agn-preowned-id='{{agnid}}' data-agn-preowned-maps='{{agnid}}'>
+                        <img src="../img/sitio/agencias/small/{{agnsmall}}" alt="{{agnnombre}}">
+                        {{!--
+                        <img src="../img/sitio/agencias/small/{{agnsmall}}" alt="{{agnnombre}}" class="img-disable">
+                        --}}
+                        <span style="text-transform: uppercase;">{{agnnombre}}</span>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

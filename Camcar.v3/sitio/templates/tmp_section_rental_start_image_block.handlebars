@@ -1,0 +1,46 @@
+<div class="container">
+{{#each campa}}
+<section class="image-block" id="{{agnId}}">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5 col-sm-6 {{columns}}">
+                <div class="text-block {{textAlign}}">
+                    <h2 class="entry-title entry-title-portfolio">{{agnNombre}}</h2>
+                    <br>
+                    <p class="lead">
+                        <strong>Dirección:</strong> {{agnDireccion}} <br>
+                        {{#if telefonos}}
+                            <strong>Telefono: </strong> {{telefonos.telefono}} <br>
+                        {{/if}}
+                        {{#if sociales}}
+                            <a class="primaryLink rental-agencie button-resp withStyle website" href="{{sociales.website}}" target="_blank">
+                                <span>CAPITAL RENTAL</span>
+                            </a>
+                        {{/if}}
+                    </p>
+                    {{#if telefonos}}
+                        <div class="phone visible-xs">
+                            <a href="tel:{{telefonos.call}}" class="primaryLink rental-agencie button-resp withStyle">
+                                <span class="">Llamanos</span>
+                            </a>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div><!--end of row-->
+    </div><!--end of container-->
+
+    <div class="image-holder image-holder-resp col-md-6 col-sm-6 {{direction}}">
+        <div class="background-image-holder">
+            <img alt="Slide Background" class="background-image" src="../img/sitio/rental/{{agnSmall}}">
+        </div>
+    </div>
+    {{!--
+    {{#if sociales}}
+    {{socwebsite}}
+    {{/if}}
+    --}}
+</section>
+{{/each}}
+</div>

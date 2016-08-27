@@ -1,0 +1,45 @@
+<div id="content-start-inventories-preowned-action-bar" class="about-content">
+    {# Actions bar #}
+    <div class="sticky-wrapper-action-bar">
+        <div class="actions-bar tsticky" id="tsticky">
+            <div class="container">
+                <div class="row" id="small-screen-filters">
+                    {# Small Screens Filters Toggle Button #}
+                    <button class="sem-style-button-resp btn btn-default visible-xs" id="Show-Filters">
+                        <i class="fa fa-search fa-fw fa-lg" style="padding-right: 30px;"></i>Filtros de Búsqueda
+                    </button>
+                    <div id="content-start-inventories-preowned-filter-section">
+                        <div class="sem-style-panel-filters form-inline form-noPrint" id="Search-Filters">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12" id="panel-filters-cateogories">
+                                        <form id="search-sen">
+                                            {% block filttros %}
+                                                {% embed "seminuevos/action_bar_marcas.twig" %}{% endembed %}
+                                                {% embed "seminuevos/action_bar_modelos.twig" %}{% endembed %}
+                                                <div class="col-md-4 field-filter-resp">
+                                                    <input type="text"
+                                                           name="sen_search"
+                                                           id="sen-get-searching"
+                                                           placeholder="Buscar"
+                                                           class="form-control"
+                                                           style="font-size: 1.3em;"
+                                                           value="{{ mystery }}">
+                                                </div>
+                                            {% endblock %}
+                                        </form>
+                                        <div class="col-md-3 field-filter-resp">
+                                            <a id="sen-get-search" class="button button-transparent bg-youtube resp-button">
+                                                Buscar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

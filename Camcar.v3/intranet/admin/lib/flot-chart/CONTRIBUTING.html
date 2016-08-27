@@ -1,0 +1,76 @@
+<h2 id="contributing-to-flot">Contributing to Flot</h2>
+<p>We welcome all contributions, but following these guidelines results in less
+work for us, and a faster and better response.</p>
+<h3 id="issues">Issues</h3>
+<p>Issues are not a way to ask general questions about Flot. If you see unexpected
+behavior but are not 100% certain that it is a bug, please try posting to the
+<a href="http://groups.google.com/group/flot-graphs">forum</a> first, and confirm that
+what you see is really a Flot problem before creating a new issue for it.</p>
+<p>When reporting a bug, please include a working demonstration of the problem, if
+possible, or at least a clear description of the options you&#39;re using and the
+environment (browser and version, jQuery version, other libraries) that you&#39;re
+running under.</p>
+<p>If you have suggestions for new features, or changes to existing ones, we&#39;d
+love to hear them! Please submit each suggestion as a separate new issue.</p>
+<p>If you would like to work on an existing issue, please make sure it is not
+already assigned to someone else. If an issue is assigned to someone, that
+person has already started working on it. So, pick unassigned issues to prevent
+duplicated efforts.</p>
+<h3 id="pull-requests">Pull Requests</h3>
+<p>To make merging as easy as possible, please keep these rules in mind:</p>
+<ol>
+<li><p>Divide larger changes into a series of small, logical commits with
+descriptive messages.</p>
+</li>
+<li><p>Format your code according to the style guidelines below.</p>
+</li>
+<li><p>Submit new features or architectural changes to the <version>-work branch
+for the next major release.  Submit bug fixes to the master branch.</p>
+</li>
+<li><p>Rebase, if necessary, before submitting your pull request, to reduce the
+work we need to do to merge it.</p>
+</li>
+</ol>
+<h3 id="flot-style-guidelines">Flot Style Guidelines</h3>
+<p>Flot follows the <a href="http://docs.jquery.com/JQuery_Core_Style_Guidelines">jQuery Core Style Guidelines</a>,
+with the following updates and exceptions:</p>
+<h4 id="spacing">Spacing</h4>
+<p>Do not add horizontal space around parameter lists, loop definitions, or
+array/object indices. For example:</p>
+<pre><code class="lang-js">    for ( var i = 0; i &lt; data.length; i++ ) {    // This block is wrong!
+        if ( data[ i ] &gt; 1 ) {
+            data[ i ] = 2;
+        }
+    }
+
+    for (var i = 0; i &lt; data.length; i++) {        // This block is correct!
+        if (data[i] &gt; 1) {
+            data[i] = 2;
+        }
+    }
+</code></pre>
+<h4 id="comments">Comments</h4>
+<p>Use // for all comments except the header at the top of a file or inline
+include.</p>
+<p>All // comment blocks should have an empty line above <em>and</em> below them. For
+example:</p>
+<pre><code class="lang-js">    var a = 5;
+
+    // We&#39;re going to loop here
+    // TODO: Make this loop faster, better, stronger!
+
+    for (var x = 0; x &lt; 10; x++) {}
+</code></pre>
+<h4 id="wrapping">Wrapping</h4>
+<p>Block comments should be wrapped at 80 characters.</p>
+<p>Code should attempt to wrap at 80 characters, but may run longer if wrapping
+would hurt readability more than having to scroll horizontally.  This is a
+judgement call made on a situational basis.</p>
+<p>Statements containing complex logic should not be wrapped arbitrarily if they
+do not exceed 80 characters. For example:</p>
+<pre><code class="lang-js">    if (a == 1 &amp;&amp;        // This block is wrong!
+        b == 2 &amp;&amp;
+        c == 3) {}
+
+    if (a == 1 &amp;&amp; b == 2 &amp;&amp; c == 3) {}        // This block is correct!
+</code></pre>

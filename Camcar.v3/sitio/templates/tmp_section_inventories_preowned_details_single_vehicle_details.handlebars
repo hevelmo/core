@@ -1,0 +1,180 @@
+{{!-- Start Body Content --}}
+
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+
+            {{!-- Vehicle Details --}}
+
+            <article class="single-vehicle-details">
+
+                <div id="content_single_vehicle"></div>
+
+                <div class="single-vehicle-title">
+                    <span class="badge-premium-listing" 
+                          data-id-sem="{{campa.0.id}}">
+                        {{campa.0.agencia}}
+                    </span>
+                    <h2 class="post-title" 
+                        data-id-sem="{{campa.0.id}}">
+                        {{campa.0.marca}} - {{campa.0.modelo}} - {{campa.0.year}}
+                    </h2>
+                </div>
+
+                <div class="single-listing-actions">
+                    <div class="btn-group single-listing-actions-group pull-right" role="group">
+                        <a href="javascript:void(0)"
+                           onclick="window.print();"
+                           class="btn btn-default btn_print single-listing-actions-print-resp"
+                           title="Print">
+                            <i class="fa fa-print"></i>
+                            <span>Imprimir</span>
+                        </a>
+                        <a class="btn btn-default btn_return single-listing-actions-back-resp" 
+                           title="Regresar" id="back">
+                           <i class="fa fa-arrow-left"></i>
+                           <span>Regresar</span>
+                        </a>
+                    </div>
+                    <div class="btn btn-info price" data-id-sem="{{campa.0.id}}">
+                        <span class="multiple">
+                            {{campa.0.precio}}
+                        </span>
+                    </div>
+
+                    {{#if campa.0.telefonos.ventas}}
+                        {{#if campa.0.telefonos.ventas.agntelefonoventaslinea1}}
+                            <div class="btn btn-info phone hidden-movil">
+                                <i class="fa fa-phone"></i>
+                                <span>
+                                    {{campa.0.telefonos.ventas.agntelefonoventaslinea1}}
+                                </span>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+                    
+                    <span class="badge-premium-listing" data-id-sem="{{campa.0.id}}">
+                        {{campa.0.agencia}}
+                    </span>
+                    
+                    {{#if campa.0.telefonos.ventas}}
+                        {{#if campa.0.telefonos.ventas.agncallventaslinea1}}
+                            <div class="btn btn-info phone visible-xs">
+                                <a href="tel:{{campa.0.telefonos.ventas.agncallventaslinea1}}">
+                                    <i class="fa fa-phone"></i>
+                                    <span>Llamanos</span>
+                                </a>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <div class="single-listing-images" id="content-vehicle-slider-details"></div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sidebar-widget widget">
+                            <div id="content_specifications"></div>
+                            <div class="vehicle-enquiry-foot pull-left">
+                                <h6 class="widgettitle">
+                                    DESCRIPCIÓN
+                                </h6>
+                                <strong class="address-description to_print">
+                                    {{campa.0.descripcion}}
+                                </strong>
+                            </div>
+                            <div class="vehicle-enquiry-foot pull-left">
+                                <h6 class="widgettitle">
+                                    {{campa.0.agencia}}
+                                </h6>
+                                <span class="vehicle-enquiry-foot-ico">
+                                    <i class="fa fa-location-arrow"></i>
+                                </span>
+                                <strong class="address">
+                                    {{campa.0.agnAddress}}
+                                </strong>
+                                <br>
+                                {{#if campa.0.telefonos.ventas}}
+                                    {{#if campa.0.telefonos.ventas.agntelefonoventaslinea1}}
+                                        <span class="vehicle-enquiry-foot-ico">
+                                            <i class="fa fa-phone"></i>
+                                        </span>
+                                        <strong class="address">
+                                            {{campa.0.telefonos.ventas.agntelefonoventaslinea1}}
+                                        </strong>
+                                    {{/if}}
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="tabs vehicle-details-tabs">
+                            <ul class="nav nav-tabs">
+                            </ul>
+                            <div class="tab-content">
+                                <div id="vehicle-location" class="tab-pane fade in active no_print">
+                                    <div id="content_wrapper_map"></div>
+                                </div>
+                                <a href="{{campa.0.map_url}}"
+                                   class="btn btn-default btn_default visible-xs"
+                                   title="VIEW MAP"
+                                   target="_blank">
+                                    <i class="icon icon-geolocalizator"></i>
+                                    <span>VER MAPA</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="content_form_contact_by_model"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="spacer-50"></div>
+                        {{!-- Recently Listed Vehicles --}}
+                        <section class="listing-block recent-vehicles">
+                            <div class="listing-header">
+                                <h3>
+                                    Vehículos relacionados
+                                </h3>
+                            </div>
+                            <div id="content_carousel_vehicles"></div>
+                        </section>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </article>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+{{!-- End Body Content --}}
+
+<script>
+    $(document).ready( function() {
+        $("#sem-basic-price").currency();
+        $("#basic").currency();
+        $("#input").currency();
+        $("#advanced").currency({ 
+            region: "GBP", 
+            thousands: ",", 
+            decimal: ",", 
+            decimals: 3 
+        });
+        $(".multiple").currency();
+        $("#convert").currency({ 
+            region: "GBP", 
+            convertFrom: "EUR", 
+            convertLocation: "../convert.php" 
+        });
+    });
+</script>

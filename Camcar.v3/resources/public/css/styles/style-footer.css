@@ -1,0 +1,276 @@
+/*!
+// 18. Footers
+// --------------------------------------------------*/
+  footer {
+    padding: 80px 0;
+    background-color: #ffffff;
+  }
+  footer:nth-child(odd) {
+    /*background: #f7f7f7;*/
+
+    background-color: #ffffff;
+    clear: both;
+  }
+  .newsletter-form input[type="submit"] {
+    background: #0054a6;
+    border: none;
+    padding: 12px;
+    color: #0054a6;
+    position: relative;
+    right: 5px;
+    border: 1px solid #0054a6;
+  }
+  .newsletter-form {
+    position: relative;
+    display: inline-block;
+  }
+  .newsletter-form i {
+    position: absolute;
+    font-size: 48px;
+    z-index: 2;
+    right: 40px;
+    top: 0;
+    pointer-events: none;
+  }
+  .footer-1 ul li a {
+    color: #333333;
+    line-height: 32px;
+  }
+  .footer-1 .newsletter-form .input-standard {
+    border: 1px solid #ccc;
+    width: 70%;
+    float: left;
+    min-height: 50px;
+  }
+  .footer-1 .newsletter-form input[type="submit"] {
+    width: 30%;
+    float: right;
+  }
+  .footer-1 .footer-lower {
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+    padding-top: 32px;
+  }
+  .footer-1 .footer-lower span {
+    color: #888;
+  }
+  .footer-1 .footer-lower i {
+    margin: 0 8px;
+    color: #ff0042;
+    font-size: 14px !important;
+  }
+  .footer-2 .footer-lower {
+    overflow: hidden;
+    margin-top: 48px;
+  }
+  .footer-2 .copyright {
+    opacity: 0.7;
+    display: block;
+    float: right;
+    font-size: 12px;
+  }
+  .footer-2 .logo {
+    max-height: 40px;
+    display: block;
+    margin-right: 24px;
+    float: left;
+    position: relative;
+    top: 1px;
+  }
+  .footer-2 .tagline {
+    display: block;
+    float: left;
+    line-height: 20px;
+  }
+  .footer-3 .logo,
+  .footer-4 .logo {
+    max-height: 30px;
+    display: inline-block;
+    margin-right: 12px;
+  }
+  .footer-3 span {
+    opacity: 0.7;
+  }
+  .footer-4 .social-links {
+    margin-bottom: 80px;
+  }
+  .footer-4 .social-links a {
+    font-family: 'font_name_landrover_light', 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0054a6;
+    display: inline-block;
+    margin: 24px 0px 16px 0px;
+    font-size: 12px;
+    color: #333333;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    opacity: 0.5;
+  }
+  .footer-4 .social-links li {
+    margin-right: 64px;
+  }
+  .footer-4 .social-links a:hover {
+    opacity: 1;
+  }
+  .footer-5 {
+    background: #0054a6 !important;
+    color: rgba(101, 100, 97, 1);
+  }
+  .footer-5 .logo {
+    max-height: 60px;
+    margin-bottom: 80px;
+  }
+  .footer-5 ul {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .footer-5 ul li {
+    float: left;
+    margin-left: 40px;
+  }
+  .footer-5 .text-link {
+    font-size: 12px;
+    color: rgba(101, 100, 97, 1);
+    border-color: rgba(101, 100, 97, 1);
+    border-bottom: 1px solid rgba(101, 100, 97, 1);
+  }
+  .footer-5 i {
+    color: rgba(101, 100, 97, 1);
+  }
+  .footer-5 span {
+    font-size: 12px;
+    opacity: 0.8;
+    position: relative;
+    top: 7px;
+  }
+  @media all and (max-width: 767px) {
+    .footer-5 .logo {
+      margin-bottom: 64px;
+    }
+    .footer-5 ul {
+      display: block;
+      margin-top: 32px;
+    }
+    .footer-5 ul li {
+      margin-left: 0;
+      margin-right: 16px;
+    }
+  }
+  .footer-6 {
+    border-top: 1px solid #d4d4d4;
+    background-color: white;
+    -webkit-box-shadow: 0 -0.125em 0.25em 0 rgba(0, 0, 0, 0.075);
+    box-shadow: 0 -0.125em 0.25em 0 rgba(0, 0, 0, 0.075);
+    clear: both;
+    color: rgba(101, 100, 97, 0.8);
+  }
+  .footer-6 h5 {
+    color: rgba(101, 100, 97, 1);
+    color: rgba(101, 100, 97, 0.9);
+  }
+  .footer-6 .tweet {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  .footer-6 .tweets-feed a {
+    color: rgba(101, 100, 97, 1);
+    color: rgba(101, 100, 97, 0.9);
+  }
+  .footer-6 .timePosted {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .footer-6 .tweets-feed li {
+    margin-bottom: 24px;
+  }
+  .footer-6 .tweets-feed li:nth-child(n+3) {
+    display: none;
+  }
+  .footer-6 .link-list a {
+    color: rgba(101, 100, 97, 1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+  }
+  .footer-6 .link-list li {
+    margin-bottom: 8px;
+  }
+  .footer-6 .link-list a:hover {
+    opacity: 1;
+    color: rgba(101, 100, 97, 1);
+  }
+  .footer-6 .footer-lower {
+    padding-top: 32px;
+    border-top: 1px solid rgba(101, 100, 97, 0.14);
+    margin-top: 48px;
+    overflow: hidden;
+  }
+  .footer-6 .footer-lower span {
+    font-family: 'font_avira','Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    opacity: 0.6;
+    font-size: 12px;
+      padding: 15px;
+  }
+  .footer-6 .footer-lower .social-links {
+    float: right;
+  }
+  .footer-6 .social-links a {
+    font-size: 16px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    color: #000;
+  }
+  .footer-6 .social-links a:hover {
+    opacity: 1;
+  }
+  .footer-6 .social-links li {
+    margin-right: 32px;
+  }
+  .footer-6 .social-links li:last-child {
+    margin-right: 0;
+  }
+  /*.footer-6 .logo {
+    max-height: 30px;
+    display: inline-block;
+    margin-bottom: 48px;
+  }*/
+  .footer-6 .logo {
+    max-height: 70px;
+    display: block;
+    margin: 0 auto;
+  }
+  @media all and (max-width: 990px) {
+    .footer-6 .tweets-feed {
+      margin-bottom: 48px;
+    }
+    .footer-6 .link-list li {
+      float: left;
+      margin-right: 32px;
+    }
+  }
+  @media all and (max-width: 767px) {
+    .footer-6 div[class*="col-"] {
+      margin-bottom: 32px;
+    }
+    .footer-6 .tweets-feed {
+      margin-bottom: 0;
+    }
+    .footer-6 br {
+      display: block;
+    }
+    .footer-6 .social-links {
+      float: left;
+      display: block;
+      width: 100%;
+      margin-top: 24px;
+    }
+  }
+/**/

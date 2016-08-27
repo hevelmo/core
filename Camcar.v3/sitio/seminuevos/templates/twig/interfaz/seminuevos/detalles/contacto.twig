@@ -1,0 +1,183 @@
+<div class="col-md-4">
+    <div id="content_form_contact_by_model">
+        <div class="sidebar-widget widget no-print">
+            <div class="vehicle-enquiry-foot pull-left contact_main" 
+                 style="width: 100%;">
+                <h6 class="widgettitle no-print">
+                    CONTACTO
+                </h6>
+                <div class="vehicle-enquiry-in contact_content clearfix">
+                    <div id="form-wrapper">
+                        {% block contacto_form %}
+                            <form class="email-form-sen-premium-by-model"
+                                  id="detail-sen-contact"
+                                  data-sen-id="{{ detalle.id }}">
+                                <div class="contact_elements">
+                                    <div class="contact_element ab">
+                                        <fieldset>
+                                            <input type="text"
+                                                   name="sen_name"
+                                                   id="detail-sen-name"
+                                                   placeholder="Nombre"
+                                                   class="detail-sen-element input-standard validate-required no-print"
+                                                   style="font-size: 1.3em;"
+                                                   data-validation-data="required|name">
+                                            <p class="invalid-message" id="error_nombre">
+                                                 Este campo es obligatorio
+                                                <span>&nbsp;</span>
+                                            </p>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="contact_elements">
+                                    <div class="contact_element ab">
+                                        <fieldset>
+                                            <input type="text"
+                                                   name="sen_lastname"
+                                                   id="detail-sen-lastname"
+                                                   placeholder="Apellido"
+                                                   class="detail-sen-element input-standard validate-required no-print"
+                                                   style="font-size: 1.3em;"
+                                                   data-validation-data="required|lastname">
+                                            <p class="invalid-message" id="error_apellido">
+                                                 Este campo es obligatorio
+                                                <span>&nbsp;</span>
+                                            </p>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="contact_elements">
+                                    <div class="contact_element ab">
+                                        <fieldset>
+                                            <input type="email" 
+                                                   name="sen_email"
+                                                   id="detail-sen-email"
+                                                   placeholder="Email"
+                                                   class="detail-sen-element input-standard validate-required validate-email no-print"
+                                                   style="font-size: 1.3em;"
+                                                   data-validation-data="required|email">
+                                            <p class="invalid-message" id="error_correo">
+                                                Este campo es obligatorio
+                                                <span>&nbsp;</span>
+                                            </p>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="contact_elements">
+                                    <div class="contact_element ab">
+                                        <fieldset>
+                                            <input type="text"
+                                                   name="sen_phone"
+                                                   id="detail-sen-phone"
+                                                   placeholder="Telefono"
+                                                   maxlength="13"
+                                                   class="detail-sen-element input-standard validate-required no-print"
+                                                   style="font-size: 1.3em;"
+                                                   data-validation-data="required|phone">
+                                            <p class="invalid-message" id="error_phone">
+                                                Este campo es obligatorio
+                                                <span>&nbsp;</span>
+                                            </p>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                <div class="contact_elements">
+                                    <div class="contact_element ab">
+                                        <fieldset>
+                                            <textarea name="sen_message" 
+                                                 id="detail-sen-message" 
+                                                 class="detail-sen-element input-standard validate-required no-print" 
+                                                 placeholder="Comentario" 
+                                                 style="font-size: 1.3em;" 
+                                                 data-validation-data="required|address"></textarea>
+                                            <p class="invalid-message" id="error_mensaje">
+                                                Este campo es obligatorio
+                                                <span>&nbsp;</span>
+                                            </p>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <input type="hidden"
+                                           name="sen_email_send"
+                                           id="detail-sen-email-send"
+                                           value="{{ detalle.agencia.correo }}">
+                                    <input type="hidden"
+                                           name="sen_concessionary"
+                                           id="detail-sen-concessionary"
+                                           value="CAMCAR - {{ detalle.agencia.nombre }}">
+                                    <input type="hidden"
+                                           name="sen_logo"
+                                           id="detail-sen-logo"
+                                           value="camcar.png">
+                                    <input type="hidden"
+                                           name="sen_agn_logo"
+                                           id="detail-sen-agn-logo"
+                                           value="{{ detalle.agencia.logo }}">
+                                    <input type="hidden"
+                                           name="sen_mar"
+                                           id="detail-sen-mar"
+                                           value="{{ detalle.marca.nombre }}">
+                                    <input type="hidden"
+                                           name="sen_mdo"
+                                           id="detail-sen-mdo"
+                                           value="{{ detalle.modelo.nombre }}">
+                                    <input type="hidden"
+                                           name="sen_year"
+                                           id="detail-sen-year"
+                                           value="{{ detalle.anio }}">
+                                    <input type="hidden"
+                                           name="sen_pic"
+                                           id="detail-sen-pic"
+                                           value="{{ detalle.thm_folder }}/{{ detalle.thm_nombre }}">   
+                                </div>
+
+                            </form>
+                            <div id="loader-by-model"></div>
+                            <div class="linkContainer ctaContainer text-right">
+                                <input type="submit"
+                                       class="submit_contact"
+                                       id="detail-sen-send"
+                                       value="Enviar"
+                                       style="font-size: 1.3em;"
+                                       disabled="disabled">
+                            </div>
+
+                        {% endblock %}
+
+                    </div>
+                    {% block contacto_mensajes %}
+                        <div class="form-thanks clearfix" style="display: none;">
+                            <p class="agradecimiento_titulo">
+                                Mensaje enviado
+                            </p>
+                            <hr>
+                            <p class="agradecimiento_titulo2">
+                                En breve responderemos tu mensaje al siguiente correo:
+                                <br>
+                                <span id="email-from">-</span>
+                            </p>
+                        </div>
+                        <div class="form-error clearfix" style="display: none;">
+                            <p class="agradecimiento_titulo">
+                                Hubo un error
+                            </p>
+                            <hr>
+                            <p class="agradecimiento_titulo2">
+                                Intentalo nuevamente
+                            </p>
+                        </div>
+                        <div class="form-loader clearfix" style="display: none;">
+                            <div class="loader">
+                                <div class="loader-wrap">
+                                    <div class="loader-item"></div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 text-center" data-id={{campa.0.agnid}}>
+            <h5 style="color: #000; text-transform: uppercase;"><span style="color:#7a7a7a;">{{campa.0.agnnombre}}</span></h5>
+            {{#if campa.0.logotipos}}
+                {{#if campa.0.logotipos.agnlogo1}}
+                    <img src="../img/sitio/agencias/brands/{{campa.0.logotipos.agnlogo1}}" alt="{{campa.0.agnnombre}}" class="x-img x-img-none none agn_logo">
+                {{/if}}
+                {{#if campa.0.logotipos.agnlogo2}}
+                    <img src="../img/sitio/agencias/logos/{{campa.0.logotipos.agnlogo2}}" alt="{{campa.0.agnnombre}}" class="x-img x-img-none none agn_logo">
+                {{/if}}
+            {{/if}}
+        </div>
+        <div class="col-md-8 col-sm-8 text-left" style="font-size: 16px; padding: 20px 5px 0px;">
+            {{#each campa}}
+                <div class="contact-method">
+                    <i class="icon pe-7s-phone agn_icono"></i>
+                    {{#if telefonos.ventas}}
+                        <span class="agn_span">
+                            {{#if telefonos.ventas.agntelefonoventaslinea1}}
+                                <strong>Ventas: </strong>
+                                {{telefonos.ventas.agntelefonoventaslinea1}}
+                            {{/if}}
+                            {{#if telefonos.ventas.agntelefonoventaslinea2}}
+                                / {{telefonos.ventas.agntelefonoventaslinea2}}
+                            {{/if}}
+                        </span>
+                    {{/if}}
+                    {{#if telefonos.servicios}}
+                        <span class="agn_span">
+                            {{#if telefonos.servicios.agntelefonoserviciolinea1}}
+                                <strong>Servicio: </strong>
+                                {{telefonos.servicios.agntelefonoserviciolinea1}}
+                            {{/if}}
+                            {{#if telefonos.servicios.agntelefonoserviciolinea2}}
+                                / {{telefonos.servicios.agntelefonoserviciolinea2}}
+                            {{/if}}
+                        </span>
+                    {{/if}}
+                </div>
+            {{/each}}
+
+            <div class="contact-method">
+                <i class="icon pe-7s-map-marker agn_icono"></i>
+                <span class="agn_span">
+                    {{campa.0.agndireccion}}
+                </span>
+            </div>
+            {{#each campa}}
+            <div class="contact-method">
+            {{#if horarios.ventas.agnhrventas}}
+                <i class="icon pe-7s-clock agn_icono"></i>
+                <span class="agn_span">
+                    <strong>Ventas:</strong> {{horarios.ventas.agnhrventas}} <br>
+            {{/if}}
+            {{#if horarios.servicios.agnhrservicio}}
+                    <strong>Servicio:</strong> {{horarios.servicios.agnhrservicio}} <br>
+            {{/if}}
+            {{#if horarios.refacciones.agnhrrefaccion}}
+                    <strong>Refacciones:</strong> {{horarios.refacciones.agnhrrefaccion}}
+                </span>
+            {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{#if campa.0.sociales}}
+    <div class="row">
+        <div class="col-md-12 text-center" style="padding: 20px 20px 0;">
+            {{#if campa.0.sociales.sitio_web.agnwebsite}}
+                <a href="{{campa.0.sociales.sitio_web.agnwebsite}}" class="button py4 button-transparent bg-youtube resp-button" target="_blank">
+                    <i class="fa fa-globe fa-fw fa-lg"></i> SITIO WEB
+                </a>
+            {{/if}}
+            {{#each campa}}
+                {{#if sociales.facebook.agnfacebookcta1}}
+                    <a href="{{sociales.facebook.agnfacebookcta1}}" class="button py4 button-transparent bg-facebook resp-button" target="_blank">
+                        {{#if sociales.facebook.agntitle_facebook_cta1}}
+                            <i class="fa fa-facebook fa-fw fa-lg"></i> {{sociales.facebook.agntitle_facebook_cta1}}
+                        {{/if}}
+                    </a>
+                {{/if}}
+                {{#if sociales.facebook.agnfacebookcta2}}
+                    <a href="{{sociales.facebook.agnfacebookcta2}}" class="button py4 button-transparent bg-facebook resp-button" target="_blank">
+                        {{#if sociales.facebook.agntitle_facebook_cta2}}
+                            <i class="fa fa-facebook fa-fw fa-lg"></i> {{sociales.facebook.agntitle_facebook_cta2}}
+                        {{/if}}
+                    </a>
+                {{/if}}
+            {{/each}}
+            {{#if campa.0.sociales.twitter.agntwitter}}
+                <a href="{{campa.0.sociales.twitter.agntwitter}}" class="button py4 button-transparent bg-twitter resp-button" target="_blank">
+                    {{#if campa.0.sociales.twitter.agntitle_twitter}}
+                        <i class="fa fa-twitter fa-fw fa-lg"></i> {{campa.0.sociales.twitter.agntitle_twitter}}
+                    {{/if}}
+                </a>
+            {{/if}}
+        </div>
+    </div>
+    {{/if}}
+</div>

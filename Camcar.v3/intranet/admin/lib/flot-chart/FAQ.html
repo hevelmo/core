@@ -1,0 +1,54 @@
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h4 id="how-much-data-can-flot-cope-with-">How much data can Flot cope with?</h4>
+<p>Flot will happily draw everything you send to it so the answer
+depends on the browser. The excanvas emulation used for IE (built with
+VML) makes IE by far the slowest browser so be sure to test with that
+if IE users are in your target group (for large plots in IE, you can
+also check out Flashcanvas which may be faster).</p>
+<p>1000 points is not a problem, but as soon as you start having more
+points than the pixel width, you should probably start thinking about
+downsampling/aggregation as this is near the resolution limit of the
+chart anyway. If you downsample server-side, you also save bandwidth.</p>
+<h4 id="flot-isn-t-working-when-i-m-using-json-data-as-source-">Flot isn&#39;t working when I&#39;m using JSON data as source!</h4>
+<p>Actually, Flot loves JSON data, you just got the format wrong.
+Double check that you&#39;re not inputting strings instead of numbers,
+like [[&quot;0&quot;, &quot;-2.13&quot;], [&quot;5&quot;, &quot;4.3&quot;]]. This is most common mistake, and
+the error might not show up immediately because Javascript can do some
+conversion automatically.</p>
+<h4 id="can-i-export-the-graph-">Can I export the graph?</h4>
+<p>You can grab the image rendered by the canvas element used by Flot
+as a PNG or JPEG (remember to set a background). Note that it won&#39;t
+include anything not drawn in the canvas (such as the legend). And it
+doesn&#39;t work with excanvas which uses VML, but you could try
+Flashcanvas.</p>
+<h4 id="the-bars-are-all-tiny-in-time-mode-">The bars are all tiny in time mode?</h4>
+<p>It&#39;s not really possible to determine the bar width automatically.
+So you have to set the width with the barWidth option which is NOT in
+pixels, but in the units of the x axis (or the y axis for horizontal
+bars). For time mode that&#39;s milliseconds so the default value of 1
+makes the bars 1 millisecond wide.</p>
+<h4 id="can-i-use-flot-with-libraries-like-mootools-or-prototype-">Can I use Flot with libraries like Mootools or Prototype?</h4>
+<p>Yes, Flot supports it out of the box and it&#39;s easy! Just use jQuery
+instead of $, e.g. call jQuery.plot instead of $.plot and use
+jQuery(something) instead of $(something). As a convenience, you can
+put in a DOM element for the graph placeholder where the examples and
+the API documentation are using jQuery objects.</p>
+<p>Depending on how you include jQuery, you may have to add one line of
+code to prevent jQuery from overwriting functions from the other
+libraries, see the documentation in jQuery (&quot;Using jQuery with other
+libraries&quot;) for details.</p>
+<h4 id="flot-doesn-t-work-with-insert-name-of-javascript-ui-framework-">Flot doesn&#39;t work with [insert name of Javascript UI framework]!</h4>
+<p>Flot is using standard HTML to make charts. If this is not working,
+it&#39;s probably because the framework you&#39;re using is doing something
+weird with the DOM or with the CSS that is interfering with Flot.</p>
+<p>A common problem is that there&#39;s display:none on a container until the
+user does something. Many tab widgets work this way, and there&#39;s
+nothing wrong with it - you just can&#39;t call Flot inside a display:none
+container as explained in the README so you need to hold off the Flot
+call until the container is actually displayed (or use
+visibility:hidden instead of display:none or move the container
+off-screen).</p>
+<p>If you find there&#39;s a specific thing we can do to Flot to help, feel
+free to submit a bug report. Otherwise, you&#39;re welcome to ask for help
+on the forum/mailing list, but please don&#39;t submit a bug report to
+Flot.</p>

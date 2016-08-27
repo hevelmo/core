@@ -1,0 +1,78 @@
+/* ################################################################################################### *\
+
+	Project Name: Camcar
+	Proyect Version: 2.0
+	Author: *******
+	Update: hevelmo
+
+	CONTENT STYLES LOGIN PAGE
+
+	[styles] bootstrap
+	[styles] remark site
+	[styles] remark plugins
+	[styles] remark login page
+	[styles] remark webfont
+	[styles] remark fonts.googleApis
+	[styles] remark extras
+
+\* ################################################################################################### */
+	/* ------------------------------------------------------ *\
+		[styles] bootstrap
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/main/bootstrap.css);
+		@import url(styles/assets/main/bootstrap-extend.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark site
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/main/site.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark plugins
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/plugins/animsition/animsition.css);
+		@import url(styles/assets/plugins/asscrollable/asScrollable.css);
+		@import url(styles/assets/plugins/switchery/switchery.css);
+		@import url(styles/assets/plugins/intro-js/introjs.css);
+		@import url(styles/assets/plugins/slidepanel/slidePanel.css);
+		@import url(styles/assets/plugins/flag-icon-css/flag-icon.css);
+		@import url(styles/assets/plugins/waves/waves.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark intranet page
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/plugins/chartist-js/chartist.css);
+		@import url(styles/assets/plugins/jvectormap/jquery-jvectormap.css);
+		@import url(styles/assets/plugins/chartist-plugin-tooltip/chartist-plugin-tooltip.css);
+		@import url(styles/assets/jquery.bxslider.css);
+		@import url(styles/modal-responsive.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark webfont
+	\* ------------------------------------------------------ */
+		@import url(webfonts/brand-icons/brand-icons.min.css);
+		@import url(webfonts/font-awesome/font-awesome.css);
+		@import url(webfonts/web-icons/web-icons.min.css);
+		@import url(webfonts/weather-icons/weather-icons.css);
+		@import url(webfonts/navicons/navicons.css);
+		@import url(webfonts/7-stroke/7-stroke.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark fonts.googleApis
+	\* ------------------------------------------------------ */
+		@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,700,400italic,500%7CMontserrat:400,700);
+	/* ------------------------------------------------------ *\
+		[styles] remark extras
+	\* ------------------------------------------------------ */
+		/*
+		*/
+		@import url(main.css);
+		@import url(styles/animate.css);
+		@import url(styles/remark-main-intranet.css);
+		@import url(styles/animation.css);
+		@import url(styles/basscss.css);
+		@import url(styles/hint.css);
+		@import url(styles/font-size.css);
+		@import url(styles/cursor.css);
+		@import url(styles/padding.css);
+		@import url(styles/margin.css);
+		@import url(styles/font-family.css);
+		@import url(styles/responsive-table.css);
+/* ################################################################################################### *\
+	END CONTENT
+\* ################################################################################################### */

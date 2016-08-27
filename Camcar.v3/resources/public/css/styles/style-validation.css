@@ -1,0 +1,65 @@
+/* validate form contact */
+.contact_main .contact_content .contact_elements {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.contact_main .contact_content .contact_elements .contact_element input,
+.contact_main .contact_content .contact_elements .contact_element textarea {
+    width: 100%;
+}
+.contact_main .contact_content .contact_elements .contact_element input {
+    margin-bottom: 5px;
+}
+.contact_main .contact_content .contact_elements .contact_element textarea {
+    margin-bottom: 0px;
+}
+.contact_main .contact_content .contact_elements .contact_element.a {
+    float: left;
+    margin-right: 1%;
+}
+.contact_main .contact_content .contact_elements .contact_element.b {
+    float: right;
+    margin-left: 1%;
+}
+.contact_main .contact_content .contact_elements .contact_element.ab {
+    float: none;
+    height: auto;
+    width: 100%;
+}
+.contact_main .contact_content .contact_elements .contact_element {
+    height: auto;
+    width: 49%;
+}
+.contact_main .contact_content .contact_elements .contact_element.ab .invalid-message {
+    width: 100%;
+}
+
+fieldset {
+    margin: 10px auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    color: #999;
+    border: 0;
+}
+fieldset .invalid-message {
+    width:100%;
+    padding:7px 10px;
+    margin-top:5px;
+    background-color:#e1251b;
+    color:#fff;
+    font-size:14px;
+    position:relative;
+    display:none;
+}
+fieldset .invalid-message span {
+    position:absolute;
+    top:-10px;
+    right:30px;
+    width:0;
+    height:0;
+    border-left:7px solid transparent;
+    border-right:7px solid transparent;
+    border-bottom:10px solid #e1251b;
+}

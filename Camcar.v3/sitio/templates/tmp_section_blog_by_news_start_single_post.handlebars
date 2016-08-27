@@ -1,0 +1,108 @@
+<!-- Start Body Content -->
+<div class="main" role="main">
+	<div id="content" class="content full">
+  		<div class="container">
+    		<div class="row">
+      			<div class="col-md-9 single-post">
+        			<header class="single-post-header clearfix">
+                        <div class="post-actions">
+                            <div class="post-date">{{campa.0.blogPublicacion}}</div>
+                            <div class="comment-count"><a id="go-back-blog"><i class="fa fa-chevron-left"></i> Regresar</a></div>
+                        </div>
+          				<h2 class="post-title">
+          					{{campa.0.blogTitulo}}
+          				</h2>
+        			</header>
+        			<article class="post-content">
+                        {{#if campa.0.blogDescripcion}}
+                        <div class="to-html">{{campa.0.blogDescripcion}}</div>
+                        {{/if}}
+        				{{#if campa.0.blogGaleria}}
+        					<div class="featured-image">
+                                <a id="content-section-blog-galery">
+                                </a>
+                            </div>
+        				{{/if}}
+        				{{#if campa.0.blogVideo}}
+        					<div class="featured-image featured-image-mobile">
+                                <a>
+                                    <iframe width="795" height="480" src="{{campa.0.blogVideo}}?rel=0" frameborder="0" allowfullscreen=""></iframe>
+                                </a>
+                            </div>
+                            <div class="tab_content_agencies animation-fadeIn">
+                                <section class="" style="padding: 0px 0px 0px;">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 text-center" style="font-size: 16px; padding: 20px 5px 0px;">
+                                            <a href="https://www.youtube.com/c/CamcarMx" class="button py4 button-transparent bg-youtube resp-button tex-center resp-button-channel" target="_blank">
+                                                <i class="fa fa-youtube-square fa-fw fa-lg"></i> CANAL DE YOUTUBE
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+        				{{/if}}
+        				{{#if campa.0.blogSubTitulo}}
+    					<h3 class="post-subtitle to-html">{{campa.0.blogSubTitulo}}</h3>
+        				{{/if}}
+        				{{#if campa.0.blogFeatureImage}}
+        				<div class="featured-image">
+                            <a>
+                                <img src="../img/sitio/blog/{{campa.0.blogFeatureImage}}" alt="" class="post-img">
+                            </a>
+                        </div>
+        				{{/if}}
+
+        				{{#if campa.0.blogPostParrafo1}}
+        				<div class="to-html">{{campa.0.blogPostParrafo1}}</div>
+        				{{/if}}
+        				{{#if campa.0.blogPostSubTitulo}}
+        				<div class="to-html">{{campa.0.blogPostSubTitulo}}</div>
+        				{{/if}}
+        				{{#if campa.0.blogPostParrafo2}}
+        				<div class="to-html">{{campa.0.blogPostParrafo2}}</div>
+        				{{/if}}
+        				{{#if campa.0.blogPostFeatureImage1}}
+        				<div class="featured-image">
+                            <a>
+                                <img src="../img/sitio/blog/{{campa.0.blogPostFeatureImage1}}" alt="" class="post-img">
+                            </a>
+                        </div>
+        				{{/if}}
+        				{{#if campa.0.blogPostFeatureImage2}}
+        				<div class="featured-image">
+                            <a>
+                                <img src="../img/sitio/blog/{{campa.0.blogPostFeatureImage2}}" alt="" class="post-img">
+                            </a>
+                        </div>
+        				{{/if}}
+        				{{#if campa.0.blogPostBlockquote}}
+        				<div class="to-html">{{campa.0.blogPostBlockquote}}</div>
+        				{{/if}}
+        				{{#if campa.0.blogPrimaryLinkUrl}}
+        				<div class="tab_content_agencies animation-fadeIn">
+                            <section class="" style="padding: 0px 0px 0px;">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 text-center" style="font-size: 16px; padding: 20px 5px 0px;">
+                                        <a href="{{campa.0.blogPrimaryLinkUrl}}" class="button py4 button-transparent bg-youtube resp-button tex-center" target="_blank">
+                                            <i class="fa fa-youtube-square fa-fw fa-lg"></i> {{campa.0.blogPrimaryLinkName}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+        				{{/if}}
+        			</article>
+        			<article class="post-content-address" id="content-address">
+                        <div class="to-html">
+                        {{campa.0.agencias.blogAddress}}
+                        </div>
+                    </article>
+      			</div>
+      			<!-- Start Sidebar -->
+      			<div class="col-md-3 sidebar">
+        		</div>
+      		</div>
+    	</div>
+  	</div>
+</div>
+<!-- End Body Content -->

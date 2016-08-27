@@ -1,0 +1,26 @@
+{% set marcaSel = marca %}
+<div id="div-get-brands" 
+     class="col-md-4 field-filter-resp">
+    <select name="sen_mar" 
+            id="sen-get-brand" 
+            class="selectpicker btn-default form-control sel-marca" 
+            style="display: none;">
+        <option value="0" 
+                class="filter-action-mrc" 
+                id="filter-action-mrc-" 
+                data-name-short="">
+            Marca
+        </option>
+        {% for currentMarca in marcas %}
+            {% block marcas %}
+                <option value="{{ currentMarca.id }}" 
+                        class="filter-action-mrc" 
+                        id="filter-action-mrc-{{ currentMarca.id }}" 
+                        data-name-short="{{ currentMarca.nombre_short }}" 
+                        {{ (marcaSel == currentMarca.nombre_short) ? "selected" : "" }} >
+                    {{ currentMarca.nombre }}
+                </option>
+            {% endblock %}
+        {% endfor %}
+    </select>
+</div>

@@ -1,0 +1,65 @@
+<article class="single-vehicle-details">
+    <div class="single-vehicle-title">
+        <h2 class="post-title">Imágenes actuales</h2>
+    </div>
+</article>
+<br>
+<br>
+{{#if camadpa.length}}
+<div id="results-holder" class="results-grid-view">
+    {{#each camadpa}}
+    <!-- Result Item -->
+    <div class="result-item format-standard">
+        <div class="result-item-image" style="overflow: hidden;">
+            <a class="media-box">
+              <img src="cdn/img/seminuevos/{{sen_id}}/{{nombre}}" alt="{{nombre}}" width='30%'>
+            </a>
+            {{#if thm_possible}}
+            <div class="load-images-pictures">
+                <a class="button mt1 mb1 button-transparent bg-black-camcar black-camcar ttip_action picture-sen-action-thumb" data-sen-id="{{sen_id}}" data-pic-id="{{id}}">
+                    <i class="fa fa-picture-o fa-fw"></i>
+                    <span class="ttip_buttons animation-slideUp">
+                      <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                      <div class="brands-icons text-center">
+                        <ul>
+                          <li>
+                            <span>Imagen Principal</span>
+                          </li>
+                      </ul>
+                    </div>
+                  </span>
+                </a>
+            </div>
+            {{/if}}
+            <div class="load-delete">
+                <a class="button m3 mb1 button-transparent bg-red-camcar red-camcar ttip_action picture-sen-action-delete" data-sen-id="{{sen_id}}" data-pic-id="{{id}}" data-pic-nombre="{{nombre}}">
+                    <i class="fa fa-times fa-fw"></i>
+                    <span class="ttip_buttons animation-slideUp">
+                      <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                      <div class="brands-icons text-center">
+                        <ul>
+                          <li>
+                            <span>Eliminar</span>
+                          </li>
+                      </ul>
+                    </div>
+                  </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<div id="results-holder" class="results-grid-view">
+    <div class="container">
+        <div class='row'>
+            <div class="col-md-12 col-sm-6 col-xs-12 text-center">
+                <p>
+                  No ha ingresado imágenes
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

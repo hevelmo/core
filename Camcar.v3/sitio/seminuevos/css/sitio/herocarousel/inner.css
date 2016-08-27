@@ -1,0 +1,690 @@
+.HeroCarousel.inner {
+    width: 100%;
+    height: 575px !important;
+    min-height: 575px !important;
+    text-align: center;
+    position: relative;
+    background-color: #000000;
+    overflow: hidden;
+}
+.HeroCarousel.inner.loaded {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.HeroCarousel.inner .rsOverflow {
+    min-height: 450px;
+}
+.HeroCarousel.inner .carousel {
+    text-align: center;
+    overflow: hidden;
+    direction: ltr;
+}
+.HeroCarousel.inner .carousel .rsSlide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: table;
+}
+.HeroCarousel.inner .carousel .heroItem {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    color: #e4e8e8;
+}
+.HeroCarousel.inner .carousel .heroItem>span, .HeroCarousel.inner .carousel .heroItem noscript>div, .HeroCarousel.inner .carousel .heroItem .VideoPlayer>span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    -webkit-background-size: cover;
+    -khtml-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.HeroCarousel.inner .carousel .heroItem>span {
+    z-index: 0;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent {
+    display: inline-block;
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
+    -webkit-transform: translateZ(0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .heading {
+    margin-bottom: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.1em;
+    letter-spacing: 0.15em;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem .heroContent .heading .headingWrapper:after {
+    background-color: rgba(255,255,255,0);
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .heading.headingFocus .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem .heroContent .heading.headingFocus .headingWrapper:after {
+    left: 50%;
+    right: auto;
+    margin-left: -0.67em;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .heading .price, .HeroCarousel.inner .carousel .heroItem .heroContent .heading .subtitle {
+    display: block;
+    /*
+    border: 1px solid red;
+    */
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer>span {
+    display: block;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .primaryLinkWithStyle {
+    text-shadow: none;
+}
+#index .HeroCarousel.inner .carousel .heroItem .heroContent .primaryLinkWithStyle {
+    background-color: #ffffff;
+    color: rgba(178, 17, 23, 1);
+}
+#index .HeroCarousel.inner .carousel .heroItem .heroContent .primaryLinkWithStyle:hover {
+    background-color: rgba(178, 17, 23, 1);
+    color: #ffffff;
+    text-decoration: none;
+}
+#index .HeroCarousel.inner .carousel .heroItem .heroContent .primaryLinkWithStyle.disabled:hover {
+    background-color: rgba(178, 17, 23, 1);
+    color: #0c121c;
+    text-decoration: none;
+}
+#index.focusStylesOn .HeroCarousel.inner .carousel .heroItem .heroContent .primaryLinkWithStyle:focus {
+    background-color: #0c121c;
+    color: #ffffff;
+}
+#index.focusStylesOn .HeroCarousel.inner .carousel .heroItem .heroContent .primaryLinkWithStyle.disabled:focus {
+    background-color: #ffffff;
+    color: #0c121c;
+}
+#index .HeroCarousel.inner .carousel .heroItem .heroContent .secondaryLinkWithStyle {
+    color: #ffffff;
+}
+#index .HeroCarousel.inner .carousel .heroItem .heroContent .secondaryLinkWithStyle:hover {
+    color: #ffffff;
+    text-shadow: 0 0 1px #ffffff;
+}
+#index.focusStylesOn .HeroCarousel.inner .carousel .heroItem .heroContent .secondaryLinkWithStyle:focus {
+    color: #ffffff;
+    text-shadow: 0 0 1px #ffffff;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent .caveat {
+    margin-top: 36px;
+}
+.HeroCarousel.inner .carousel .heroItem .heroContent.visible {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    -webkit-transition: opacity 0.8s;
+    -webkit-transition-delay: ease;
+    -moz-transition: opacity 0.8s ease;
+    -o-transition: opacity 0.8s ease;
+    transition: opacity 0.8s ease;
+}
+.HeroCarousel.inner .carousel .heroItem.alignedText .heroContent {
+    /*max-width: 440px;*/
+    max-width: 495px
+}
+.HeroCarousel.inner .carousel .heroItem.left {
+    text-align: left;
+}
+.HeroCarousel.inner .carousel .heroItem.left .heroContent {
+    margin-left: 50px;
+    margin-top: 30px !important;
+}
+.HeroCarousel.inner .carousel .heroItem.center .heroContent {
+    margin-top: -250px !important;
+    margin-left: -13%;
+}
+.HeroCarousel.inner .carousel .heroItem.left .heroContent .heading {
+    text-align: left;
+}
+.HeroCarousel.inner .carousel .heroItem.left .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.left .heroContent .heading .headingWrapper:after {
+    left: 0;
+    right: auto;
+    margin-left: 0;
+}
+.HeroCarousel.inner .carousel .heroItem.darkText .heroContent {
+    text-shadow: none;
+}
+.HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading {
+    color: #0c121c;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading .headingWrapper:after {
+    background-color: #0c121c;
+}
+.HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading .headingWrapper:after {
+    box-shadow: none;
+}
+#index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .primaryLinkWithStyle {
+    background-color: #0c121c;
+    color: #ffffff;
+}
+#index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .primaryLinkWithStyle:hover {
+    background-color: #ffffff;
+    color: #0c121c;
+}
+#index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .primaryLinkWithStyle.disabled:hover {
+    background-color: #0c121c;
+    color: #ffffff;
+}
+#index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .primaryLinkWithStyle:focus {
+    background-color: #ffffff;
+    color: #0c121c;
+}
+#index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .primaryLinkWithStyle.disabled:focus {
+    background-color: #0c121c;
+    color: #ffffff;
+}
+#index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .secondaryLinkWithStyle {
+    color: #5c6065;
+}
+#index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .secondaryLinkWithStyle:hover {
+    color: #0c121c;
+    text-shadow: none;
+}
+#index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .secondaryLinkWithStyle:focus {
+    color: #0c121c;
+    text-shadow: none;
+}
+.HeroCarousel.inner .carousel .heroItem .playButton {
+    display: none;
+}
+.HeroCarousel.inner .carousel .heroItem[data-audio="true"] .playButton {
+    text-shadow: 0 0 10px rgba(0,  0,  0,  0.15);
+}
+.no-touch .HeroCarousel.inner .carousel .heroItem[data-audio="true"] .playButton {
+    display: block;
+}
+.HeroCarousel.inner .carousel .heroItem[data-audio="true"] .heroControlsContainer {
+    position: absolute;
+    right: 100px;
+    bottom: 30px;
+}
+.HeroCarousel.inner .carousel .heroItem[data-audio="true"] .heroControlsContainer div {
+    position: relative;
+    height: 60px;
+    width: 60px;
+}
+.HeroCarousel.inner .carousel .heroItem[data-audio="true"] .heroControlsContainer div a {
+    text-decoration: none;
+}
+.HeroCarousel.inner .carousel .heroItem[data-audio="true"] .heroControlsContainer div a.playButton {
+    float: right;
+    position: relative;
+    font-size: 26px;
+}
+.HeroCarousel.inner .carousel .heroItem .heroLogo img {
+    position: absolute;
+    bottom: 20px;
+    right: 90px;
+    z-index: 6;
+}
+@media screen and (min-width: 1px) and (max-width: 740px) {
+    .HeroCarousel.inner .carousel .heroItem .heroLogo img {
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: auto;
+    }
+    .HeroCarousel.inner {
+        background-color: #0c121c;
+        height: auto;
+        margin-top: 0px;
+    }
+}
+.HeroCarousel.inner .carousel>.heroItem>span {
+    z-index: auto;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer.flash {
+    width: 100%;
+    height: 100%;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer.flash embed, .HeroCarousel.inner .carousel .video .VideoPlayer.flash object {
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer .mejs-video {
+    position: static;
+    width: 100% !important;
+    height: 100% !important;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer .mejs-video .mejs-controls {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    background-color: #4e4e4e;
+    width: 30%;
+    left: 30%;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer .mejs-layers {
+    width: 100%;
+    height: 100%;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer video {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: auto;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer video.is-horizontal {
+    left: 50% !important;
+    top: 0 !important;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer video.is-vertical {
+    left: 0 !important;
+    top: 50% !important;
+}
+.HeroCarousel.inner .carousel .video .heroContent {
+    position: relative;
+}
+.HeroCarousel.inner .carousel .video .VideoPlayer+span {
+    z-index: -1;
+}
+.HeroCarousel.inner .carousel .rsNav {
+    float: none;
+    position: relative;
+    display: inline-block;
+    left: 0px;
+    bottom: 96px;
+    height: 42px;
+    /*text-align: left;
+    /*-webkit-font-smoothing: antialiased;
+    /*text-shadow: 0 1px 2px rgba(0,  0,  0,  0.1);*/
+}
+.HeroCarousel.inner .carousel .rsNav .rsNavItem {
+    cursor: pointer;
+    font-family: "lr_ot4", "arial", "helvetica", sans-serif;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    font-size: 24px;
+    padding-top: 18px;
+    font-weight: 700;
+    line-height: 1em;
+    width: 27px;
+    text-align: center;
+    -webkit-transition: all 0.5s;
+    -webkit-transition-delay: ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    opacity: 1;
+}
+.HeroCarousel.inner .carousel .rsNav .rsNavSelected {
+    font-size: 42px;
+    padding-top: 0;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.HeroCarousel.inner .disable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    background-color: #000000;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+}
+.HeroCarousel.inner .VideoPlayer .mejs-controls, .HeroCarousel.inner .VideoPlayer .mejs-overlay-play {
+    display: none !important;
+}
+.HeroCarousel.inner[data-total="1"] .mejs-video {
+    cursor: default;
+}
+.HeroCarousel.inner[data-total="1"] .mejs-video video, .HeroCarousel.inner[data-total="1"] .mejs-video object {
+    cursor: default;
+}
+.ie10 #index .HeroCarousel.inner .linkContainer, .lt-ie10 #index .HeroCarousel.inner .linkContainer {
+    margin-top: 15px;
+}
+.lt-ie9 #index .HeroCarousel.inner {
+    background-color: transparent;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.lt-ie9 #index .HeroCarousel.inner .image {
+    background-position: center center !important;
+}
+.lt-ie9 #index .HeroCarousel.inner .heroContent {
+    visibility: hidden;
+}
+.lt-ie9 #index .HeroCarousel.inner .linkContainer {
+    margin-top: 0;
+}
+.lt-ie9 #index .HeroCarousel.inner .current .heroContent {
+    visibility: visible;
+}
+.lt-ie9 #index .HeroCarousel.inner .carousel>.heroItem>.heroContent {
+    visibility: visible;
+}
+#index .HeroCarousel.inner .heroContent .primaryLinkWithStyle {
+    margin: 50px 0 0;
+}
+.HeroCarousel.inner[data-total="1"] {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+.HeroCarousel.inner[data-total="1"] .carousel .heroItem {
+    display: none;
+}
+.HeroCarousel.inner[data-total="1"] .carousel .heroItem:first-child {
+    display: block;
+}
+.HeroCarousel.inner[data-total="1"] .carousel .heroItem .heroContent {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.HeroCarousel.inner[data-total="1"] .carousel .heroItem.left .heroContent {
+    left: 0;
+}
+.HeroCarousel.inner[data-total="1"] .carousel .heroItem.right .heroContent {
+    left: auto;
+    right: 0;
+}
+@media screen and (min-width: 1px) and (max-width: 740px) {
+    .HeroCarousel.inner[data-total="1"] .carousel>* {
+        float: none;
+    }
+    .HeroCarousel.inner[data-total="1"] .carousel .heroItem span {
+        z-index: 1;
+    }
+    .HeroCarousel.inner[data-total="1"] .carousel .heroItem .heroContent {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+}
+html.no-js .HeroCarousel.inner {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+html.no-js .HeroCarousel.inner .carousel {
+    display: table;
+}
+html.no-js .HeroCarousel.inner .carousel>* {
+    float: none;
+}
+html.no-js .HeroCarousel.inner .carousel .video .VideoPlayer+span {
+    display: block;
+    z-index: 1;
+}
+html.no-js .HeroCarousel.inner .carousel span {
+    z-index: 1;
+}
+html.no-js .HeroCarousel.inner .carousel .heroItem {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    display: none;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+    height: 450px;
+}
+html.no-js .HeroCarousel.inner .carousel .heroItem.left {
+    text-align: left;
+}
+html.no-js .HeroCarousel.inner .carousel .heroItem:first-child {
+    display: table-cell;
+}
+html.no-js .HeroCarousel.inner .carousel .heroItem .heroContent {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+    top: auto;
+}
+@media screen and (min-width: 741px) {
+    .HeroCarousel.inner .carousel .heroItem .heroContent {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 900px) {
+    .HeroCarousel.inner {
+        min-height: 0;
+        height: 490px;
+    }
+    .HeroCarousel.inner .rsOverflow {
+        min-height: 0;
+    }
+    .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent {
+        width: 440px;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogo img {
+        max-width: 60px;
+        max-height: 60px;
+        right: 50px;
+    }
+    .HeroCarousel.inner .carousel .video .VideoPlayer {
+        display: none;
+    }
+    .HeroCarousel.inner .carousel .video .VideoPlayer+span, .HeroCarousel.inner .carousel .video>span {
+        display: block;
+        z-index: 1;
+    }
+    .HeroCarousel.inner .carousel .rsNav {
+        bottom: 20px;
+    }
+    .HeroCarousel.inner .disable {
+        display: none;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 740px) {
+    .HeroCarousel.inner {
+        background-color: #0c121c;
+        /*height: auto;*/
+        height: 450px !important;
+        min-height: 450px !important;
+    }
+    .HeroCarousel.inner .carousel .rsOverflow {
+        height: auto !important;
+    }
+    .HeroCarousel.inner .carousel .heroItem, .HeroCarousel.inner .carousel .heroItem.alignedText, .HeroCarousel.inner .carousel .heroItem.darkText {
+        display: block;
+        color: #ffffff;
+    }
+    .HeroCarousel.inner .carousel .heroItem>span, .HeroCarousel.inner .carousel .heroItem.alignedText>span, .HeroCarousel.inner .carousel .heroItem.darkText>span {
+        position: relative;
+        /*height: 250px;*/
+        height: 205px;
+        background-position: 0% 0% !important;
+        background-size: 100%;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroContent, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent {
+        background: #0c121c;
+        margin: 0;
+        width: 100%;
+        max-width: none;
+        text-align: center;
+        padding: 30px 30px;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroContent .heading, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .heading, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading {
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+        text-align: center;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem .heroContent .heading .headingWrapper:after, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .heading .headingWrapper:after, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading .headingWrapper:after {
+        background-color: #ffffff;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroContent .heading.headingFocus .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem .heroContent .heading.headingFocus .headingWrapper:after, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .heading.headingFocus .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .heading.headingFocus .headingWrapper:after, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading.headingFocus .headingWrapper:before, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .heading.headingFocus .headingWrapper:after {
+        left: 50%;
+        right: auto;
+        margin-left: -0.67em;
+    }
+    #index .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle, #index .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .primaryLinkWithStyle, #index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .primaryLinkWithStyle {
+        background-color: #ffffff;
+        color: rgba(178, 17, 23, 1)
+    }
+    #index .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle:hover, #index .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .primaryLinkWithStyle:hover, #index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .primaryLinkWithStyle:hover {
+        background-color: rgba(178, 17, 23, 1);
+        color: #ffffff;
+    }
+    #index .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle.disabled:hover, #index .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .primaryLinkWithStyle.disabled:hover, #index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .primaryLinkWithStyle.disabled:hover {
+        background-color: #ffffff;
+        color: #0c121c;
+    }
+    #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle:focus, #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .primaryLinkWithStyle:focus, #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .primaryLinkWithStyle:focus {
+        background-color: #0c121c;
+        color: #ffffff;
+    }
+    #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle.disabled:focus, #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .primaryLinkWithStyle.disabled:focus, #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .primaryLinkWithStyle.disabled:focus {
+        background-color: #ffffff;
+        color: #0c121c;
+    }
+    #index .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .primaryLinkWithStyle, #index .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .primaryLinkWithStyle, #index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .primaryLinkWithStyle {
+        margin-top: 30px;
+    }
+    #index .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .secondaryLinkWithStyle, #index .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .secondaryLinkWithStyle, #index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .secondaryLinkWithStyle {
+        color: #ffffff;
+    }
+    #index .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .secondaryLinkWithStyle:hover, #index .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .secondaryLinkWithStyle:hover, #index .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .secondaryLinkWithStyle:hover {
+        color: #ffffff;
+        text-shadow: 0 0 1px #ffffff;
+    }
+    #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem .heroContent .linkContainer .secondaryLinkWithStyle:focus, #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .linkContainer .secondaryLinkWithStyle:focus, #index.focusStylesOn .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .linkContainer .secondaryLinkWithStyle:focus {
+        color: #ffffff;
+        text-shadow: 0 0 1px #ffffff;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroContent .caveat, .HeroCarousel.inner .carousel .heroItem.alignedText .heroContent .caveat, .HeroCarousel.inner .carousel .heroItem.darkText .heroContent .caveat {
+        margin-top: 30px;
+    }
+    .HeroCarousel.inner .carousel .heroItem.left .heroContent, .HeroCarousel.inner .carousel .heroItem.alignedText.left .heroContent, .HeroCarousel.inner .carousel .heroItem.darkText.left .heroContent {
+        margin-left: 0;
+        margin-top: 0px !important;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogo, .HeroCarousel.inner .carousel .heroItem.alignedText .heroLogo, .HeroCarousel.inner .carousel .heroItem.darkText .heroLogo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogo img, .HeroCarousel.inner .carousel .heroItem.alignedText .heroLogo img, .HeroCarousel.inner .carousel .heroItem.darkText .heroLogo img {
+        top: auto;
+        right: 18px;
+        bottom: 18px;
+        left: auto;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogoContainer, .HeroCarousel.inner .carousel .heroItem.alignedText .heroLogoContainer, .HeroCarousel.inner .carousel .heroItem.darkText .heroLogoContainer {
+        position: absolute;
+        right: 30px;
+        top: 174px;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogoContainer div, .HeroCarousel.inner .carousel .heroItem.alignedText .heroLogoContainer div, .HeroCarousel.inner .carousel .heroItem.darkText .heroLogoContainer div {
+        position: relative;
+        height: 60px;
+        width: 60px;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogoContainer div .heroLogo img, .HeroCarousel.inner .carousel .heroItem.alignedText .heroLogoContainer div .heroLogo img, .HeroCarousel.inner .carousel .heroItem.darkText .heroLogoContainer div .heroLogo img {
+        right: 36px;
+        bottom: 36px;
+    }
+    .HeroCarousel.inner .carousel .rsNav {
+        position: absolute;
+        top: 196px;
+        width: 100%;
+        left: 0;
+        height: 54px;
+        text-align: center;
+        transform: scale(0.75);
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        -o-transform: scale(0.75);
+    }
+    .HeroCarousel.inner .carousel .rsNav .rsNavItem span {
+        width: 26px;
+    }
+    .HeroCarousel.inner .VideoPlayer .mejs-video {
+        display: none;
+    }
+    .HeroCarousel.inner .VideoPlayer .mejs-controls {
+        display: none !important;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 640px) {
+    .HeroCarousel.inner {
+        /*height: auto;*/
+        height: 575px !important;
+        min-height: 575px !important;
+    }
+    .HeroCarousel.inner .carousel .heroItem>span, .HeroCarousel.inner .carousel .heroItem.alignedText>span, .HeroCarousel.inner .carousel .heroItem.darkText>span {
+        height: 273px;
+    }
+    .HeroCarousel.inner .carousel .heroItem.left .heroContent, .HeroCarousel.inner .carousel .heroItem.alignedText.left .heroContent, .HeroCarousel.inner .carousel .heroItem.darkText.left .heroContent {
+        margin-left: 0;
+        margin-top: 0px !important;
+    }
+}
+@media screen and (min-width: 401px) {
+    .HeroCarousel.inner .heroLogo {
+        height: 250px;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 400px) {
+    .HeroCarousel.inner {
+        /*height: auto;*/
+        height: 450px !important;
+        min-height: 450px !important;
+    }
+    .HeroCarousel.inner .carousel .heroItem>span, .HeroCarousel.inner .carousel .heroItem.alignedText>span, .HeroCarousel.inner .carousel .heroItem.darkText>span {
+        height: 273px;
+    }
+    .HeroCarousel.inner .carousel .heroItem.left .heroContent, .HeroCarousel.inner .carousel .heroItem.alignedText.left .heroContent, .HeroCarousel.inner .carousel .heroItem.darkText.left .heroContent {
+        margin-left: 0;
+        margin-top: 0px !important;
+    }
+    .HeroCarousel.inner .carousel .heroItem>span, .HeroCarousel.inner .carousel .heroItem.alignedText>span, .HeroCarousel.inner .carousel .heroItem.darkText>span {
+        height: 177px;
+    }
+    .HeroCarousel.inner .carousel .heroItem .heroLogoContainer, .HeroCarousel.inner .carousel .heroItem.alignedText .heroLogoContainer, .HeroCarousel.inner .carousel .heroItem.darkText .heroLogoContainer {
+        position: absolute;
+        right: 30px;
+        top: 76px;
+    }
+    .HeroCarousel.inner .carousel .heroLogo {
+        height: 150px;
+    }
+    .HeroCarousel.inner .carousel .rsNav {
+        transform: scale(0.75);
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        -o-transform: scale(0.75);
+        top: 98px;
+    }
+    html.no-js .HeroCarousel.inner .carousel .heroItem:first-child {
+        display: block;
+    }
+}
+@media screen and (min-width: 1px) and (max-width: 640px) {
+
+}

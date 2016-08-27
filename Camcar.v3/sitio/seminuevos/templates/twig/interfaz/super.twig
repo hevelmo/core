@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="es" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="es" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="es" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="es" class="no-js lt-ie10"> <![endif]-->
+<html class="no-js" lang="es">
+    <head>
+        {% block head %}
+            {% block metas %}
+                <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                <meta http-equiv="cache-control" content="no-cache">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+                <meta class="temp" name="description" content="CAMCAR Grupo Automotriz - Es el resultado de un equipo que se adapta al cambio sumando experiencia, fuerza y calidad de servicio adquiridos en 25 años de trabajo y presencia de marcas en el occidente del país. Nacimos con la VISION DE SER LIDER DEL MERCADO al que hoy atendemos con la mayor oferta marcas automotrices.">
+                <meta class="temp" name="copyright" content="© Copyright 2016 Camcar Grupo Automotriz.">
+                <meta class="temp" name="robots" content="index, follow">
+            {% endblock %}
+            <title id="head-change-section-title">
+                {% block title %}Camcar Grupo Automotriz{% endblock %}
+            </title>
+            {% block links %}
+                <link class="temp" rel="alternate" hreflang="es-MX" href="http://camcar.mx/sitio" />
+                <link href="http://fonts.googleapis.com/css?family=Roboto:100,400,300,700,400italic,500%7CMontserrat:400,700" rel="stylesheet" type="text/css">
+                <link rel="stylesheet" href="{{ _host }}css/import-sitio.css">
+                <link type="image/x-icon" rel="shortcut icon" href="{{ _host }}img/ico/camcaricon.ico">
+                <link rel="apple-touch-icon" href="{{ _host }}img/ico/apple-touch-icon.png">
+            {% endblock %}
+            {% block head_scripts %}
+                <!--[if lt IE 9]>
+                <script src="{{ _host }}lib/assets/plugins/html5shiv/html5shiv.min.js"></script>
+                <![endif]-->
+                <!--[if lt IE 10]>
+                <script src="{{ _host }}lib/assets/plugins/media-match/media.match.min.js"></script>
+                <script src="{{ _host }}lib/assets/plugins/respond/respond.min.js"></script>
+                <![endif]-->
+                <script async="" src="//www.google-analytics.com/analytics.js"></script>
+                <script>
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                    
+                    ga('create', 'UA-60582942-1', 'auto');
+                    ga('send', 'pageview');
+                </script>
+                <script>
+                    var nav = navigator.appName;
+                    if(nav == "Microsoft Internet Explorer"){
+                        //Detectamos si nos visitan desde IE
+                        if(nav == "Microsoft Internet Explorer"){
+                            //Convertimos en minusculas la cadena que devuelve userAgent
+                            var ie = navigator.userAgent.toLowerCase();
+                            //Extraemos de la cadena la version de IE
+                            var version = parseInt(ie.split('msie')[1]);
+                            //Dependiendo de la version mostramos un resultado
+                            switch(version){
+                                case 6:
+                                    alert("El sitio no es compatible con Internet Explorer, te recomendamos usar Chrome o Firefox.");
+                                    break;
+                                case 7:
+                                    alert("El sitio no es compatible con Internet Explorer, te recomendamos usar Chrome o Firefox.");
+                                    break;
+                                case 8:
+                                    alert("El sitio no es compatible con Internet Explorer, te recomendamos usar Chrome o Firefox.");
+                                    break;
+                                /*
+                                case 9:
+                                    alert("El sitio no es compatible con Internet Explorer, te recomendamos usar Chrome o Firefox.");
+                                    break;
+                                */
+                            }
+                        }
+                    }
+                </script>
+                <script src="{{ _host }}lib/modernizr.js"></script>
+            {% endblock %}
+        {% endblock %}
+    </head>
+    <body id="index" class="sitio">
+        <input id="master-host" type="hidden" value="{{ _host }}">
+        <input id="master-intranet" type="hidden" value="{{ _intranet }}">
+        <input id="master-admin" type="hidden" value="{{ _admin }}">
+        <input id="master-sitio" type="hidden" value="{{ _sitio }}">
+        <input id="master-seminuevos" type="hidden" value="{{ _seminuevos }}">
+        <input id="master-inventarios" type="hidden" value="{{ _inventarios }}">
+        <input id="master-detalles" type="hidden" value="{{ _detalles }}">
+        {# Auxiliar Temporal Inputs's DIV #}
+        <div id="hidden-inputs-session"></div>
+        {# Auxiliar Temporal Inputs's DIV #}
+        <div id="hidden-inputs-temporal"></div>
+        {% embed "super_navbar.twig" %}{% endembed %}
+        {# Templates's DIV #}
+        <div class="wrapper_content_interactive" id='content-temporal-interactive'>
+            {% block content_recurrent %}{% endblock %}  
+        </div>
+        {% embed "super_footer.twig" %}{% endembed %}
+        <a href="#0" class="back-to-top cd-top no-print">top</a>
+        {% block body_scripts %}
+            {# CORE LIBS #}
+            <script src="{{ _host }}lib/min/lib-core-seminuevos.min.js"></script>
+            {# GOOGLE API #}
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=geometry&libraries=places&key=AIzaSyCCqo-F2TnMAABZvfV5yTQLlWvUCJlJViU&amp;sensor=false"></script>
+            {# TEMPLATES #}
+            <script src="{{ _seminuevos }}templates/handlebars/min/templates.min.js"></script>
+            {# OLD STRUCTURE #}
+            <script src="{{ _seminuevos }}js/min/core.min.js"></script>
+            {#
+                <script src="{{ _seminuevos }}js/method.js"></script>
+                <script src="{{ _sitio }}js/model.js"></script>
+                <script src="{{ _seminuevos }}js/main.js"></script>
+            #}
+        {% endblock %}
+        <script>{% block load_scripts %}{% endblock %}</script>
+    </body>
+</html>

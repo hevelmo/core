@@ -1,0 +1,120 @@
+
+/* ----------------------------------- *\
+    [Config] Colores
+\* ----------------------------------- */
+        $rojo : #E2545C;
+
+       $negro : #141824;
+
+        $azul_top : #2f3649;
+       $azul_side : #1f2638;
+       $azul_menu : #16a4fa;
+       $azul_info : #94b7cb;
+      $azul_fecha : #335096;
+    $azul_cliente : #355B9A;
+ $azul_cliente_10 : #3f6dba;
+
+   $azul_user : #6AACD6;
+
+   $blanco_on : #f4fbff;
+  $blanco_off : #777f94;
+      $blanco : #FFFFFF;
+$blanco_fondo : #f1f2f7;
+
+
+  $gris_borde : #e6e6e6;
+    $gris_top : #eef1f6;
+   $gris_pill : #97b3ce;
+  $gris_vacio : #BEBEBE;
+  $texto_gris : #8e94a0;
+  $linea_gris : #dadfea;
+
+    $gris_cli : #e1e6ee;
+
+       $texto : #454a5e;
+
+   $lista_uno : #7874cf;
+   $lista_dos : #00bfdd;
+
+          $verde : #59B122;
+$separador_verde : #4DA737;
+$cliente_detalle : #466AA2;
+
+$zona_asesor : #f37054;
+ $top_asesor : #e66346; 
+
+
+
+$virbac_color : #004d97;
+
+
+
+
+
+/* ----------------------------------- *\
+    [Config] Font Size
+\* ----------------------------------- */
+$px6  : 0.6em;
+$px7  : 0.7em;
+$px8  : 0.8em;
+$px9  : 0.9em;
+$px10 : 1em;
+$px11 : 1.1em;
+$px12 : 1.2em;
+$px13 : 1.3em;
+$px14 : 1.4em;
+$px15 : 1.5em;
+$px16 : 1.6em;
+$px17 : 1.7em;
+$px18 : 1.8em;
+$px20 : 2em;
+$px23 : 2.3em;
+$px25 : 2.5em;
+$px26 : 2.6em;
+$px28 : 2.8em;
+$px30 : 3em;
+$px35 : 3.5em;
+
+/* ----------------------------------- *\
+    [Config] Mixins
+\* ----------------------------------- */
+
+@mixin espacio($space) {
+	padding: $space;
+}
+
+@mixin lento($tiempo) {
+  -webkit-transition: all $tiempo ease;
+  -moz-transition: all $tiempo ease;
+  -o-transition: all $tiempo ease;
+  -ms-transition: all $tiempo ease;
+  transition: all $tiempo ease;
+}
+
+@mixin lento_in($tiempo) {
+  -webkit-transition: all $tiempo ease-in-out;
+  -moz-transition: all $tiempo ease-in-out;
+  -o-transition: all $tiempo ease-in-out;
+  -ms-transition: all $tiempo ease-in-out;
+  transition: all $tiempo ease-in-out;
+}
+
+
+@mixin radio($rad) {
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  border-radius: $rad;
+}
+html,body,.menu_app
+{
+    height:100%;
+}
+
+body {
+  //background: $azul_top;
+  //height: 100%
+  overflow-x: hidden;
+  background-image: -webkit-linear-gradient(left, #4b6cb7, #182848);
+}
+
+

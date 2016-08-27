@@ -1,0 +1,34 @@
+{{!-- CIUDADES POR MARCA --}}
+<div class="page-aside-switch">
+    <i class="icon wb-chevron-left" aria-hidden="true"></i>
+    <i class="icon wb-chevron-right" aria-hidden="true"></i>
+</div>
+<div class="page-aside-inner">
+    <div class="page-aside-section">
+        <div class="div-mar-directory list-group-item active" data-marca="">
+            <a class="a-mar-directory" href="javascript:void(0)" data-marca="">
+                <i class="icon wb-inbox" aria-hidden="true"></i>
+                <b>TODAS LAS MARCAS</b>
+            </a>
+      </div>
+    </div>
+    <div class="page-aside-section">
+        {{!--
+        <h5 class="page-aside-title"></h5>
+        --}}
+        <div class="list-group has-actions">
+            {{#each webservice}}
+            <div class="div-mar-directory list-group-item" data-marca="{{marca}}">
+                <div class="list-content">
+                    {{!--
+                    <span class="item-right">{{numero_empleados}}</span>
+                    --}}
+                    <span class="span-mar-directory list-text" data-marca="{{marca}}">
+                        <b>{{marca}}</b>
+                    </span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

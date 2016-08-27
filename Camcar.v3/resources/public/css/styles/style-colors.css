@@ -1,0 +1,18 @@
+/*!
+// 3. Colors
+// --------------------------------------------------*/
+.color-love {
+  color: #e21a1a !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.dark-bg {
+  background-color: #222 !important;
+}
+.red-bg {
+  background-color: #b21117 !important;
+}
+.black-paper-bg {
+  background-image: url(../../img/black_paper.png) !important;
+}

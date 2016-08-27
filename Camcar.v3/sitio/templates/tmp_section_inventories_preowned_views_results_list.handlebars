@@ -1,0 +1,85 @@
+<div id="results-holder" class="results-grid-view">
+    {{#if campa}}
+    {{#each campa}}
+    <!-- Result Item -->
+    <div class="result-item format-standard equal-height" id="result-item-col" data-sem-car="{{id}}">
+        <a class="views-details views-details-size bg-views-details views-details-transition visible-lg-block sem-action"
+            id='sem-action-{{id}}'
+            data-sem-mrc-nombre-short='{{mrc_nombre}}'
+            data-sem-mdo-nombre-short='{{mdo_nombre}}'
+            data-sem-id='{{id}}'>
+            <span class="">ver detalles</span>
+        </a>
+        <div class="result-item-image">
+            <a class="media-box sem-action"
+                id='sem-action-{{id}}'
+                data-sem-mrc-nombre-short='{{mrc_nombre}}'
+                data-sem-mdo-nombre-short='{{mdo_nombre}}'
+                data-sem-id='{{id}}'>
+                <img src="../intranet/admin/cdn/img/seminuevos/{{directorio}}/{{thumb}}" alt="{{modelo}}">
+            </a>
+            <div class="result-item-labels clearfix">
+                <span class="label label-default vehicle-age" id="sem_year">{{year}}</span>
+                <span class="label label-success premium-listing">{{agencia}}</span>
+            </div>
+            <div class="result-item-view-details-resp visible-xs clearfix">
+                <a class="view-details-resp col-md-12 col-xs-12 sem-action"
+                    id='sem-action-{{id}}'
+                    data-sem-mrc-nombre-short='{{mrc_nombre}}'
+                    data-sem-mdo-nombre-short='{{mdo_nombre}}'
+                    data-sem-id='{{id}}'>
+                    ver detalles
+                </a>
+            </div>
+        </div>
+        <div class="result-item-in">
+            <h4 class="result-item-title">
+                <a class='sem-action'
+                    id='sem-action-{{id}}'
+                    data-sem-mrc-nombre-short='{{mrc_nombre}}'
+                    data-sem-mdo-nombre-short='{{mdo_nombre}}'
+                    data-sem-id='{{id}}'>
+                    {{marca}} - {{modelo}}
+                </a>
+            </h4>
+            <div class="result-item-cont">
+                <div class="result-item-block col1">
+                    <p>{{descripcion}}</p>
+                </div>
+                <div class="result-item-block col2">
+                    <div class="result-item-pricing">
+                        <div class="price">
+                            <span class="multiple">{{precio}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result-item-features">
+                <ul class="inline">
+                    <li>Cilindros: {{cilindros}}</li>
+                    <li>Transmisión: {{transmision}}</li>
+                    <li>Color: {{color}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <!-- Result Item -->
+    <div class="col-md-12 col-sm-12">
+        <h2 class="text-center" style="color: #000;">No se encontraron resultados</h2>
+    </div>
+    {{/if}}
+</div>
+<script>
+
+    $(document).ready(function() {
+        $("#sem-basic-price").currency();
+        $("#basic").currency();
+        $("#input").currency();
+        $("#advanced").currency({ region: "GBP", thousands: ",", decimal: ",", decimals: 3 });
+        $(".multiple").currency();
+        $("#convert").currency({ region: "GBP", convertFrom: "EUR", convertLocation: "../convert.php" });
+    });
+
+</script>

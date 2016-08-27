@@ -1,0 +1,127 @@
+/*!
+// 2. Global & Helper Classes
+// --------------------------------------------------*/
+  .main-container,
+  .footer-container {
+    max-width: 1580px;
+    margin: 0px auto;
+    position: relative;
+    z-index: 1;
+  }
+  section {
+    background-color: #f9f9f9;
+    background-repeat: repeat;
+    background-position: left top;
+    clear: both;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  section.slider, section.listing-block.recent-vehicles {
+    background-color: #f9f9f9;
+    background-repeat: repeat;
+    background-position: left top;
+    padding: 10px;
+  }
+  section:nth-of-type(even) {
+    background-repeat: repeat;
+    background-position: left top;
+    clear: both;
+  }
+  section.fullwidth div[class*='col-'] {
+    padding: 0;
+  }
+  section.double-pad {
+    padding: 160px 0;
+    margin: 0 auto;
+    height: 575px;
+  }
+  section.large-pad {
+    padding: 50px 0 25px;
+    /*z-index: 2;*/
+  }
+  section.large-pad.agencies-news,
+  section.large-pad.agencies-trucks {
+    padding-top: 25px; padding-bottom: 0px;
+  }
+  section.large-pad.agencies-news:last-child,
+  section.large-pad.agencies-trucks:last-child {
+    padding-top: 25px; padding-bottom: 25px;
+  }
+  section.large-pad.white-bg {
+    background: #fff;
+  }
+  .feature-lists.large-pad {
+    padding: 120px 0 80px 0;
+  }
+  .feature-list {
+    margin-bottom: 40px;
+  }
+  .feature-lists i {
+    color: #b21117;
+    margin-bottom: 8px;
+  }
+  .icon-large {
+    font-size: 80px;
+    display: inline-block;
+  }
+  .no-pad {
+    padding: 0;
+  }
+  .detail-line {
+    width: 30px;
+    height: 1px;
+    background: #fff;
+    margin-bottom: 24px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  /*div[class*='col-'] div[class*='col-'] {
+    padding-left: 0;
+  }*/
+  img {
+    /*max-width: 100%;*/
+  }
+  .duplicatable-content {
+    padding: 80px 0 40px 0;
+  }
+  .duplicatable-content div[class*='col-'] {
+    margin-bottom: 40px;
+  }
+  @media all and (max-width: 767px) {
+    br {
+      display: none;
+    }
+  }
+  body.boxed .main-container,
+  body.boxed .footer-container,
+  body.boxed nav {
+    max-width: 1280px;
+  }
+  .sub-p {
+    font-size: 26px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 8px;
+    color: #fff;
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    width: 25%;
+  }
+  ::selection {
+    text-shadow: none;
+    color: #7a7a7a;
+    background-color: #eeeeee;
+  }
+/**/

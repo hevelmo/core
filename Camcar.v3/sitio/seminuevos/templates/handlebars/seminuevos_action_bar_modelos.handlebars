@@ -1,0 +1,19 @@
+<select name="sem-model" 
+		id="sen-get-model" 
+		class="selectpicker btn-default form-control sel-modelo" 
+		style="display: none;">
+	<option value="0" 
+			class="filter-action-mdo" 
+			id="filter-action-mdo-" 
+			data-name-short="">
+		Modelo
+	</option>
+	{{#each campa}}
+		<option value="{{id}}" 
+				class="filter-action-mdo" 
+				id="filter-action-mdo-{{id}}" 
+				data-name-short="{{nombre_short}}">
+			{{nombre}}
+		</option>
+	{{/each}}
+</select>

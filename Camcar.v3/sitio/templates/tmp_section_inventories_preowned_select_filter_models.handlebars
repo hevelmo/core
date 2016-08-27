@@ -1,0 +1,6 @@
+<select name="sem-model" id="select-fil-models" class="selectpicker btn-default form-control sel-modelo">
+    <option value='0' class="filter-action-mdo" id="filter-action-mdo-" data-filter-action-mdo-id="">Modelo</option>
+    {{#each campa}}
+        <option value='{{id_model}}' class="filter-action-mdo" id="filter-action-mdo-{{id_model}}" data-filter-action-mdo-id="{{id_model}}">{{modelo}}</option>
+    {{/each}}
+</select>

@@ -1,0 +1,818 @@
+<h2 id="flot-0-8-1">Flot 0.8.1</h2>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li><p>Fixed a regression in the time plugin, introduced in 0.8, that caused dates
+to align to the minute rather than to the highest appropriate unit. This
+caused many x-axes in 0.8 to have different ticks than they did in 0.7.
+(reported by Tom Sheppard, patch by Daniel Shapiro, issue #1017, pull
+request #1023)</p>
+</li>
+<li><p>Fixed a regression in text rendering, introduced in 0.8, that caused axis
+labels with the same text as another label on the same axis to disappear.
+More generally, it&#39;s again possible to have the same text in two locations.
+(issue #1032)</p>
+</li>
+<li><p>Fixed a regression in text rendering, introduced in 0.8, where axis labels
+were no longer assigned an explicit width, and their text could not wrap.
+(reported by sabregreen, issue #1019)</p>
+</li>
+<li><p>Fixed a regression in the pie plugin, introduced in 0.8, that prevented it
+from accepting data in the format &#39;[[x, y]]&#39;.
+(patch by Nicolas Morel, pull request #1024)</p>
+</li>
+<li><p>The &#39;zero&#39; series option and &#39;autoscale&#39; format option are no longer
+ignored when the series contains a null value.
+(reported by Daniel Shapiro, issue #1033)</p>
+</li>
+<li><p>Avoid triggering the time-mode plugin exception when there are zero series.
+(reported by Daniel Rothig, patch by Mark Raymond, issue #1016)</p>
+</li>
+<li><p>When a custom color palette has fewer colors than the default palette, Flot
+no longer fills out the colors with the remainder of the default.
+(patch by goorpy, issue #1031, pull request #1034)</p>
+</li>
+<li><p>Fixed missing update for bar highlights after a zoom or other redraw.
+(reported by Paolo Valleri, issue #1030)</p>
+</li>
+<li><p>Fixed compatibility with jQuery versions earlier than 1.7.
+(patch by Lee Willis, issue #1027, pull request #1027)</p>
+</li>
+<li><p>The mouse wheel no longer scrolls the page when using the navigate plugin.
+(patch by vird, pull request #1020)</p>
+</li>
+<li><p>Fixed missing semicolons in the core library.
+(reported by Michal Zglinski)</p>
+</li>
+</ul>
+<h2 id="flot-0-8-0">Flot 0.8.0</h2>
+<h3 id="api-changes">API changes</h3>
+<p>Support for time series has been moved into a plugin, jquery.flot.time.js.
+This results in less code if time series are not used. The functionality
+remains the same (plus timezone support, as described below); however, the
+plugin must be included if axis.mode is set to &quot;time&quot;.</p>
+<p>When the axis mode is &quot;time&quot;, the axis option &quot;timezone&quot; can be set to null,
+&quot;browser&quot;, or a particular timezone (e.g. &quot;America/New_York&quot;) to control how
+the dates are displayed. If null, the dates are displayed as UTC. If
+&quot;browser&quot;, the dates are displayed in the time zone of the user&#39;s browser.</p>
+<p>Date/time formatting has changed and now follows a proper subset of the
+standard strftime specifiers, plus one nonstandard specifier for quarters.
+Additionally, if a strftime function is found in the Date object&#39;s prototype,
+it will be used instead of the built-in formatter.</p>
+<p>Axis tick labels now use the class &#39;flot-tick-label&#39; instead of &#39;tickLabel&#39;.
+The text containers  for each axis now use the classes &#39;flot-[x|y]-axis&#39; and
+&#39;flot-[x|y]#-axis&#39; instead of &#39;[x|y]Axis&#39; and &#39;[x|y]#Axis&#39;. For compatibility
+with Flot 0.7 and earlier text will continue to use the old classes as well,
+but they are considered deprecated and will be removed in a future version.</p>
+<p>In previous versions the axis &#39;color&#39; option was used to set the color of tick
+marks and their label text. It now controls the color of the axis line, which
+previously could not be changed separately, and continues to act as a default
+for the tick-mark color.  The color of tick label text is now set either by
+overriding the &#39;flot-tick-label&#39; CSS rule or via the axis &#39;font&#39; option.</p>
+<p>A new plugin, jquery.flot.canvas.js, allows axis tick labels to be rendered
+directly to the canvas, rather than using HTML elements. This feature can be
+toggled with a simple option, making it easy to create interactive plots in the
+browser using HTML, then re-render them to canvas for export as an image.</p>
+<p>The plugin tries to remain as faithful as possible to the original HTML render,
+and goes so far as to automatically extract styles from CSS, to avoid having to
+provide a separate set of styles when rendering to canvas. Due to limitations
+of the canvas text API, the plugin cannot reproduce certain features, including
+HTML markup embedded in labels, and advanced text styles such as &#39;em&#39; units.</p>
+<p>The plugin requires support for canvas text, which may not be present in some
+older browsers, even if they support the canvas tag itself. To use the plugin
+with these browsers try using a shim such as canvas-text or FlashCanvas.</p>
+<p>The base and overlay canvas are now using the CSS classes &quot;flot-base&quot; and
+&quot;flot-overlay&quot; to prevent accidental clashes (issue 540).</p>
+<h3 id="changes">Changes</h3>
+<ul>
+<li><p>Addition of nonstandard %q specifier to date/time formatting. (patch
+by risicle, issue 49)</p>
+</li>
+<li><p>Date/time formatting follows proper subset of strftime specifiers, and
+support added for Date.prototype.strftime, if found. (patch by Mark Cote,
+issues 419 and 558)</p>
+</li>
+<li><p>Fixed display of year ticks. (patch by Mark Cote, issue 195)</p>
+</li>
+<li><p>Support for time series moved to plugin. (patch by Mark Cote)</p>
+</li>
+<li><p>Display time series in different time zones. (patch by Knut Forkalsrud,
+issue 141)</p>
+</li>
+<li><p>Added a canvas plugin to enable rendering axis tick labels to the canvas.
+(sponsored by YCharts.com, implementation by Ole Laursen and David Schnur)</p>
+</li>
+<li><p>Support for setting the interval between redraws of the overlay canvas with
+redrawOverlayInterval. (suggested in issue 185)</p>
+</li>
+<li><p>Support for multiple thresholds in thresholds plugin. (patch by Arnaud
+Bellec, issue 523)</p>
+</li>
+<li><p>Support for plotting categories/textual data directly with new categories
+plugin.</p>
+</li>
+<li><p>Tick generators now get the whole axis rather than just min/max.</p>
+</li>
+<li><p>Added processOffset and drawBackground hooks. (suggested in issue 639)</p>
+</li>
+<li><p>Added a grid &quot;margin&quot; option to set the space between the canvas edge and
+the grid.</p>
+</li>
+<li><p>Prevent the pie example page from generating single-slice pies. (patch by
+Shane Reustle)</p>
+</li>
+<li><p>In addition to &quot;left&quot; and &quot;center&quot;, bars now recognize &quot;right&quot; as an
+alignment option. (patch by Michael Mayer, issue 520)</p>
+</li>
+<li><p>Switched from toFixed to a much faster default tickFormatter. (patch by
+Clemens Stolle)</p>
+</li>
+<li><p>Added to a more helpful error when using a time-mode axis without including
+the flot.time plugin. (patch by Yael Elmatad)</p>
+</li>
+<li><p>Added a legend &quot;sorted&quot; option to control sorting of legend entries
+independent of their series order. (patch by Tom Cleaveland)</p>
+</li>
+<li><p>Added a series &quot;highlightColor&quot; option to control the color of the
+translucent overlay that identifies the dataset when the mouse hovers over
+it. (patch by Eric Wendelin and Nate Abele, issues 168 and 299)</p>
+</li>
+<li><p>Added a plugin jquery.flot.errorbars, with an accompanying example, that
+adds the ability to plot error bars, commonly used in many kinds of
+statistical data visualizations. (patch by Rui Pereira, issue 215)</p>
+</li>
+<li><p>The legend now omits entries whose labelFormatter returns null.  (patch by
+Tom Cleaveland, Christopher Lambert, and Simon Strandgaard)</p>
+</li>
+<li><p>Added support for high pixel density (retina) displays, resulting in much
+crisper charts on such devices. (patch by Olivier Guerriat, additional
+fixes by Julien Thomas, maimairel, and Lau Bech Lauritzen)</p>
+</li>
+<li><p>Added the ability to control pie shadow position and alpha via a new pie
+&#39;shadow&#39; option. (patch by Julien Thomas, pull request #78)</p>
+</li>
+<li><p>Added the ability to set width and color for individual sides of the grid.
+(patch by Ara Anjargolian, additional fixes by Karl Swedberg, pull requests #855
+and #880)</p>
+</li>
+<li><p>The selection plugin&#39;s getSelection now returns null when the selection
+has been cleared. (patch by Nick Campbell, pull request #852)</p>
+</li>
+<li><p>Added a new option called &#39;zero&#39; to bars and filled lines series, to control
+whether the y-axis minimum is scaled to fit the data or set to zero.
+(patch by David Schnur, issues #316, #529, and #856, pull request #911)</p>
+</li>
+<li><p>The plot function is now also a jQuery chainable property.
+(patch by David Schnur, issues #734 and #816, pull request #953)</p>
+</li>
+<li><p>When only a single pie slice is beneath the combine threshold it is no longer
+replaced by an &#39;other&#39; slice. (suggested by Devin Bayer, issue #638)</p>
+</li>
+<li><p>Added lineJoin and minSize options to the selection plugin to control the
+corner style and minimum size of the selection, respectively.
+(patch by Ruth Linehan, pull request #963)</p>
+</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li><p>Fix problem with null values and pie plugin. (patch by gcruxifix,
+issue 500)</p>
+</li>
+<li><p>Fix problem with threshold plugin and bars. (based on patch by
+kaarlenkaski, issue 348)</p>
+</li>
+<li><p>Fix axis box calculations so the boxes include the outermost part of the
+labels too.</p>
+</li>
+<li><p>Fix problem with event clicking and hovering in IE 8 by updating Excanvas
+and removing previous work-around. (test case by Ara Anjargolian)</p>
+</li>
+<li><p>Fix issues with blurry 1px border when some measures aren&#39;t integer.
+(reported by Ara Anjargolian)</p>
+</li>
+<li><p>Fix bug with formats in the data processor. (reported by Peter Hull,
+issue 534)</p>
+</li>
+<li><p>Prevent i from being declared global in extractRange. (reported by
+Alexander Obukhov, issue 627)</p>
+</li>
+<li><p>Throw errors in a more cross-browser-compatible manner. (patch by
+Eddie Kay)</p>
+</li>
+<li><p>Prevent pie slice outlines from being drawn when the stroke width is zero.
+(reported by Chris Minett, issue 585)</p>
+</li>
+<li><p>Updated the navigate plugin&#39;s inline copy of jquery.mousewheel to fix
+Webkit zoom problems. (reported by Hau Nguyen, issue 685)</p>
+</li>
+<li><p>Axis labels no longer appear as decimals rather than integers in certain
+cases. (patch by Clemens Stolle, issue 541)</p>
+</li>
+<li><p>Automatic color generation no longer produces only whites and blacks when
+there are many series. (patch by David Schnur and Tom Cleaveland)</p>
+</li>
+<li><p>Fixed an error when custom tick labels weren&#39;t provided as strings. (patch
+by Shad Downey)</p>
+</li>
+<li><p>Prevented the local insertSteps and fmt variables from becoming global.
+(first reported by Marc Bennewitz and Szymon Barglowski, patch by Nick
+Campbell, issues #825 and #831, pull request #851)</p>
+</li>
+<li><p>Prevented several threshold plugin variables from becoming global. (patch
+by Lasse Dahl Ebert)</p>
+</li>
+<li><p>Fixed various jQuery 1.8 compatibility issues. (issues #814 and #819,
+pull request #877)</p>
+</li>
+<li><p>Pie charts with a slice equal to or approaching 100% of the pie no longer
+appear invisible. (patch by David Schnur, issues #444, #658, #726, #824
+and #850, pull request #879)</p>
+</li>
+<li><p>Prevented several local variables from becoming global. (patch by aaa707)</p>
+</li>
+<li><p>Ensure that the overlay and primary canvases remain aligned. (issue #670,
+pull request #901)</p>
+</li>
+<li><p>Added support for jQuery 1.9 by removing and replacing uses of $.browser.
+(analysis and patch by Anthony Ryan, pull request #905)</p>
+</li>
+<li><p>Pie charts no longer disappear when redrawn during a resize or update.
+(reported by Julien Bec, issue #656, pull request #910)</p>
+</li>
+<li><p>Avoided floating-point precision errors when calculating pie percentages.
+(patch by James Ward, pull request #918)</p>
+</li>
+<li><p>Fixed compatibility with jQuery 1.2.6, which has no &#39;mouseleave&#39; shortcut.
+(reported by Bevan, original pull request #920, replaced by direct patch)</p>
+</li>
+<li><p>Fixed sub-pixel rendering issues with crosshair and selection lines.
+(patches by alanayoub and Daniel Shapiro, pull requests #17 and #925)</p>
+</li>
+<li><p>Fixed rendering issues when using the threshold plugin with several series.
+(patch by Ivan Novikov, pull request #934)</p>
+</li>
+<li><p>Pie charts no longer disappear when redrawn after calling setData().
+(reported by zengge1984 and pareeohnos, issues #810 and #945)</p>
+</li>
+<li><p>Added a work-around for the problem where points with a lineWidth of zero
+still showed up with a visible line. (reported by SalvoSav, issue #842,
+patch by Jamie Hamel-Smith, pull request #937)</p>
+</li>
+<li><p>Pie charts now accept values in string form, like other plot types.
+(reported by laerdal.no, issue #534)</p>
+</li>
+<li><p>Avoid rounding errors in the threshold plugin.
+(reported by jerikojerk, issue #895)</p>
+</li>
+<li><p>Fixed an error when using the navigate plugin with jQuery 1.9.x or later.
+(reported by Paolo Valleri, issue #964)</p>
+</li>
+<li><p>Fixed inconsistencies between the highlight and unhighlight functions.
+(reported by djamshed, issue #987)</p>
+</li>
+<li><p>Fixed recalculation of tickSize and tickDecimals on calls to setupGrid.
+(patch by thecountofzero, pull request #861, issues #860, #1000)</p>
+</li>
+</ul>
+<h2 id="flot-0-7">Flot 0.7</h2>
+<h3 id="api-changes">API changes</h3>
+<p>Multiple axes support. Code using dual axes should be changed from using
+x2axis/y2axis in the options to using an array (although backwards-
+compatibility hooks are in place). For instance,</p>
+<pre><code class="lang-js">{
+    xaxis: { ... }, x2axis: { ... },
+    yaxis: { ... }, y2axis: { ... }
+}
+</code></pre>
+<p>becomes</p>
+<pre><code class="lang-js">{
+    xaxes: [ { ... }, { ... } ],
+    yaxes: [ { ... }, { ... } ]
+}
+</code></pre>
+<p>Note that if you&#39;re just using one axis, continue to use the xaxis/yaxis
+directly (it now sets the default settings for the arrays). Plugins touching
+the axes must be ported to take the extra axes into account, check the source
+to see some examples.</p>
+<p>A related change is that the visibility of axes is now auto-detected. So if
+you were relying on an axis to show up even without any data in the chart, you
+now need to set the axis &quot;show&quot; option explicitly.</p>
+<p>&quot;tickColor&quot; on the grid options is now deprecated in favour of a corresponding
+option on the axes, so:</p>
+<pre><code class="lang-js">{ grid: { tickColor: &quot;#000&quot; }}
+</code></pre>
+<p>becomes</p>
+<pre><code class="lang-js">{ xaxis: { tickColor: &quot;#000&quot;}, yaxis: { tickColor: &quot;#000&quot;} }
+</code></pre>
+<p>But if you just configure a base color Flot will now autogenerate a tick color
+by adding transparency. Backwards-compatibility hooks are in place.</p>
+<p>Final note: now that IE 9 is coming out with canvas support, you may want to
+adapt the excanvas include to skip loading it in IE 9 (the examples have been
+adapted thanks to Ryley Breiddal). An alternative to excanvas using Flash has
+also surfaced, if your graphs are slow in IE, you may want to give it a spin:</p>
+<pre><code>http://code.google.com/p/flashcanvas/
+</code></pre><h3 id="changes">Changes</h3>
+<ul>
+<li><p>Support for specifying a bottom for each point for line charts when filling
+them, this means that an arbitrary bottom can be used instead of just the x
+axis. (based on patches patiently provided by Roman V. Prikhodchenko)</p>
+</li>
+<li><p>New fillbetween plugin that can compute a bottom for a series from another
+series, useful for filling areas between lines.</p>
+<p>See new example percentiles.html for a use case.</p>
+</li>
+<li><p>More predictable handling of gaps for the stacking plugin, now all
+undefined ranges are skipped.</p>
+</li>
+<li><p>Stacking plugin can stack horizontal bar charts.</p>
+</li>
+<li><p>Navigate plugin now redraws the plot while panning instead of only after
+the fact. (raised by lastthemy, issue 235)</p>
+<p>Can be disabled by setting the pan.frameRate option to null.</p>
+</li>
+<li><p>Date formatter now accepts %0m and %0d to get a zero-padded month or day.
+(issue raised by Maximillian Dornseif)</p>
+</li>
+<li><p>Revamped internals to support an unlimited number of axes, not just dual.
+(sponsored by Flight Data Services, www.flightdataservices.com)</p>
+</li>
+<li><p>New setting on axes, &quot;tickLength&quot;, to control the size of ticks or turn
+them off without turning off the labels.</p>
+</li>
+<li><p>Axis labels are now put in container divs with classes, for instance labels
+in the x axes can be reached via &quot;.xAxis .tickLabel&quot;.</p>
+</li>
+<li><p>Support for setting the color of an axis. (sponsored by Flight Data
+Services, www.flightdataservices.com)</p>
+</li>
+<li><p>Tick color is now auto-generated as the base color with some transparency,
+unless you override it.</p>
+</li>
+<li><p>Support for aligning ticks in the axes with &quot;alignTicksWithAxis&quot; to ensure
+that they appear next to each other rather than in between, at the expense
+of possibly awkward tick steps. (sponsored by Flight Data Services,
+www.flightdataservices.com)</p>
+</li>
+<li><p>Support for customizing the point type through a callback when plotting
+points and new symbol plugin with some predefined point types. (sponsored
+by Utility Data Corporation)</p>
+</li>
+<li><p>Resize plugin for automatically redrawing when the placeholder changes
+size, e.g. on window resizes. (sponsored by Novus Partners)</p>
+<p>A resize() method has been added to plot object facilitate this.</p>
+</li>
+<li><p>Support Infinity/-Infinity for plotting asymptotes by hacking it into
++/-Number.MAX_VALUE. (reported by rabaea.mircea)</p>
+</li>
+<li><p>Support for restricting navigate plugin to not pan/zoom an axis. (based on
+patch by kkaefer)</p>
+</li>
+<li><p>Support for providing the drag cursor for the navigate plugin as an option.
+(based on patch by Kelly T. Moore)</p>
+</li>
+<li><p>Options for controlling whether an axis is shown or not (suggestion by Timo
+Tuominen) and whether to reserve space for it even if it isn&#39;t shown.</p>
+</li>
+<li><p>New attribute $.plot.version with the Flot version as a string.</p>
+</li>
+<li><p>The version comment is now included in the minified jquery.flot.min.js.</p>
+</li>
+<li><p>New options.grid.minBorderMargin for adjusting the minimum margin provided
+around the border (based on patch by corani, issue 188).</p>
+</li>
+<li><p>Refactor replot behaviour so Flot tries to reuse the existing canvas,
+adding shutdown() methods to the plot. (based on patch by Ryley Breiddal,
+issue 269)</p>
+<p>This prevents a memory leak in Chrome and hopefully makes replotting faster
+for those who are using $.plot instead of .setData()/.draw(). Also update
+jQuery to 1.5.1 to prevent IE leaks fixed in jQuery.</p>
+</li>
+<li><p>New real-time line chart example.</p>
+</li>
+<li><p>New hooks: drawSeries, shutdown.</p>
+</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li><p>Fixed problem with findNearbyItem and bars on top of each other. (reported
+by ragingchikn, issue 242)</p>
+</li>
+<li><p>Fixed problem with ticks and the border. (based on patch from
+ultimatehustler69, issue 236)</p>
+</li>
+<li><p>Fixed problem with plugins adding options to the series objects.</p>
+</li>
+<li><p>Fixed a problem introduced in 0.6 with specifying a gradient with:</p>
+<p><code>{brightness: x, opacity: y }</code></p>
+</li>
+<li><p>Don&#39;t use $.browser.msie, check for getContext on the created canvas element
+instead and try to use excanvas if it&#39;s not found.</p>
+<p>Fixes IE 9 compatibility.</p>
+</li>
+<li><p>highlight(s, index) was looking up the point in the original s.data instead
+of in the computed datapoints array, which breaks with plugins that modify
+the datapoints, such as the stacking plugin. (reported by curlypaul924,
+issue 316)</p>
+</li>
+<li><p>More robust handling of axis from data passed in from getData(). (reported)
+by Morgan)</p>
+</li>
+<li><p>Fixed problem with turning off bar outline. (fix by Jordi Castells,
+issue 253)</p>
+</li>
+<li><p>Check the selection passed into setSelection in the selection
+plugin, to guard against errors when synchronizing plots (fix by Lau
+Bech Lauritzen).</p>
+</li>
+<li><p>Fix bug in crosshair code with mouseout resetting the crosshair even
+if it is locked (fix by Lau Bech Lauritzen and Banko Adam).</p>
+</li>
+<li><p>Fix bug with points plotting using line width from lines rather than
+points.</p>
+</li>
+<li><p>Fix bug with passing non-array 0 data (for plugins that don&#39;t expect
+arrays, patch by vpapp1).</p>
+</li>
+<li><p>Fix errors in JSON in examples so they work with jQuery 1.4.2
+(fix reported by honestbleeps, issue 357).</p>
+</li>
+<li><p>Fix bug with tooltip in interacting.html, this makes the tooltip
+much smoother (fix by bdkahn). Fix related bug inside highlighting
+handler in Flot.</p>
+</li>
+<li><p>Use closure trick to make inline colorhelpers plugin respect
+jQuery.noConflict(true), renaming the global jQuery object (reported
+by Nick Stielau).</p>
+</li>
+<li><p>Listen for mouseleave events and fire a plothover event with empty
+item when it occurs to drop highlights when the mouse leaves the
+plot (reported by by outspirit).</p>
+</li>
+<li><p>Fix bug with using aboveData with a background (reported by
+amitayd).</p>
+</li>
+<li><p>Fix possible excanvas leak (report and suggested fix by tom9729).</p>
+</li>
+<li><p>Fix bug with backwards compatibility for shadowSize = 0 (report and
+suggested fix by aspinak).</p>
+</li>
+<li><p>Adapt examples to skip loading excanvas (fix by Ryley Breiddal).</p>
+</li>
+<li><p>Fix bug that prevent a simple f(x) = -x transform from working
+correctly (fix by Mike, issue 263).</p>
+</li>
+<li><p>Fix bug in restoring cursor in navigate plugin (reported by Matteo
+Gattanini, issue 395).</p>
+</li>
+<li><p>Fix bug in picking items when transform/inverseTransform is in use
+(reported by Ofri Raviv, and patches and analysis by Jan and Tom
+Paton, issue 334 and 467).</p>
+</li>
+<li><p>Fix problem with unaligned ticks and hover/click events caused by
+padding on the placeholder by hardcoding the placeholder padding to
+0 (reported by adityadineshsaxena, Matt Sommer, Daniel Atos and some
+other people, issue 301).</p>
+</li>
+<li><p>Update colorhelpers plugin to avoid dying when trying to parse an
+invalid string (reported by cadavor, issue 483).</p>
+</li>
+</ul>
+<h2 id="flot-0-6">Flot 0.6</h2>
+<h3 id="api-changes">API changes</h3>
+<p>Selection support has been moved to a plugin. Thus if you&#39;re passing
+selection: { mode: something }, you MUST include the file
+jquery.flot.selection.js after jquery.flot.js. This reduces the size of
+base Flot and makes it easier to customize the selection as well as
+improving code clarity. The change is based on a patch from andershol.</p>
+<p>In the global options specified in the $.plot command, &quot;lines&quot;, &quot;points&quot;,
+&quot;bars&quot; and &quot;shadowSize&quot; have been moved to a sub-object called &quot;series&quot;:</p>
+<pre><code class="lang-js">$.plot(placeholder, data, { lines: { show: true }})
+</code></pre>
+<p>should be changed to</p>
+<pre><code class="lang-js">  $.plot(placeholder, data, { series: { lines: { show: true }}})
+</code></pre>
+<p>All future series-specific options will go into this sub-object to
+simplify plugin writing. Backward-compatibility code is in place, so
+old code should not break.</p>
+<p>&quot;plothover&quot; no longer provides the original data point, but instead a
+normalized one, since there may be no corresponding original point.</p>
+<p>Due to a bug in previous versions of jQuery, you now need at least
+jQuery 1.2.6. But if you can, try jQuery 1.3.2 as it got some improvements
+in event handling speed.</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li><p>Added support for disabling interactivity for specific data series.
+(request from Ronald Schouten and Steve Upton)</p>
+</li>
+<li><p>Flot now calls $() on the placeholder and optional legend container passed
+in so you can specify DOM elements or CSS expressions to make it easier to
+use Flot with libraries like Prototype or Mootools or through raw JSON from
+Ajax responses.</p>
+</li>
+<li><p>A new &quot;plotselecting&quot; event is now emitted while the user is making a
+selection.</p>
+</li>
+<li><p>The &quot;plothover&quot; event is now emitted immediately instead of at most 10
+times per second, you&#39;ll have to put in a setTimeout yourself if you&#39;re
+doing something really expensive on this event.</p>
+</li>
+<li><p>The built-in date formatter can now be accessed as $.plot.formatDate(...)
+(suggestion by Matt Manela) and even replaced.</p>
+</li>
+<li><p>Added &quot;borderColor&quot; option to the grid. (patches from Amaury Chamayou and
+Mike R. Williamson)</p>
+</li>
+<li><p>Added support for gradient backgrounds for the grid. (based on patch from
+Amaury Chamayou, issue 90)</p>
+<p>The &quot;setting options&quot; example provides a demonstration.</p>
+</li>
+<li><p>Gradient bars. (suggestion by stefpet)</p>
+</li>
+<li><p>Added a &quot;plotunselected&quot; event which is triggered when the selection is
+removed, see &quot;selection&quot; example. (suggestion by Meda Ugo)</p>
+</li>
+<li><p>The option legend.margin can now specify horizontal and vertical margins
+independently. (suggestion by someone who&#39;s annoyed)</p>
+</li>
+<li><p>Data passed into Flot is now copied to a new canonical format to enable
+further processing before it hits the drawing routines. As a side-effect,
+this should make Flot more robust in the face of bad data. (issue 112)</p>
+</li>
+<li><p>Step-wise charting: line charts have a new option &quot;steps&quot; that when set to
+true connects the points with horizontal/vertical steps instead of diagonal
+lines.</p>
+</li>
+<li><p>The legend labelFormatter now passes the series in addition to just the
+label. (suggestion by Vincent Lemeltier)</p>
+</li>
+<li><p>Horizontal bars (based on patch by Jason LeBrun).</p>
+</li>
+<li><p>Support for partial bars by specifying a third coordinate, i.e. they don&#39;t
+have to start from the axis. This can be used to make stacked bars.</p>
+</li>
+<li><p>New option to disable the (grid.show).</p>
+</li>
+<li><p>Added pointOffset method for converting a point in data space to an offset
+within the placeholder.</p>
+</li>
+<li><p>Plugin system: register an init method in the $.flot.plugins array to get
+started, see PLUGINS.txt for details on how to write plugins (it&#39;s easy).
+There are also some extra methods to enable access to internal state.</p>
+</li>
+<li><p>Hooks: you can register functions that are called while Flot is crunching
+the data and doing the plot. This can be used to modify Flot without
+changing the source, useful for writing plugins. Some hooks are defined,
+more are likely to come.</p>
+</li>
+<li><p>Threshold plugin: you can set a threshold and a color, and the data points
+below that threshold will then get the color. Useful for marking data
+below 0, for instance.</p>
+</li>
+<li><p>Stack plugin: you can specify a stack key for each series to have them
+summed. This is useful for drawing additive/cumulative graphs with bars and
+(currently unfilled) lines.</p>
+</li>
+<li><p>Crosshairs plugin: trace the mouse position on the axes, enable with
+crosshair: { mode: &quot;x&quot;} (see the new tracking example for a use).</p>
+</li>
+<li><p>Image plugin: plot prerendered images.</p>
+</li>
+<li><p>Navigation plugin for panning and zooming a plot.</p>
+</li>
+<li><p>More configurable grid.</p>
+</li>
+<li><p>Axis transformation support, useful for non-linear plots, e.g. log axes and
+compressed time axes (like omitting weekends).</p>
+</li>
+<li><p>Support for twelve-hour date formatting (patch by Forrest Aldridge).</p>
+</li>
+<li><p>The color parsing code in Flot has been cleaned up and split out so it&#39;s
+now available as a separate jQuery plugin. It&#39;s included inline in the Flot
+source to make dependency managing easier. This also makes it really easy
+to use the color helpers in Flot plugins.</p>
+</li>
+</ul>
+<h2 id="bug-fixes">Bug fixes</h2>
+<ul>
+<li><p>Fixed two corner-case bugs when drawing filled curves. (report and analysis
+by Joshua Varner)</p>
+</li>
+<li><p>Fix auto-adjustment code when setting min to 0 for an axis where the
+dataset is completely flat on that axis. (report by chovy)</p>
+</li>
+<li><p>Fixed a bug with passing in data from getData to setData when the secondary
+axes are used. (reported by nperelman, issue 65)</p>
+</li>
+<li><p>Fixed so that it is possible to turn lines off when no other chart type is
+shown (based on problem reported by Glenn Vanderburg), and fixed so that
+setting lineWidth to 0 also hides the shadow. (based on problem reported by
+Sergio Nunes)</p>
+</li>
+<li><p>Updated mousemove position expression to the latest from jQuery. (reported
+by meyuchas)</p>
+</li>
+<li><p>Use CSS borders instead of background in legend. (issues 25 and 45)</p>
+</li>
+<li><p>Explicitly convert axis min/max to numbers.</p>
+</li>
+<li><p>Fixed a bug with drawing marking lines with different colors. (reported by
+Khurram)</p>
+</li>
+<li><p>Fixed a bug with returning y2 values in the selection event. (fix by
+exists, issue 75)</p>
+</li>
+<li><p>Only set position relative on placeholder if it hasn&#39;t already a position
+different from static. (reported by kyberneticist, issue 95)</p>
+</li>
+<li><p>Don&#39;t round markings to prevent sub-pixel problems. (reported by
+Dan Lipsitt)</p>
+</li>
+<li><p>Make the grid border act similarly to a regular CSS border, i.e. prevent
+it from overlapping the plot itself. This also fixes a problem with anti-
+aliasing when the width is 1 pixel. (reported by Anthony Ettinger)</p>
+</li>
+<li><p>Imported version 3 of excanvas and fixed two issues with the newer version.
+Hopefully, this will make Flot work with IE8. (nudge by Fabien Menager,
+further analysis by Booink, issue 133)</p>
+</li>
+<li><p>Changed the shadow code for lines to hopefully look a bit better with
+vertical lines.</p>
+</li>
+<li><p>Round tick positions to avoid possible problems with fractions. (suggestion
+by Fred, issue 130)</p>
+</li>
+<li><p>Made the heuristic for determining how many ticks to aim for a bit smarter.</p>
+</li>
+<li><p>Fix for uneven axis margins (report and patch by Paul Kienzle) and snapping
+to ticks. (report and patch by lifthrasiir)</p>
+</li>
+<li><p>Fixed bug with slicing in findNearbyItems. (patch by zollman)</p>
+</li>
+<li><p>Make heuristic for x axis label widths more dynamic. (patch by
+rickinhethuis)</p>
+</li>
+<li><p>Make sure points on top take precedence when finding nearby points when
+hovering. (reported by didroe, issue 224)</p>
+</li>
+</ul>
+<h2 id="flot-0-5">Flot 0.5</h2>
+<p>Timestamps are now in UTC. Also &quot;selected&quot; event -&gt; becomes &quot;plotselected&quot;
+with new data, the parameters for setSelection are now different (but
+backwards compatibility hooks are in place), coloredAreas becomes markings
+with a new interface (but backwards compatibility hooks are in place).</p>
+<h3 id="api-changes">API changes</h3>
+<p>Timestamps in time mode are now displayed according to UTC instead of the time
+zone of the visitor. This affects the way the timestamps should be input;
+you&#39;ll probably have to offset the timestamps according to your local time
+zone. It also affects any custom date handling code (which basically now
+should use the equivalent UTC date mehods, e.g. .setUTCMonth() instead of
+.setMonth().</p>
+<p>Markings, previously coloredAreas, are now specified as ranges on the axes,
+like <code>{ xaxis: { from: 0, to: 10 }}</code>. Furthermore with markings you can
+now draw horizontal/vertical lines by setting from and to to the same
+coordinate. (idea from line support patch by by Ryan Funduk)</p>
+<p>Interactivity: added a new &quot;plothover&quot; event and this and the &quot;plotclick&quot;
+event now returns the closest data item (based on patch by /david, patch by
+Mark Byers for bar support). See the revamped &quot;interacting with the data&quot;
+example for some hints on what you can do.</p>
+<p>Highlighting: you can now highlight points and datapoints are autohighlighted
+when you hover over them (if hovering is turned on).</p>
+<p>Support for dual axis has been added (based on patch by someone who&#39;s annoyed
+and /david). For each data series you can specify which axes it belongs to,
+and there are two more axes, x2axis and y2axis, to customize. This affects the
+&quot;selected&quot; event which has been renamed to &quot;plotselected&quot; and spews out
+<code>{ xaxis: { from: -10, to: 20 } ... },</code> setSelection in which the
+parameters are on a new form (backwards compatible hooks are in place so old
+code shouldn&#39;t break) and markings (formerly coloredAreas).</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li><p>Added support for specifying the size of tick labels (axis.labelWidth,
+axis.labelHeight). Useful for specifying a max label size to keep multiple
+plots aligned.</p>
+</li>
+<li><p>The &quot;fill&quot; option can now be a number that specifies the opacity of the
+fill.</p>
+</li>
+<li><p>You can now specify a coordinate as null (like [2, null]) and Flot will
+take the other coordinate into account when scaling the axes. (based on
+patch by joebno)</p>
+</li>
+<li><p>New option for bars &quot;align&quot;. Set it to &quot;center&quot; to center the bars on the
+value they represent.</p>
+</li>
+<li><p>setSelection now takes a second parameter which you can use to prevent the
+method from firing the &quot;plotselected&quot; handler. </p>
+</li>
+<li><p>Improved the handling of axis auto-scaling with bars. </p>
+</li>
+</ul>
+<h2 id="bug-fixes">Bug fixes</h2>
+<ul>
+<li><p>Fixed a bug in calculating spacing around the plot. (reported by
+timothytoe)</p>
+</li>
+<li><p>Fixed a bug in finding max values for all-negative data sets.</p>
+</li>
+<li><p>Prevent the possibility of eternal looping in tick calculations.</p>
+</li>
+<li><p>Fixed a bug when borderWidth is set to 0. (reported by Rob/sanchothefat)</p>
+</li>
+<li><p>Fixed a bug with drawing bars extending below 0. (reported by James Hewitt,
+patch by Ryan Funduk).</p>
+</li>
+<li><p>Fixed a bug with line widths of bars. (reported by MikeM)</p>
+</li>
+<li><p>Fixed a bug with &#39;nw&#39; and &#39;sw&#39; legend positions.</p>
+</li>
+<li><p>Fixed a bug with multi-line x-axis tick labels. (reported by Luca Ciano,
+IE-fix help by Savage Zhang)</p>
+</li>
+<li><p>Using the &quot;container&quot; option in legend now overwrites the container element
+instead of just appending to it, fixing the infinite legend bug. (reported
+by several people, fix by Brad Dewey)</p>
+</li>
+</ul>
+<h2 id="flot-0-4">Flot 0.4</h2>
+<h3 id="api-changes">API changes</h3>
+<p>Deprecated axis.noTicks in favor of just specifying the number as axis.ticks.
+So <code>xaxis: { noTicks: 10 }</code> becomes <code>xaxis: { ticks: 10 }</code>.</p>
+<p>Time series support. Specify axis.mode: &quot;time&quot;, put in Javascript timestamps
+as data, and Flot will automatically spit out sensible ticks. Take a look at
+the two new examples. The format can be customized with axis.timeformat and
+axis.monthNames, or if that fails with axis.tickFormatter.</p>
+<p>Support for colored background areas via grid.coloredAreas. Specify an array
+of { x1, y1, x2, y2 } objects or a function that returns these given
+{ xmin, xmax, ymin, ymax }.</p>
+<p>More members on the plot object (report by Chris Davies and others).
+&quot;getData&quot; for inspecting the assigned settings on data series (e.g. color) and
+&quot;setData&quot;, &quot;setupGrid&quot; and &quot;draw&quot; for updating the contents without a total
+replot.</p>
+<p>The default number of ticks to aim for is now dependent on the size of the
+plot in pixels. Support for customizing tick interval sizes directly with
+axis.minTickSize and axis.tickSize.</p>
+<p>Cleaned up the automatic axis scaling algorithm and fixed how it interacts
+with ticks. Also fixed a couple of tick-related corner case bugs (one reported
+by mainstreetmark, another reported by timothytoe).</p>
+<p>The option axis.tickFormatter now takes a function with two parameters, the
+second parameter is an optional object with information about the axis. It has
+min, max, tickDecimals, tickSize.</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li><p>Added support for segmented lines. (based on patch from Michael MacDonald)</p>
+</li>
+<li><p>Added support for ignoring null and bad values. (suggestion from Nick
+Konidaris and joshwaihi)</p>
+</li>
+<li><p>Added support for changing the border width. (thanks to joebno and safoo)</p>
+</li>
+<li><p>Label colors can be changed via CSS by selecting the tickLabel class.</p>
+</li>
+</ul>
+<h2 id="bug-fixes">Bug fixes</h2>
+<ul>
+<li><p>Fixed a bug in handling single-item bar series. (reported by Emil Filipov)</p>
+</li>
+<li><p>Fixed erratic behaviour when interacting with the plot with IE 7. (reported
+by Lau Bech Lauritzen).</p>
+</li>
+<li><p>Prevent IE/Safari text selection when selecting stuff on the canvas.</p>
+</li>
+</ul>
+<h2 id="flot-0-3">Flot 0.3</h2>
+<p>This is mostly a quick-fix release because jquery.js wasn&#39;t included in the
+previous zip/tarball.</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li><p>Include jquery.js in the zip/tarball.</p>
+</li>
+<li><p>Support clicking on the plot. Turn it on with grid: { clickable: true },
+then you get a &quot;plotclick&quot; event on the graph placeholder with the position
+in units of the plot.</p>
+</li>
+</ul>
+<h2 id="bug-fixes">Bug fixes</h2>
+<ul>
+<li>Fixed a bug in dealing with data where min = max. (thanks to Michael
+Messinides)</li>
+</ul>
+<h2 id="flot-0-2">Flot 0.2</h2>
+<p>The API should now be fully documented.</p>
+<h3 id="api-changes">API changes</h3>
+<p>Moved labelMargin option to grid from x/yaxis.</p>
+<h2 id="changes">Changes</h2>
+<ul>
+<li><p>Added support for putting a background behind the default legend. The
+default is the partly transparent background color. Added backgroundColor
+and backgroundOpacity to the legend options to control this.</p>
+</li>
+<li><p>The ticks options can now be a callback function that takes one parameter,
+an object with the attributes min and max. The function should return a
+ticks array.</p>
+</li>
+<li><p>Added labelFormatter option in legend, useful for turning the legend
+labels into links.</p>
+</li>
+<li><p>Reduced the size of the code. (patch by Guy Fraser)</p>
+</li>
+</ul>
+<h2 id="flot-0-1">Flot 0.1</h2>
+<p>First public release.</p>

@@ -1,0 +1,97 @@
+@import url("http://fonts.googleapis.com/css?family=Lato");
+
+.custom-file-upload-hidden {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload {
+  display: block;
+  width: auto;
+  font-size: 16px;
+  margin-top: 0px;
+}
+
+.custom-file-upload label {
+  display: block;
+  margin-top: 10px;
+    margin-bottom: 0px;
+    color: #444;
+  	font-weight: bold;
+  	text-transform: uppercase;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.file-upload-input {
+	max-width: 350px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 11px 17px;
+      margin-top: 5px;
+  border: none;
+  background-color: #c0392b;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  float: left;
+  /* IE 9 Fix */
+}
+.file-upload-input:hover, .file-upload-input:focus {
+  background-color: #ab3326;
+  outline: none;
+}
+.email-form-job-board input.file-upload-input::-webkit-input-placeholder { color: #fff; font-weight :bold; }
+.email-form-job-board input.file-upload-input:-moz-placeholder { color: #fff; font-weight: bold; }
+.email-form-job-board input.file-upload-input::-moz-placeholder { color: #fff; font-weight: bold; }
+.email-form-job-board input.file-upload-input:-ms-input-placeholder { color: #fff; font-weight: bold; }
+
+.file-upload-button {
+	height: 48px;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 11px 35px;
+      margin-top: 5px;
+  border: none;
+  margin-left: -1px;
+  background-color: #962d22;
+  float: none;
+  /* IE 9 Fix */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+.file-upload-button:hover {
+  background-color: #6d2018;
+}
+.file-upload-allowed-extensions {
+	display: none;
+	padding: 15px 10px 0;
+	text-align: center;
+}
+.file-upload-allowed-extensions:hover {
+	color: rgba(255,255,255,255, 0.5);
+}
+.file-upload-allowed-extensions .file-upload-legend,
+.file-upload-allowed-extensions .file-upload-icons {
+	color: #fff;
+	display: inline-block;
+	vertical-align: middle;
+}
+.file-upload-allowed-extensions .file-upload-legend {
+	margin-top: -15px;
+}
+.file-upload-allowed-extensions .file-upload-icons i {
+	font-size: 3.5em;
+}

@@ -1,0 +1,49 @@
+/* ----------------------------------- *\
+    [Fonts] Layers Fonts
+\* ----------------------------------- */
+@font-face {
+    font-family: 'Bold';
+    src: url('fonts/OpenSans-Bold-webfont.eot');
+    src: url('fonts/OpenSans-Bold-webfont?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Bold-webfont.svg#Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Regular';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Light';
+    src: url('fonts/OpenSans-Light-webfont.eot');
+    src: url('fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Light-webfont.svg#Light') format('svg');   
+
+}
+
+@font-face {
+  font-family: "outlined-iconset";
+  src:url("fonts/outlined-iconset.eot");
+  src:url("fonts/outlined-iconset.eot?#iefix") format("embedded-opentype"),
+    url("fonts/outlined-iconset.woff") format("woff"),
+    url("fonts/outlined-iconset.ttf") format("truetype"),
+    url("fonts/outlined-iconset.svg#outlined-iconset") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+

@@ -1,0 +1,37 @@
+/* action bars */
+.actions-bar{
+	width:100%;
+	z-index:998;
+	background-color: #ddd;
+    /*background-image: url(../../img/texture-grey-mist.png);*/
+    background-repeat: repeat;
+    background-position: left top;
+	border-bottom:1px solid #eee;
+	padding:15px 0;
+}
+.listing-sort-btn{
+	font-weight:normal;
+	color:#555;
+	width:97px;
+	text-align:left;
+}
+.toggle-view{
+	margin:0;
+	list-style-type:none;
+}
+.actions-bar .toggle-view{
+	margin-right:20px;
+}
+.search-actions h4{
+	font-size:14px;
+	margin-bottom:0;
+	display:inline-block;
+}
+.actions-bar .toggle-view label{
+	float:left;
+	margin-right:10px;
+	line-height:38px;
+	font-size:11px;
+	text-transform:uppercase;
+	margin-bottom:0;
+}

@@ -1,0 +1,99 @@
+{% extends "seminuevos/_main.twig" %}
+{% block content_recurrent %}
+    {{ parent() }}
+    {% set detalle =  seminuevos[0] %}
+    <div id="content-start-body-main" class="about-content">
+        {# Start Body Content #}
+        <div class="main" role="main">
+            <div id="content" class="content full">
+                <div class="container">
+                    {# Vehicle Details #}
+                    <article class="single-vehicle-details">
+                        <div id="content_single_vehicle"></div>
+                        {# TITULO #}
+                        <div class="single-vehicle-title">
+                            {% block titulo %}
+                                <span class="badge-premium-listing" data-sen-id="{{ sen_id }}">
+                                    {{ detalle.agencia.nombre }}
+                                </span>
+                                <h2 class="post-title" data-sen-id="{{ sen_id }}">
+                                    {{ detalle.marca.nombre }} - {{ detalle.modelo.nombre }} - {{ detalle.anio }}
+                                </h2>
+                            {% endblock %}
+                        </div>
+                        {# ACCIONES #}
+                        <div class="single-listing-actions">
+                            {% block acciones %}
+                                <div class="btn-group single-listing-actions-group pull-right" role="group">
+                                    <a href="javascript:void(0)"
+                                       onclick="window.print();"
+                                       class="btn btn-default btn_print single-listing-actions-print-resp"
+                                       title="Print">
+                                        <i class="fa fa-print"></i>
+                                        <span>Imprimir</span>
+                                    </a>
+                                    <a href="{{ _inventarios }}{{ marca }}/{{ modelo }}" 
+                                       class="btn btn-default btn_return single-listing-actions-back-resp" 
+                                       title="Regresar" 
+                                       id="back">
+                                        <i class="fa fa-arrow-left"></i>
+                                        <span>Regresar</span>
+                                    </a>
+                                </div>
+                                <div class="btn btn-info price" data-sen-id="{{ sen_id }}">
+                                    <span class="multiple">
+                                        ${{ detalle.precio|number_format(2, '.', ',') }}
+                                    </span>
+                                </div>
+                                {% if detalle.telefonos.ventas_tel_1|trim != "" %}
+                                    <div class="btn btn-info phone hidden-movil">
+                                        <i class="fa fa-phone"></i>
+                                        <span>
+                                            {{ detalle.telefonos.ventas_tel_1|trim }}
+                                        </span>
+                                    </div>
+                                {% endif %}
+                                <span class="badge-premium-listing" data-sen-id="{{ sen_id }}">
+                                    {{ detalle.agencia.nombre }}
+                                </span>
+                                <div class="btn btn-info phone visible-xs">
+                                    <a href="tel:+3338187500">
+                                        <i class="fa fa-phone"></i>
+                                        <span>Llamanos</span>
+                                    </a>
+                                </div>
+                            {% endblock %}
+                        </div>
+                        <div class="row">
+                            {# SLIDER #}
+                            {% embed "seminuevos/detalles/imagenes.twig" %}{% endembed %}
+                            {# DESCRIPCIÓN #}
+                            {% embed "seminuevos/detalles/descripcion.twig" %}{% endembed %}
+                        </div>
+                        <div class="row">
+                            {# MAPA #}
+                            {% embed "seminuevos/detalles/mapa.twig" %}{% endembed %}
+                            {# CONTACTO #}
+                            {% embed "seminuevos/detalles/contacto.twig" %}{% endembed %}
+                        </div>
+                        <div class="row">
+                            {# VEHÍCULOS RELACIONADOS #}
+                            {#
+                            {% embed "seminuevos/detalles/relacionados.twig" %}{% endembed %}
+                            <div class="col-md-4"></div>
+                            #}
+                        </div>
+                    </article>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            {# End Body Content #}
+        </div>
+    </div>
+{% endblock %}
+{% block load_scripts %}
+    {{ parent() }}
+    loadSlider();
+    owlCarouselMethods.owlCarousel("#vehicle-slider");
+    detailSenMethod.readMap();
+{% endblock %}

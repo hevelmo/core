@@ -1,0 +1,272 @@
+{{!--
+<article class="single-vehicle-details">
+    <div class="single-vehicle-title">
+        <h2 class="post-title" id='sen-results'>0 Seminuevos</h2>
+        <div class="toggle-view view-format-choice pull-right">
+            <label>Vistas</label>
+            <div class="btn-group">
+                <a class="btn btn-default active" id="results-list-view">
+                    <i class="fa fa-th-list"></i>
+                </a>
+                <a class="btn btn-default" id="results-grid-view">
+                    <i class="fa fa-th"></i>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</article>
+<br>
+<br>
+--}}
+<!-- Listing Results -->
+<!--
+<div class="col-md-1"></div>
+-->
+<div class="col-md-12 results-container">
+    <div class="results-container-in">
+        <div class="waiting" style="display:none;">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+        <div id="results-holder" class="results-list-view">
+            {{#each camadpa}}
+            <!-- Result Item -->
+            <div class="result-item format-standard sen-item" style='display: none;'>
+                <div class="result-item-image">
+                    <a class="media-box">
+                        <img src="cdn/img/seminuevos/{{thm_folder}}/{{thm_nombre}}" alt="{{thm_nombre}}">
+                    </a>
+                    <div class="load-edit">
+                        <a class="button mt1 mb1 button-transparent bg-white-camcar white-camcar ttip_action sen-action-set" id="sen-action-set-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-pencil fa-fw"></i>
+                            <span class="ttip_buttons animation-slideUp">
+                                <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                                <div class="brands-icons text-center">
+                                    <ul>
+                                        <li>
+                                            <span>Editar</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+                         </a>
+                    </div>
+                    <div class="load-delete">
+                        <a class="button mt1 mb1 button-transparent bg-red-camcar red-camcar ttip_action sen-action-delete" id="sen-action-delete-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-times fa-fw"></i>
+                            <span class="ttip_buttons animation-slideUp">
+                                <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                                <div class="brands-icons text-center">
+                                    <ul>
+                                        <li>
+                                            <span>Eliminar</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+                        </a>
+                    </div>
+                    <span class="label label-default vehicle-age">{{anio}}</span>
+                    <span class="button button-outline label bg-white adm-premium-listing">
+                        <span class="result-item-agencie navy">{{agencia.nombre}}</span>
+                    </span>
+                    <div class="result-item-view-buttons grid-details">
+                        <a class="view-details-model">
+                            <i class="fa fa-chevron-down"></i> Mostrar detalles
+                        </a>
+                    </div>
+                    <div class="result-item-view-buttons list-details">
+                        <a class="button mt1 mb1 button-transparent bg-white-camcar white-camcar ttip_action sen-action-set" id="sen-action-set-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-pencil fa-fw"></i> Editar
+                        </a>
+                        <a class="button mt1 mb1 button-transparent bg-red-camcar red-camcar ttip_action sen-action-delete" id="sen-action-delete-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-times fa-fw"></i> Eliminar
+                        </a>
+                    </div>
+                    <div class="result-item-view-legend">
+                        <div class="box-legend">
+                            {{marca.nombre}} - {{modelo.nombre}}
+                        </div>
+                    </div>
+                </div>
+                <div class="result-item-in result-item-box">
+                    <h4 class="result-item-title">
+                        <a style="te">
+                        <span class="result-item-brand">{{marca.nombre}}</span> -
+                        <span class="result-item-model">{{modelo.nombre}}</span>
+                        </a>
+                    </h4>
+                    <div class="result-item-cont">
+                        <div class="result-item-block col1">
+                            <p>{{descripcion}}</p>
+                        </div>
+                        <div class="result-item-block col2">
+                            <div class="result-item-pricing">
+                                <div class="price currency-h">{{precio}}</div>
+                            </div>
+                            <!--
+                            <div class="result-item-action-buttons">
+                                <a href="#" class="btn btn-default btn-sm">
+                                    <i class="fa fa-star-o"></i> Save
+                                </a>
+                                <a href="vehicle-details.html" class="btn btn-default btn-sm">Enquire</a>
+                                <br>
+                                <a href="#" class="distance-calc">
+                                    <i class="fa fa-map-marker"></i> Distance from me?
+                                </a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <div class="result-item-features">
+                        <ul class="inline">
+                            <li>
+                                <strong>Interior: </strong>{{interior}}
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Kilometraje: </strong>{{kilometraje}} KM
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Transmisión: </strong>{{transmision}}
+                            </li>
+                            <br>
+                            <li>
+                                <strong>Cilindraje: </strong>{{cilindros}} CIL
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<!--
+<div class="col-md-1"></div>
+-->
+{{!--
+<div id="results-holder" class="results-grid-view">
+    <div id='get-sen-list'>
+        {{#each camadpa}}
+        <!-- Result Item -->
+        <div class="result-item format-standard">
+            <div class="result-item-image">
+                <a class="media-box">
+                    <img src="cdn/img/seminuevos/{{thm_folder}}/{{thm_nombre}}" alt="{{thm_nombre}}">
+                    <div class="load-images">
+                        <a class="button mt1 mb1 button-transparent bg-black-camcar black-camcar ttip_action sen-action-picture" id="sen-action-picture-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-picture-o fa-fw"></i>
+                            <span class="ttip_buttons animation-slideUp">
+                                <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                                <div class="brands-icons text-center">
+                                    <ul>
+                                        <li>
+                                            <span>Cargar Imagenes</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="load-edit">
+                        <a class="button mt1 mb1 button-transparent bg-white-camcar white-camcar ttip_action sen-action-set" id="sen-action-set-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-pencil fa-fw"></i>
+                            <span class="ttip_buttons animation-slideUp">
+                                <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                                <div class="brands-icons text-center">
+                                    <ul>
+                                        <li>
+                                            <span>Editar</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="load-delete">
+                        <a class="button mt1 mb1 button-transparent bg-red-camcar red-camcar ttip_action sen-action-delete" id="sen-action-delete-{{id}}" data-sen-id="{{id}}">
+                            <i class="fa fa-times fa-fw"></i>
+                            <span class="ttip_buttons animation-slideUp">
+                                <img src="../../resources/public/img/callout.png" class="ttip_callout">
+                                <div class="brands-icons text-center">
+                                    <ul>
+                                        <li>
+                                            <span>Eliminar</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </span>
+                        </a>
+                    </div>
+                </a>
+                <div class="result-item-view-buttons">
+                    <a class="view-details-model">
+                    <i class="fa fa-chevron-down"></i> Mostrar detalles
+                    </a>
+                </div>
+            </div>
+            <div class="result-item-in result-item-box" style="display: none;">
+                <h4 class="result-item-title">
+                    <a href="vehicle-details.html">{{agencia.nombre}}</a>
+                </h4>
+                <div class="result-item-cont">
+                    <div class="result-item-block col1">
+                        <p>{{descripcion}}</p>
+                    </div>
+                    <div class="result-item-block col2">
+                        <div class="result-item-pricing">
+                            <div class="price currency-h">
+                                <strong>Precio: </strong>{{precio}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-item-features">
+                    <ul class="inline">
+                        <li>
+                            <strong>Categoría: </strong>{{categoria.nombre}}
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Marca: </strong>{{marca.nombre}}
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Modelo: </strong>{{modelo.nombre}}
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Año: </strong>{{anio}}
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Cilindraje: </strong>{{cilindros}} CIL
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Transmisión: </strong>{{transmision}}
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Kilometraje: </strong>{{kilometraje}} KM
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Interior: </strong>{{interior}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+--}}

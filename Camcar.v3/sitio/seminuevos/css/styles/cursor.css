@@ -1,0 +1,35 @@
+.auto            { cursor: auto !important; }
+.default         { cursor: default !important; }
+.none            { cursor: none !important; }
+.context-menu    { cursor: context-menu !important; }
+.help            { cursor: help !important; }
+.pointer         { cursor: pointer !important; }
+.progress        { cursor: progress !important; }
+.wait            { cursor: wait !important; }
+.cell            { cursor: cell !important; }
+.crosshair       { cursor: crosshair !important; }
+.text            { cursor: text !important; }
+.vertical-text   { cursor: vertical-text !important; }
+.alias           { cursor: alias !important; }
+.copy            { cursor: copy !important; }
+.move            { cursor: move !important; }
+.no-drop         { cursor: no-drop !important; }
+.not-allowed     { cursor: not-allowed !important; }
+.all-scroll      { cursor: all-scroll !important; }
+.col-resize      { cursor: col-resize !important; }
+.row-resize      { cursor: row-resize !important; }
+.n-resize        { cursor: n-resize !important; }
+.e-resize        { cursor: e-resize !important; }
+.s-resize        { cursor: s-resize !important; }
+.w-resize        { cursor: w-resize !important; }
+.ns-resize       { cursor: ns-resize !important; }
+.ew-resize       { cursor: ew-resize !important; }
+.ne-resize       { cursor: ne-resize !important; }
+.nw-resize       { cursor: nw-resize !important; }
+.se-resize       { cursor: se-resize !important; }
+.sw-resize       { cursor: sw-resize !important; }
+.nesw-resize     { cursor: nesw-resize !important; }
+.nwse-resize     { cursor: nwse-resize !important; }
+.avoid-clicks {
+  pointer-events: none;
+}

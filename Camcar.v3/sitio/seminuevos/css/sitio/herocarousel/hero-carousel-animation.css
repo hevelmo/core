@@ -1,0 +1,49 @@
+/*
+<span class="headingWrapper bouncy">
+    <span class="headingTextMain headingTextMain-animate bouncy-headingTextMain">
+    	<!-- Start Component Field: {"XPath":"tcm:Content/custom:heroCarousel2/custom:slides[1]/custom:title"} -->
+    	SUZUKI
+	</span>
+    <span class="headingTextSub">
+
+        <span class="subtitle ">
+        	<!-- Start Component Field: {"XPath":"tcm:Content/custom:heroCarousel2/custom:slides[1]/custom:subtitle"} -->
+        	PRESENTA EL BUEN HOY :)
+    	</span>
+     	<span class="subtitle ">
+     		<!-- Start Component Field: {"XPath":"tcm:Content/custom:heroCarousel2/custom:slides[1]/custom:subtitle"} -->
+     		LOS MEJORES DESCUENTOS DEL AÑO.
+ 		</span>
+    </span>
+</span>
+*/
+.headingWrapper .headingTextMain-animate {
+	opacity: 0;
+	-webkit-animation-duration: 0.8s;
+	-moz-animation-duration: 0.8s;
+	animation-duration: 0.8s;
+	-webkit-animation-delay: 0.3s;
+	-moz-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+.no-cssanimations .headingWrapper .headingTextMain-animate h1 {
+	opacity: 1;
+}
+/* ------------------------------------------------------ *\
+    Bouncy
+\* ------------------------------------------------------ */
+.headingWrapper.bouncy .bouncy-headingTextMain {
+	-webkit-animation-name: cd-bounce-right;
+	-moz-animation-name: cd-bounce-right;
+	animation-name: cd-bounce-right;
+
+}
+.headingWrapper.bouncy .bouncy-headingTextMain {
+	-webkit-animation-duration: 0.6s;
+	-moz-animation-duration: 0.6s;
+	animation-duration: 0.6s;
+}
+

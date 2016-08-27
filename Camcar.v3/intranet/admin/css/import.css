@@ -1,0 +1,59 @@
+@import url(../../../resources/public/css/styles/style-media-print.css);
+@import url(../../../resources/public/css/styles/style-responsive.css);
+
+/* webfont */
+@import url(../../../resources/public/css/styles/webfont/font-avenir.css);
+@import url(../../../resources/public/css/styles/webfont/font-awesome.css);
+@import url(../../../resources/public/css/styles/webfont/font-elegant-icons.css);
+@import url(../../../resources/public/css/styles/webfont/font-eurostile.css);
+@import url(../../../resources/public/css/styles/webfont/font-line-icons.css);
+@import url(../../../resources/public/css/styles/webfont/font-land-rover.css);
+@import url(../../../resources/public/css/styles/webfont/font-pe-icon-7-stroke.css);
+@import url(../../../resources/public/css/styles/webfont/font-fullwidth-features.css);
+
+/* Animation */
+@import url(../../../resources/public/css/styles/style_animation.css);
+@import url(../../../resources/public/css/styles/style-animate.css);
+/* bootstrap */
+@import url(../../../resources/public/css/styles/bootstrap.css);
+@import url(../../../resources/public/css/styles/bootstrap-theme.css);
+@import url(../../../resources/public/css/styles/bootstrap-datetimepicker.css);
+@import url(../../../resources/public/css/styles/alertify.boostrap.css);
+@import url(../../../resources/public/css/styles/alertify.core.css);
+
+/* General Styles */
+/*@import url(../../../resources/public/css/styles/style-rev-slider-settings.css);*/
+@import url(../../../resources/public/css/styles/style-mixins.css);
+@import url(../../../resources/public/css/styles/style-global-helper-classes.css);
+@import url(../../../resources/public/css/styles/style-headers-slider-dividers.css);
+@import url(../../../resources/public/css/styles/style-colors.css);
+@import url(../../../resources/public/css/styles/style-typography.css);
+@import url(../../../resources/public/css/styles/style-contact.css);
+@import url(../../../resources/public/css/styles/style-form-elements.css);
+@import url(../../../resources/public/css/styles/style-integrity-light.css);
+
+/* Theme */
+@import url(../../../resources/public/css/styles/style-nav.css);
+@import url(../../../resources/public/css/styles/style-footer.css);
+@import url(../../../resources/public/css/styles/style-team.css);
+@import url(../../../resources/public/css/styles/style-utility-bar.css);
+@import url(../../../resources/public/css/styles/style-single.css);
+@import url(../../../resources/public/css/styles/style-media-box.css);
+@import url(../../../resources/public/css/styles/style-spacers-sets.css);
+/*@import url(../../../resources/public/css/styles/style-action-bars.css);*/
+@import url(../../../resources/public/css/styles/style-tool-box.css);
+@import url(../../../resources/public/css/styles/style-search-filters.css);
+/*@import url(../../../resources/public/css/styles/style-results-views.css);*/
+/*@import url(../../../resources/public/css/styles/style-rs-full-width-slider.css);*/
+@import url(../../../resources/public/css/styles/style-fullwidth-features.css);
+
+/* OWL CAROUSEL */
+@import url(../../../resources/public/css/styles/style-hero-carousel.css);
+@import url(../../../resources/public/css/owl-carousel/owl.carousel.css);
+@import url(../../../resources/public/css/owl-carousel/owl.theme.css);
+@import url(../../../resources/public/css/flexslider/flexslidernew.css);
+
+/* Extras Styles */
+@import url(../../../resources/public/css/styles/style-medigraf.css);
+@import url(../../../resources/public/css/styles/main.css);
+

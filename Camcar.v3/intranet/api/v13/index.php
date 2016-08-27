@@ -1,0 +1,1045 @@
+<?php
+
+include_once '../../PHPExcel/ExcelMaker2.php';
+include_once '../../../incorporate/db_connect.php';
+include_once '../../../incorporate/functions.php';
+include_once '../../../incorporate/queryintojson.php';
+include_once '../Mandrill.php';
+
+sec_session_start();
+
+/**
+ * 
+ * [Initial V 13.0]
+ * 
+ */
+
+require '../Slim/Slim.php';
+\Slim\Slim::registerAutoloader();
+$app = new \Slim\Slim(array(
+    'mode' => 'development',
+    'cookies.httponly' => true
+));
+
+//Only invoked if mode is "production"
+$app->configureMode('production', function () use ($app) {
+    $app->config(array(
+        'log.enable' => true,
+        'debug' => false
+    ));
+});
+
+//Only invoked if mode is "development"
+$app->configureMode('development', function () use ($app) {
+    $app->config(array(
+        'log.enable' => false,
+        'debug' => true
+    ));
+});
+
+/**
+ * [Routes Deep V 1.0]
+ */
+
+//·······GET route    
+   
+$app->get('/kill', 'mws', function () {
+    echo 'This is a Kill Get route';
+});
+
+
+//POST route
+
+//GET route
+
+//SELECT
+
+$app->get('/get/test', 'mw1', 'getTest');
+
+$app->get('/get/convenios', 'mw1', 'getConvenios');
+$app->get('/get/convenios/:conId', 'mw1', 'getConveniosById');
+
+//SESSION route
+
+$app->get('/session/get/admin/access', 'mw1', 'getSessionAdminAccess');
+
+//WEB SERVICE route
+
+$app->get('/webservice/get/empleados', 'mw1', 'getWSEmpleados');
+$app->get('/webservice/get/empleados/filters/:sorter/:sort', 'mw1', 'getWSEmpleadosByFilters');
+$app->get('/webservice/get/empleados/filters/:sorter/:sort/:mystery', 'mw1', 'getWSEmpleadosByFiltersSearch');
+$app->get('/webservice/get/empleados/agencias/:agencia', 'mw1', 'getWSEmpleadosByAgencia');
+$app->get('/webservice/get/empleados/aniversarios/:aniversario', 'mw1', 'getWSEmpleadosByAniversario');
+$app->get('/webservice/get/empleados/apellidos_maternos/:apellido_materno', 'mw1', 'getWSEmpleadosByApellidoMaterno');
+$app->get('/webservice/get/empleados/apellidos_paternos/:apellido_paterno', 'mw1', 'getWSEmpleadosByApellidoPaterno');
+$app->get('/webservice/get/empleados/areas/:area', 'mw1', 'getWSEmpleadosByArea');
+$app->get('/webservice/get/empleados/cargos/:cargo', 'mw1', 'getWSEmpleadosByCargo');
+$app->get('/webservice/get/empleados/ciudades/:ciudad', 'mw1', 'getWSEmpleadosByCiudad');
+$app->get('/webservice/get/empleados/correos/:correo', 'mw1', 'getWSEmpleadosByCorreo');
+$app->get('/webservice/get/empleados/cumpleanos/:fecha', 'mw1', 'getWSEmpleadosByCumpleanos');
+$app->get('/webservice/get/empleados/edades/:edad', 'mw1', 'getWSEmpleadosByEdad');
+$app->get('/webservice/get/empleados/estados/:estado', 'mw1', 'getWSEmpleadosByEstado');
+$app->get('/webservice/get/empleados/fechas_ingreso/:fecha', 'mw1', 'getWSEmpleadosByFechaIngreso');
+$app->get('/webservice/get/empleados/marcas/:marca', 'mw1', 'getWSEmpleadosByMarca');
+$app->get('/webservice/get/empleados/numeros_agencia/:no_agencia', 'mw1', 'getWSEmpleadosByNoAgencia');
+$app->get('/webservice/get/empleados/numeros_empleado/:no_empleado', 'mw1', 'getWSEmpleadosByNoEmpleado');
+$app->get('/webservice/get/empleados/nombres/:nombres', 'mw1', 'getWSEmpleadosByNombres');
+$app->get('/webservice/get/empleados/telefonos/:telefono', 'mw1', 'getWSEmpleadosByTelefono');
+
+$app->post('/webservice/set/empleados', 'mw1', 'setWSEmpleados');
+
+
+// BG HEADER
+$app->get('/get/header/agencias/:agnId', 'mw1', 'getHeaderAgencia');
+$app->get('/get/header/agencias', 'mw1', 'getHeaderAgencias');
+
+
+
+
+//POST route
+
+$app->post(
+    '/post',
+    function () {
+        $app = \Slim\Slim::getInstance();
+           $request = $app->request();
+           $propiedad = JSON_decode($request->getBody());
+            foreach ($propiedad as $key => $value) {
+                //echo JSON_encode($value->entorno1);
+                echo JSON_encode($value->tipo);
+                echo JSON_encode($value->core);
+            }
+    }
+);
+
+
+/**
+ * Step 4: Run the Slim application
+ *
+ * This method should be called last. This executes the Slim application
+ * and returns the HTTP response to the HTTP client.
+ */
+
+$app->run();
+
+/*
+----------------------------------------------------------------------------
+    Midelwere Methods
+----------------------------------------------------------------------------
+*/
+
+function mw1() {
+    $app = \Slim\Slim::getInstance();
+    if(login_check() == true) {
+        return true;
+    } else {
+        $app->halt(401, 'Acceso Denegado');
+    }
+}
+
+function mws() {
+    $app = \Slim\Slim::getInstance();
+    if (user_check() == true) {
+        return true;
+    } else {
+        $app->halt(401, 'No user');
+    } 
+}
+
+//----------------------
+
+function requestBody() {
+    $app = \Slim\Slim::getInstance();
+    $request = $app->request();
+    return json_decode($request->getBody());
+}
+
+function getTest() {
+    $version = phpversion();
+    echo "<b>PHP Version:</b> " . $version;
+
+    /*
+    $result = getWSEmpleadosArray();
+    $result = sortArrayByKeys($result, array(
+        'no_empleado',
+        'apellido_paterno',
+        'apellido_materno',
+        'nombres'
+    ));
+    */
+
+    /*
+    $result = restructureArray($result, array(
+        'no_empleado' => 'no_empleado',
+        'apellido_paterno' => 'apellido_paterno',
+        'apellido_materno' => 'apellido_materno',
+        'nombres' => 'nombres',
+        'agencia' => 'agencia',
+        'marca' => 'marca',
+        'area' => 'area',
+        'cargo' => 'cargo',
+        'estado' => 'estado',
+        'ciudad' => 'ciudad',
+        'correo' => 'correo',
+        'telefono' => 'telefono',
+        'cumpleanos' => 'cumpleanos',
+        'fecha_ingreso' => 'fecha_ingreso'
+    ));
+    */
+
+    /*
+    foreach($result as $key => $value) {
+        $result[$key]['no_empleado'] = "   " . $result[$key]['no_empleado'] . "   ";
+    }
+    */
+
+    /*
+    $em = new ExcelMaker2(
+        'Empleados_Camcar', 
+        'Empleados', 
+        array(
+            'Número de Empleado',
+            'Appellido Paterno',
+            'Appellido Materno',
+            'Nombres',
+            'Agencia',
+            'Marca',
+            'Área',
+            'Cargo',
+            'Estado',
+            'Ciudad',
+            'Correo',
+            'Teléfono',
+            'Cumpleaños',
+            'Fecha de Ingreso',
+        ), 
+        $result
+    );
+    $em->makeFileCreator();
+    $url = $em->getCreatorReference();
+    echo changeArrayIntoJSON('caminpa', array('url' => $url));
+    */
+}
+
+/*
+----------------------------------------------------------------------------
+    General Post Methods
+----------------------------------------------------------------------------
+*/
+
+
+/*
+----------------------------------------------------------------------------
+    General Get Methods
+----------------------------------------------------------------------------
+*/
+
+function getConveniosArray($sql, $conId) {
+    $structure = array(
+        'id' => 'CON_Id',
+        'numero' => 'CON_Numero',
+        'titulo' => 'CON_Titulo',
+        'sector' => 'CON_Sector',
+        'empresa' => 'CON_Empresa',
+        'localidad' => 'CON_Localidad',
+        'beneficio' => 'CON_Beneficio',
+        'descripcion_corta' => 'CON_DescripcionCorta',
+        'mecanicas' => 'CON_Mecanicas',
+        'restricciones' => 'CON_Restricciones',
+        'vigencia' => 'CON_Vigencia',
+        'contacto' => 'CON_Contacto',
+        'picture' => 'CON_Picture'
+    );
+    $params = array();
+    ($conId !== '') ? $params['conId'] = $conId : $params = $params;
+    return restructureQuery($structure, getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
+}
+
+function getConveniosJSON($sql, $conId) {
+    $result = getConveniosArray($sql, $conId);
+    echo changeArrayIntoJSON('caminpa', $result);
+}
+
+function getConvenios() {
+    $sql = "SELECT * 
+            FROM camConvenios
+            WHERE CON_Status <> 0";
+    getConveniosJSON($sql, '');
+}
+
+function getConveniosById($conId) {
+    $sql = "SELECT * 
+            FROM camConvenios
+            WHERE CON_Status <> 0
+            AND CON_Id = :conId";
+    getConveniosJSON($sql, $conId);
+}
+
+/*
+----------------------------------------------------------------------------
+    General Session Methods
+----------------------------------------------------------------------------
+*/
+
+function getSessionAdminAccess() {
+    $access = (admin_access_check()) ? 1 : 0;
+    echo changeArrayIntoJSON('caminpa', array('usr_adm_access'=>$access));
+}
+
+/*
+----------------------------------------------------------------------------
+    General Web Services Methods
+----------------------------------------------------------------------------
+*/
+
+function getWSEmpleadosArray() {
+    $today = new DateTime(date('o-m-d'));
+    //Get contents from webservice provided by camcar
+    $content = file_get_contents('http://camcar.com.mx/camcarservice/rest/Empleados');
+    //Trim the content
+    $content = trim($content);
+    //Delete tabs, ends of line, and new lines
+    $content = str_replace(array("\n", "\r", "\t"), '', $content);
+    //Trim the content
+    $content = trim($content);
+    //Change all " into '
+    $content = trim(str_replace('"', "'", $content));
+    //Trim the content
+    $content = trim($content);
+    //Get String Content length
+    $lengthContent = strlen($content);
+    //Change content into an array of Simplexml objects
+    $array = ($lengthContent > 0) 
+        ? simplexml_load_string($content, 'SimpleXMLElement', LIBXML_COMPACT|LIBXML_PARSEHUGE) 
+        : array();
+    //Cast the array of Simplexml objects into a simple array
+    $array = (array)($array);
+    //Result array is empty by default
+    $result = array();
+    //Itereate all the array
+    foreach($array as $key1 => $value1) {
+        //For each $key1 (first level)
+        //Cast the array of Simplexml objects into a simple array
+        $castedValueL1 = (array)($value1);
+        //Declare an empty array to fill it with the new casted values of each level 2
+        $castedArrayL2 = array();
+        //Itereate all the array of the vurrent $castedValueL1 casted value
+        foreach($castedValueL1 as $key2 => $value2) {
+            //For each $key2 (second level)
+            //Cast the array of Simplexml objects into a simple array
+            $castedValueL2 = (array)($value2);
+            //Declare an empty array to fill it with the new casted values of each level 3
+            $castedArrayL3 = array();
+            foreach($castedValueL2 as $key3 => $value3) {
+                //For each $key3 (second level)
+                //Cast the Simplexml value into a string
+                $castedValueL3 = (string)($value3);
+                //Asign the casted value in the $key3 of $castedArrayL3
+                $castedValueL3 = ($key3 !== 'correo') 
+                    ? strtoupper(trim($castedValueL3))
+                    : trim($castedValueL3);
+                //If there is a date change it into format yyyy-mm-dd
+                if(strtolower($key3) === 'cumpleanos' || strtolower($key3) === 'fecha_ingreso') {
+                    //$castedArrayL3[$key3] = str_replace('T00:00:00', '', $castedValueL3);
+                    $castedArrayL3[$key3] = substr($castedValueL3, 0, 10);
+
+                    //Divide in numeric year, month and day
+                    $elements = explode('-', $castedArrayL3[$key3]);
+                    $dateYear = intval($elements[0]);
+                    $dateMonth = intval($elements[1]);
+                    $dateDay = intval($elements[2]);
+
+                    $date = new DateTime($castedValueL3);
+                    $interval = $date->diff($today);
+                    $years = (string)($interval->format('%r%y'));
+
+                    if(strtolower($key3) === 'cumpleanos') {
+                        $castedArrayL3['cumpleanos_anio'] = $dateYear;
+                        $castedArrayL3['cumpleanos_mes'] = $dateMonth;
+                        $castedArrayL3['cumpleanos_dia'] = $dateDay;
+                        $castedArrayL3['edad'] = $years;
+                    } else {
+                        $castedArrayL3['fecha_ingreso_anio'] = $dateYear;
+                        $castedArrayL3['fecha_ingreso_mes'] = $dateMonth;
+                        $castedArrayL3['fecha_ingreso_dia'] = $dateDay;
+                        $castedArrayL3['aniversario'] = $years;
+                    }
+
+                } else {
+                    $castedArrayL3[strtolower($key3)] = $castedValueL3;
+                }
+            }
+            //Sort array by key
+            ksort($castedArrayL3);
+            //Asign the casted values array in the $key2 of $castedArrayL2
+            $castedArrayL2[strtolower($key2)] = $castedArrayL3;
+        }
+        //Asign the casted values array in the $key1 of $array (the main array)
+        $array[strtolower($key1)] = $castedArrayL2;
+    }
+    //Now the the array of Simplexml objects is a simple multilevel array
+    //Assign it to de result array
+    $result = (array_key_exists('empleado', $array)) 
+        ? $array['empleado'] 
+        : $result;
+    
+    //Return it
+    return array_values($result);
+}
+
+function getWSEmpleadosJSON($array) {
+    $json = changeArrayIntoJSON('webservice', $array);
+    return $json;
+}
+
+function getWSEmpleados() {
+    $array = getWSEmpleadosArray();
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByFiltersMaster($sorter, $sort, $mystery) {
+
+    //Get all employees' array  from web service
+    $arrayResult = getWSEmpleadosArray();
+    
+    //Trim Parameters
+    $sorter = trim($sorter);
+    $sort = trim($sort);
+    $mystery = trim($mystery);
+
+    //Keys in which value, $mystery will be look for, in case it's necessary
+    $searchingKeys = array(
+        'apellido_paterno',
+        'apellido_materno',
+        'nombres',
+        'estado',
+        'ciudad',
+        'agencia',
+        'marca',
+        'correo',
+        'no_empleado'
+    );
+
+    //Keys whose values will perform like sort parameters
+    $sortingKeys = array();
+
+    //Depending on the $sorter value, the $sortingKeys will take different parameters values
+    switch($sorter) {
+        case '': 
+            $sortingKeys = array();
+            break;
+        case 'n-emp':
+            $sortingKeys = array(
+                'no_empleado'
+            );
+            break;
+        case 'agn':
+            $sortingKeys = array(
+                'agencia'
+            );
+            break;
+        case 'mar':
+            $sortingKeys = array(
+                'marca'
+            );
+            break;
+        case 'are':
+            $sortingKeys = array(
+                'area'
+            );
+            break;
+        case 'car':
+            $sortingKeys = array(
+                'cargo'
+            );
+            break;
+        case 'ciu':
+            $sortingKeys = array(
+                'ciudad',
+                'estado'
+            );
+            break;
+        case 'est':
+            $sortingKeys = array(
+                'estado',
+                'ciudad'
+            );
+            break;
+        case 'mail':
+            $sortingKeys = array(
+                'correo'
+            );
+            break;
+        case 'tel':
+            $sortingKeys = array(
+                'telefono'
+            );
+            break;
+        case 'nom':
+        default:
+            $sortingKeys = array(
+                'apellido_paterno',
+                'apellido_materno',
+                'nombres'
+            );
+            break;
+    }
+
+    //If it's necessary to look search ($mystery has a value)
+    $arraySearch = ($mystery !== '')
+        //YES: Get an array with the subset of employees that fulfill the searching condition 
+        ? searchMultiArrayKeyValueLike($arrayResult, $searchingKeys, $mystery, false)
+        //NO: Keep all the result array
+        : $arrayResult;
+
+    //If it's necessary to sort ($sortingKeys has at list one element)
+    $arraySort = (count($sortingKeys) > 0)
+        //YES: Get an array sorted by the values in $sortingKeys
+        ? sortArrayByKeys($arraySearch, $sortingKeys, $sort)
+        //NO: Keep the result in $arraySearch
+        : $arraySearch;
+
+    //Print the JSON result
+    echo getWSEmpleadosJSON($arraySort);
+}
+
+function getWSEmpleadosByFilters($sorter, $sort) {
+    getWSEmpleadosByFiltersMaster($sorter, $sort, '');
+}
+
+function getWSEmpleadosByFiltersSearch($sorter, $sort, $mystery) {
+    getWSEmpleadosByFiltersMaster($sorter, $sort, $mystery);
+}
+
+function getEmployeesByAnySpecificKey($keyWS, $valueWS, $getAll) {
+    $array = getWSEmpleadosArray();
+    $newArray = array();
+    if(count($array)) {
+        //Prepare $getAll param, default value is false
+        $getAll = ($getAll === true) ? $getAll : false;
+        //Trim values of $keyWS and $valueWS
+        $keyWS =  strtolower(trim($keyWS));
+        $valueWS = strtoupper(trim($valueWS));
+        //Get only the values in the key $keyWS
+        $acEmpleados = ownArrayColumn($array, $keyWS);
+        //Get all occurrences
+        if($getAll) {
+            //Get an $array of indexes of $acEmpleados where $valueWS is found
+            //This $array could be empty
+            $idxsDB = array_keys($acEmpleados, $valueWS);
+            //Look for each $idxsDB value in $array
+            foreach($idxsDB as $idxDB) {
+                //Assign, in the new array, each found array 
+                $newArray[] = $array[$idxDB];
+            }
+        //Get only the first of the occurrences
+        } else {
+            $idxDB = array_search($valueWS, $acEmpleados, true);
+            $type = gettype($idxDB);
+            //Look for $idxDB (the first ocurrence) in $array
+            //Only if it exists in $acEmpleados
+            if($type !== 'boolean') {
+                ////Assign, in the new array, the only one found array
+                $newArray[] = $array[$idxDB];
+            }
+        }
+    }
+    //Return the new array with the found arrays
+    return $newArray;
+}
+
+function getEmployeesByDataRange($dateKey, $dateStart, $dateEnd, $dateFilterParams, $sortGo, $sortMode) {
+    $array = getWSEmpleadosArray();
+    //Make empty the array that allocates the elements that fulfill the date conditions
+    $newArray = array();
+    //Determinate if it is necessary to sort the array
+    $sortGo = ($sortGo === true) ? $sortGo : false;
+    //If it is necessary to sort the array
+    //Determinate the sort mode ASC: Ascendant, DESC: Descendant or any
+    if($sortGo) {
+        //Sort mode is defined
+        if(isset($sortMode)) {
+            //Make it string
+            $sortMode = (string)($sortMode);
+            //Change it into UPER case
+            $sortMode = strtoupper($sortMode);
+            //If there is a correct kind of sort mode keep it, otherwise make it empty
+            $sortMode = ($sortMode === 'ASC' || $sortMode === 'DESC') ? $sortMode : '';
+        //Sort mode is undefined
+        } else {
+            //Default sort mode is ASC
+            $sortMode = 'ASC';
+        }
+    } else {
+        //Any kind of sort mode
+        $sortMode = '';
+    }
+    //
+    if(count($array)) {
+        //Validates both dates have a correct format date
+        $format = 'Y-m-d';
+        if(validateDate($dateStart, $format) && validateDate($dateEnd, $format)) {
+            //Prepare dateFilterParams string
+            $dateFilterParams = isset($dateFilterParams) ? $dateFilterParams : '';
+            $dateFilterParams = trim($dateFilterParams);
+            $dateFilterParams = strtoupper($dateFilterParams);
+            //Validate from $dateFilterParams if it is necessary search the year
+            $searchYear = (strpos($dateFilterParams, 'Y') !== false);
+            //Validate from $dateFilterParams if it is necessary search the month
+            $searchMonth = (strpos($dateFilterParams, 'M') !== false);
+            //Validate from $dateFilterParams if it is necessary search the day
+            $searchDay = (strpos($dateFilterParams, 'D') !== false);
+            //Get start elements (year, month, day)
+            $dateStartElements = explode('-', $dateStart);
+            $dayStart = (integer)($dateStartElements[2]);
+            $monthStart = (integer)($dateStartElements[1]);
+            $yearStart = (integer)($dateStartElements[0]);
+            //Get end elements (year, month, day)
+            $dateEndElements = explode('-', $dateEnd);
+            $dayEnd = (integer)($dateEndElements[2]);
+            $monthEnd = (integer)($dateEndElements[1]);
+            $yearEnd = (integer)($dateEndElements[0]);
+            for($idx = 0; $idx < count($array); $idx++) {
+                //By default year, month and day permits to get the current element
+                $yearGo = true;
+                $monthGo = true;
+                $dayGo = true;
+                //Get the element and is current date by key
+                $currentElement = $array[$idx];
+                $dateCurrent = $currentElement[$dateKey];
+                //Get current date elements (year, month, day)
+                $dateCurrentElements = explode('-', $dateCurrent);
+                $dayCurrent = (integer)($dateCurrentElements[2]);
+                $monthCurrent = (integer)($dateCurrentElements[1]);
+                $yearCurrent = (integer)($dateCurrentElements[0]);
+                //Make the validation only if there is necessary look for the year
+                if($searchYear) {
+                    //Permit only is the year ins in the start - end range
+                    $yearGo = ($yearCurrent >= $yearStart && $yearCurrent <= $yearEnd) ? true : false;
+                }
+                //Make the validation only if there is necessary look for the month
+                if($searchMonth) {
+                    //Permit only is the month ins in the start - end range
+                    $monthGo = ($monthCurrent >= $monthStart && $monthCurrent <= $monthEnd) ? true : false;
+                }
+                //Make the validation only if there is necessary look for the day
+                if($searchDay) {
+                    //Permit only is the day ins in the start - end range
+                    $dayGo = ($dayCurrent >= $dayStart && $dayCurrent <= $dayEnd) ? true : false;
+                }
+                //Get the elementh only ¡f the three conditions (year, month, day) permit it
+                if($yearGo && $monthGo && $dayGo) {
+                    $newArray[] = $array[$idx];
+                }
+            }
+        }
+    }
+    return $newArray;   
+}
+
+function getWSEmpleadosByAgencia($agencia) {
+    $array = getEmployeesByAnySpecificKey('agencia', $agencia, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByAniversario($aniversario) {
+    $array = getEmployeesByAnySpecificKey('aniversario', $aniversario, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByApellidoMaterno($apellido_materno) {
+    $array = getEmployeesByAnySpecificKey('apellido_materno', $apellido_materno, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByApellidoPaterno($apellido_paterno) {
+    $array = getEmployeesByAnySpecificKey('apellido_paterno', $apellido_paterno, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByArea($area) {
+    $array = getEmployeesByAnySpecificKey('area', $area, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByCargo($cargo) {
+    $array = getEmployeesByAnySpecificKey('cargo', $cargo, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByCiudad($ciudad) {
+    $array = getEmployeesByAnySpecificKey('ciudad', $ciudad, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByCorreo($correo) {
+    $array = getEmployeesByAnySpecificKey('correo', $correo, false);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByCumpleanos($fecha) {
+    $array = getEmployeesByDataRange('cumpleanos', $fecha, $fecha, 'md', true, 'DESC');
+    $array = sortArrayByKeys($array, array('cumpleanos_mes', 'cumpleanos_dia', 'cumpleanos_anio'));
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByEdad($edad) {
+    $array = getEmployeesByAnySpecificKey('edad', $edad, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByEstado($estado) {
+    $array = getEmployeesByAnySpecificKey('estado', $estado, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByFechaIngreso($fecha) {
+    $array = getEmployeesByDataRange('fecha_ingreso', $fecha, $fecha, 'md', true, 'DESC');
+    $array = sortArrayByKeys($array, array('fecha_ingreso_mes', 'fecha_ingreso_dia', 'fecha_ingreso_anio'));
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByMarca($marca) {
+    $array = getEmployeesByAnySpecificKey('marca', $marca, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByNoAgencia($numero_agencia) {
+    $array = getEmployeesByAnySpecificKey('numero_agencia', $numero_agencia, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByNoEmpleado($no_empleado) {
+    $array = getEmployeesByAnySpecificKey('no_empleado', $no_empleado, false);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByNombres($nombres) {
+    $array = getEmployeesByAnySpecificKey('nombres', $nombres, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function getWSEmpleadosByTelefono($telefono) {
+    $array = getEmployeesByAnySpecificKey('telefono', $telefono, true);
+    echo getWSEmpleadosJSON($array);
+}
+
+function setWSEmpleados() {
+    $sql = "SELECT *
+            FROM camUsuarios
+            WHERE USR_NumeroEmpleado NOT IN(:no_empleado, :no_empleado_2)
+            ORDER BY USR_Id ASC";
+    $structure = array(
+        'id' => 'USR_Id',
+        'no_empleado' => 'USR_NumeroEmpleado',
+        'apellido_paterno' => 'USR_ApellidoPaterno',
+        'apellido_materno' => 'USR_ApellidoMaterno',
+        'nombres' => 'USR_Nombres',
+        'cumpleanos' => 'USR_Cumpleanos',
+        'telefono' => 'USR_Telefono',
+        'correo' => 'USR_Mail',
+        'estado' => 'USR_Estado',
+        'ciudad' => 'USR_Ciudad',
+        'numero_agencia' => 'USR_NumeroAgencia',
+        'agencia' => 'USR_Agencia',
+        'marca' => 'USR_Marca',
+        'area' => 'USR_Area',
+        'cargo' => 'USR_Cargo',
+        'fecha_ingreso' => 'USR_FechaIngreso',
+        'tipo' => 'USR_Tipo',
+        'admin_access' => 'USR_AdminAccess',
+        'usercontrol' => 'USR_Control'
+    );
+    $params = array(
+        'no_empleado' => 'XXXX',
+        'no_empleado_2' => 'YYYY'
+    );
+    //Get empleados from table 'camUsuarios' of database
+    $empleadosDB = restructureQuery($structure, getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
+    //Get empleados from webservice
+    $empleadosWS = getWSEmpleadosArray();
+    //UPDATE DB USERS FROM WS
+    $empleadosDB = updateFromWS($empleadosDB, $empleadosWS);
+    //UPDATE DB USERS FROM WS
+    deleteFromWS($empleadosDB);
+    echo changeArrayIntoJSON('caminpa', array('process' => 'ok'));
+}
+
+function updateFromWS($empleadosDB, $empleadosWS) {
+    $sql_i = "INSERT INTO camUsuarios(
+                USR_Mail,
+                USR_NumeroEmpleado,
+                USR_ApellidoPaterno,
+                USR_ApellidoMaterno,
+                USR_Nombres,
+                USR_Cumpleanos,
+                USR_Telefono,
+                USR_Estado,
+                USR_Ciudad,
+                USR_NumeroAgencia,
+                USR_Agencia,
+                USR_Marca,
+                USR_Area,
+                USR_Cargo,
+                USR_FechaIngreso,
+                USR_Username,
+                USR_Tipo,
+                USR_Control,
+                USR_AdminAccess,
+                USR_Password,
+                USR_Salt
+            ) VALUES (
+                :correo,
+                :no_empleado,
+                :apellido_paterno,
+                :apellido_materno,
+                :nombres,
+                :cumpleanos,
+                :telefono,
+                :estado,
+                :ciudad,
+                :numero_agencia,
+                :agencia,
+                :marca,
+                :area,
+                :cargo,
+                :fecha_ingreso,
+                :username,
+                :tipo,
+                :usercontrol,
+                :admin_access,
+                :password,
+                :salt
+            )";
+    $sql_u = "UPDATE camUsuarios
+              SET USR_ApellidoPaterno = :apellido_paterno,
+                  USR_ApellidoMaterno = :apellido_materno,
+                  USR_Nombres = :nombres,
+                  USR_Cumpleanos = :cumpleanos,
+                  USR_Telefono = :telefono,
+                  USR_Mail = :correo,
+                  USR_Estado = :estado,
+                  USR_Ciudad = :ciudad,
+                  USR_NumeroAgencia = :numero_agencia,
+                  USR_Agencia = :agencia,
+                  USR_Marca = :marca,
+                  USR_Area = :area,
+                  USR_Cargo = :cargo,
+                  USR_FechaIngreso = :fecha_ingreso,
+                  USR_Control = :usercontrol
+              WHERE USR_Id = :id";
+    $sha = hash('sha512', '123456');
+    //Get all 'no_empleado' array values
+    $acEmpleadosDB = ownArrayColumn($empleadosDB, 'no_empleado');
+    foreach($empleadosWS as $keyWS => $empleadoWS) {
+        $no_empleadoWS = $empleadoWS['no_empleado'];
+        $no_empleadoWS = trim($no_empleadoWS);
+        $apPatWS = $empleadoWS['apellido_paterno'];
+        $apPatWS = trim($apPatWS);
+        $apMatWS = $empleadoWS['apellido_materno'];
+        $apMatWS = trim($apMatWS);
+        $apMatWS = trim($apMatWS);
+        $nombresWS = $empleadoWS['nombres'];
+        $cumpleanosWS = $empleadoWS['cumpleanos'];
+        $cumpleanosWS = trim($cumpleanosWS);
+        $telefonoWS = $empleadoWS['telefono'];
+        $telefonoWS = trim($telefonoWS);
+        $correoWS = $empleadoWS['correo'];
+        $correoWS = trim($correoWS);
+        $estadoWS = $empleadoWS['estado'];
+        $estadoWS = trim($estadoWS);
+        $ciudadWS = $empleadoWS['ciudad'];
+        $ciudadWS = trim($ciudadWS);
+        $numero_agenciaWS = $empleadoWS['numero_agencia'];
+        $numero_agenciaWS = trim($numero_agenciaWS);
+        $agenciaWS = $empleadoWS['agencia'];
+        $agenciaWS = trim($agenciaWS);
+        $marcaWS = $empleadoWS['marca'];
+        $marcaWS = trim($marcaWS);
+        $areaWS = $empleadoWS['area'];
+        $areaWS = trim($areaWS);
+        $cargoWS = $empleadoWS['cargo'];
+        $cargoWS = trim($cargoWS);
+        $fecha_ingresoWS = $empleadoWS['fecha_ingreso'];
+        $fecha_ingresoWS = trim($fecha_ingresoWS);
+        
+        $keyDB = array_search($no_empleadoWS, $acEmpleadosDB, true);
+        $type = gettype($keyDB);
+        //There is a new user from WS
+        if($type === 'boolean') {
+            $params_i = array(
+                'correo' => trim($correoWS),
+                'no_empleado' => trim($no_empleadoWS),
+                'apellido_paterno' => trim($apPatWS),
+                'apellido_materno' => trim($apMatWS),
+                'nombres' => trim($nombresWS),
+                'cumpleanos' => trim($cumpleanosWS),
+                'telefono' => trim($telefonoWS),
+                'estado' => trim($estadoWS),
+                'ciudad' => trim($ciudadWS),
+                'numero_agencia' => trim($numero_agenciaWS),
+                'agencia' => trim($agenciaWS),
+                'marca' => trim($marcaWS),
+                'area' => trim($areaWS),
+                'cargo' => trim($cargoWS),
+                'fecha_ingreso' => trim($fecha_ingresoWS),
+                'username' => '',
+                'tipo' => 2,
+                'usercontrol' => 2,
+                'admin_access' => 0,
+                'password' => $sha,
+                'salt' => $sha
+            );
+            $result_i = generalQuery(getConnection(), $sql_i, $params_i, 1, PDO::FETCH_ASSOC);
+        //The user exists in DB
+        } else {
+            $empleadoDB = $empleadosDB[$keyDB];
+            $no_empleadoDB = $empleadoDB['no_empleado'];
+            $apPatDB = $empleadoDB['apellido_paterno'];
+            $apPatDB = trim($apPatDB);
+            $apMatDB = $empleadoDB['apellido_materno'];
+            $apMatDB = trim($apMatDB);
+            $nombresDB = $empleadoDB['nombres'];
+            $nombresDB = trim($nombresDB);
+            $cumpleanosDB = $empleadoDB['cumpleanos'];
+            $cumpleanosDB = trim($cumpleanosDB);
+            $telefonoDB = $empleadoDB['telefono'];
+            $telefonoDB = trim($telefonoDB);
+            $correoDB = $empleadoDB['correo'];
+            $correoDB = trim($correoDB);
+            $estadoDB = $empleadoDB['estado'];
+            $estadoDB = trim($estadoDB);
+            $ciudadDB = $empleadoDB['ciudad'];
+            $ciudadDB = trim($ciudadDB);
+            $numero_agenciaDB = $empleadoDB['numero_agencia'];
+            $numero_agenciaDB = trim($numero_agenciaDB);
+            $agenciaDB = $empleadoDB['agencia'];
+            $agenciaDB = trim($agenciaDB);
+            $marcaDB = $empleadoDB['marca'];
+            $marcaDB = trim($marcaDB);
+            $areaDB = $empleadoDB['area'];
+            $areaDB = trim($areaDB);
+            $cargoDB = $empleadoDB['cargo'];
+            $cargoDB = trim($cargoDB);
+            $fecha_ingresoDB = $empleadoDB['fecha_ingreso'];
+            $fecha_ingresoDB = trim($fecha_ingresoDB);
+
+            $idEmpleadoDB = (integer)($empleadoDB['id']);
+            $usercontrolDB = (integer)($empleadoDB['usercontrol']);
+            //If the use
+            //if(trim($correoWS) !== trim($correoDB) || !$usercontrolDB) {
+                $newUsercontrol = (!$usercontrolDB) ? 2 : $usercontrolDB;
+                $newCorreo = (trim($correoWS) !== trim($correoDB)) ? $correoWS : $correoDB;
+                $newCorreo = trim($newCorreo);
+
+                $newApPat = (trim($apPatWS) !== trim($apPatDB)) ? $apPatWS : $apPatDB;
+                $newApPat = trim($newApPat);
+                $newApMat = (trim($apMatWS) !== trim($apMatDB)) ? $apMatWS : $apMatDB;
+                $newApMat = trim($newApMat);
+                $newNombres = (trim($nombresWS) !== trim($nombresDB)) ? $nombresWS : $nombresDB;
+                $newNombres = trim($newNombres);
+                $newCumpleanos = (trim($cumpleanosWS) !== trim($cumpleanosDB)) ? $cumpleanosWS : $cumpleanosDB;
+                $newCumpleanos = trim($newCumpleanos);
+                $newTelefono = (trim($telefonoWS) !== trim($telefonoDB)) ? $telefonoWS : $telefonoDB;
+                $newTelefono = trim($newTelefono);
+                $newEstado = (trim($estadoWS) !== trim($estadoDB)) ? $estadoWS : $estadoDB;
+                $newEstado = trim($newEstado);
+                $newCiudad = (trim($ciudadWS) !== trim($ciudadDB)) ? $ciudadWS : $ciudadDB;
+                $newCiudad = trim($newCiudad);
+                $newNumero_agencia = (trim($numero_agenciaWS) !== trim($numero_agenciaDB)) ? $numero_agenciaWS : $numero_agenciaDB;
+                $newNumero_agencia = trim($newNumero_agencia);
+                $newAgencia = (trim($agenciaWS) !== trim($agenciaDB)) ? $agenciaWS : $agenciaDB;
+                $newAgencia = trim($newAgencia);
+                $newMarca = (trim($marcaWS) !== trim($marcaDB)) ? $marcaWS : $marcaDB;
+                $newMarca = trim($newMarca);
+                $newArea = (trim($areaWS) !== trim($areaDB)) ? $areaWS : $areaDB;
+                $newArea = trim($newArea);
+                $newCargo = (trim($cargoWS) !== trim($cargoDB)) ? $cargoWS : $cargoDB;
+                $newCargo = trim($newCargo);
+                $newFecha_ingreso = (trim($fecha_ingresoWS) !== trim($fecha_ingresoDB)) ? $fecha_ingresoWS : $fecha_ingresoDB;
+                $newFecha_ingreso = trim($newFecha_ingreso);
+
+                $params_u = array(
+                    'id' => $idEmpleadoDB,
+                    'apellido_paterno' => trim($newApPat),
+                    'apellido_materno' => trim($newApMat),
+                    'nombres' => trim($newNombres),
+                    'cumpleanos' => trim($newCumpleanos),
+                    'telefono' => trim($newTelefono),
+                    'correo' => trim($newCorreo),
+                    'estado' => trim($newEstado),
+                    'ciudad' => trim($newCiudad),
+                    'numero_agencia' => trim($newNumero_agencia),
+                    'agencia' => trim($newAgencia),
+                    'marca' => trim($newMarca),
+                    'area' => trim($newArea),
+                    'cargo' => trim($newCargo),
+                    'fecha_ingreso' => trim($newFecha_ingreso),
+                    'usercontrol' => $newUsercontrol
+                );
+                $result_u = generalQuery(getConnection(), $sql_u, $params_u, 2, PDO::FETCH_ASSOC);
+            //}
+            unset($empleadosDB[$keyDB]);
+            unset($acEmpleadosDB[$keyDB]);
+        }
+        unset($empleadosWS[$keyWS]);
+    }
+    $empleadosDB = array_values($empleadosDB);
+    return $empleadosDB;
+}
+
+function deleteFromWS($empleadosDB) {
+    $sql = "UPDATE camUsuarios
+            SET USR_Control = :usercontrol
+            WHERE USR_Id = :id";
+    foreach($empleadosDB as $keyDB => $empleadoDB) {
+        $idEmpleadoDB = (integer)($empleadoDB['id']);
+        $usercontrolDB = (integer)($empleadoDB['usercontrol']);
+        if($usercontrolDB) {
+            $params = array(
+                'id' => $idEmpleadoDB,
+                'usercontrol' => 0
+            );
+            $result = generalQuery(getConnection(), $sql, $params, 2, PDO::FETCH_ASSOC);
+        }
+        unset($empleadosDB[$keyDB]);
+    }
+}
+
+
+
+
+// GET HEADER AGENCIES
+function getAgenciasJSON($sql, $agnId) {
+    $result = getAgenciasArray($sql, $agnId);
+    echo changeArrayIntoJSON('caminpa', $result);
+}
+
+function getHeaderAgenciaJSON($sql, $agnId) {
+    $structure = array(
+        'agn_id' => 'AGN_Id',
+        'agn_name' => 'AGN_Nombre',
+        'agn_style' => 'AGN_Url',
+        'agn_header' => 'AGN_Header'
+    );
+    $params = array();
+    ($agnId !== '') ? $params['agn_id'] = $agnId : $params = $params;
+    $result = restructureQuery($structure, getConnection(), $sql, $params, 0, PDO::FETCH_ASSOC);
+
+    echo changeArrayIntoJSON('caminpa', $result);
+}
+
+function getHeaderAgencias() {
+    $sql = "SELECT *
+            FROM camAgencias
+            WHERE AGN_Tipo = 0";
+    getHeaderAgenciaJSON($sql, '');
+}
+
+function getHeaderAgencia($agnId) {
+    $sql = "SELECT *
+            FROM camAgencias
+            WHERE AGN_Tipo = 0
+            AND AGN_Id = :agn_id";
+    getHeaderAgenciaJSON($sql, $agnId);
+}

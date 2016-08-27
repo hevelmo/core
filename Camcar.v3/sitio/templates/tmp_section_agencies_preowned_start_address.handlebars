@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+        <section class="" style="padding: 35px 15px 15px;">
+            <div class="col-md-4 col-sm-4 text-center">
+                <h5 style="color: #000; text-transform: uppercase;">
+                    SEMINUEVOS 
+                    {{#if campa.0.agnseudonimo}}
+                    <br> 
+                    <span style="color:#7a7a7a;">{{campa.0.agnseudonimo}}</span>
+                    {{/if}}
+                    <br> 
+                    <span style="color:#7a7a7a;">{{campa.0.agnnombre}}</span>
+                </h5>
+                <img src="../img/sitio/agencias/logos/{{campa.0.agnlogo}}" alt="{{campa.0.agnnombre}}" class="x-img x-img-none none agn_logo">
+            </div>
+            <div class="col-md-8 col-sm-8 text-left" style="font-size: 16px; padding: 20px 5px 0px;">
+                <div class="contact-method">
+                        <i class="icon pe-7s-phone agn_icono"></i>
+                        {{#each campa}}
+                            {{#if telefonos.ventas}}
+                                <span class="agn_span span_phone">
+                                    {{#if telefonos.ventas.agntelefonoventaslinea1}}
+                                        <strong>Ventas: </strong>
+                                        {{telefonos.ventas.agntelefonoventaslinea1}}
+                                    {{/if}}
+                                    {{#if telefonos.ventas.agntelefonoventaslinea2}}
+                                        / {{telefonos.ventas.agntelefonoventaslinea2}}
+                                    {{/if}}
+                                </span>
+                            {{/if}}
+                            {{#if telefonos.servicios}}
+                                <span class="agn_span span_phone">
+                                    {{#if telefonos.servicios.agntelefonoserviciolinea1}}
+                                        <strong>Servicio: </strong>
+                                        {{telefonos.servicios.agntelefonoserviciolinea1}}
+                                    {{/if}}
+                                    {{#if telefonos.servicios.agntelefonoserviciolinea2}}
+                                        / {{telefonos.servicios.agntelefonoserviciolinea2}}
+                                    {{/if}}
+                                </span>
+                            {{/if}}
+                        {{/each}}
+                </div>
+                <div class="contact-method">
+                    <i class="icon pe-7s-map-marker agn_icono"></i>
+                    <span class="agn_span">
+                        {{campa.0.agndireccion}}
+                    </span>
+                </div>
+                {{#if campa.0.horarios}}
+                    <div class="contact-method">
+                        <div class="block-icon">
+                            <i class="icon pe-7s-clock agn_icono"></i>
+                        </div>
+                        <div class="block-description">
+                            {{#if campa.0.horarios.agnhrventas}}
+                            <strong class="subStrong">Ventas: </strong><span class="agn_span spanhr">{{campa.0.horarios.agnhrventas}}</span>
+                            {{/if}}
+                            {{#if campa.0.horarios.agnhrservicio}}
+                            <strong class="subStrong">Servicio: </strong><span class="agn_span spanhr">{{campa.0.horarios.agnhrservicio}}</span>
+                            {{/if}}
+                            {{#if campa.0.horarios.agnhrrefaccion}}
+                            <strong class="subStrong">Refacciones: </strong><span class="agn_span spanhr">{{campa.0.horarios.agnhrrefaccion}}</span>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+            {{#if campa.0.sociales}}
+            <div class="row">
+                <div class="col-md-12 text-center" style="padding: 20px;">
+                    {{#if campa.0.sociales.sitio_web.agnwebsite}}
+                        <a href="{{campa.0.sociales.sitio_web.agnwebsite}}" class="button button-transparent bg-youtube resp-button" target="_blank">
+                            <i class="fa fa-globe fa-fw fa-lg"></i> SITIO WEB
+                        </a>
+                    {{/if}}
+                    {{#each campa}}
+                        {{#if sociales.facebook.agnfacebookcta1}}
+                            <a href="{{sociales.facebook.agnfacebookcta1}}" class="button button-transparent bg-facebook resp-button" target="_blank">
+                                <i class="fa fa-facebook fa-fw fa-lg"></i> FACEBOOK
+                            </a>
+                        {{/if}}
+                    {{/each}}
+                    {{#if campa.0.sociales.twitter.agntwitter}}
+                        <a href="{{campa.0.sociales.twitter.agntwitter}}" class="button button-transparent bg-twitter resp-button" target="_blank">
+                            <i class="fa fa-twitter fa-fw fa-lg"></i> TWITTER
+                        </a>
+                    {{/if}}
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </section>
+    </div>
+</div>

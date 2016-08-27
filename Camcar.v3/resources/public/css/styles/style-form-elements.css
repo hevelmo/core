@@ -1,0 +1,179 @@
+/*!
+// 17. Form elements
+// --------------------------------------------------*/
+input.btn-white {
+  background: #fff;
+  color: #0054a6;
+}
+input.btn-white:hover {
+  background: #0054a6;
+  color: #fff;
+  border-color: #0054a6;
+}
+.input-transparent {
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+.input-transparent::-webkit-input-placeholder {
+  color: #fff;
+}
+.input-transparent:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+}
+.input-transparent::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+.input-transparent:-ms-input-placeholder {
+  color: #fff;
+}
+.input-transparent:focus {
+  outline: none;
+}
+.input-standard {
+  border: none;
+  padding: 12px;
+}
+.input-standard:focus {
+  outline: none;
+}
+textarea {
+  width: 100%;
+}
+.email-form input[type="submit"].btn {
+  background: none;
+  min-width: 140px;
+}
+input[type="submit"] {
+  font-weight: 400;
+}
+input[type="submit"].btn:hover {
+  /*background: #02260a;*/
+}
+input[type="submit"].btn-filled:hover {
+  background: #fff;
+}
+input.success {
+  -webkit-box-shadow: inset 1px 1px 5px 2px #54ad28;
+  -moz-box-shadow: inset 1px 1px 5px 2px #54ad28;
+  box-shadow: inset 1px 1px 5px 2px #54ad28;
+}
+.field-error {
+  -webkit-box-shadow: inset 0px 0px 0px 1px #e82323;
+  -moz-box-shadow: inset 0px 0px 0px 1px #e82323;
+  box-shadow: inset 0px 0px 0px 1px #e82323;
+}
+section:nth-of-type(odd) .input-standard {
+  background: #fff;
+}
+section:nth-of-type(even) .input-standard {
+  background: #fff;
+}
+.form-success,
+.form-error {
+  display: none;
+  padding: 12px;
+  color: #fff;
+  background: #39b54a;
+  clear: both;
+  float: left;
+  margin-top: 32px;
+  width: 100%;
+}
+.form-error {
+  background: #9e0b0f;
+}
+.form-loading {
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  margin: 0px auto;
+  top: 50%;
+  width: 30px;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: pulsate 1s ease-out;
+  -moz-animation-iteration-count: infinite;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+.mail-list-form {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+.form-loading {
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  margin: 0px auto;
+  top: 50%;
+  width: 30px;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: pulsate 1s ease-out;
+  -moz-animation-iteration-count: infinite;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}

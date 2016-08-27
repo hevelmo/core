@@ -1,0 +1,160 @@
+/* Results Page */
+.tools-bar li:hover > .tool-box{
+	display:block;
+}
+.tools-bar > li{
+	margin-right:3px;
+}
+.tools-bar > li > a{
+	background:#252525;
+	color:#fff;
+	border-radius:3px;
+}
+.tools-bar{
+	float:left;
+}
+.tool-box{
+	display:none;
+	width:350px;
+	z-index:4444;
+	position:absolute;
+	left:0;
+	top:100%;
+	border:1px solid #eee;
+	background:#fff;
+	z-index:11;
+	border-radius:0 0 3px 3px;
+	box-shadow:0px 6px 12px rgba(0, 0, 0, 0.176)
+}
+.tool-box:before {
+	position: absolute;
+	left:21px;
+	top: auto;
+	margin: -14px 0px 0px -10px;
+	width: 0;
+	height: 0;
+	border: solid transparent;
+	border-width: 8px;
+	border-bottom-color: #fff;
+	content: " ";
+	pointer-events: none;
+}
+.tool-box-in a:hover{
+	text-decoration:underline;
+}
+.tool-box-head{
+	border-bottom:1px solid #eee;
+	padding:12px 15px;
+}
+.tool-box-head a{
+	color:#999;
+}
+.tool-box-head a:hover{
+	color:#666;
+}
+.tool-box-foot{
+	border-top:1px solid #eee;
+	padding:12px 15px;
+	background:#F9F9F9
+}
+.tool-signin{
+	margin-right:15px;
+	font-size:13px;
+}
+.tool-box h5{
+	font-family: 'font_avenir_heavy';
+	font-weight:700;
+	font-size:15px;
+	margin-bottom:0;
+	color: #000;
+	text-transform: uppercase;
+}
+.tool-box p{
+	font-family: 'font_avenir_medium';
+	line-height:1.4em;
+}
+.tool-box-in{
+	font-family: 'font_avenir_roman';
+	padding:0 15px;
+	font-size:13px;
+}
+.tool-box .listing{
+	margin:0 0 10px;
+	list-style-type:none;
+}
+.tool-box .listing li{
+	width:100%;
+	display:block;
+	margin:10px 0 0;
+	border-bottom:1px solid #eee;
+	padding-bottom:10px
+}
+.tool-box .listing li:last-child{
+	border-bottom:0;
+	padding-bottom:0;
+}
+.tool-box .listing li:before, .tool-box .listing li:after, .tool-box-foot:before, .tool-box-foot:after{
+	display:table;
+	content:" ";
+}
+.tool-box .listing li:after, .tool-box-foot:after{
+	clear:both;
+}
+.tool-box .listing .link{
+	float:left;
+	width:94%;
+}
+.tool-box .listing .checkb{
+	float:left;
+	width:7%;
+	padding-top:20px;
+}
+.tool-box .listing .imageb{
+	float:right;
+	width:30%;
+	margin-right:4%;
+}
+.tool-box .listing .imageb img{
+	border:1px solid #eee;
+	width: 100%;
+}
+.tool-box .listing .textb{
+	width: 47%;
+	float: right;
+	line-height:15px;
+	font-size:13px;
+}
+.tool-box .tool-view-listing .textb{
+	width:60%;
+}
+.tool-box .listing .textb a{
+	font-weight:700;
+	color:#5e5e5e;
+	font-family: 'font_name_landrover_medium';
+	text-transform: uppercase;
+}
+.tool-box .listing .textb .price{
+	font-family: 'font_avenir_heavy';
+	display:block;
+	margin-top:7px;
+	color:#999
+}
+.tool-box .listing .delete, .tool-box .listing .save{
+	width:6%;
+	float:right;
+	text-align:right;
+}
+.tool-box .tool-car-listing .delete, .tool-box .tool-view-listing .save{
+	padding-top:20px;
+}
+.tool-box .listing .delete a, .tool-box .listing .save a{
+	color:#ccc;
+}
+.tool-box .listing .delete a:hover, .tool-box .listing .save a:hover{
+	text-decoration:none;
+	color:#999;
+}
+.tool-box .tool-search-listing .link a{
+	font-family: 'font_name_landrover_light';
+	text-decoration:underline;
+}

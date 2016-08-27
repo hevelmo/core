@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12">
+			<div id="x-content-band-3" class="x-content-band vc" style="margin: 0 auto; padding: 0;">
+				{{#each campa}}
+				<div class="x-column vc one-sixth action-brand-agencie">
+					<a class="x-img x-img-margin x-img-link x-img-none none inner-link ttip_{{tltip}}_action_brand action-new-agn" data-agp_nombre="{{agpshort}}" data-agp_id="{{agpid}}" data-index="{{agpindex}}">
+						<img src="../img/sitio/agencias/brands/{{logo}}" class="img-disable">
+						{{#if marcas.length}}
+						<span class="ttip_{{tltip}}_brands {{animate}}">
+							<img src="../img/callout.png" class="ttip_callout">
+							<div class="brands-icons text-center">
+								<ul>
+									{{#each marcas}}
+										<li>
+											<img src="../img/sitio/agencias/logos/{{brand}}" width="145">
+										</li>
+									{{/each}}
+								</ul>
+							</div>
+						</span>
+						{{/if}}
+					</a>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+
+	</div>
+</div>

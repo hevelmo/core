@@ -1,0 +1,37 @@
+/* LAND ROVER FONT */
+@font-face {
+    font-family: 'font_name_landrover_bold';
+    src: url('LandRoverWeb/LandRoverBold.eot');
+    src: url('LandRoverWeb/LandRoverBold.eot') format('embedded-opentype'),
+         url('LandRoverWeb/LandRoverBold.woff2') format('woff2'),
+         url('LandRoverWeb/LandRoverBold.woff') format('woff'),
+         url('LandRoverWeb/LandRoverBold.ttf') format('truetype'),
+         url('LandRoverWeb/LandRoverBold.svg#LandRoverBold') format('svg');
+}
+@font-face {
+    font-family: 'font_name_landrover_demi';
+    src: url('LandRoverWeb/LandRoverDemi.eot');
+    src: url('LandRoverWeb/LandRoverDemi.eot') format('embedded-opentype'),
+         url('LandRoverWeb/LandRoverDemi.woff2') format('woff2'),
+         url('LandRoverWeb/LandRoverDemi.woff') format('woff'),
+         url('LandRoverWeb/LandRoverDemi.ttf') format('truetype'),
+         url('LandRoverWeb/LandRoverDemi.svg#LandRoverDemi') format('svg');
+}
+@font-face {
+    font-family: 'font_name_landrover_medium';
+    src: url('LandRoverWeb/LandRoverMedium.eot');
+    src: url('LandRoverWeb/LandRoverMedium.eot') format('embedded-opentype'),
+         url('LandRoverWeb/LandRoverMedium.woff2') format('woff2'),
+         url('LandRoverWeb/LandRoverMedium.woff') format('woff'),
+         url('LandRoverWeb/LandRoverMedium.ttf') format('truetype'),
+         url('LandRoverWeb/LandRoverMedium.svg#LandRoverMedium') format('svg');
+}
+@font-face {
+    font-family: 'font_name_landrover_light';
+    src: url('LandRoverWeb/LandRoverLight.eot');
+    src: url('LandRoverWeb/LandRoverLight.eot') format('embedded-opentype'),
+         url('LandRoverWeb/LandRoverLight.woff2') format('woff2'),
+         url('LandRoverWeb/LandRoverLight.woff') format('woff'),
+         url('LandRoverWeb/LandRoverLight.ttf') format('truetype'),
+         url('LandRoverWeb/LandRoverLight.svg#LandRoverLight') format('svg');
+}

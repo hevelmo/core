@@ -1,0 +1,68 @@
+/* ################################################################################################### *\
+
+	Project Name: Camcar Login
+	Proyect Version: 2.0
+	Author: *******
+	Update: hevelmo
+
+	CONTENT STYLES LOGIN PAGE
+
+	[styles] bootstrap
+	[styles] remark site
+	[styles] remark plugins
+	[styles] remark login page
+	[styles] remark webfont
+	[styles] remark fonts.googleApis
+	[styles] remark extras
+
+\* ################################################################################################### */
+	/* ------------------------------------------------------ *\
+		[styles] bootstrap
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/main/bootstrap.css);
+		@import url(styles/assets/main/bootstrap-extend.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark site
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/main/site.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark plugins
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/plugins/animsition/animsition.css);
+		@import url(styles/assets/plugins/asscrollable/asScrollable.css);
+		@import url(styles/assets/plugins/switchery/switchery.css);
+		@import url(styles/assets/plugins/intro-js/introjs.css);
+		@import url(styles/assets/plugins/slidepanel/slidePanel.css);
+		@import url(styles/assets/plugins/flag-icon-css/flag-icon.css);
+		@import url(styles/assets/sweetalert/sweetalert.css);
+		@import url(styles/assets/strength/strength.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark login page
+	\* ------------------------------------------------------ */
+		@import url(styles/assets/login/login-v3.css);
+		/*@import url(styles/assets/login/login-v3.css);*/
+	/* ------------------------------------------------------ *\
+		[styles] remark webfont
+	\* ------------------------------------------------------ */
+		@import url(webfonts/brand-icons/brand-icons.min.css);
+		@import url(webfonts/font-awesome/font-awesome.css);
+		@import url(webfonts/web-icons/web-icons.min.css);
+	/* ------------------------------------------------------ *\
+		[styles] remark fonts.googleApis
+	\* ------------------------------------------------------ */
+		@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,700,400italic,500%7CMontserrat:400,700);
+	/* ------------------------------------------------------ *\
+		[styles] remark extras
+	\* ------------------------------------------------------ */
+		@import url(sitio/form-validation.css);
+		@import url(styles/remark-main-login.css);
+		@import url(styles/basscss.css);
+		@import url(styles/magic.css);
+		@import url(styles/iconfonts/ionicons/ionicons.css);
+		@import url(styles/font-size.css);
+		@import url(styles/cursor.css);
+		@import url(styles/padding.css);
+		@import url(styles/margin.css);
+/* ################################################################################################### *\
+	END CONTENT
+\* ################################################################################################### */

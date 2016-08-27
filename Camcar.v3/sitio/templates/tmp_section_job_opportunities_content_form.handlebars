@@ -1,0 +1,111 @@
+<form class="email-form-job-board" id="form-job-opportunities" enctype="multipart/form-data">
+    <div class="contact_elements">
+        <div class="contact_element ab">
+            <fieldset class="custom-file-upload" id="content_custom_file_upluad"></fieldset>
+        </div>
+    </div>
+    <div class="contact_elements">
+        <div class="contact_element a">
+            <fieldset>
+                <input class="input-standard input-standard-job-board validate-required" type="text"
+                    name="job_opportunities_first_name"
+                    id="job_opportunities_first_name"
+                    placeholder="Nombre"
+                    data-validation-data="required|name">
+                <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+        <div class="contact_element b">
+            <fieldset>
+                <input class="input-standard input-standard-job-board validate-required" type="text"
+                    name="job_opportunities_last_name"
+                    id="job_opportunities_last_name"
+                    placeholder="Apellidos"
+                    data-validation-data="required|name">
+                <p class="invalid-message" id="error_nombre">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+    </div>
+    <div class="contact_elements">
+        <div class="contact_element a">
+            <fieldset>
+                <input class="input-standard input-standard-job-board validate-required validate-email" type="text"
+                    name="job_opportunities_email"
+                    id="job_opportunities_email"
+                    placeholder="Correo"
+                    data-validation-data="required|email">
+                <p class="invalid-message" id="error_correo">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+        <div class="contact_element b">
+            <fieldset>
+                <input class="input-standard input-standard-job-board validate-required validate-email" type="text"
+                    name="job_opportunities_phone"
+                    id="job_opportunities_phone"
+                    placeholder="Teléfono"
+                    maxlength="10"
+                    data-validation-data="required|phone">
+                <p class="invalid-message" id="error_phone">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+    </div>
+    {{!--<div class="contact_elements">
+        <div class="contact_element ab">
+            <fieldset>
+                <select
+                    name="job_opportunities_interest_area"
+                    id="job_opportunities_interest_area"
+                    class="selectpicker btn-default form-control sel-job-board-interest-area validate-required"
+                    data-validation-data="required">
+                        <option value='' class="" id="">Área de Interés</option>
+                        <option value='mercadotecnia' class="" id="">Mercadotecnia</option>
+                        <option value='ventas' class="" id="">Ventas</option>
+                        <option value='administrativo' class="" id="">Administrativo</option>
+                        <option value='seminuevos' class="" id="">Seminuevos</option>
+                        <option value='taller' class="" id="">Taller</option>
+                        <option value='otros' class="" id="">Otros</option>
+                </select>
+                <p class="invalid-message" id="error_select_area">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+    </div>--}}
+    <div class="contact_elements">
+        <div class="contact_element ab">
+            <fieldset>
+                <textarea class="input-standard input-standard-job-board validate-required"
+                    name="job_opportunities_message"
+                    id="job_opportunities_message"
+                    placeholder="Comentarios" rows="4"
+                    data-validation-data="required|address"></textarea>
+                <p class="invalid-message" id="error_mensaje">Este campo es obligatorio<span>&nbsp;</span></p>
+            </fieldset>
+        </div>
+    </div>
+    <input type="hidden"
+        name="job_opportunities_date"
+        id="job_opportunities_date"
+        value="">
+    <input type="hidden"
+        name="job_opportunities_file_name"
+        id="job_opportunities_file_name"
+        value="">
+    <input type="hidden"
+        name="job_opportunities_mime"
+        id="job_opportunities_mime"
+        value="">
+    <input type="hidden"
+        name="job_opportunities_file_content"
+        id="job_opportunities_file_content"
+        value="">
+    <input type="hidden"
+        name="job_opportunities_concessionary"
+        id="job_opportunities_concessionary"
+        value="CAMCAR">
+    <input type="hidden"
+        name="job_opportunities_logo"
+        id="job_opportunities_logo"
+        value="camcar.png">
+</form>
+<div class="linkContainer ctaContainer text-right" style="margin-top: 0;">
+    <button type="button" name="job_opportunities_send" style="font-size: 1.3em;" class="submit_contact" id="job_opportunities_send">Enviar</button>
+</div>

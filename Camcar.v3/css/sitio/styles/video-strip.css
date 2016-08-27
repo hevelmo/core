@@ -1,0 +1,112 @@
+.video-strip {
+  position: relative;
+  padding: 60px 0;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
+.video-strip .pre-video i {
+  cursor: pointer;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #b21117;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 40px;
+  color: #b21117;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.video-strip h2 {
+  margin: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  display: inline-block;
+  margin-left: 24px;
+  position: relative;
+  bottom: 10px;
+  font-family: 'Open Sans','Roboto',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+}
+.action-strip-2 h2 {
+    color: #b21117;
+}
+.video-strip:hover h2 {
+  transform: translate3d(8px, 0px, 0);
+  -webkit-transform: translate3d(8px, 0px, 0);
+  -moz-transform: translate3d(8px, 0px, 0);
+}
+.video-strip:hover .pre-video i {
+  transform: translate3d(-8px, 0px, 0);
+  -webkit-transform: translate3d(-8px, 0px, 0);
+  -moz-transform: translate3d(-8px, 0px, 0);
+  opacity: 1;
+}
+.video-strip .pre-video i:hover {
+  background: #b21117;
+  color: #fff;
+  transform: translateX(-8px) scale(1.2);
+}
+.pre-video {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  max-height: 200px;
+}
+.video-strip .iframe-holder {
+  max-width: 890px;
+  text-align: right;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.iframe-holder iframe {
+  border: 0;
+  width: 100%;
+  height: 500px;
+}
+.iframe-holder i {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 40px;
+  color: #b21117;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+}
+.iframe-holder i:hover {
+  transform: scale(1.2);
+}
+iframe {
+  border: none !important;
+}
+.show-iframe {
+  max-height: 800px !important;
+  overflow: visible !important;
+}
+.fade-off {
+  opacity: 0;
+  max-height: 0;
+}
+.fade-on {
+  opacity: 1 !important;
+}

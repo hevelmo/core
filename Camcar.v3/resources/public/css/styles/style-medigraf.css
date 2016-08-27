@@ -1,0 +1,11 @@
+.medigraf
+	{
+		width:18px;height:11px;
+		background-image:url('../../img/corp/sprite-logo.png');
+		background-position: 0px 0px;
+	}
+
+.medigraf:hover
+	{
+		background-position: 0px -11px;
+	}

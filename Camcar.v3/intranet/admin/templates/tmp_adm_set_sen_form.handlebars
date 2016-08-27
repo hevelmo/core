@@ -1,0 +1,326 @@
+<!-- Utiity Bar -->
+<div class='utility-box'>
+    <div class="utility-bar" style=" margin-top: 50px; background: #fff;">
+        <div class="container">
+            <div class='row'>
+                <div class="col-md-10 col-sm-6 col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="active">
+                            <i class="fa fa-pencil fa-lg fa-fw"></i>
+                            <span style="font-size: 1.3em; padding-left: 15px; padding-top: 15px;">
+                                Editar Seminuevo
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                    <span class='tools' style="position: relative; right: -100%; top: 9px;">
+                        <a href='javascript:;' class='fa fa-chevron-down'></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="large-pad" style="overflow: visible;">
+        <div class="container">
+            <div class='row'>
+                <div class='panel-body'>
+                    <div class='form'>
+                        <form  id='set-sen'>
+                            <div class='form-inline'>
+                                {{!-- First Line --}}
+                                <div class='col-sm-12 col-md-12'>
+                                    <div class='col-sm-4 col-md-4'
+                                         id='div-set-sen-agency-container'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-agency' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Agencia
+                                                </label>
+                                            </label>
+                                            <div id='div-select-set-sen-agency'>
+                                                {{!--
+                                                <select class='set-sen-select form-control set-sen-element m-bot15' id='set-sen-agency' name='sen_agency'>
+                                                    <option value=''> - Seleccione una agencia - </option>
+                                                    {{#each camadpa}}
+                                                    <option value='{{id}}'>{{nombre}}</option>
+                                                    {{/each}}
+                                                </select>
+                                                --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-4 col-md-4'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-category' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Categoría
+                                                </label>
+                                            </label>
+                                            <div id='div-select-set-sen-category'>
+                                                {{!--
+                                                 <select class='set-sen-select form-control set-sen-element m-bot15' id='set-sen-category' name='sen_category'>
+                                                    <option value=''> - Seleccione una categoría - </option>
+                                                    {{#each camadpa}}
+                                                    <option value='{{id}}'>{{nombre}}</option>
+                                                    {{/eaach}}
+                                                </select>
+                                                --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-4 col-md-4'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-brand' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Marca
+                                                </label>
+                                            </label>
+                                            <div id='div-select-set-sen-brand'>
+                                                {{!--
+                                                <select class='set-sen-select form-control set-sen-element m-bot15' id='set-sen-brand' name='sen_brand'>
+                                                    <option value=''> - Seleccione una marca - </option>
+                                                    {{#each camadpa}}
+                                                    <option value='{{id}}'>{{nombre}}</option>
+                                                    {{/each}}
+                                                </select>
+                                                --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{!-- Second Line --}}
+                                <div class='col-sm-12 col-md-12'>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-model' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Modelo
+                                                </label>
+                                            </label>
+                                            <div id='div-select-set-sen-model'>
+                                                {{!--
+                                                <select class='set-sen-select form-control set-sen-element m-bot15' id='set-sen-model' name='sen_model'>
+                                                    <option value=''> - Seleccione una modelo - </option>
+                                                    {{#each camadpa}}
+                                                    <option value='{{id}}'>{{nombre}}</option>
+                                                    {{/each}}
+                                                </select>
+                                                --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-transmission' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Transmisión
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <select class='set-sen-select selectpicker btn-default form-control set-sen-element m-bot15 stl-sel-transmision' id='set-sen-transmission' name='sen_transmission'>
+                                                    <option value=''> - Seleccione un tipo de transmisión - </option>
+                                                    <option value='AUTOMATICA'>AUTOMATICA</option>
+                                                    <option value='MANUAL'>MANUAL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-color' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Color
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <select class='set-sen-select selectpicker btn-default form-control set-sen-element m-bot15 stl-sel-color' id='set-sen-color' name='sen_color'>
+                                                    <option value=''> - Seleccione un color - </option>
+                                                    <option value='ALPINE'>ALPINE</option>
+                                                    <option value='ALUMINIO'>ALUMINIO</option>
+                                                    <option value='AMARILLO'>AMARILLO</option>
+                                                    <option value='ARENA'>ARENA</option>
+                                                    <option value='AZUL'>AZUL</option>
+                                                    <option value='PERLA'>PERLA</option>
+                                                    <option value='BLANCO'>BLANCO</option>
+                                                    <option value='CAFE'>CAFE</option>
+                                                    <option value='CEREZA'>CEREZA</option>
+                                                    <option value='CHAMPAGNE'>CHAMPAGNE</option>
+                                                    <option value='GRIS'>GRIS</option>
+                                                    <option value='KHAKI'>KHAKI</option>
+                                                    <option value='MARRÓN'>MARRÓN</option>
+                                                    <option value='NARANJA'>NARANJA</option>
+                                                    <option value='NEGRO'>NEGRO</option>
+                                                    <option value='PLATA'>PLATA</option>
+                                                    <option value='ROJO'>ROJO</option>
+                                                    <option value='TINTO'>TINTO</option>
+                                                    <option value='VERDE'>VERDE</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-interior' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Interior
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <select class='set-sen-select selectpicker btn-default form-control set-sen-element m-bot15 stl-sel-interior' id='set-sen-interior' name='sen_interior'>
+                                                    <option value=''> - Seleccione un tipo de interior - </option>
+                                                    <option value='TELA'>TELA</option>
+                                                    <option value='PIEL'>PIEL</option>
+                                                    <option value='PIEL/TELA'>PIEL/TELA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{!-- Third Line --}}
+                                <div class='col-sm-12 col-md-12'>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-year' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Año
+                                                </label>
+                                            </label>
+                                            <div id='div-select-set-sen-year'>
+                                                {{!--
+                                                <select class='set-sen-select selectpicker
+                                                        btn-default form-control set-sen-element m-bot15
+                                                        stl-sel-year'
+                                                        id='set-sen-year' name='sen_year'>
+                                                    <option value=''> - Seleccione un año - </option>
+                                                    {{#each camadpa}}
+                                                    <option value='{{year}}'>{{year}}</option>
+                                                    {{/each}}
+                                                </select>
+                                                --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-price' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Precio
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <input class='set-sen-input form-control set-sen-element stl-input' id='set-sen-price' name='sen_price' type='text' value='{{camadpa.0.precio}}' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-cylinders' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Cilindros
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <select class='set-sen-select selectpicker
+                                                               btn-default form-control set-sen-element m-bot15 stl-sel-cylinders'
+                                                               id='set-sen-cylinders' name='sen_cylinders'>
+                                                    <option value=''> - Seleccione el cilindraje - </option>
+                                                    <option value='3'>3</option>
+                                                    <option value='4'>4</option>
+                                                    <option value='5'>5</option>
+                                                    <option value='6'>6</option>
+                                                    <option value='8'>8</option>
+                                                    <option value='10'>10</option>
+                                                    <option value='12'>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-3 col-md-3'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-mileage' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Kilometraje
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <input class='set-sen-input form-control set-sen-element stl-input' id='set-sen-mileage' name='sen_mileage' type='text' value='{{camadpa.0.kilometraje}}' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{!-- Fourth Line --}}
+                                <div class='col-sm-12 col-md-12'>
+                                    <div class='col-sm-12 col-md-12'>
+                                        <div class='form-group'>
+                                            <label for='set-sen-description' class='control-label'>
+                                                <sup>
+                                                    <i class='fa fa-asterisk' style='position: relative; top: 4px; padding: 5px;'></i>
+                                                </sup>
+                                                <label>
+                                                    Descripción
+                                                </label>
+                                            </label>
+                                            <div>
+                                                <textarea class='form-control set-sen-element stl-text-area' id='set-sen-description' name='sen_description'>{{camadpa.0.descripcion}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class='col-sm-12 col-md-12'>
+                            <div class="row">
+                                <div class='col-sm-2 col-md-2'></div>
+                                <button class='button button-outline bg-red-camcar red-camcar button-resp col-sm-2 col-md-2' id='set-sen-save' data-sen-id='{{camadpa.0.id}}' style="padding: 1em;">
+                                    Guardar
+                                </button>
+                                <div class='col-sm-1 col-md-1'></div>
+                                <button class='button button-outline bg-white-camcar white-camcar button-resp col-sm-2 col-md-2' id='set-sen-clean' data-sen-id='{{camadpa.0.id}}' style="padding: 1em;">
+                                    Limpiar
+                                </button>
+                                <div class='col-sm-1 col-md-1'></div>
+                                <button class='button button-outline bg-black-camcar black-camcar button-resp col-sm-2 col-md-2' id='set-sen-restore' data-sen-id='{{camadpa.0.id}}' style="padding: 1em;">
+                                    Restaurar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

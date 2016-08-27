@@ -1,0 +1,86 @@
+<div class="col-md-8">
+    <div class="spacer-50"></div>
+    {# Recently Listed Vehicles #}
+    <section class="listing-block recent-vehicles">
+        <div class="listing-header">
+            <h3>Vehículos relacionados</h3>
+        </div>
+        <div id="content_carousel_vehicles">
+            <div class="listing-container">
+                <div class="carousel-wrapper">
+                    <div class="row">
+                        <div class="owl-carousel carousel-fw" 
+                             id="vehicle-slider" 
+                             data-columns="3" 
+                             data-autoplay="" 
+                             data-pagination="yes" 
+                             data-arrows="no" 
+                             data-single-item="no" 
+                             data-items-desktop="3" 
+                             data-items-desktop-small="3" 
+                             data-items-tablet="2" 
+                             data-items-mobile="1">
+                            {% for related in relacionados %}
+                                {% block result_related %}
+                                    <div class="item equal-height" id="{{ related.id }}">
+                                        <a href="{{ _seminuevos }}detalles/{{ related.marca.nombre_short }}/{{ related.modelo.nombre_short }}/{{ related.id }}"
+                                         class="views-details views-details-size bg-views-details views-details-transition visible-lg-block sem-action"
+                                         id="sem-action-{{ related.id }}"
+                                         data-mar-nombre-short="{{ related.marca.nombre_sort }}"
+                                         data-mdo-nombre-short="{{ related.modelo.nombre_sort }}"
+                                         data-sen-id="{{ related.id }}">
+                                            <span class="">ver detalles</span>
+                                        </a>
+                                        <div class="vehicle-block format-standard">
+                                            <a class="media-box sem-action carousel-media-box"
+                                               id="sem-action-{{ related.id }}"
+                                               data-mar-nombre-short="{{ related.marca.nombre_sort }}"
+                                               data-mdo-nombre-short="{{ related.modelo.nombre_sort }}"
+                                               data-sen-id="{{ related.id }}">
+                                                <img src="{{ _admin }}cdn/img/seminuevos/{{ related.thm_folder }}/{{ related.thm_nombre }}"
+                                                     class="carousel-media-box-img"
+                                                     alt="{{ related.modelo.nombre }}">
+                                            </a>
+                                            <div class="owl-item-labels clearfix">
+                                                <span class="label label-default vehicle-age"
+                                                      id="sem_year">
+                                                    {{ related.anio }}
+                                                </span>
+                                                <span class="label label-success premium-listing">
+                                                    {{ related.agencia.nombre }}
+                                                </span>
+                                            </div>
+                                            <div class="result-item-view-details-resp visible-xs clearfix">
+                                                <a href="{{ _seminuevos }}detalles/{{ related.marca.nombre_short }}/{{ related.modelo.nombre_short }}/{{ related.id }}"
+                                                   class="view-details-resp col-md-12 col-xs-12 sem-action"
+                                                   id="sem-action-{{ related.id }}"
+                                                   data-mar-nombre-short="{{ related.marca.nombre_sort }}"
+                                                   data-mdo-nombre-short="{{ related.modelo.nombre_sort }}"
+                                                   data-sen-id="{{ related.id }}">
+                                                    ver detalles
+                                                </a>
+                                            </div>
+                                            <h5 class="vehicle-title">
+                                                <a class="sem-action"
+                                                   id="sem-action-{{ related.id }}" 
+                                                   data-mar-nombre-short="{{ related.marca.nombre_sort }}"
+                                                   data-mdo-nombre-short="{{ related.modelo.nombre_sort }}"
+                                                   data-sen-id="{{ related.id }}">
+                                                    {{ related.marca.nombre }} {{ related.modelo.nombre }} {{ related.cilindros }}
+                                                </a>
+                                            </h5>
+                                            <span class="vehicle-meta">
+                                                {{ related.modelo.nombre }}, {{ related.interior }}, {{ related.color }}
+                                            </span>
+                                            <span class="vehicle-cost multiple">{{ related.precio }}</span>
+                                        </div>
+                                    </div>
+                                {% endblock %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

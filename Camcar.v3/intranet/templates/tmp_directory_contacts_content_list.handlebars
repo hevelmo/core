@@ -1,0 +1,40 @@
+{{#each webservice}}
+<tr{{!-- data-url="panel.tpl" data-toggle="slidePanel" --}}>
+    {{!--<td class="cell-60 responsive-hide">
+        <span class="checkbox-custom checkbox-primary checkbox-lg">
+            <input type="checkbox"
+                   class="contacts-checkbox selectable-item"
+                   id="employees-{{no_empleado}}" />
+            <label for="employees-{{no_empleado}}"></label>
+        </span>
+    </td>
+    --}}
+    <td class="cell-300 dir-contact-list">
+        <a class="avatar" href="javascript:void(0)">
+            <img class="img-responsive" src="../../img/portraits/default-v2.png" alt="...">
+        </a>
+        <span class="ucwords">
+            {{apellido_paterno}} {{apellido_materno}} {{nombres}}
+        </span>
+    </td>
+    {{!--
+    <td class="cell-300">{{estado}}</td>
+    --}}
+    <td class="cell-300 dir-contact-list">{{ciudad}}</td>
+    <td class="cell-300 dir-contact-list">{{agencia}}</td>
+    <td class="cell-300 dir-contact-list">{{telefono}}</td>
+    {{!--
+    <td>{{correo}}</td>
+    --}}
+    <td class="waves-init dir-contact-list">
+        {{#if correo}}
+        <button type="button" class="btn btn-primary btn-sm bg-red-camcar btn-pulse call-modal-overlay directory button-resp"
+            data-name-to="{{apellido_paterno}} {{apellido_materno}} {{nombres}}"
+            data-email-to="{{correo}}">
+            Enviar Mensaje
+            <i class="fa fa-paper-plane fa-fw fa-lg"></i>
+        </button>
+        {{/if}}
+    </td>
+</tr>
+{{/each}}

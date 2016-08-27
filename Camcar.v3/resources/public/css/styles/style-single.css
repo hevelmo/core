@@ -1,0 +1,275 @@
+.seller-contact-widget p.sm{
+	font-size:85%;
+	line-height:1.5em;
+}
+.seller-contact-widget .form-control{
+	margin-bottom:12px;
+}
+.seller-contact-widget .checkbox-inline{
+	display:block;
+	margin:0 25px 10px;
+}
+.seller-contact-widget .checkbox-inline .checkbox{
+	margin-top:0;
+}
+.seller-contact-widget .btn-primary{
+	margin-top:10px;
+}
+.vehicle-enquiry-foot{
+	background:#f9f9f9;
+	border-radius:3px;
+	padding:15px 20px;
+	font-size:11px;
+	margin-top:20px;
+	border:1px solid #eee;
+}
+.vehicle-enquiry-foot i{
+	font-size:30px;
+	float:left;
+	margin-right:10px;
+	position:relative;
+	top:0px;
+}
+.vehicle-enquiry-foot-ico, strong.address {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px auto 10px;
+}
+.vehicle-enquiry-foot strong.address{
+	font-size:16px;
+	line-height:16px;
+	/*display:block;*/
+	width: 85%;
+}
+.vehicle-enquiry-foot strong.address-description {
+	font-size: 16px;
+	line-height: 18px;
+	width: 100%;
+	display: block;
+	text-align: justify;
+}
+.vehicle-enquiry-foot a{
+	text-decoration:underline;
+}
+.single-vehicle-details{
+	position:relative;
+	top:-5px;
+	margin-bottom:-5px;
+}
+.single-vehicle-details .post-title{
+	padding-right:30px;
+	margin-bottom:10px;
+	color: #000;
+	font-size: 30px;
+	font-family: 'font_name_landrover_bold';
+}
+.single-vehicle-details .badge-premium-listing{
+	padding:0 10px 0 15px;
+	height:24px;
+	color:#fff;
+	text-transform:uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing:1px;
+	font-weight:700;
+	font-size:12px;
+	float:right;
+	position:relative;
+	background-color:#5cb85c;
+	top:10px;
+	border-radius:0 3px 3px 0;
+}
+.single-vehicle-details .badge-premium-listing:before {
+  border-bottom: 12px transparent solid;
+  border-right: 12px #5cb85c solid;
+  border-top: 12px transparent solid;
+  content: '';
+  height: 0;
+  left: -12px;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+.single-vehicle-details .badge-premium-listing:after {
+  background: white;
+  border: 2px #6fc76f solid;
+  border-radius: 50%;
+  content: '';
+  height: 6px;
+  left: 0;
+  position: absolute;
+  width: 6px;
+  top: 9px;
+}
+.single-vehicle-title{
+	border-bottom:1px solid #ddd;
+}
+.single-vehicle-details .btn-info.price,
+.single-vehicle-details .btn-info.phone,
+.single-vehicle-details .btn-info.phone a{
+	padding:0 5px;
+	line-height:1.6em;
+	min-width:120px;
+	font-size:22px;
+}
+.single-vehicle-details .btn-info.phone a{
+	color: #fff;
+}
+.single-listing-actions{
+	border-top:4px solid #F9F9F9;
+	padding-top:20px;
+	margin-bottom:45px;
+}
+.single-listing-actions .badge-premium-listing{
+	display:none;
+}
+.single-listing-actions .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.single-listing-actions .btn-default{
+	letter-spacing:0;
+	font-weight:400;
+	font-size:13px;
+	text-transform:none;
+	color:#777;
+	padding-left:14px;
+	padding-right:14px;
+	font-family: 'Roboto', sans-serif;
+}
+.single-listing-images{
+}
+.single-listing-images .featured-image img, .single-listing-images .featured-image .media-box .zoom{
+	border-radius:3px 3px 0 0;
+	width: 100%;
+}
+.single-listing-images .additional-images{
+	background:#eee;
+    background-image: url(../../img/texture-grey-mist-light.png);
+    background-repeat: repeat;
+    background-position: left top;
+    clear: both;
+	overflow:hidden;
+	padding:10px;
+	border-radius:0 0 3px 3px;
+}
+.additional-images .owl-carousel{
+	margin-left:0;
+}
+.additional-images .owl-carousel .item-video i{
+	position:absolute;
+	z-index:9;
+	top:50%;
+	left:50%;
+	margin-top:-15px;
+	font-size:30px;
+	color:rgba(255,255,255,.9)
+}
+.additional-images .owl-carousel .item{
+	margin-left:1px;
+}
+.additional-images .owl-carousel .owl-wrapper-outer{
+	width:100%!important;
+}
+.additional-images .owl-theme .owl-controls{
+	margin-top:0;
+}
+.additional-images .owl-theme .owl-buttons div{
+	margin-top:-13px;
+}
+.additional-images .owl-theme .owl-buttons div.owl-prev{
+	left:0;
+}
+.single-vehicle-details .list-group{
+	margin-top:0;
+}
+.single-vehicle-details .list-group li{
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size:13px;
+}
+.table-specifications > tbody > tr > td:first-child{
+	font-weight:700;
+}
+.add-features-list{
+	margin:0;
+	list-style-type:none;
+}
+.add-features-list li{
+	border:1px solid #eee;
+	border-radius:20px;
+	padding:3px 10px;
+	display:inline-block;
+	margin-right:5px;
+	margin-bottom:15px;
+	font-size:13px;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.075);
+	background: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+	.single-listing-actions .btn-group > .btn > span{
+		display:none;
+	}
+	.single-listing-images{
+		margin-bottom:30px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.single-listing-actions .btn-group{
+		float:none!important;
+		display:block;
+	}
+	.single-listing-actions .btn-group .btn{
+		width:14.40%;
+	}
+	.single-vehicle-details .btn-info.price,
+	.single-vehicle-details .btn-info.phone,
+	.single-vehicle-details .btn-info.phone a{
+		margin-top:15px;
+	}
+	.single-listing-actions .badge-premium-listing{
+		display:inline-block;
+		margin-top:12px;
+	}
+	.single-vehicle-title .badge-premium-listing{
+		display:none;
+	}
+	.single-vehicle-details .post-title{
+		padding-right:0;
+	}
+
+
+	/*.single-listing-actions .btn-group{
+		float:none!important;
+		display:block;
+	}*/
+	.single-listing-actions .btn-group{
+		float:none!important;
+		display: -webkit-box;
+	}
+	/*.single-listing-actions .btn-group .btn{
+		width:14.40%;
+	}*/
+	.single-listing-actions .btn-group .btn{
+		width:100%;
+		font-size: 1.5em;
+	}
+	.single-vehicle-details .btn-info.price,
+	.single-vehicle-details .btn-info.phone,
+	.single-vehicle-details .btn-info.phone a{
+		margin-top:15px;
+	}
+	.single-listing-actions .badge-premium-listing{
+		display:inline-block;
+		margin-top:12px;
+	}
+	.single-vehicle-title .badge-premium-listing{
+		display:none;
+	}
+	.single-vehicle-details .post-title{
+		padding-right:0;
+		font-size: 30px;
+		font-family: 'font_name_landrover_bold';
+	}
+	.single-vehicle-details .btn-info.phone.hidden-movil {display: none;}
+
+}

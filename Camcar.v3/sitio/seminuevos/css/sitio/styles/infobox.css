@@ -1,0 +1,122 @@
+.infobox {
+    background-color: #fff;
+    position: relative;
+}
+.infobox-inner {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    height: 210px;
+    padding: 15px;
+    position: relative;
+    width: 260px;
+}
+.infobox-image {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 3px 3px 0px 0px;
+    height: 170px;
+    margin: -15px -15px 0px -15px;
+    position: relative;
+}
+.infobox-image:after {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 55px);
+    bottom: 0px;
+    content: '';
+    display: block;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+}
+.infobox .inventor-favorites-btn-toggle {
+    bottom: 10px;
+    color: #fff;
+    font-size: 14px;
+    right: 15px;
+    position: absolute;
+    z-index: 11;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.infobox .inventor-favorites-btn-toggle span {
+    display: none;
+}
+.infobox-title {
+    position: relative;
+}
+.infobox-title h2, .infobox-title .comment-reply-title {
+    color: #363636;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 13px 0px 0px 0px;
+    padding: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 170px;
+    white-space: nowrap;
+}
+.infobox-title h2 a, .infobox-title .comment-reply-title a {
+    color: #363636;
+}
+.infobox-category {
+    font-size: 12px;
+    position: absolute;
+    right: 0px;
+    top: 1px;
+}
+.infobox-category a {
+    color: #b8b8b8;
+}
+.infobox-inner .close {
+    background-color: #444;
+    border: 0px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
+    height: 26px;
+    opacity: 1;
+    padding: 3px;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    text-shadow: none;
+    width: 26px;
+    z-index: 999;
+    transition: all linear .12s;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+.infobox:after {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 12px 6px;
+    border-top-color: #fff;
+    bottom: -24px;
+    content: '';
+    display: block;
+    height: 0px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 0px;
+}
+/*i, a {
+    transition: all linear .15s;
+}*/

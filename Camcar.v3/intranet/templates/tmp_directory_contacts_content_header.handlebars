@@ -1,0 +1,118 @@
+<!-- Contacts Content Header -->
+<div class="page-header">
+    <h1 class="page-title">
+        {{!--
+        Directorio <span id="span-dir-marck"><em>/</em> Agencia</span>
+        --}}
+        <i class="site-menu-icon navi-nav-icons-directory-v2 fa-2x" aria-hidden="true"></i> 
+        <span class="title-name">
+            Directorio <span id="span-dir-marck"></span>
+        </span>
+    </h1>
+    <div class="page-header-actions">
+        <div class="input-search input-search-dark">
+            <form id="directory-filters" class="float-filter-search">
+                <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                <input id="directory-search" type="text" class="form-control" name="directory_search" placeholder=". . .">
+            </form>
+            <button id="directory-search-btn" type="button" class="btn btn-primary bg-red-camcar btn-pulse btn-filter-search">
+                Buscar
+            </button>
+        </div>
+    </div>
+</div>
+<!-- Contacts Content -->
+<div class="page-content page-content-table">
+
+    <!-- Contacts -->
+    <table class="table tablesaw tablesaw-stack dir-contacts"
+           data-tablesaw-mode="stack"
+           data-plugin="animateList"
+           data-animate="fade"
+           data-child="tr"
+           data-selectable="selectable">
+        <thead>
+            <tr>
+                {{!--<th class="cell-60" scope="col" data-tablesaw-sortable-col data-tablesaw-priority="5">
+                    <span class="checkbox-custom checkbox-primary checkbox-lg contacts-select-all"></span>
+                </th>--}}
+                <th class="epy-sorter cell-130 ord-filter cur-up active" scope="col" data-tablesaw-sortable-col data-tablesaw-priority="5"
+                    data-sorter="nom"
+                    data-sort="DESC">
+                    <span class="ffRoboto">Nombre</span>
+                </th>
+                {{!--
+                <th class="epy-sorter cell-300 ord-filter cur-down"
+                    scope="col" data-tablesaw-sortable-col
+                    data-tablesaw-priority="5"
+                    data-sorter="est"
+                    data-sort="ASC">
+                    <span class="ffRoboto">Estado</span>
+                </th>
+                --}}
+                <th class="epy-sorter cell-300 ord-filter cur-down"
+                    scope="col" data-tablesaw-sortable-col
+                    data-tablesaw-priority="5"
+                    data-sorter="ciu"
+                    data-sort="ASC">
+                    <span class="ffRoboto">Ciudad</span>
+                </th>
+                <th class="epy-sorter cell-300 ord-filter cur-down"
+                    scope="col" data-tablesaw-sortable-col
+                    data-tablesaw-priority="5"
+                    data-sorter="agn"
+                    data-sort="ASC">
+                    <span class="ffRoboto">Agencia</span>
+                </th>
+                <th class="epy-sorter cell-300 ord-filter cur-down"
+                    scope="col" data-tablesaw-sortable-col
+                    data-tablesaw-priority="5"
+                    data-sorter="tel"
+                    data-sort="ASC">
+                    <span class="ffRoboto">Teléfono</span>
+                </th>
+                <th class="epy-sorter"
+                    scope="col" data-tablesaw-sortable-col
+                    data-tablesaw-priority="5"
+                    {{!--
+                    data-sorter="mail"
+                    data-sort="ASC"
+                    --}}
+                    >
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody id="directory-employees-list"></tbody>
+    </table>
+
+    {{!--<ul data-plugin="paginator" data-total="50" data-skin="pagination-gap"></ul>--}}
+    {{!--<ul data-plugin="paginator" data-total="50" data-skin="pagination-gap" class="pagination pagination-gap">
+        <li class="pagination-prev disabled">
+            <a href="#">
+                <span class="icon wb-chevron-left-mini"></span>
+            </a>
+        </li>
+        <li class="pagination-items bg-red-camcar active" data-value="1">
+            <a href="#">1</a>
+        </li>
+        <li class="pagination-items" data-value="2">
+            <a href="#">2</a>
+        </li>
+        <li class="pagination-items" data-value="3">
+            <a href="#">3</a>
+        </li>
+        <li class="pagination-items" data-value="4">
+            <a href="#">4</a>
+        </li>
+        <li class="pagination-items" data-value="5">
+            <a href="#">5</a>
+        </li>
+        <li class="pagination-next">
+            <a href="#">
+                <span class="icon wb-chevron-right-mini"></span>
+            </a>
+        </li>
+    </ul>--}}
+
+</div>

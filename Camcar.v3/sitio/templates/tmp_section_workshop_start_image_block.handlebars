@@ -1,0 +1,44 @@
+<div class="container">
+{{#each campa}}
+<a id="{{agnId}}" class="in-page-link"></a>
+<section class="image-block">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5 col-sm-7 {{columns}}">
+                <div class="text-block {{textAlign}}">
+                    <h2 class="entry-title entry-title-portfolio">{{agnNombre}}</h2>
+                    <br>
+                    <p class="lead">
+                        <strong>Dirección:</strong> {{agnDireccion}} <br>
+                        {{#if telefonos.ventas}}
+                        <strong>Teléfono:</strong> {{telefonos.ventas.agntelefonoventaslinea1}} <br>
+                        {{/if}}
+                        {{#if horarios.ventas}}
+                            <strong>Ventas: </strong>{{horarios.ventas}}
+                        {{/if}}
+                        {{#if horarios.servicios}}
+                            <strong>Servicios: </strong>{{horarios.servicios}}
+                        {{/if}}
+                        {{#if horarios.refacciones}}
+                            <strong>Refacciones: </strong>{{horarios.refacciones}}
+                        {{/if}}
+                    </p>
+                    {{#if sociales.website}}
+                    <a class="primaryLink workshop-agencie button-resp withStyle" href="{{sociales.website}}" target="_blank">
+                        <span>SITIO WEB</span>
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+        </div><!--end of row-->
+    </div><!--end of container-->
+
+    <div class="image-holder col-md-6 col-sm-4 {{direction}}">
+        <div class="background-image-holder">
+            <img alt="Slide Background" class="background-image" src="../img/sitio/talleres/{{agnSmall}}">
+        </div>
+    </div>
+</section>
+{{/each}}
+</div>

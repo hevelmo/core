@@ -1,0 +1,46 @@
+<ul class="blocks blocks-100 blocks-xlg-4 blocks-md-3 blocks-sm-2" data-plugin="masonry">
+    {{#each caminpa}}
+    <li class="masonry-item">
+        <div class="widget widget-article widget-shadow">
+            <div class="widget-header cover">
+                <img class="cover-image widget-toggle-slide-panel-agreement-other-brands" id="con-cover-imagee-{{id}}" data-con-id={{id}} src="../admin/cdn/img/convenios/{{id}}/{{picture}}" alt="...">
+            </div>
+            <div class="widget-body">
+                <h3 class="widget-title widget-toggle-slide-panel-agreement-other-brands" id="con-widget-title-{{id}}" data-con-id={{id}}>
+                    {{titulo}}
+                </h3>
+                <p class="widget-metas type-link">
+                    Por
+                    <a href="javascript:void(0)">{{empresa}}</a>
+                    {{!--
+                    <a href="javascript:void(0)">05, 2015</a>
+                    --}}
+                    {{!--
+                    <a href="javascript:void(0)">
+                        <span>0</span> Comments
+                    </a>
+                    --}}
+                </p>
+                <p>
+                    {{descripcion_corta}}
+                </p>
+                <div class="widget-body-footer">
+                    {{!--
+                    <div class="widget-actions pull-right">
+                        <a href="javascript:void(0)">
+                            <i class="icon wb-heart" aria-hidden="true"></i>
+                            <span>0</span>
+                        </a>
+                    </div>
+                    --}}
+                    <button type="button" 
+                            class="con-show-more btn btn-outline btn-red-camcar btn-camcar-block widget-toggle-slide-panel-agreement-other-brands"
+                            id="con-show-more-{{id}}" data-con-id={{id}}>
+                        Leer Más
+                    </button>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>

@@ -1,0 +1,357 @@
+@font-face {
+	font-family: "font_icons";
+	src: url("icons/icons-826b1e41199f05ef38e5ce03a8ef6729.eot");
+	src: url("icons/icons-826b1e41199f05ef38e5ce03a8ef6729.eot?#iefix") format("embedded-opentype"),
+		 url("icons/icons-826b1e41199f05ef38e5ce03a8ef6729.woff") format("woff"),
+		 url("icons/icons-826b1e41199f05ef38e5ce03a8ef6729.ttf") format("truetype"),
+		 url("icons/icons-826b1e41199f05ef38e5ce03a8ef6729.svg?#icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon,[class^="icon-"]:before,[class*=" icon-"]:before,#landrover .secondaryLinkWithStyle:before,#landrover .darkText .secondaryLinkWithStyle:before,.MainNavigation ul li.vehicles span:after,.MainNavigation ul li.vehicles.activeOverlay span:after,.MainNavigation .SearchButton > a:before,.MainNavigation .SearchButton button:before,.MainNavigation .SearchButton .inactiveSearchButton:before,.MainNavigation .MoreButton a:before,.MainNavigation .LocationButton a:before,.SubNavigation .SubNavigationContainer .SubNavigationModels li a:after,.SubNavigation .SubNavigationContainer .SubNavigationButtons:after,.ShoppingToolsMenu li.ShoppingToolsButton > a:after,.SlideOutMenu ul.first > li > a:after,.SlideOutMenu ul.first > li ul li a:before,.SlideOutMenu ul.third li a:before,.SiteNavigation .SiteNavigationTertiaryNav li a:before,.IgniteBar li > a div.addThis:before,.IgniteBarDevice li a span.brochure:before,.IgniteBarDevice li a span.configure:before,.IgniteBarDevice li a span.drive:before,.IgniteBarDevice li a span.dealer:before,.IgniteBarDevice li a span.share:before,html.withVehicleSelector[style] #header .MainNavigation ul li.vehicles span:after,.ModelSelector .modelSelectorHeader .backButton:after,.VideoPlayer .playButton:before,.VideoPlayer .playButton.soundOn:before,.VideoPlayer .mejs-play button:before,.VideoPlayer .mejs-pause button:before,.VideoPlayer .mejs-mute button:before,.VideoPlayer .mejs-unmute button:before,.VideoPlayer[data-audio="false"] .mejs-mute button:before,.VideoPlayer[data-audio="false"] .mejs-unmute button:before,.VideoPlayer .mejs-fullscreen-button button:before,.VideoPlayer .mejs-fullscreen-button.mejs-unfullscreen button:before,.VideoPlayer .mejs-captions-button button:before,.VideoPlayer .mejs-captions-button.mejs-captions-enabled button:before,.VideoPlayer.finished .mejs-overlay-button:before,.DualFrameCarousel .navigation > div a.prev:before,.DualFrameCarousel .navigation > div a.next:before,.addThisMenu > a > span:before,.SocialSharing a.addthis_button_twitter > span:before,.SocialSharing a.addthis_button_facebook > span:before,.SocialSharing a.addthis_button_linkedin > span:before,.SocialSharing a.addthis_button_google_plusone_share > span:before,.SocialSharing a.addthis_button_tumblr > span:before,.SocialSharing a.addthis_button_sinaweibo > span:before,.SocialSharing a.addthis_button_pinterest_share > span:before,.SocialSharing a.addthis_button_douban > span:before,.SocialSharing a.addthis_button_vkontakt > span:before,.SocialSharing a.addthis_button_renren > span:before,.SocialSharing a.addthis_button_email > span:before,.SocialSharing a.addthis_button_expanded > span:before,#at3win #at3winheader #at3winheaderclose:before,a.mfp-close:before,.Fullscreen .fullscreenHeader #filmstripToggle:after,.Fullscreen .fullscreenHeader #filmstripToggle.on:after,.Fullscreen .galleryCategoriesBtn:before,.Fullscreen.shared a.mfp-close:before,.ScrollDown:after,.Quote p:before,.Quote p:after,.Quote.inArticle .quoteContent:before,.Quote.inArticle .quoteContent:after,.QuotePlayer .mejs-play button:before,.QuotePlayer.finished .mejs-play button:before,.QuotePlayer .mejs-pause button:before,.Article .sectionWrapper .section .richText .tickList li:before,.FooterNav .hygieneLinks li a.toggleHandle:after,.FooterNav .hygieneLinks li.open a.toggleHandle:after,.NotificationBar .notificationContainer .close span:before,.VehicleSpecifications .openAll .open:before,.VehicleSpecifications .openAll .close:before,.VehicleSpecifications .specDetails > ul > li a:after,.VehicleSpecifications .specDetails > ul > li.active a:after,.VehicleSpecifications .imageListKey ul li.standard:before,.VehicleSpecifications .imageListKey ul li.optional:before,.VehicleSpecifications .imageListKey ul li.nocostoption:before,.VehicleSpecifications .imageList > li span.standard:after,.VehicleSpecifications .imageList > li span.optional:after,.VehicleSpecifications .imageList > li span.nocostoption:after,.responsiveTableArrow .leftArrow:before,.responsiveTableArrow .rightArrow:before,div.DropdownSelect span.selected:before,div.DropdownSelect.open span.selected:before,#landrover .NationalDealerLocatorResults.mapOpen .dealerHeader .mapCloseButton:before,.YouTubePlayer .playButton:before,.Gallery .gallery a.directionArrow.left span:before,.Gallery .gallery a.directionArrow.right span:before,.Gallery .rsNav .rsThumbsArrow.rsThumbsArrowLeft .rsThumbsArrowIcn:before,.Gallery .rsNav .rsThumbsArrow.rsThumbsArrowRight .rsThumbsArrowIcn:before,.EngineSpecifications th:first-child a:before,.VinRecall .FormElements a.vinLink:after,.SocialFeed .feedItem .content .header .postDetails .retweet:before,.SocialFeed .feedItem.facebook .content .meta:before,.SocialFeed .feedItem.facebook .content .meta .comments:before,.SocialFeed .feedItem.facebook .content .meta .likes:before,.SocialFeed .feedItem.facebook .content .meta .shares:before,.SocialFeed .feedItem.instagram .content .meta:before,.SocialFeed .feedItem.instagram .content .meta .comments:before,.SocialFeed .feedItem.instagram .content .meta .likes:before,.SocialFeed .feedItem.pinterest .content .meta:before,.SocialFeed .feedItem.pinterest .content .meta .likes:before,.SocialFeed .feedItem.pinterest .content .meta .shares:before,.SocialFeed .feedItem.twitter .content .meta:before,.SocialFeed .feedItem.twitter .content .meta .likes:before,.SocialFeed .feedItem.twitter .content .meta .shares:before,.SocialFeed .feedItem.tumblr .content .meta:before,.SocialFeed .feedItem.tumblr .content .meta .likes:before,.SocialFeed .feedItem.tumblr .content .meta .shares:before,.SocialFeed .feedItem.youtube .content .meta:before,.SocialFeed .feedItem.feedItemText .content .message .messageWrapper .messageContent:before,.SocialFeed .feedItem.feedItemText .content .message .messageWrapper .messageContent:after,.SocialFeed .profileLinks li a.facebook .ico:before,.SocialFeed .profileLinks li a.instagram .ico:before,.SocialFeed .profileLinks li a.pinterest .ico:before,.SocialFeed .profileLinks li a.twitter .ico:before,.SocialFeed .profileLinks li a.youtube .ico:before,.SocialFeed .profileLinks li a.tumblr .ico:before,.ExperienceRegions > ul > li a .regionStats .numberOfCentres:before,.ExperienceRegions > ul > li a .regionStats .numberOfCountries:before,.InPageNavigation .ipnBar .ipnTopLink:before,.carouselNavigation > div a.prev:before,.carouselNavigation > div a.next:before,.infoCard .mobileStateBtn:before,.infoCard.openInfoCard .mobileStateBtn:before,.infoCardDealer .cardDetails .services li.sales:before,.infoCardDealer .cardDetails .services li.service:before,.infoCardDealer .cardDetails .services li.repair:before,.infoCardDealer .cardDetails .services li.bodyshop:before,.infoCardDealer .cardDetails .services li.parts:before,.infoCardDealer .cardDetails .services li.partsonly:before,.infoCardLRECentre .cardDetails .experiencesHeading:before {
+	font-family: "font_icons";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: 0.2em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	/*line-height: 1em;
+	margin-left: 0.2em;*/
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,[class*=" icon-"]:before {
+	content: '\e800';
+}
+
+.icon-360-view:before {
+	content: "\e001";
+}
+
+.icon-accessories:before {
+	content: "\e002";
+}
+
+.icon-bars:before {
+	content: "\e003";
+}
+
+.icon-bodyshop:before {
+	content: "\e004";
+}
+
+.icon-calculate-trade-in-value:before {
+	content: "\e005";
+}
+
+.icon-captions-on:before {
+	content: "\e006";
+}
+
+.icon-captions:before {
+	content: "\e007";
+}
+
+.icon-chevron-down:before {
+	content: "\e008";
+}
+
+.icon-chevron-up:before {
+	content: "\e009";
+}
+
+.icon-close:before {
+	content: "\e00a";
+}
+
+.icon-directional-left:before {
+	content: "\e00b";
+}
+
+.icon-directional-right:before {
+	content: "\e00c";
+}
+
+.icon-download:before {
+	content: "\e00d";
+}
+
+.icon-driveoffroad:before {
+	content: "\e00e";
+}
+
+.icon-driveonroad:before {
+	content: "\e00f";
+}
+
+.icon-fax:before {
+	content: "\e010";
+}
+
+.icon-finance-calculator:before {
+	content: "\e011";
+}
+
+.icon-fullscreen-exit:before {
+	content: "\e012";
+}
+
+.icon-fullscreen:before {
+	content: "\e013";
+}
+
+.icon-gallery-categories:before {
+	content: "\e014";
+}
+
+.icon-ignite-brochure:before {
+	content: "\e015";
+}
+
+.icon-ignite-configure:before {
+	content: "\e016";
+}
+
+.icon-ignite-drive:before {
+	content: "\e017";
+}
+
+.icon-ignite-inform:before {
+	content: "\e018";
+}
+
+.icon-information:before {
+	content: "\e019";
+}
+
+.icon-inventory:before {
+	content: "\e01a";
+}
+
+.icon-left-open-big:before {
+	content: "\e01b";
+}
+
+.icon-map-pin:before {
+	content: "\e01c";
+}
+
+.icon-minus:before {
+	content: "\e01d";
+}
+
+.icon-nocostoption:before {
+	content: "\e01e";
+}
+
+.icon-offers:before {
+	content: "\e01f";
+}
+
+.icon-optional:before {
+	content: "\e020";
+}
+
+.icon-parts:before {
+	content: "\e021";
+}
+
+.icon-pause:before {
+	content: "\e022";
+}
+
+.icon-phone:before {
+	content: "\e023";
+}
+
+.icon-play:before {
+	content: "\e024";
+}
+
+.icon-plus:before {
+	content: "\e025";
+}
+
+.icon-print:before {
+	content: "\e026";
+}
+
+.icon-question-mark:before {
+	content: "\e027";
+}
+
+.icon-quote-left-mena:before {
+	content: "\e028";
+}
+
+.icon-quote-left:before {
+	content: "\e029";
+}
+
+.icon-quote-right-mena:before {
+	content: "\e02a";
+}
+
+.icon-quote-right:before {
+	content: "\e02b";
+}
+
+.icon-repair:before {
+	content: "\e02c";
+}
+
+.icon-replay:before {
+	content: "\e02d";
+}
+
+.icon-request-quote:before {
+	content: "\e02e";
+}
+
+.icon-right-open-big:before {
+	content: "\e02f";
+}
+
+.icon-search:before {
+	content: "\e030";
+}
+
+.icon-service:before {
+	content: "\e031";
+}
+
+.icon-share:before {
+	content: "\e032";
+}
+
+.icon-social-facebook-comment:before {
+	content: "\e033";
+}
+
+.icon-social-facebook-like:before {
+	content: "\e034";
+}
+
+.icon-social-facebook-share:before {
+	content: "\e035";
+}
+
+.icon-social-instagram-comment:before {
+	content: "\e036";
+}
+
+.icon-social-instagram-like:before {
+	content: "\e037";
+}
+
+.icon-social-pinterest-like:before {
+	content: "\e038";
+}
+
+.icon-social-pinterest-pin:before {
+	content: "\e039";
+}
+
+.icon-social-twitter-favourite:before {
+	content: "\e03a";
+}
+
+.icon-social-twitter-retweet:before {
+	content: "\e03b";
+}
+
+.icon-social_blogger:before {
+	content: "\e03c";
+}
+
+.icon-social_douban:before {
+	content: "\e03d";
+}
+
+.icon-social_facebook:before {
+	content: "\e03e";
+}
+
+.icon-social_google:before {
+	content: "\e03f";
+}
+
+.icon-social_instagram:before {
+	content: "\e040";
+}
+
+.icon-social_linkedin:before {
+	content: "\e041";
+}
+
+.icon-social_pinterest:before {
+	content: "\e042";
+}
+
+.icon-social_renren:before {
+	content: "\e043";
+}
+
+.icon-social_sinaweibo:before {
+	content: "\e044";
+}
+
+.icon-social_tumblr:before {
+	content: "\e045";
+}
+
+.icon-social_twitter:before {
+	content: "\e046";
+}
+
+.icon-social_vkontakt:before {
+	content: "\e047";
+}
+
+.icon-social_youtube:before {
+	content: "\e048";
+}
+
+.icon-sound-off:before {
+	content: "\e049";
+}
+
+.icon-sound-on:before {
+	content: "\e04a";
+}
+
+.icon-standard:before {
+	content: "\e04b";
+}
+
+.icon-subtitles-on:before {
+	content: "\e04c";
+}
+
+.icon-subtitles:before {
+	content: "\e04d";
+}
+
+.icon-thumbnail_view:before {
+	content: "\e04e";
+}
+
+.icon-tick:before {
+	content: "\e04f";
+}
+
+.icon-view-vehicles:before {
+	content: "\e050";
+}
+
+.icon-zoom:before {
+	content: "\e051";
+}
