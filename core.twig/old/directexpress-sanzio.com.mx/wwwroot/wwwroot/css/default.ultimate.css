@@ -1,0 +1,708 @@
+@charset "UTF-8";
+
+/** 
+ * Drop-Down Menu
+ *
+ * @file		default.ultimate.css
+ * @name		ANCGVW Volkswagen
+ * @version		beta
+ * @type		transitional
+ * @browsers	Windows: IE5+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.ancgvw.com/
+ * @copyright	2012 Asociación Nacional de Concesionarios del Grupo Volkswagen, A.C.
+ *
+ */
+ 
+ 
+/* ================================================================ 
+
+This copyright notice must be untouched at all times.
+
+
+
+The original version of this stylesheet and the associated (x)html
+
+is available at http://www.cssplay.co.uk/menus/ipad-dropdown-single.html
+
+Copyright (c) Stu Nicholls. All rights reserved.
+
+This stylesheet and the associated (x)html may be modified in any 
+
+way to fit your requirements.
+
+=================================================================== */
+ 
+@import "default.css"; 
+
+/**  START MENU  */
+ul.menu {
+	padding:0; 
+	margin:0; 
+	list-style:none; 
+	position:relative; 
+	z-index:900; 
+	float:left; 
+	border-left: 1px solid #e9e9e9;
+	 /*background-image: url(http://mkt.ancgvw.com/mailing/HTML5/images/separador-menu.png);  BG */
+	/* background-repeat: no-repeat;*/
+  	/*background-position: 10px 0px;*/}
+	
+ul.posLeft {
+	margin-left:0px; 
+	border-left: none;}
+
+ul.menu ul {
+	padding:8px; 
+	margin:0 !important; 
+	list-style:none; 
+	position:absolute; 
+	left:-9999px; 
+	top:26px; 
+ 	top: 24px\9; /* target IE8 */
+	 *top: 24px; /* target IE7 */
+	 _top: 24px; /* target IE6 */
+	width:170px; 
+	background-color: #FFF; 
+	border-style: solid;
+	border-top: none !important;
+	border-width: 1px;
+	border-top: none !important;
+    border-color: #e8e7e7 #d4d3d3 #a2a1a1 #bbbbbb;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	 background-image: url(http://mkt.ancgvw.com/mailing/HTML5/images/list-top.png); /* BG */
+	 background-repeat: no-repeat;
+  	background-position: -1px 0px;}
+	
+ul.menu ul:hover {
+		left:-8px !important; 
+	}	
+
+ul.menu li:hover ul {
+		left:-8px !important; 
+	}	
+	
+ul.menu li:hover {
+		-moz-box-shadow: 0 0 .5em #ccc;
+		-webkit-box-shadow: 0 0 .5em #ccc;
+	}		
+ul.menu li:hover.close {
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+	}	
+	
+ul.menu li.liTop {
+	float:left;}
+	
+ul.menu li.liTop a.open { 
+	font: normal 14px/normal volkswagen_book, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+ 	font-size: 11px\9; /* target IE8 */
+	*font-size: 11px; /* target IE7 */
+	_font-size: 11px; /* target IE6 */
+	font-family: volkswagen_book, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	color:#32434D;}
+ 
+ul.menu li.liTop a.open { 
+	border-style: solid;
+	border-width: 1px;border-color: #ffffff;
+	background-color: #fff;
+	color: #32434D;}
+
+ul.menu li.liTop a:hover.open {  
+	border-style: solid;
+	border-width: 1px;border-color: #ffffff;
+	background-color: #fff;
+	color: #2274AC;}		
+		
+ul.menu  {
+	background-color: #FFF;
+	}		
+ul.menu li ul.drop {
+	z-index:9000;
+	}		
+
+ul.menu a {
+	font:normal 11px arial, sans-serif; 
+	color:#32434D; 
+	text-decoration:none;}
+
+ul.menu a:hover {
+	color:#32434D; 
+	text-decoration:none;}
+
+ul.menu li:hover > a {
+	color:#32434D;}
+ul.menu ul li {
+	border-bottom: 1px solid #cfd7d9; 
+	padding:0px 4px; 
+	border-right: none !important;}
+	
+ul.menu ul li:hover { 
+color:#32434D !important;
+background-color: #cfd7d9;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;}
+
+ul.menu ul li.last_inlist { 
+border-bottom:none}
+
+
+
+ul.menu li.close {
+		position:absolute; right:0; top:0; width:30px; height:20px; z-index:1000;}
+
+ul.menu li.close a {display:block; height:20px; width:30px;}
+
+
+
+ul.menu li.liTop a.open {display:block; height:100%;padding:4px 12px; float:left;cursor:pointer;}
+
+
+ul.menu ul li a {display:block; padding:2px 10px; height:auto; line-height:16px;}
+
+ul.menu ul li a:hover {background:#cfd7d9;}
+
+
+
+ul.menu li.liTop:hover {position:relative; height:auto;}
+
+ul.menu li.liTop:hover ul {left:0;}
+
+
+
+/* for IE6 */
+
+ul.menu table {border-collapse:collapse; width:0; height:0; position:absolute; left:0; top:0;}
+
+ul.menu a ul li {float:left; width:170px;}
+
+* html ul.menu li.liTop a:hover {direction:ltr; height:41px;}
+
+ul.menu a:hover ul {left:0;}
+
+ul.menu a:hover ul li a {width:160px;}
+
+ul.menu a:hover ul li a:hover {height:auto;}
+
+/**  END MENU  */
+
+
+ul.dropdown {
+ padding-bottom: 1px;
+ font: normal 14px/normal volkswagen_book, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+ font-size: 11px\9; /* target IE8 */
+ *font-size: 11px; /* target IE7 */
+ _font-size: 11px; /* target IE6 */
+ font-family: volkswagen_book, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+ color:#000000;
+}
+
+	ul.dropdown li {
+		z-index:1000 !important;
+	 padding: 4px 6px;
+	 color: #0063dc;
+	}
+	ul.dropdown li span{
+		padding: 4px 12px;
+	 height:12px;
+	 border-right: 1px solid #d4dce0 !important;
+	}
+	ul.dropdown li span.last{
+		padding: 4px 12px;
+	 height:auto;
+	 border-right:none !important;
+	}
+
+	ul.dropdown li.divider {
+	 border-top: solid 1px #e5e5e5;
+	}
+	ul.dropdown li ul { width: 184px; padding: 8px; }
+	ul.dropdown li ul li {border-bottom: 1px solid #cfd7d9; padding:0px 4px; border-right: none !important;}
+	ul.dropdown li ul li.last_inlist { border-bottom:none}
+	ul.dropdown li.hover,
+	ul.dropdown li:hover {
+	 color: #000000;
+	 background-color:#cfd7d9;
+	 text-decoration: none;
+	}
+
+	ul.dropdown a:link,
+	ul.dropdown a:visited { color: #32434d; text-decoration: none; }
+	ul.dropdown a:hover { color: #32434d; text-decoration: none; }
+	ul.dropdown a:active { color: #32434d; }
+
+
+	/* -- level mark -- */
+
+	ul.dropdown ul {
+	 width: 150px;
+	 padding: 3px 6px;
+	 border-style: solid;
+	 border-width: 1px;
+     border-color: #f4f4f4 #e3e3e3 #bbbbbb #dddddd;
+	 background-color: #fff;
+	 font-weight: normal;
+	 font-size: 11px;
+	 font-family: Arial, Helvetica, sans-serif;
+	}
+
+		ul.dropdown ul li {
+		}
+
+
+
+/*-------------------------------------------------/
+ * @section		Support Class `dir`
+ * @level sep	ul, .class
+ */
+
+#main-navigation{position: absolute;
+	left: 70px;
+	top: 70px;
+	}
+
+ul.dropdown *.dir {
+	color:#32434d;
+}
+
+
+/* -- Components override -- */
+
+ul.dropdown-vertical ul {
+ top: 0;
+ left: 100%;
+}
+
+ul.dropdown-vertical-rtl ul {
+ right: 100%;
+}
+
+ul.dropdown-horizontal,
+ul.dropdown-linear,
+ul.dropdown-upward {
+ width: 100%;
+}
+
+ul.dropdown-horizontal ul *.dir {
+ padding-right: 25px;
+ background-image: url(../../../../images/flickr.com/nav-arrow-right.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+ul.dropdown-upward *.dir {
+ background-image: url(../../../../images/flickr.com/nav-arrow-up.png);
+}
+
+ul.dropdown-vertical *.dir {
+ background-image: url(../../../../images/flickr.com/nav-arrow-right.png);
+ background-position: 180px 50%;
+}
+
+ul.dropdown-vertical ul *.dir,
+ul.dropdown-upward ul *.dir {
+ background-image: url(../../../../images/flickr.com/nav-arrow-right.png);
+ background-position: 100% 50%;
+}
+
+ul.dropdown-vertical-rtl *.dir {
+ padding-right: 6px;
+ padding-left: 25px;
+ background-image: url(../../../../images/flickr.com/nav-arrow-left.png);
+ background-position: 5px 50%;
+}
+
+ul.dropdown-vertical-rtl ul *.dir {
+ padding-right: 0;
+ background-image: url(../../../../images/flickr.com/nav-arrow-left.png);
+ background-position: 0 50%;
+}
+
+
+/*-------------------------------------------------/
+ * @section		Base Style Extension
+ */
+
+ul.dropdown a,
+ul.dropdown span {
+ display: block;
+ padding: 4px 6px;
+}
+
+ul.dropdown ul a,
+ul.dropdown ul span {
+ padding: 4px 0;
+}
+
+
+/*-------------------------------------------------/
+ * @section		Base Style Override
+ */
+
+ul.dropdown li {
+ padding: 0;
+ border: none;
+}
+
+
+/*-------------------------------------------------/
+ *	@section	Custom Styles
+ */
+
+ul.dropdown li a,
+ul.dropdown *.dir {
+ border-style: solid;
+ border-width: 1px 1px 0;
+ border-color: #fff;
+}
+
+ul.dropdown ul li a,
+ul.dropdown ul *.dir {
+ border: none;
+}
+
+
+ul.dropdown-vertical li a,
+ul.dropdown-vertical *.dir {
+ border-width: 1px 0 1px 1px;
+}
+
+ul.dropdown-vertical-rtl li a,
+ul.dropdown-vertical-rtl *.dir {
+ border-width: 1px 1px 1px 0;
+}
+
+
+/*-------------------------------------------------/
+ * @section		Support Class `open` Usage
+ * @source		js, artificial
+ *
+ */
+
+ul.dropdown li.hover *.open {
+ position: relative;
+ z-index: 600;
+ margin: -1px 0;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ border-color: #f4f4f4 #e3e3e3 #e3e3e3 #d85217;
+	background-color: #fff;
+	
+ color: #0063dc;
+ zoom: 1;
+}
+
+ul.dropdown-horizontal li.hover *.open,
+ul.dropdown-upward li.hover *.open,
+ul.dropdown-linear li.hover *.open {
+ float: left;
+ zoom: none;
+}
+
+ul.dropdown-vertical li.hover *.open {
+ margin: 0 -1px;
+ padding-top: 4px;
+ padding-bottom: 4px;
+ padding-left: 4px;
+}
+
+ul.dropdown-vertical-rtl li.hover *.open {
+ padding-right: 4px;
+}
+
+ul.dropdown-vertical ul li.hover *.open {
+ padding-right: 0;
+ padding-left: 0;
+}
+
+ul.dropdown ul li.hover *.open {
+ position: static;
+ z-index: 0;
+ float: none;
+ margin: 0;
+ padding-top: 4px;
+ padding-bottom: 4px;
+ border: none;
+}
+
+ul.dropdown ul li.hover *.open,
+ul.dropdown-vertical li.hover *.open {
+ background-image: url(../../../../images/flickr.com/nav-arrow-right-open.png);
+}
+
+ul.dropdown-vertical-rtl li.hover *.open,
+ul.dropdown-vertical-rtl ul li.hover *.open {
+ background-image: url(../../../../images/flickr.com/nav-arrow-left-open.png);
+}
+
+ul.dropdown-upward li.hover *.open {
+ background-image: url(../../../../images/flickr.com/nav-arrow-up-open.png);
+}
+
+ul.dropdown-upward ul li.hover *.open {
+ background-image: url(../../../../images/flickr.com/nav-arrow-right-open.png);
+}
+
+ul.dropdown a.dir:hover {
+ background-image: url(../../../../images/flickr.com/nav-arrow-down-on.png) !important;
+}
+
+ul.dropdown-upward a.dir:hover {
+ background-image: url(../../../../images/flickr.com/nav-arrow-up-on.png) !important;
+}
+
+ul.dropdown ul a.dir:hover,
+ul.dropdown-vertical a.dir:hover {
+ background-image: url(../../../../images/flickr.com/nav-arrow-right-on.png) !important;
+}
+
+ul.dropdown-vertical-rtl a.dir:hover,
+ul.dropdown-vertical-rtl ul a.dir:hover {
+ background-image: url(../../../../images/flickr.com/nav-arrow-left-on.png) !important;
+}
+
+
+	/* CSS2 clone */
+
+	ul.dropdown li:hover > *.dir {
+	position: relative;
+	z-index: 600;
+	margin: -1px 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-color: #f4f4f4 #e3e3e3 #e3e3e3 #dddddd;
+	background-color: #fff;
+	color: #2274AC;
+	}
+
+	ul.dropdown-horizontal li:hover > *.dir,
+	ul.dropdown-upward li:hover > *.dir,
+	ul.dropdown-linear li:hover > *.dir {
+	 float: left;
+	}
+
+	ul.dropdown-vertical li:hover > *.dir {
+	 margin: 0 -1px;
+	 padding-top: 4px;
+	 padding-bottom: 4px;
+	 padding-left: 7px;
+	 *position: static;
+	}
+
+	ul.dropdown-vertical-rtl li:hover > *.dir {
+	 padding-right: 7px;
+	}
+
+	ul.dropdown-vertical ul li:hover > *.dir {
+	 padding-right: 0;
+	 padding-left: 0;
+	}
+
+	ul.dropdown ul li:hover > *.dir {
+	 position: static;
+	 z-index: 0;
+	 float: none;
+	 margin: 0;
+	 padding-top: 4px;
+	 padding-bottom: 4px;
+	 border: none;
+	}
+
+	ul.dropdown ul li:hover > *.dir,
+	ul.dropdown-vertical li:hover > *.dir {
+	 background-image: url(../../../../images/flickr.com/nav-arrow-right-open.png);
+	}
+
+	ul.dropdown-vertical-rtl li:hover > *.dir,
+	ul.dropdown-vertical-rtl ul li:hover > *.dir {
+	 background-image: url(../../../../images/flickr.com/nav-arrow-left-open.png);
+	}
+
+/*-------------------------------------------------/
+ * dropdown.css
+ *
+ */	
+ 
+ul.dropdown,
+ul.dropdown li,
+ul.dropdown ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+
+ul.dropdown {
+ position: relative;
+ z-index: 597;
+ float: left;
+}
+
+ul.dropdown li {
+ float: left;
+ line-height: 1.3em;
+ vertical-align: middle;
+ zoom: 1;
+}
+
+ul.dropdown li.hover,
+ul.dropdown li:hover {
+ position: relative;
+ z-index: 599;
+ cursor: default;
+}
+
+ul.dropdown ul {
+ visibility: hidden;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ z-index: 598;
+ width: 100%;
+}
+
+ul.dropdown ul li {
+ float: none;
+}
+
+ul.dropdown ul ul {
+ top: 1px;
+ left: 99%;
+}
+
+ul.dropdown li:hover > ul {
+ visibility: visible;
+}
+
+/*-------------------------------------------------/
+ * helper.css
+ *
+ */	
+ * {
+ margin: 0;
+ padding: 0;
+ outline: none;
+}
+
+p { margin-bottom: 1em; }
+
+ul.classic {
+ list-style: disc;
+ margin-bottom: 1em;
+ padding-left: 2em;
+}
+
+
+
+.dropdown-upward {
+ margin-top: 400px !important;
+}
+
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {position: relative;zoom: 1;}
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+
+/* Direction Nav */
+.flex-direction-nav { height: 0; }
+.flex-direction-nav li a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(theme/bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav li .next {background-position: -52px 0; right: -21px;}
+.flex-direction-nav li .prev {left: -20px;}
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
+.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(theme/bg_control_nav.png) no-repeat; cursor: pointer; text-indent: -999em;}
+.flex-control-nav li a:hover {background-position: 0 -13px;}
+.flex-control-nav li a.active {background-position: 0 -26px; cursor: default;}
+
+#container {width: 100%; max-width: 960px; margin: 0 auto;}
+
+
+/*Example 2*/
+#containerEx2 {
+	clear: both;
+	width: 960px;
+	margin: 0 auto !important;
+	position:absolute; z-index:750; top:500px; left:25px;
+}
+#containerEx2:hover {
+	left:15px;
+	 -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+#ex2 img{
+    height: 80px;
+    width: 158px;
+	margin-right: 20px;
+	float:left;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+	padding: 4px;
+	background-color: #FFF;
+	-moz-box-shadow: 1px 0 .5em #555;
+	-webkit-box-shadow: 1px 0 .5em #555;
+}
+
+#ex2 img:hover {
+	height: 95px;
+	width: 188px;
+	margin-top: -20px;
+	margin-left: -5px;
+	
+	
+}
+
+ 

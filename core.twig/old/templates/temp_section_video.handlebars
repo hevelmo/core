@@ -1,0 +1,76 @@
+<section class="action-strip-2 video-strip" style="background: #ebecef; padding: 60px 0;">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<div class="pre-video">
+					<i class="icon pe-7s-play"></i>
+					<h2>Ver Video</h2>
+				</div>
+
+				<div class="iframe-holder">
+					<i class="close-frame pe-7s-close-circle"></i>
+					<iframe id="player1" src="http://player.vimeo.com/video/121731570?color=ffffff?badge=0&amp;title=0&amp;byline=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<div class="playvimeo">
+						<button>Play</button>
+						<button>Pause</button>
+					</div>
+				</div>
+			</div>
+		</div><!--end of row-->
+	</div><!--end of container-->
+</section>
+<script>
+	$(function() {
+	    var iframe = $('#player1')[0];
+	    var player = $f(iframe);
+	    var status = $('.status');
+
+	    // When the player is ready, add listeners for pause, finish, and playProgress
+	    player.addEvent('ready', function() {
+	        status.text('ready');
+
+	        player.addEvent('pause', onPause);
+	        player.addEvent('finish', onFinish);
+	        player.addEvent('playProgress', onPlayProgress);
+	    });
+
+	    // Call the API when a button is pressed
+	    $('button').bind('click', function() {
+	        player.api($(this).text().toLowerCase());
+	    });
+
+	    function onPause(id) {
+	        status.text('paused');
+	    }
+
+	    function onFinish(id) {
+	        status.text('finished');
+	    }
+
+	    /*function onPlayProgress(data, id) {
+	        status.text(data.seconds + 's played');
+	    }*/
+	});
+
+	$('.video-strip .pre-video i').click(function(){
+    	$(this).closest('.pre-video').addClass('fade-off');
+    	$(this).closest('.video-strip').find('.iframe-holder').addClass('show-iframe');
+    	var that = $(this);
+    	setTimeout(function(){
+    		that.closest('.video-strip').find('.iframe-holder').addClass('fade-on');
+    	},500);
+    });
+
+	$('.video-strip .close-frame').click(function(){
+    	$(this).closest('.iframe-holder').removeClass('fade-on');
+    	var that = $(this);
+    	setTimeout(function(){
+    		that.closest('.video-strip').find('.iframe-holder').removeClass('show-iframe');
+    		that.closest('.video-strip').find('.pre-video').removeClass('fade-off');
+    	},500);
+    });
+</script>
+<style>
+
+
+</style>

@@ -1,0 +1,79 @@
+/*!
+// 2. Global & Helper Classes
+// --------------------------------------------------*/
+body {
+  background: #eee;
+  font-family: "VWHeadlineBook", 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #777;
+  font-size: 14px;
+  line-height: 24px;
+}
+.main-container,
+.footer-container {
+  max-width: 1580px;
+  margin: 0px auto;
+  position: relative;
+  z-index: 1;
+}
+section {
+  background: #f7f7f7;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+section:nth-of-type(even) {
+  background: #fff;
+}
+section.fullwidth div[class*='col-'] {
+  padding: 0;
+}
+section.double-pad {
+  padding: 160px 0;
+}
+section.large-pad {
+  padding: 120px 0;
+}
+.no-pad {
+  padding: 0;
+}
+.detail-line {
+  width: 30px;
+  height: 1px;
+  background: #333333;
+  margin: 24px auto 24px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+div[class*='col-'] div[class*='col-'] {
+  padding-left: 0;
+}
+img {
+  max-width: 100%;
+}
+.duplicatable-content {
+  padding: 80px 0 40px 0;
+}
+.duplicatable-content div[class*='col-'] {
+  margin-bottom: 40px;
+}
+@media all and (max-width: 767px) {
+  br {
+    display: none;
+  }
+}
+body.boxed .main-container,
+body.boxed .footer-container,
+body.boxed nav {
+  max-width: 1280px;
+}

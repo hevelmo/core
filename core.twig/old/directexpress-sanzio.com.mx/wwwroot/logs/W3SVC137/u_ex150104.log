@@ -1,0 +1,175 @@
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 00:19:16
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 00:19:16 W3SVC137 NEON 69.174.241.126 GET /servicios.html - 80 - 66.249.69.221 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 369 46
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 01:10:50
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 01:10:50 W3SVC137 NEON 69.174.241.126 GET /promociones.html - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 371 62
+2015-01-04 01:13:10 W3SVC137 NEON 69.174.241.126 GET /servicios.html - 80 - 66.249.88.153 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+8.0;+Windows+NT+6.1;+Trident/4.0;+SLCC2;+.NET+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+.NET4.0E;+InfoPath.3) - http://www.google.com.mx/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CFAQFjAG&url=http%3A%2F%2Fwww.directexpress-sanzio.com.mx%2Fservicios.html&ei=bZOoVILjOojbNLhN&usg=AFQjCNH_sxwo8HA_PcS-4VsfEbpxvLsSpg www.directexpress-sanzio.com.mx 200 0 0 7603 731 109
+2015-01-04 01:13:12 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 66.249.88.186 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+8.0;+Windows+NT+6.1;+Trident/4.0;+SLCC2;+.NET+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+.NET4.0E;+InfoPath.3) - http://www.directexpress-sanzio.com.mx/servicios.html directexpress-sanzio.com.mx 200 0 0 10688 433 156
+2015-01-04 01:26:27 W3SVC137 NEON 69.174.241.126 GET /promociones.html - 80 - 207.46.13.91 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 304 0 0 211 388 78
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 02:05:32
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 02:05:31 W3SVC137 NEON 69.174.241.126 GET /contacto.html - 80 - 66.249.69.205 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 368 62
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 02:24:48
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 02:24:48 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.83.208 HTTP/1.1 Mozilla/5.0+(Linux;+Android+4.2.2;+en-us;+SAMSUNG+SGH-M919+Build/JDQ39)+AppleWebKit/535.19+(KHTML,+like+Gecko)+Version/1.0+Chrome/18.0.1025.308+Mobile+Safari/535.19 - http://www.google.com.mx/url?sa=t&rct=j&q=&esrc=s&source=web&cd=4&ved=0CEwQFjAF&url=http%3A%2F%2Fdirectexpress-sanzio.com.mx%2F&ei=cqSoVOvMMZf0jQHSMQ&usg=AFQjCNHQT_4rJCFcDOsbD7rSwj0DhH7XAw directexpress-sanzio.com.mx 200 0 0 6224 527 93
+2015-01-04 02:24:48 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 66.249.83.214 HTTP/1.1 Mozilla/5.0+(Linux;+Android+4.2.2;+en-us;+SAMSUNG+SGH-M919+Build/JDQ39)+AppleWebKit/535.19+(KHTML,+like+Gecko)+Version/1.0+Chrome/18.0.1025.308+Mobile+Safari/535.19 - http://directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 10688 327 171
+2015-01-04 02:24:48 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 66.249.83.214 HTTP/1.1 Mozilla/5.0+(Linux;+Android+4.2.2;+en-us;+SAMSUNG+SGH-M919+Build/JDQ39)+AppleWebKit/535.19+(KHTML,+like+Gecko)+Version/1.0+Chrome/18.0.1025.308+Mobile+Safari/535.19 - http://directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 273140 320 468
+2015-01-04 02:33:04 W3SVC137 NEON 69.174.241.126 GET /contactos.php - 80 - 66.249.69.221 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+6_0+like+Mac+OS+X)+AppleWebKit/536.26+(KHTML,+like+Gecko)+Version/6.0+Mobile/10A5376e+Safari/8536.25+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 200 0 0 7363 432 140
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 03:21:41
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 03:21:41 W3SVC137 NEON 69.174.241.126 GET /politica_privacidad.html - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 379 46
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 04:19:38
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 04:19:38 W3SVC137 NEON 69.174.241.126 GET / gclid=CO3I6o6--cICFe9aMgodRA4AUA 80 - 187.246.19.103 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Mobile/12B440+[FBAN/FBIOS;FBAV/20.1.0.15.10;FBBV/5758778;FBDV/iPhone6,1;FBMD/iPhone;FBSN/iPhone+OS;FBSV/8.1.2;FBSS/2;+FBCR/Telcel;FBID/phone;FBLC/es_LA;FBOP/5] - http://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-0579069280875606&format=320x100&output=html&h=100&slotname=6296642278&adk=1985600213&w=320&lmt=1420366777&flash=0&url=http%3A%2F%2Fwww.poderpda.com%2Fplataformas%2Fapple%2Fapple-estaria-obligado-a-lanzar-el-iphone-6s-mini-este-ano%2F&dt=1420345176995&bpp=36&shv=r20141209&cbv=r20141212&saldr=aa&correlator=3150523389953&frm=20&ga_vid=1435200633.1414998207&ga_sid=1420345177&ga_hid=2131452844&ga_fc=1&u_tz=-360&u_his=1&u_java=0&u_h=0&u_w=0&u_ah=0&u_aw=0&u_cd=32&u_nplug=1&u_nmime=34&dff=helvetica%20neue&dfs=15&adx=12&ady=287&biw=320&bih=504&eid=317150304&oid=3&ref=http%3A%2F%2Fm.facebook.com&rx=0&eae=0&fc=11&brdim=0%2C0%2C0%2C0%2C320%2C0%2C0%2C0%2C320%2C504&vis=1&abl=CS&ppjl=u&srr=1&fu=0&bc=1&ifi=1&xpc=0Bpao18Z3d&p=http%3A//www.poderpda.com&dtd=96 directexpress-sanzio.com.mx 200 0 0 6224 1330 125
+2015-01-04 04:19:38 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 187.246.19.103 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Mobile/12B440+[FBAN/FBIOS;FBAV/20.1.0.15.10;FBBV/5758778;FBDV/iPhone6,1;FBMD/iPhone;FBSN/iPhone+OS;FBSV/8.1.2;FBSS/2;+FBCR/Telcel;FBID/phone;FBLC/es_LA;FBOP/5] - http://directexpress-sanzio.com.mx/?gclid=CO3I6o6--cICFe9aMgodRA4AUA directexpress-sanzio.com.mx 200 0 0 10688 520 140
+2015-01-04 04:19:38 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 187.246.19.103 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Mobile/12B440+[FBAN/FBIOS;FBAV/20.1.0.15.10;FBBV/5758778;FBDV/iPhone6,1;FBMD/iPhone;FBSN/iPhone+OS;FBSV/8.1.2;FBSS/2;+FBCR/Telcel;FBID/phone;FBLC/es_LA;FBOP/5] - http://directexpress-sanzio.com.mx/?gclid=CO3I6o6--cICFe9aMgodRA4AUA directexpress-sanzio.com.mx 200 0 0 273140 513 625
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 04:42:20
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 04:42:20 W3SVC137 NEON 69.174.241.126 GET / utm_source=bing&utm_medium=cpc&utm_campaign=Servicios%20de%20Direct%20Express&utm_term=vw 80 - 187.244.168.252 HTTP/1.1 Mozilla/5.0+(Linux;+U;+Android+4.1.1;+es-us;+Prism+II+Build/HuaweiU8686)+AppleWebKit/534.30+(KHTML,+like+Gecko)+Version/4.0+Mobile+Safari/534.30 - - directexpress-sanzio.com.mx 200 0 0 6224 670 156
+2015-01-04 04:42:21 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 187.244.168.252 HTTP/1.1 Mozilla/5.0+(Linux;+U;+Android+4.1.1;+es-us;+Prism+II+Build/HuaweiU8686)+AppleWebKit/534.30+(KHTML,+like+Gecko)+Version/4.0+Mobile+Safari/534.30 - http://directexpress-sanzio.com.mx/?utm_source=bing&utm_medium=cpc&utm_campaign=Servicios%20de%20Direct%20Express&utm_term=vw directexpress-sanzio.com.mx 200 0 0 10688 623 296
+2015-01-04 04:42:28 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 187.244.168.252 HTTP/1.1 Mozilla/5.0+(Linux;+U;+Android+4.1.1;+es-us;+Prism+II+Build/HuaweiU8686)+AppleWebKit/534.30+(KHTML,+like+Gecko)+Version/4.0+Mobile+Safari/534.30 - http://directexpress-sanzio.com.mx/?utm_source=bing&utm_medium=cpc&utm_campaign=Servicios%20de%20Direct%20Express&utm_term=vw directexpress-sanzio.com.mx 200 0 0 273140 662 7359
+2015-01-04 04:53:38 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 200 0 0 6224 305 109
+2015-01-04 04:57:02 W3SVC137 NEON 69.174.241.126 GET /robots.txt - 80 - 66.249.75.156 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - directexpress-sanzio.com.mx 404 0 2 1405 268 46
+2015-01-04 04:57:02 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.75.156 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - directexpress-sanzio.com.mx 200 0 0 6224 241 109
+2015-01-04 04:57:04 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 66.249.75.156 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - http://directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 10688 313 125
+2015-01-04 04:57:04 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 66.249.75.124 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - http://directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 273140 306 500
+2015-01-04 05:05:40 W3SVC137 NEON 69.174.241.126 GET / - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 - https://www.google.com.mx/ www.directexpress-sanzio.com.mx 200 0 0 6224 397 421
+2015-01-04 05:05:40 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 - http://www.directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 10688 372 609
+2015-01-04 05:05:43 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 - http://www.directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 273140 365 2453
+2015-01-04 05:06:19 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.91.107 HTTP/1.1 AdsBot-Google-Mobile+(+http://www.google.com/mobile/adsbot.html)+Mozilla+(iPhone;+U;+CPU+iPhone+OS+3+0+like+Mac+OS+X)+AppleWebKit+(KHTML,+like+Gecko)+Mobile+Safari - - www.directexpress-sanzio.com.mx 200 0 0 6224 302 109
+2015-01-04 05:06:55 W3SVC137 NEON 69.174.241.126 GET /promociones.html - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 _dc_gtm_UA-48281551-4=1;+_ga=GA1.3.1508973373.1420347947 http://www.directexpress-sanzio.com.mx/ www.directexpress-sanzio.com.mx 200 0 0 4950 492 3218
+2015-01-04 05:07:00 W3SVC137 NEON 69.174.241.126 GET /images/Pasajeros-mayo.jpg - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 _dc_gtm_UA-48281551-4=1;+_ga=GA1.3.1508973373.1420347947 http://www.directexpress-sanzio.com.mx/promociones.html directexpress-sanzio.com.mx 200 0 0 394345 453 3890
+2015-01-04 05:08:11 W3SVC137 NEON 69.174.241.126 GET /servicios.html - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 _dc_gtm_UA-48281551-4=1;+_ga=GA1.3.1508973373.1420347947 http://www.directexpress-sanzio.com.mx/promociones.html www.directexpress-sanzio.com.mx 200 0 0 7603 506 593
+2015-01-04 05:08:44 W3SVC137 NEON 69.174.241.126 GET /dondeestamos.html - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 _dc_gtm_UA-48281551-4=1;+_ga=GA1.3.1508973373.1420347947 http://www.directexpress-sanzio.com.mx/servicios.html www.directexpress-sanzio.com.mx 200 0 0 5480 507 671
+2015-01-04 05:08:48 W3SVC137 NEON 69.174.241.126 GET /ventajas.html - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 _dc_gtm_UA-48281551-4=1;+_ga=GA1.3.1508973373.1420347947 http://www.directexpress-sanzio.com.mx/dondeestamos.html www.directexpress-sanzio.com.mx 200 0 0 5882 506 484
+2015-01-04 05:08:51 W3SVC137 NEON 69.174.241.126 GET /images/ventajas.jpg - 80 - 189.182.128.72 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+8_1_2+like+Mac+OS+X)+AppleWebKit/600.1.4+(KHTML,+like+Gecko)+Version/8.0+Mobile/12B440+Safari/600.1.4 _dc_gtm_UA-48281551-4=1;+_ga=GA1.3.1508973373.1420347947 http://www.directexpress-sanzio.com.mx/ventajas.html directexpress-sanzio.com.mx 200 0 0 88500 444 1546
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 05:44:23
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 05:44:23 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.75.156 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+6_0+like+Mac+OS+X)+AppleWebKit/536.26+(KHTML,+like+Gecko)+Version/6.0+Mobile/10A5376e+Safari/8536.25+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - directexpress-sanzio.com.mx 200 0 0 6224 365 125
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 06:23:13
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 06:23:13 W3SVC137 NEON 69.174.241.126 GET /robots.txt - 80 - 66.249.69.205 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 404 0 2 1405 272 46
+2015-01-04 06:23:13 W3SVC137 NEON 69.174.241.126 GET /promociones.html - 80 - 66.249.69.205 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 371 93
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 06:43:04
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 06:43:04 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.102.6.196 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+8.0;+Windows+NT+6.1;+WOW64;+Trident/4.0;+SLCC2;+.NET+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+.NET4.0E;+InfoPath.3) - http://www.google.com.mx/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0CCMQFjAF&url=http%3A%2F%2Fdirectexpress-sanzio.com.mx%2F&ei=w-CoVIufKoKcxgKpFw&usg=AFQjCNHQT_4rJCFcDOsbD7rSwj0DhH7XAw directexpress-sanzio.com.mx 200 0 0 6224 704 93
+2015-01-04 06:43:08 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 66.102.6.205 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+8.0;+Windows+NT+6.1;+WOW64;+Trident/4.0;+SLCC2;+.NET+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+.NET4.0E;+InfoPath.3) - http://directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 10688 422 203
+2015-01-04 06:43:10 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 66.102.6.214 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+8.0;+Windows+NT+6.1;+WOW64;+Trident/4.0;+SLCC2;+.NET+CLR+2.0.50727;+.NET+CLR+3.5.30729;+.NET+CLR+3.0.30729;+Media+Center+PC+6.0;+.NET4.0C;+.NET4.0E;+InfoPath.3) - http://directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 273140 415 500
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 07:39:22
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 07:39:21 W3SVC137 NEON 69.174.241.126 GET /contacto.html - 80 - 66.249.69.205 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 368 46
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 08:24:22
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 08:24:22 W3SVC137 NEON 69.174.241.126 GET /servicios.html - 80 - 66.249.69.221 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 369 62
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 09:50:54
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 09:50:54 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 200 0 0 6224 305 109
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 10:56:40
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 10:56:40 W3SVC137 NEON 69.174.241.126 GET /politica_privacidad.html - 80 - 66.249.69.221 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 379 46
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 11:13:08
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 11:13:08 W3SVC137 NEON 69.174.241.126 GET / - 80 - 180.76.4.229 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+7.0;+Windows+NT+6.0) - - www.directexpress-sanzio.com.mx 200 0 64 1460 164 203
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 14:39:06
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 14:39:06 W3SVC137 NEON 69.174.241.126 GET / - 80 - 207.46.13.136 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 6224 286 156
+2015-01-04 14:49:15 W3SVC137 NEON 69.174.241.126 GET /contacto.html - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+6_0+like+Mac+OS+X)+AppleWebKit/536.26+(KHTML,+like+Gecko)+Version/6.0+Mobile/10A5376e+Safari/8536.25+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 432 46
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 15:08:47
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 15:08:47 W3SVC137 NEON 69.174.241.126 GET /favicon.ico - 80 - 189.169.253.120 HTTP/1.1 Dolphin+http+client/11.3.6(411)+(Android) - - directexpress-sanzio.com.mx 404 0 2 1424 161 93
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 16:03:59
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 16:03:59 W3SVC137 NEON 69.174.241.126 GET /promociones.html - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+6_0+like+Mac+OS+X)+AppleWebKit/536.26+(KHTML,+like+Gecko)+Version/6.0+Mobile/10A5376e+Safari/8536.25+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 304 0 0 211 435 46
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 16:26:21
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 16:26:21 W3SVC137 NEON 69.174.241.126 GET /dondeestamos.html - 80 - 157.55.39.153 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 5480 303 187
+2015-01-04 16:26:21 W3SVC137 NEON 69.174.241.126 GET /politica_privacidad.html - 80 - 157.55.39.153 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 6990 310 109
+2015-01-04 16:26:27 W3SVC137 NEON 69.174.241.126 GET /avisoprivacidad.html - 80 - 207.46.13.136 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 23211 306 328
+2015-01-04 16:26:27 W3SVC137 NEON 69.174.241.126 GET /contactos.php - 80 - 207.46.13.136 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 7363 299 109
+2015-01-04 16:26:27 W3SVC137 NEON 69.174.241.126 GET / - 80 - 207.46.13.136 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 6224 286 78
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 18:22:31
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 18:22:31 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.69.237 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+6_0+like+Mac+OS+X)+AppleWebKit/536.26+(KHTML,+like+Gecko)+Version/6.0+Mobile/10A5376e+Safari/8536.25+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - www.directexpress-sanzio.com.mx 200 0 0 6224 369 109
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 18:47:27
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 18:47:26 W3SVC137 NEON 69.174.241.126 GET /ventajas.html - 80 - 207.46.13.95 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 5882 299 171
+2015-01-04 18:47:26 W3SVC137 NEON 69.174.241.126 GET /promociones.html - 80 - 207.46.13.95 HTTP/1.1 Mozilla/5.0+(compatible;+bingbot/2.0;++http://www.bing.com/bingbot.htm) - - www.directexpress-sanzio.com.mx 200 0 0 4950 302 93
+2015-01-04 18:50:54 W3SVC137 NEON 69.174.241.126 GET /robots.txt - 80 - 66.249.75.124 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - directexpress-sanzio.com.mx 404 0 2 1405 268 46
+2015-01-04 18:50:54 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.75.140 HTTP/1.1 Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - directexpress-sanzio.com.mx 200 0 0 6224 301 109
+2015-01-04 19:02:37 W3SVC137 NEON 69.174.241.126 GET / - 80 - 189.209.29.158 HTTP/1.1 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_10)+AppleWebKit/600.1.25+(KHTML,+like+Gecko)+Version/8.0+Safari/600.1.25 _ga=GA1.3.1718137075.1410493964 - www.directexpress-sanzio.com.mx 200 0 0 6224 379 93
+2015-01-04 19:02:37 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 189.209.29.158 HTTP/1.1 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_10)+AppleWebKit/600.1.25+(KHTML,+like+Gecko)+Version/8.0+Safari/600.1.25 _ga=GA1.3.1718137075.1410493964 http://www.directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 10688 391 171
+2015-01-04 19:02:37 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 189.209.29.158 HTTP/1.1 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_10)+AppleWebKit/600.1.25+(KHTML,+like+Gecko)+Version/8.0+Safari/600.1.25 _ga=GA1.3.1718137075.1410493964 http://www.directexpress-sanzio.com.mx/ directexpress-sanzio.com.mx 200 0 0 273140 384 484
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 19:30:30
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 19:30:30 W3SVC137 NEON 69.174.241.126 GET / - 80 - 180.76.5.22 HTTP/1.1 Mozilla/5.0+(compatible;+Baiduspider/2.0;++http://www.baidu.com/search/spider.html) - - www.directexpress-sanzio.com.mx 200 0 0 6243 233 437
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 21:33:21
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 21:33:21 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.75.124 HTTP/1.1 Mozilla/5.0+(iPhone;+CPU+iPhone+OS+6_0+like+Mac+OS+X)+AppleWebKit/536.26+(KHTML,+like+Gecko)+Version/6.0+Mobile/10A5376e+Safari/8536.25+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html) - - directexpress-sanzio.com.mx 200 0 0 6224 365 109
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 23:07:51
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 23:07:51 W3SVC137 NEON 69.174.241.126 GET /robots.txt - 80 - 100.43.81.143 HTTP/1.1 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - - www.directexpress-sanzio.com.mx 404 0 2 1405 201 140
+2015-01-04 23:07:51 W3SVC137 NEON 69.174.241.126 GET /robots.txt - 80 - 100.43.81.143 HTTP/1.1 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - - directexpress-sanzio.com.mx 404 0 2 1405 197 140
+2015-01-04 23:07:53 W3SVC137 NEON 69.174.241.126 GET / - 80 - 100.43.81.143 HTTP/1.1 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - - www.directexpress-sanzio.com.mx 200 0 0 6224 279 281
+2015-01-04 23:07:53 W3SVC137 NEON 69.174.241.126 GET / - 80 - 100.43.81.143 HTTP/1.1 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - - directexpress-sanzio.com.mx 200 0 0 2770 275 140
+2015-01-04 23:07:58 W3SVC137 NEON 69.174.241.126 GET / - 80 - 100.43.81.143 HTTP/1.1 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - - www.directexpress-sanzio.com.mx 200 0 0 2770 279 140
+2015-01-04 23:07:58 W3SVC137 NEON 69.174.241.126 GET / - 80 - 100.43.81.143 HTTP/1.1 Mozilla/5.0+(compatible;+YandexBot/3.0;++http://yandex.com/bots) - - directexpress-sanzio.com.mx 200 0 0 2770 275 140
+2015-01-04 23:10:35 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.91.202 HTTP/1.1 AdsBot-Google-Mobile+(+http://www.google.com/mobile/adsbot.html)+Mozilla+(iPhone;+U;+CPU+iPhone+OS+3+0+like+Mac+OS+X)+AppleWebKit+(KHTML,+like+Gecko)+Mobile+Safari - - directexpress-sanzio.com.mx 200 0 0 6224 298 109
+2015-01-04 23:10:35 W3SVC137 NEON 69.174.241.126 GET / - 80 - 66.249.91.193 HTTP/1.1 AdsBot-Google+(+http://www.google.com/adsbot.html) - - directexpress-sanzio.com.mx 200 0 0 2770 185 62
+2015-01-04 23:10:56 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 66.249.91.202 HTTP/1.1 AdsBot-Google-Mobile+(+http://www.google.com/mobile/adsbot.html)+Mozilla+(iPhone;+U;+CPU+iPhone+OS+3+0+like+Mac+OS+X)+AppleWebKit+(KHTML,+like+Gecko)+Mobile+Safari - - directexpress-sanzio.com.mx 200 0 0 10688 324 125
+2015-01-04 23:10:56 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 66.249.91.202 HTTP/1.1 AdsBot-Google-Mobile+(+http://www.google.com/mobile/adsbot.html)+Mozilla+(iPhone;+U;+CPU+iPhone+OS+3+0+like+Mac+OS+X)+AppleWebKit+(KHTML,+like+Gecko)+Mobile+Safari - - directexpress-sanzio.com.mx 200 0 0 273140 317 375
+2015-01-04 23:10:58 W3SVC137 NEON 69.174.241.126 GET /images/logo_volkswagen.png - 80 - 66.249.91.211 HTTP/1.1 AdsBot-Google+(+http://www.google.com/adsbot.html) - - directexpress-sanzio.com.mx 200 0 0 10688 211 171
+2015-01-04 23:10:59 W3SVC137 NEON 69.174.241.126 GET /images/postada2.jpg - 80 - 66.249.91.211 HTTP/1.1 AdsBot-Google+(+http://www.google.com/adsbot.html) - - directexpress-sanzio.com.mx 200 0 0 273140 204 343
+#Software: Microsoft Internet Information Services 7.0
+#Version: 1.0
+#Date: 2015-01-04 23:41:15
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
+2015-01-04 23:41:15 W3SVC137 NEON 69.174.241.126 GET / gclid=CIvpjdP_pMICFe47Mgodxn8ATA 80 - 54.187.222.253 HTTP/1.1 Mozilla/4.0+(compatible;+MSIE+6.0;+Windows+NT+5.1;+SV1;+.NET+CLR+2.0.50727;+MAXTHON+2.0);+Connect+Us:+webauth@cmcm.com ASPSESSIONIDQASBQDRC=HJNCEIDDOOKIJECJODIJEKMD;ASPSESSIONIDQSCCTADB=ACDBJAOCGNMMIABENILOEENF; - directexpress-sanzio.com.mx 200 0 0 6224 493 156

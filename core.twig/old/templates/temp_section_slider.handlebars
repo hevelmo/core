@@ -1,0 +1,53 @@
+<section class="hero-slider large-image fixed-header restrict-hero-height">
+	<ul class="slides">
+		<li>
+			<div class="background-image-holder">
+				<img alt="Slide Background" class="background-image" src="img/face2.jpg">
+			</div>
+
+			<div class="container vertical-align">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h1 class="text-white text-font-vw-black">EL TALLER DE SERVICIO DE VOLKSWAGEN</h1>
+					</div>
+				</div>
+			</div><!--end of container-->
+		</li>
+
+		{{!--<li>
+			<div class="background-image-holder">
+				<img alt="Slide Background" class="background-image" src="img/hero27.jpg">
+			</div>
+
+			<div class="container vertical-align">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h1 class="text-white">Make it yours with Variant.</h1>
+					</div>
+				</div>
+			</div><!--end of container-->
+		</li><li>
+			<div class="background-image-holder overlay">
+				<img alt="Slide Background" class="background-image" src="img/hero28.jpg">
+			</div>
+
+			<div class="container vertical-align">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h1 class="text-white">Design with clarity &amp; purpose.</h1>
+					</div>
+				</div>
+			</div><!--end of container-->
+		</li>--}}
+	</ul>
+</section>
+<script>
+	// Append .background-image-holder <img>'s as CSS backgrounds
+
+	$('.background-image-holder').each(function(){
+		var imgSrc= $(this).children('img').attr('src');
+		$(this).css('background', 'url("' + imgSrc + '")');
+    	$(this).children('img').hide();
+        $(this).css('background-position', '35% 50%');
+	});
+</script>

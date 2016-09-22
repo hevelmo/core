@@ -1,0 +1,88 @@
+@import url(styles/webfont/VWHeadline.css);
+@import url(styles/webfont/font-awesome.css);
+@import url(styles/webfont/font-pe-icon-7-stroke.css);
+@import url(styles/webfont/font-elegant-icons.css);
+@import url(styles/webfont/font-maintenance-services.css);
+@import url(styles/webfont/icon-set.css);
+/*@import url(styles/webfont/font-icons.css);*/
+@import url(styles/webfont/font-glyphicons.css);
+@import url(styles/webfont/font-iconos-de.css);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+/* bootstrap */
+@import url(styles/bootstrap.css);
+@import url(styles/bootstrap-datetimepicker.css);
+@import url(styles/alertify.boostrap.css);
+@import url(styles/alertify.core.css);
+/* theme */
+@import url(flexslider/flexslider.css);
+@import url(styles/style-mixins.css);
+@import url(styles/style-global-helper-class.css);
+@import url(styles/style-colors.css);
+@import url(styles/style-typography.css);
+@import url(styles/style-buttons.css);
+@import url(styles/style-nav.css);
+@import url(styles/style-headers-slider-dividers.css);
+@import url(styles/style-short-strip-sections.css);
+@import url(styles/style-text-based-sections.css);
+@import url(styles/style-portfolio-gallery.css);
+@import url(styles/style-social-elements.css);
+@import url(styles/style-blocg.css);
+@import url(styles/style-shop.css);
+@import url(styles/style-contact.css);
+@import url(styles/style-form-elements.css);
+@import url(styles/style-footers.css);
+@import url(styles/main.css);
+@import url(styles/style-medigraf.css);
+@import url(styles/padding-and-margin.css);
+
+/*.browse_videos_videos .player_wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+.browse_videos_videos .faux_player {
+  display: block;
+  position: relative;
+}*/
+
+.pricing-table-2 .price:before {
+	content: 'Desde:';
+	font-size: .3em;
+	display: block;
+	margin-bottom: -45px;
+}
+.pricing-table-2 .price:after {
+	content: 'Neto.';
+	font-size: .2em;
+	display: block;
+	margin-top: -40px;
+}
+.contact-2 .contact-method i, .contact-2 .contact-method span {
+	display: inline-block;
+	vertical-align: top;
+}
+.footer-2 a > img.logo,
+.footer-2 .tagline {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.social-links a.ico_foot i {
+	color: #777;
+}
+.social-links a.ico_foot:hover i {
+	color: #b1381f;
+}
+
+.map-canvas {
+	width:100%;
+	height:445px;
+}
+
+.map-canvas.h500 {
+	height:445px;
+}
+
+#google_map {width: 90%; height: 900px;margin-top:0px;margin-left:auto;margin-right:auto;}
+
+h1.heading{text-align:center;font: 18px Georgia, "Times New Roman", Times, serif;}

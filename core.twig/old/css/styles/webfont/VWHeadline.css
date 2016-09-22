@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'VWHeadlineOTSemibold';
+    src: url('VWHeadlineOTSemibold/VWHeadlineOTSemibold.eot');
+    src: url('VWHeadlineOTSemibold/VWHeadlineOTSemibold.eot') format('embedded-opentype'),
+         url('VWHeadlineOTSemibold/VWHeadlineOTSemibold.woff2') format('woff2'),
+         url('VWHeadlineOTSemibold/VWHeadlineOTSemibold.woff') format('woff'),
+         url('VWHeadlineOTSemibold/VWHeadlineOTSemibold.ttf') format('truetype'),
+         url('VWHeadlineOTSemibold/VWHeadlineOTSemibold.svg#VWHeadlineOTSemibold') format('svg');
+}
+@font-face {
+    font-family: 'VWHeadlineOTBlack';
+    src: url('VWHeadlineOTBlack/VWHeadlineOTBlack.eot');
+    src: url('VWHeadlineOTBlack/VWHeadlineOTBlack.eot') format('embedded-opentype'),
+         url('VWHeadlineOTBlack/VWHeadlineOTBlack.woff2') format('woff2'),
+         url('VWHeadlineOTBlack/VWHeadlineOTBlack.woff') format('woff'),
+         url('VWHeadlineOTBlack/VWHeadlineOTBlack.ttf') format('truetype'),
+         url('VWHeadlineOTBlack/VWHeadlineOTBlack.svg#VWHeadlineOTBlack') format('svg');
+}
+@font-face {
+    font-family: 'VWHeadlineBook';
+    src: url('VWHeadlineBook/VWHeadlineBook.eot');
+    src: url('VWHeadlineBook/VWHeadlineBook.eot') format('embedded-opentype'),
+         url('VWHeadlineBook/VWHeadlineBook.woff2') format('woff2'),
+         url('VWHeadlineBook/VWHeadlineBook.woff') format('woff'),
+         url('VWHeadlineBook/VWHeadlineBook.ttf') format('truetype'),
+         url('VWHeadlineBook/VWHeadlineBook.svg#VWHeadlineBook') format('svg');
+}
