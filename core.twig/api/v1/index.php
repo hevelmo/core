@@ -1,4 +1,11 @@
 <?php
+/*
+*/
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: DELETE, PUT, POST, GET, OPTIONS");
+header("Access-Control-Request-Headers: x-requested-with, content-type, accept");
+header("Access-Control-Allow-Headers: Content-Type");
+
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ALL);
@@ -20,7 +27,6 @@ include_once "../../core/environment/WaxConfigSet.php";
 // Medigraf
 
 include_once "../../core/Medigraf/Bases.php";
-//include_once "../../core/Medigraf/Invoker.php";
 include_once "../../core/Medigraf/Router.php";
 include_once "../../core/Medigraf/Consult.php";
 include_once "../../core/Medigraf/Sender.php";
@@ -42,105 +48,136 @@ $app = new \Slim\App($container);
 /**
  * [ROOM]
 **/
+    // INSERT MAX
+    $app->post("/add/max", "InsertMax:__invoke");
 
-    /*
-     ###################################################################################################
-        POST ROUTERS
-     ###################################################################################################
-    */
-        $app->post("/send/contactos", "SendContactos:__invoke");
-        $app->run();
+    // CONTACT
+    $app->post("/send/contacto", "SendContact:__invoke");
 
+    // SERVICES
+    $app->post("/send/servicio", "SendServices:__invoke");
+
+    // REFACCIONES
+    $app->post("/send/refacciones", "SendRepairs:__invoke");
+
+    // FINANCING
+    $app->post("/send/financiamiento", "SendFinancing:__invoke");
+
+    // TESTDRIVE
+    $app->post("/send/testdrive", "SendTestDrive:__invoke");
+
+    $app->run();
 /**
- *  [CONSULT PARENT CLASS]
- *      Ésta es la clase padre para el manejo general de las rutas de Slim.
- *      Dicha clase provee los métodos necesarios para interactuar con la base de datos
- *      que se haya configurado en el proyecto principal, para así poder hacer consultas
- *      sobre ella y obtener, agregar, modificar y eliminar información.
- *      Esta clase jamás se usará directamente por una ruta Slim,
- *      sino que cada ruta Slim será manejada por una clase hija de ConsultMaster.
+ * CONSULT MASTER
+ * 
+ * Ésta es la clase padre para el manejo general de las rutas de Slim.
+ * Dicha clase provee los métodos necesarios para interactuar con la base de datos
+ * que se haya configurado en el proyecto principal, para así poder hacer consultas
+ * sobre ella y obtener, agregar, modificar y eliminar información.
+ * Esta clase jamás se usará directamente por una ruta Slim,
+ * sino que cada ruta Slim será manejada por una clase hija de ConsultMaster.
+ * 
+ * @author ****** <******>
+ * @copyright 2017
 **/
     abstract class ConsultMaster {
-        /*
-         ###################################################################################################
-            PROPERTIES
-         ###################################################################################################
-        */
-            private $bases;
-            private $router;
-            private $consult;
-        /*
-         ###################################################################################################
-            CONSTRUCT
-         ###################################################################################################
-        */
-            function __construct() {
-                //BASES
-                $this->bases   = new Bases();
-                //ROUTER
-                $this->router   = new Router();
-                //Get an array arguments to the method
-                $args       = func_get_args();
-                //Get number of arguments
-                $numArgs    = func_num_args();
-                //Make a method name
-                $methodName = "construct" . $numArgs;
-                //If the method exists called it 
-                if (method_exists($this, $methodName)) {
-                    call_user_func_array(array($this, $methodName), $args);
-                //Otherwise
-                } else {
-                }
+        /**
+         * @var type bases 
+         * @var type router 
+         * @var type consult  
+        **/
+        private $bases, $router, $consult;
+        /**
+         * Description
+        **/
+        function __construct() {
+            $this->bases   = new Bases();
+            $this->router   = new Router();
+            //Get an array arguments to the method
+            $args       = func_get_args();
+            //Get number of arguments
+            $numArgs    = func_num_args();
+            //Make a method name
+            $methodName = "construct" . $numArgs;
+            //If the method exists called it 
+            if (method_exists($this, $methodName)) {
+                call_user_func_array(array($this, $methodName), $args);
+            //Otherwise
+            } else {
             }
-            function construct0() {
-                $this->construct5("", array(), array(), 0, false);
-            }
-            function construct1($properties) {
-                $this->construct5(
-                    $properties["sql"], 
-                    $properties["params"], 
-                    $properties["structure"], 
-                    $properties["typeQuery"], 
-                    $properties["multilevel"]
-                );
-            }    
-            function construct5($sql = "", $params = array(), $structure = array(), $typeQuery = 0, $multilevel = false) {
-                $this->sql        = $sql;
-                $this->params     = $params;
-                $this->structure  = $structure;
-                $this->typeQuery  = $typeQuery;
-                $this->multilevel = $multilevel;
-                //CONSULT
-                $this->consult   = new Consult(
-                    "senpa",
-                    getConnection(),
-                    $this->sql,
-                    $this->params,
-                    $this->structure,
-                    $this->typeQuery,
-                    $this->multilevel
-                );
-            }
-        /*
-         ###################################################################################################
-            GETTERS
-         ###################################################################################################
-        */
-            public function getBases() {
-                return $this->bases;
-            }    
-            public function getRouter() {
-                return $this->router;
-            }    
-            public function getConsult() {
-                return $this->consult;
-            }
-        /*
-         ###################################################################################################
-            ABSTRACTS
-         ###################################################################################################
-        */
-            abstract public function __invoke($request, $response, $args);    
+        }
+        /**
+         * Description
+        **/
+        function construct0() {
+            $this->construct5("", array(), array(), 0, false);
+        }
+        /**
+         * Description
+         * @param type $properties 
+        **/
+        function construct1($properties) {
+            $this->construct5(
+                $properties["sql"], 
+                $properties["params"], 
+                $properties["structure"], 
+                $properties["typeQuery"], 
+                $properties["multilevel"]
+            );
+        }
+        /**
+         * Description
+         * @param string $sql 
+         * @param array $params 
+         * @param array $structure 
+         * @param type $typeQuery 
+         * @param bool $multilevel 
+        **/
+        function construct5($sql = "", $params = array(), $structure = array(), $typeQuery = 0, $multilevel = false) {
+            $this->sql        = $sql;
+            $this->params     = $params;
+            $this->structure  = $structure;
+            $this->typeQuery  = $typeQuery;
+            $this->multilevel = $multilevel;
+            //CONSULT
+            $this->consult   = new Consult(
+                "jagpa",
+                getConnection(),
+                $this->sql,
+                $this->params,
+                $this->structure,
+                $this->typeQuery,
+                $this->multilevel
+            );
+        }
+        /**
+         * Description
+         * @return type
+        **/
+        public function getBases() {
+            return $this->bases;
+        }    
+        /**
+         * Description
+         * @return type
+        **/
+        public function getRouter() {
+            return $this->router;
+        }    
+        /**
+         * Description
+         * @return type
+        **/
+        public function getConsult() {
+            return $this->consult;
+        }
+        /**
+         * Description
+         * @param type $request 
+         * @param type $response 
+         * @param type $args 
+        **/
+        abstract public function __invoke($request, $response, $args);    
     }
 /**
  *  [CONSULT CHILD CLASS]
