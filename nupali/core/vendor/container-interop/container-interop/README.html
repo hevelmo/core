@@ -1,0 +1,66 @@
+<h1 id="container-interoperability">Container Interoperability</h1>
+<p><a href="https://packagist.org/packages/container-interop/container-interop"><img src="https://poser.pugx.org/container-interop/container-interop/v/stable.png" alt="Latest Stable Version"></a></p>
+<p><em>container-interop</em> tries to identify and standardize features in <em>container</em> objects (service locators,
+dependency injection containers, etc.) to achieve interopererability.</p>
+<p>Through discussions and trials, we try to create a standard, made of common interfaces but also recommendations. </p>
+<p>If PHP projects that provide container implementations begin to adopt these common standards, then PHP
+applications and projects that use containers can depend on the common interfaces instead of specific
+implementations. This facilitates a high-level of interoperability and flexibility that allows users to consume
+<em>any</em> container implementation that can be adapted to these interfaces.</p>
+<p>The work done in this project is not officially endorsed by the <a href="http://www.php-fig.org/">PHP-FIG</a>, but it is being
+worked on by members of PHP-FIG and other good developers. We adhere to the spirit and ideals of PHP-FIG, and hope
+this project will pave the way for one or more future PSRs.</p>
+<h2 id="installation">Installation</h2>
+<p>You can install this package through Composer:</p>
+<pre><code class="lang-json">{
+    &quot;require&quot;: {
+        &quot;container-interop/container-interop&quot;: &quot;~1.0&quot;
+    }
+}
+</code></pre>
+<p>The packages adheres to the <a href="http://semver.org/">SemVer</a> specification, and there will be full backward compatibility
+between minor versions.</p>
+<h2 id="standards">Standards</h2>
+<h3 id="available">Available</h3>
+<ul>
+<li><a href="src/Interop/Container/ContainerInterface.php"><code>ContainerInterface</code></a>.
+<a href="docs/ContainerInterface.md">Description</a> <a href="docs/ContainerInterface-meta.md">Meta Document</a>.
+Describes the interface of a container that exposes methods to read its entries.</li>
+<li><a href="docs/Delegate-lookup.md"><em>Delegate lookup feature</em></a>.
+<a href="docs/Delegate-lookup-meta.md">Meta Document</a>.
+Describes the ability for a container to delegate the lookup of its dependencies to a third-party container. This 
+feature lets several containers work together in a single application.</li>
+</ul>
+<h3 id="proposed">Proposed</h3>
+<p>View open <a href="https://github.com/container-interop/container-interop/labels/RFC">request for comments</a></p>
+<h2 id="compatible-projects">Compatible projects</h2>
+<h3 id="projects-implementing-containerinterface-">Projects implementing <code>ContainerInterface</code></h3>
+<ul>
+<li><a href="https://github.com/jeremeamia/acclimate-container">Acclimate</a></li>
+<li><a href="https://github.com/estelsmith/dcp-di">dcp-di</a></li>
+<li><a href="http://mouf-php.com">Mouf</a></li>
+<li><a href="https://github.com/njasm/container">Njasm Container</a></li>
+<li><a href="http://php-di.org">PHP-DI</a></li>
+<li><a href="https://github.com/moufmouf/pimple-interop">PimpleInterop</a></li>
+<li><a href="https://github.com/jeremeamia/xstatic">XStatic</a></li>
+</ul>
+<h3 id="projects-implementing-the-delegate-lookup-feature">Projects implementing the <em>delegate lookup</em> feature</h3>
+<ul>
+<li><a href="http://mouf-php.com">Mouf</a></li>
+<li><a href="http://php-di.org">PHP-DI</a></li>
+<li><a href="https://github.com/moufmouf/pimple-interop">PimpleInterop</a></li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<p>Everyone is welcome to join and contribute.</p>
+<p>The general workflow looks like this:</p>
+<ol>
+<li>Someone opens a discussion (GitHub issue) to suggest an interface</li>
+<li>Feedback is gathered</li>
+<li>The interface is added to a development branch</li>
+<li>We release alpha versions so that the interface can be experimented with</li>
+<li>Discussions and edits ensue until the interface is deemed stable by a general consensus</li>
+<li>A new minor version of the package is released</li>
+</ol>
+<p>We try to not break BC by creating new interfaces instead of editing existing ones.</p>
+<p>While we currently work on interfaces, we are open to anything that might help towards interoperability, may that
+be code, best practices, etc.</p>

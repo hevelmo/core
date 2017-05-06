@@ -1,0 +1,161 @@
+<h1 id="fastroute-fast-request-router-for-php">FastRoute - Fast request router for PHP</h1>
+<p>This library provides a fast implementation of a regular expression based router. <a href="http://nikic.github.io/2014/02/18/Fast-request-routing-using-regular-expressions.html">Blog post explaining how the
+implementation works and why it is fast.</a></p>
+<h2 id="usage">Usage</h2>
+<p>Here&#39;s a basic usage example:</p>
+<pre><code class="lang-php">&lt;?php
+
+require &#39;/path/to/FastRoute/src/bootstrap.php&#39;;
+
+$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+    $r-&gt;addRoute(&#39;GET&#39;, &#39;/user/{id:\d+}&#39;, &#39;handler1&#39;);
+    $r-&gt;addRoute(&#39;GET&#39;, &#39;/user/{id:\d+}/{name}&#39;, &#39;handler2&#39;);
+    // Or alternatively
+    $r-&gt;addRoute(&#39;GET&#39;, &#39;/user/{id:\d+}[/{name}]&#39;, &#39;common_handler&#39;);
+});
+
+$routeInfo = $dispatcher-&gt;dispatch($httpMethod, $uri);
+switch ($routeInfo[0]) {
+    case FastRoute\Dispatcher::NOT_FOUND:
+        // ... 404 Not Found
+        break;
+    case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+        $allowedMethods = $routeInfo[1];
+        // ... 405 Method Not Allowed
+        break;
+    case FastRoute\Dispatcher::FOUND:
+        $handler = $routeInfo[1];
+        $vars = $routeInfo[2];
+        // ... call $handler with $vars
+        break;
+}
+</code></pre>
+<h3 id="defining-routes">Defining routes</h3>
+<p>The routes are defined by calling the <code>FastRoute\simpleDispatcher</code> function, which accepts
+a callable taking a <code>FastRoute\RouteCollector</code> instance. The routes are added by calling
+<code>addRoute()</code> on the collector instance.</p>
+<p>This method accepts the HTTP method the route must match, the route pattern and an associated
+handler. The handler does not necessarily have to be a callback (it could also be a controller
+class name or any other kind of data you wish to associate with the route).</p>
+<p>By default a route pattern syntax is used where <code>{foo}</code> specified a placeholder with name <code>foo</code>
+and matching the string <code>[^/]+</code>. To adjust the pattern the placeholder matches, you can specify
+a custom pattern by writing <code>{bar:[0-9]+}</code>.</p>
+<p>Furthermore parts of the route enclosed in <code>[...]</code> are considered optional, so that <code>/foo[bar]</code>
+will match both <code>/foo</code> and <code>/foobar</code>. Optional parts are only supported in a trailing position,
+not in the middle of a route.</p>
+<p>A custom pattern for a route placeholder must not use capturing groups. For example <code>{lang:(en|de)}</code>
+is not a valid placeholder, because <code>()</code> is a capturing group. Instead you can use either
+<code>{lang:en|de}</code> or <code>{lang:(?:en|de)}</code>.</p>
+<p>The reason <code>simpleDispatcher</code> accepts a callback for defining the routes is to allow seamless
+caching. By using <code>cachedDispatcher</code> instead of <code>simpleDispatcher</code> you can cache the generated
+routing data and construct the dispatcher from the cached information:</p>
+<pre><code class="lang-php">&lt;?php
+
+$dispatcher = FastRoute\cachedDispatcher(function(FastRoute\RouteCollector $r) {
+    $r-&gt;addRoute(&#39;GET&#39;, &#39;/user/{name}/{id:[0-9]+}&#39;, &#39;handler0&#39;);
+    $r-&gt;addRoute(&#39;GET&#39;, &#39;/user/{id:[0-9]+}&#39;, &#39;handler1&#39;);
+    $r-&gt;addRoute(&#39;GET&#39;, &#39;/user/{name}&#39;, &#39;handler2&#39;);
+}, [
+    &#39;cacheFile&#39; =&gt; __DIR__ . &#39;/route.cache&#39;, /* required */
+    &#39;cacheDisabled&#39; =&gt; IS_DEBUG_ENABLED,     /* optional, enabled by default */
+]);
+</code></pre>
+<p>The second parameter to the function is an options array, which can be used to specify the cache
+file location, among other things.</p>
+<h3 id="dispatching-a-uri">Dispatching a URI</h3>
+<p>A URI is dispatched by calling the <code>dispatch()</code> method of the created dispatcher. This method
+accepts the HTTP method and a URI. Getting those two bits of information (and normalizing them
+appropriately) is your job - this library is not bound to the PHP web SAPIs.</p>
+<p>The <code>dispatch()</code> method returns an array whose first element contains a status code. It is one
+of <code>Dispatcher::NOT_FOUND</code>, <code>Dispatcher::METHOD_NOT_ALLOWED</code> and <code>Dispatcher::FOUND</code>. For the
+method not allowed status the second array element contains a list of HTTP methods allowed for
+the supplied URI. For example:</p>
+<pre><code>[FastRoute\Dispatcher::METHOD_NOT_ALLOWED, [&#39;GET&#39;, &#39;POST&#39;]]
+</code></pre><blockquote>
+<p><strong>NOTE:</strong> The HTTP specification requires that a <code>405 Method Not Allowed</code> response include the
+<code>Allow:</code> header to detail available methods for the requested resource. Applications using FastRoute
+should use the second array element to add this header when relaying a 405 response.</p>
+</blockquote>
+<p>For the found status the second array element is the handler that was associated with the route
+and the third array element is a dictionary of placeholder names to their values. For example:</p>
+<pre><code>/* Routing against GET /user/nikic/42 */
+
+[FastRoute\Dispatcher::FOUND, &#39;handler0&#39;, [&#39;name&#39; =&gt; &#39;nikic&#39;, &#39;id&#39; =&gt; &#39;42&#39;]]
+</code></pre><h3 id="overriding-the-route-parser-and-dispatcher">Overriding the route parser and dispatcher</h3>
+<p>The routing process makes use of three components: A route parser, a data generator and a
+dispatcher. The three components adhere to the following interfaces:</p>
+<pre><code class="lang-php">&lt;?php
+
+namespace FastRoute;
+
+interface RouteParser {
+    public function parse($route);
+}
+
+interface DataGenerator {
+    public function addRoute($httpMethod, $routeData, $handler);
+    public function getData();
+}
+
+interface Dispatcher {
+    const NOT_FOUND = 0, FOUND = 1, METHOD_NOT_ALLOWED = 2;
+
+    public function dispatch($httpMethod, $uri);
+}
+</code></pre>
+<p>The route parser takes a route pattern string and converts it into an array of route infos, where
+each route info is again an array of it&#39;s parts. The structure is best understood using an example:</p>
+<pre><code>/* The route /user/{id:\d+}[/{name}] converts to the following array: */
+[
+    [
+        &#39;/user/&#39;,
+        [&#39;name&#39;, &#39;[^/]+&#39;],
+    ],
+    [
+        &#39;/user/&#39;,
+        [&#39;name&#39;, &#39;[^/]+&#39;],
+        &#39;/&#39;,
+        [&#39;id&#39;, &#39;[0-9]+&#39;],
+    ],
+]
+</code></pre><p>This array can then be passed to the <code>addRoute()</code> method of a data generator. After all routes have
+been added the <code>getData()</code> of the generator is invoked, which returns all the routing data required
+by the dispatcher. The format of this data is not further specified - it is tightly coupled to
+the corresponding dispatcher.</p>
+<p>The dispatcher accepts the routing data via a constructor and provides a <code>dispatch()</code> method, which
+you&#39;re already familiar with.</p>
+<p>The route parser can be overwritten individually (to make use of some different pattern syntax),
+however the data generator and dispatcher should always be changed as a pair, as the output from
+the former is tightly coupled to the input of the latter. The reason the generator and the
+dispatcher are separate is that only the latter is needed when using caching (as the output of
+the former is what is being cached.)</p>
+<p>When using the <code>simpleDispatcher</code> / <code>cachedDispatcher</code> functions from above the override happens
+through the options array:</p>
+<pre><code class="lang-php">&lt;?php
+
+$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+    /* ... */
+}, [
+    &#39;routeParser&#39; =&gt; &#39;FastRoute\\RouteParser\\Std&#39;,
+    &#39;dataGenerator&#39; =&gt; &#39;FastRoute\\DataGenerator\\GroupCountBased&#39;,
+    &#39;dispatcher&#39; =&gt; &#39;FastRoute\\Dispatcher\\GroupCountBased&#39;,
+]);
+</code></pre>
+<p>The above options array corresponds to the defaults. By replacing <code>GroupCountBased</code> by
+<code>GroupPosBased</code> you could switch to a different dispatching strategy.</p>
+<h3 id="a-note-on-head-requests">A Note on HEAD Requests</h3>
+<p>The HTTP spec requires servers to <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html#sec5.1.1" title="RFC 2616 Section 5.1.1">support both GET and HEAD methods</a>:</p>
+<blockquote>
+<p>The methods GET and HEAD MUST be supported by all general-purpose servers</p>
+</blockquote>
+<p>To avoid forcing users to manually register HEAD routes for each resource we fallback to matching an
+available GET route for a given resource. The PHP web SAPI transparently removes the entity body
+from HEAD responses so this behavior has no effect on the vast majority of users.</p>
+<p>However, implementors using FastRoute outside the web SAPI environment (e.g. a custom server) MUST
+NOT send entity bodies generated in response to HEAD requests. If you are a non-SAPI user this is
+<em>your responsibility</em>; FastRoute has no purview to prevent you from breaking HTTP in such cases.</p>
+<p>Finally, note that applications MAY always specify their own HEAD method route for a given
+resource to bypass this behavior entirely.</p>
+<h3 id="credits">Credits</h3>
+<p>This library is based on a router that <a href="https://github.com/morrisonlevi">Levi Morrison</a> implemented for the Aerys server.</p>
+<p>A large number of tests, as well as HTTP compliance considerations, were provided by <a href="https://github.com/rdlowrey">Daniel Lowrey</a>.</p>

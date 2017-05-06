@@ -1,0 +1,58 @@
+<h1 id="slim-framework">Slim Framework</h1>
+<p><a href="https://travis-ci.org/slimphp/Slim"><img src="https://travis-ci.org/slimphp/Slim.svg?branch=develop" alt="Build Status"></a>
+<a href="https://coveralls.io/r/slimphp/Slim?branch=develop"><img src="https://coveralls.io/repos/slimphp/Slim/badge.svg?branch=develop" alt="Coverage Status"></a>
+<a href="https://packagist.org/packages/slim/slim"><img src="https://poser.pugx.org/slim/slim/downloads" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/slim/slim"><img src="https://poser.pugx.org/slim/slim/license" alt="License"></a></p>
+<p>Slim is a PHP micro-framework that helps you quickly write simple yet powerful web applications and APIs.</p>
+<h2 id="installation">Installation</h2>
+<p>It&#39;s recommended that you use <a href="https://getcomposer.org/">Composer</a> to install Slim.</p>
+<pre><code class="lang-bash">$ composer require slim/slim &quot;^3.0@RC&quot;
+</code></pre>
+<p>This will install Slim and all required dependencies. Slim requires PHP 5.5.0 or newer.</p>
+<h2 id="usage">Usage</h2>
+<p>Create an index.php file with the following contents:</p>
+<pre><code class="lang-php">&lt;?php
+
+require &#39;vendor/autoload.php&#39;;
+
+$app = new Slim\App();
+
+$app-&gt;get(&#39;/hello/{name}&#39;, function ($request, $response, $args) {
+    $response-&gt;write(&quot;Hello, &quot; . $args[&#39;name&#39;]);
+    return $response;
+});
+
+$app-&gt;run();
+</code></pre>
+<p>You may quickly test this using the built-in PHP server:</p>
+<pre><code class="lang-bash">$ php -S localhost:8000
+</code></pre>
+<p>Going to <a href="http://localhost:8000/hello/world">http://localhost:8000/hello/world</a> will now display &quot;Hello, world&quot;.</p>
+<p>For more information on how to configure your web server, see the <a href="http://www.slimframework.com/docs/start/web-servers.html">Documentation</a>.</p>
+<h2 id="tests">Tests</h2>
+<p>To execute the test suite, you&#39;ll need phpunit.</p>
+<pre><code class="lang-bash">$ phpunit
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>Please see <a href="CONTRIBUTING.md">CONTRIBUTING</a> for details.</p>
+<h2 id="learn-more">Learn More</h2>
+<p>Learn more at these links:</p>
+<ul>
+<li><a href="http://www.slimframework.com">Website</a></li>
+<li><a href="http://www.slimframework.com/docs/start/installation.html">Documentation</a></li>
+<li><a href="http://help.slimframework.com">Support Forum</a></li>
+<li><a href="https://twitter.com/slimphp">Twitter</a></li>
+<li><a href="https://github.com/xssc/awesome-slim">Resources</a></li>
+</ul>
+<h2 id="security">Security</h2>
+<p>If you discover security related issues, please email security@slimframework.com instead of using the issue tracker.</p>
+<h2 id="credits">Credits</h2>
+<ul>
+<li><a href="https://github.com/codeguy">Josh Lockhart</a></li>
+<li><a href="https://github.com/silentworks">Andrew Smith</a></li>
+<li><a href="https://github.com/akrabat">Rob Allen</a></li>
+<li><a href="https://github.com/gmanricks">Gabriel Manricks</a></li>
+<li><a href="../../contributors">All Contributors</a></li>
+</ul>
+<h2 id="license">License</h2>
+<p>The Slim Framework is licensed under the MIT license. See <a href="LICENSE.md">License File</a> for more information.</p>

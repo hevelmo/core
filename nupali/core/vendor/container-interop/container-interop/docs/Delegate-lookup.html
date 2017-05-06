@@ -1,0 +1,41 @@
+<h1 id="delegate-lookup-feature">Delegate lookup feature</h1>
+<p>This document describes a standard for dependency injection containers.</p>
+<p>The goal set by the <em>delegate lookup</em> feature is to allow several containers to share entries. 
+Containers implementing this feature can perform dependency lookups in other containers.</p>
+<p>Containers implementing this feature will offer a greater lever of interoperability 
+with other containers. Implementation of this feature is therefore RECOMMENDED.</p>
+<p>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;,
+&quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be
+interpreted as described in <a href="http://tools.ietf.org/html/rfc2119">RFC 2119</a>.</p>
+<p>The word <code>implementor</code> in this document is to be interpreted as someone
+implementing the delegate lookup feature in a dependency injection-related library or framework.
+Users of dependency injections containers (DIC) are refered to as <code>user</code>.</p>
+<h2 id="1-vocabulary">1. Vocabulary</h2>
+<p>In a dependency injection container, the container is used to fetch entries.
+Entries can have dependencies on other entries. Usually, these other entries are fetched by the container.</p>
+<p>The <em>delegate lookup</em> feature is the ability for a container to fetch dependencies in
+another container. In the rest of the document, the word &quot;container&quot; will reference the container
+implemented by the implementor. The word &quot;delegate container&quot; will reference the container we are
+fetching the dependencies from.</p>
+<h2 id="2-specification">2. Specification</h2>
+<p>A container implementing the <em>delegate lookup</em> feature:</p>
+<ul>
+<li>MUST implement the <a href="ContainerInterface.md"><code>ContainerInterface</code></a></li>
+<li>MUST provide a way to register a delegate container (using a constructor parameter, or a setter, 
+or any possible way). The delegate container MUST implement the <a href="ContainerInterface.md"><code>ContainerInterface</code></a>.</li>
+</ul>
+<p>When a container is configured to use a delegate container for dependencies:</p>
+<ul>
+<li>Calls to the <code>get</code> method should only return an entry if the entry is part of the container.
+If the entry is not part of the container, an exception should be thrown 
+(as requested by the <a href="ContainerInterface.md"><code>ContainerInterface</code></a>).</li>
+<li>Calls to the <code>has</code> method should only return <code>true</code> if the entry is part of the container.
+If the entry is not part of the container, <code>false</code> should be returned.</li>
+<li>If the fetched entry has dependencies, <strong>instead</strong> of performing 
+the dependency lookup in the container, the lookup is performed on the <em>delegate container</em>.</li>
+</ul>
+<p>Important: By default, the dependency lookups SHOULD be performed on the delegate container <strong>only</strong>, not on the container itself.</p>
+<p>It is however allowed for containers to provide exception cases for special entries, and a way to lookup 
+into the same container (or another container) instead of the delegate container.</p>
+<h2 id="3-package-interface">3. Package / Interface</h2>
+<p>This feature is not tied to any code, interface or package.</p>

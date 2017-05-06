@@ -1,0 +1,92 @@
+<h1 id="containerinterface-meta-document">ContainerInterface Meta Document</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This document describes the process and discussions that lead to the <code>ContainerInterface</code>.
+Its goal is to explain the reasons behind each decision.</p>
+<h2 id="goal">Goal</h2>
+<p>The goal set by <code>ContainerInterface</code> is to standardize how frameworks and libraries make use of a
+container to obtain objects and parameters.</p>
+<p>By standardizing such a behavior, frameworks and libraries using the <code>ContainerInterface</code>
+could work with any compatible container.
+That would allow end users to choose their own container based on their own preferences.</p>
+<p>It is important to distinguish the two usages of a container:</p>
+<ul>
+<li>configuring entries</li>
+<li>fetching entries</li>
+</ul>
+<p>Most of the time, those two sides are not used by the same party.
+While it is often end users who tend to configure entries, it is generally the framework that fetch
+entries to build the application.</p>
+<p>This is why this interface focuses only on how entries can be fetched from a container.</p>
+<h2 id="interface-name">Interface name</h2>
+<p>The interface name has been thoroughly discussed and was decided by a vote.</p>
+<p>The list of options considered with their respective votes are:</p>
+<ul>
+<li><code>ContainerInterface</code>: +8</li>
+<li><code>ProviderInterface</code>: +2</li>
+<li><code>LocatorInterface</code>: 0</li>
+<li><code>ReadableContainerInterface</code>: -5</li>
+<li><code>ServiceLocatorInterface</code>: -6</li>
+<li><code>ObjectFactory</code>: -6</li>
+<li><code>ObjectStore</code>: -8</li>
+<li><code>ConsumerInterface</code>: -9</li>
+</ul>
+<p><a href="https://github.com/container-interop/container-interop/wiki/%231-interface-name:-Vote">Full results of the vote</a></p>
+<p>The complete discussion can be read in <a href="https://github.com/container-interop/container-interop/issues/1">the issue #1</a>.</p>
+<h2 id="interface-methods">Interface methods</h2>
+<p>The choice of which methods the interface would contain was made after a statistical analysis of existing containers.
+The results of this analysis are available <a href="https://gist.github.com/mnapoli/6159681">in this document</a>.</p>
+<p>The summary of the analysis showed that:</p>
+<ul>
+<li>all containers offer a method to get an entry by its id</li>
+<li>a large majority name such method <code>get()</code></li>
+<li>for all containers, the <code>get()</code> method has 1 mandatory parameter of type string</li>
+<li>some containers have an optional additional argument for <code>get()</code>, but it doesn&#39;t same the same purpose between containers</li>
+<li>a large majority of the containers offer a method to test if it can return an entry by its id</li>
+<li>a majority name such method <code>has()</code></li>
+<li>for all containers offering <code>has()</code>, the method has exactly 1 parameter of type string</li>
+<li>a large majority of the containers throw an exception rather than returning null when an entry is not found in <code>get()</code></li>
+<li>a large majority of the containers don&#39;t implement <code>ArrayAccess</code></li>
+</ul>
+<p>The question of whether to include methods to define entries has been discussed in
+<a href="https://github.com/container-interop/container-interop/issues/1">issue #1</a>.
+It has been judged that such methods do not belong in the interface described here because it is out of its scope
+(see the &quot;Goal&quot; section).</p>
+<p>As a result, the <code>ContainerInterface</code> contains two methods:</p>
+<ul>
+<li><code>get()</code>, returning anything, with one mandatory string parameter. Should throw an exception if the entry is not found.</li>
+<li><code>has()</code>, returning a boolean, with one mandatory string parameter.</li>
+</ul>
+<h3 id="number-of-parameters-in-get-method">Number of parameters in <code>get()</code> method</h3>
+<p>While <code>ContainerInterface</code> only defines one mandatory parameter in <code>get()</code>, it is not incompatible with
+existing containers that have additional optional parameters. PHP allows an implementation to offer more parameters
+as long as they are optional, because the implementation <em>does</em> satisfy the interface.</p>
+<p>This issue has been discussed in <a href="https://github.com/container-interop/container-interop/issues/6">issue #6</a>.</p>
+<h3 id="type-of-the-id-parameter">Type of the <code>$id</code> parameter</h3>
+<p>The type of the <code>$id</code> parameter in <code>get()</code> and <code>has()</code> has been discussed in
+<a href="https://github.com/container-interop/container-interop/issues/6">issue #6</a>.
+While <code>string</code> is used in all the containers that were analyzed, it was suggested that allowing
+anything (such as objects) could allow containers to offer a more advanced query API.</p>
+<p>An example given was to use the container as an object builder. The <code>$id</code> parameter would then be an
+object that would describe how to create an instance.</p>
+<p>The conclusion of the discussion was that this was beyond the scope of getting entries from a container without
+knowing how the container provided them, and it was more fit for a factory.</p>
+<h2 id="contributors">Contributors</h2>
+<p>Are listed here all people that contributed in the discussions or votes, by alphabetical order:</p>
+<ul>
+<li><a href="https://github.com/AmyStephen">Amy Stephen</a></li>
+<li><a href="https://github.com/moufmouf">David Négrier</a></li>
+<li><a href="https://github.com/dongilbert">Don Gilbert</a></li>
+<li><a href="https://github.com/judgej">Jason Judge</a></li>
+<li><a href="https://github.com/jeremeamia">Jeremy Lindblom</a></li>
+<li><a href="https://github.com/Ocramius">Marco Pivetta</a></li>
+<li><a href="https://github.com/mnapoli">Matthieu Napoli</a></li>
+<li><a href="https://github.com/pmjones">Paul M. Jones</a></li>
+<li><a href="https://github.com/shochdoerfer">Stephan Hochdörfer</a></li>
+<li><a href="https://github.com/taylorotwell">Taylor Otwell</a></li>
+</ul>
+<h2 id="relevant-links">Relevant links</h2>
+<ul>
+<li><a href="https://github.com/container-interop/container-interop/blob/master/src/Interop/Container/ContainerInterface.php"><code>ContainerInterface.php</code></a></li>
+<li><a href="https://github.com/container-interop/container-interop/issues?labels=ContainerInterface&amp;milestone=&amp;page=1&amp;state=closed">List of all issues</a></li>
+<li><a href="https://github.com/container-interop/container-interop/wiki/%231-interface-name:-Vote">Vote for the interface name</a></li>
+</ul>

@@ -1,0 +1,120 @@
+<h1 id="container-interface">Container interface</h1>
+<p>This document describes a common interface for dependency injection containers.</p>
+<p>The goal set by <code>ContainerInterface</code> is to standardize how frameworks and libraries make use of a
+container to obtain objects and parameters (called <em>entries</em> in the rest of this document).</p>
+<p>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;,
+&quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be
+interpreted as described in <a href="http://tools.ietf.org/html/rfc2119">RFC 2119</a>.</p>
+<p>The word <code>implementor</code> in this document is to be interpreted as someone
+implementing the <code>ContainerInterface</code> in a depency injection-related library or framework.
+Users of dependency injections containers (DIC) are refered to as <code>user</code>.</p>
+<h2 id="1-specification">1. Specification</h2>
+<h3 id="1-1-basics">1.1 Basics</h3>
+<ul>
+<li><p>The <code>Interop\Container\ContainerInterface</code> exposes two methods : <code>get</code> and <code>has</code>.</p>
+</li>
+<li><p><code>get</code> takes one mandatory parameter: an entry identifier. It MUST be a string.
+A call to <code>get</code> can return anything (a <em>mixed</em> value), or throws an exception if the identifier
+is not known to the container. Two successive calls to <code>get</code> with the same
+identifier SHOULD return the same value. However, depending on the <code>implementor</code>
+design and/or <code>user</code> configuration, different values might be returned, so
+<code>user</code> SHOULD NOT rely on getting the same value on 2 successive calls.
+While <code>ContainerInterface</code> only defines one mandatory parameter in <code>get()</code>, implementations
+MAY accept additional optional parameters.</p>
+</li>
+<li><p><code>has</code> takes one unique parameter: an entry identifier. It MUST return <code>true</code>
+if an entry identifier is known to the container and <code>false</code> if it is not.</p>
+</li>
+</ul>
+<h3 id="1-2-exceptions">1.2 Exceptions</h3>
+<p>Exceptions directly thrown by the container MUST implement the 
+<a href="../src/Interop/Container/Exception/ContainerException.php"><code>Interop\Container\Exception\ContainerException</code></a>.</p>
+<p>A call to the <code>get</code> method with a non-existing id should throw a
+<a href="../src/Interop/Container/Exception/NotFoundException.php"><code>Interop\Container\Exception\NotFoundException</code></a>.</p>
+<h3 id="1-3-additional-features">1.3 Additional features</h3>
+<p>This section describes additional features that MAY be added to a container. Containers are not 
+required to implement these features to respect the ContainerInterface.</p>
+<h4 id="1-3-1-delegate-lookup-feature">1.3.1 Delegate lookup feature</h4>
+<p>The goal of the <em>delegate lookup</em> feature is to allow several containers to share entries. 
+Containers implementing this feature can perform dependency lookups in other containers.</p>
+<p>Containers implementing this feature will offer a greater lever of interoperability 
+with other containers. Implementation of this feature is therefore RECOMMENDED.</p>
+<p>A container implementing this feature:</p>
+<ul>
+<li>MUST implement the <code>ContainerInterface</code></li>
+<li>MUST provide a way to register a delegate container (using a constructor parameter, or a setter, 
+or any possible way). The delegate container MUST implement the <code>ContainerInterface</code>.</li>
+</ul>
+<p>When a container is configured to use a delegate container for dependencies:</p>
+<ul>
+<li>Calls to the <code>get</code> method should only return an entry if the entry is part of the container. 
+If the entry is not part of the container, an exception should be thrown 
+(as requested by the <code>ContainerInterface</code>).</li>
+<li>Calls to the <code>has</code> method should only return <code>true</code> if the entry is part of the container.
+If the entry is not part of the container, <code>false</code> should be returned.</li>
+<li>If the fetched entry has dependencies, <strong>instead</strong> of performing 
+the dependency lookup in the container, the lookup is performed on the <em>delegate container</em>.</li>
+</ul>
+<p>Important! By default, the lookup SHOULD be performed on the delegate container <strong>only</strong>, not on the container itself.</p>
+<p>It is however allowed for containers to provide exception cases for special entries, and a way to lookup 
+into the same container (or another container) instead of the delegate container.</p>
+<h2 id="2-package">2. Package</h2>
+<p>The interfaces and classes described as well as relevant exception are provided as part of the
+<a href="https://packagist.org/packages/container-interop/container-interop">container-interop/container-interop</a> package.</p>
+<h2 id="3-interop-container-containerinterface-">3. <code>Interop\Container\ContainerInterface</code></h2>
+<pre><code class="lang-php">&lt;?php
+namespace Interop\Container;
+
+use Interop\Container\Exception\ContainerException;
+use Interop\Container\Exception\NotFoundException;
+
+/**
+ * Describes the interface of a container that exposes methods to read its entries.
+ */
+interface ContainerInterface
+{
+    /**
+     * Finds an entry of the container by its identifier and returns it.
+     *
+     * @param string $id Identifier of the entry to look for.
+     *
+     * @throws NotFoundException  No entry was found for this identifier.
+     * @throws ContainerException Error while retrieving the entry.
+     *
+     * @return mixed Entry.
+     */
+    public function get($id);
+
+    /**
+     * Returns true if the container can return an entry for the given identifier.
+     * Returns false otherwise.
+     *
+     * @param string $id Identifier of the entry to look for.
+     *
+     * @return boolean
+     */
+    public function has($id);
+}
+</code></pre>
+<h2 id="4-interop-container-exception-containerexception-">4. <code>Interop\Container\Exception\ContainerException</code></h2>
+<pre><code class="lang-php">&lt;?php
+namespace Interop\Container\Exception;
+
+/**
+ * Base interface representing a generic exception in a container.
+ */
+interface ContainerException
+{
+}
+</code></pre>
+<h2 id="5-interop-container-exception-notfoundexception-">5. <code>Interop\Container\Exception\NotFoundException</code></h2>
+<pre><code class="lang-php">&lt;?php
+namespace Interop\Container\Exception;
+
+/**
+ * No entry was found in the container.
+ */
+interface NotFoundException extends ContainerException
+{
+}
+</code></pre>
