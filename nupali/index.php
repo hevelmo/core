@@ -174,7 +174,7 @@ $app = new \Slim\App($container);
         function __construct() {
             parent::__construct(
                 array(
-                    "title" => "Nupali",
+                    "title" => _TITLE,
                 ),
                 array(),
                 "home/_main.twig"

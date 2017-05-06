@@ -1,9 +1,24 @@
 {% extends "super.twig" %}
 {% block title %}{{ title }}{% endblock %}
+{% block preloader %}
+    {% embed "assets/preloader.twig" %}{% endembed %}
+{% endblock %}
+{% block header_nav %}
+    {% embed "assets/navbar.twig" %}{% endembed %}
+{% endblock %}
 {% block content_current %}
-    {#{% embed "home/slider.twig" %}{% endembed %}#}
+    {% embed "home/container.twig" %}{% endembed %}
+{% endblock %}
+{% block top_button %}
+    {% embed "assets/top_button.twig" %}{% endembed %}
 {% endblock %}
 {% block script_load_js %}
 {% endblock %}
 {% block load_scripts %}
+    {# ===========================================================
+       VIDEO BACKGROUND
+    ============================================================== #}
+    $('.video-play').vide("{{ _host }}img/video/video", {
+        posterType: "jpg"
+    });
 {% endblock %}

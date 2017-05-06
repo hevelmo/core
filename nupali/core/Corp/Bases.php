@@ -20,6 +20,7 @@ class Bases
     {
         $this->constants = array(
             "_host" => _HOST,
+            "_title" => _TITLE,
             //"_admin" => _ADMIN,
             //"_login" => _LOGIN,
             //"_sitio" => _SITIO,
