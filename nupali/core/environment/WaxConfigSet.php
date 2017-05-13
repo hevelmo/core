@@ -15,7 +15,7 @@ $tag_title = "Nupali, A.C.";
 if(!in_array($_SERVER['SERVER_NAME'], $devServerList)){
     $urlHost  = isset($_SERVER['HTTPS']) ? 'http://' : 'http://';
     $urlHost .= $_SERVER['SERVER_NAME'] . '/';
-    //$urlHost = str_replace ( "https" , "http" , $urlHost );
+    $urlHost = str_replace ( "https" , "http" , $urlHost );
     define("_HOST", $urlHost);
 } else {
     $urlHost  = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';

@@ -1,5 +1,6 @@
 <?php
-//namespace Medigraf;
+//namespace Corp;
+date_default_timezone_set('UTC');
 
 /**
  * This class join all the constants previously declared in "core/enviroment/ WaxConfigSet.php" file,

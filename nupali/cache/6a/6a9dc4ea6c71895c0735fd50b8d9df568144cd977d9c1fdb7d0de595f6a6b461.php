@@ -35,14 +35,18 @@ class __TwigTemplate_664b2637b82aa502fc771e55bbcd46ef59c447419f086dca8d4c31e127e
                   width: 150px;
                   height: 35px;
               -->
-              <a href=\"#\" class=\"navbar-brand logo-black smooth-scroll\"><img src=\"";
+              <a href=\"";
         // line 20
         echo twig_escape_filter($this->env, (isset($context["_host"]) ? $context["_host"] : null), "html", null, true);
-        echo "img/logo-black.png\" alt=\"logo\" /></a>
-              <a href=\"#\" class=\"navbar-brand logo-white smooth-scroll\"><img src=\"";
+        echo "\" class=\"navbar-brand logo-black smooth-scroll img-size\"><img src=\"";
+        echo twig_escape_filter($this->env, (isset($context["_host"]) ? $context["_host"] : null), "html", null, true);
+        echo "img/assets/logo/logo-nupali-hor.png\" alt=\"Logo Nupali A.C.\" /></a>
+              <a href=\"";
         // line 21
         echo twig_escape_filter($this->env, (isset($context["_host"]) ? $context["_host"] : null), "html", null, true);
-        echo "img/logo-white.png\" alt=\"logo\" /></a>
+        echo "\" class=\"navbar-brand logo-white smooth-scroll img-size\"><img src=\"";
+        echo twig_escape_filter($this->env, (isset($context["_host"]) ? $context["_host"] : null), "html", null, true);
+        echo "img/assets/logo/logo-nupali-hor.png\" alt=\"Logo Nupali A.C.\" /></a>
           </div><!-- /End Navbar Header -->
 
           <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">
@@ -198,7 +202,7 @@ class __TwigTemplate_664b2637b82aa502fc771e55bbcd46ef59c447419f086dca8d4c31e127e
 
     public function getDebugInfo()
     {
-        return array (  44 => 21,  40 => 20,  19 => 1,);
+        return array (  46 => 21,  40 => 20,  19 => 1,);
     }
 }
 /* <header id="nav1-3">*/
@@ -220,8 +224,8 @@ class __TwigTemplate_664b2637b82aa502fc771e55bbcd46ef59c447419f086dca8d4c31e127e
 /*                   width: 150px;*/
 /*                   height: 35px;*/
 /*               -->*/
-/*               <a href="#" class="navbar-brand logo-black smooth-scroll"><img src="{{ _host }}img/logo-black.png" alt="logo" /></a>*/
-/*               <a href="#" class="navbar-brand logo-white smooth-scroll"><img src="{{ _host }}img/logo-white.png" alt="logo" /></a>*/
+/*               <a href="{{ _host }}" class="navbar-brand logo-black smooth-scroll img-size"><img src="{{ _host }}img/assets/logo/logo-nupali-hor.png" alt="Logo Nupali A.C." /></a>*/
+/*               <a href="{{ _host }}" class="navbar-brand logo-white smooth-scroll img-size"><img src="{{ _host }}img/assets/logo/logo-nupali-hor.png" alt="Logo Nupali A.C." /></a>*/
 /*           </div><!-- /End Navbar Header -->*/
 /* */
 /*           <div class="collapse navbar-collapse" id="navbar-collapse">*/

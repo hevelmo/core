@@ -1,1 +1,3 @@
-
+.navbar-brand.img-size > img {
+    width: 45%;
+}

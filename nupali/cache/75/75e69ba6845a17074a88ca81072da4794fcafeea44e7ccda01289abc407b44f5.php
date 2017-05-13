@@ -148,17 +148,18 @@ class __TwigTemplate_96a09ca85d48793d10ce58798e1237a0bb0c74b32ea0febc3ee7bf6a8b3
         // line 33
         echo "                    <link rel=\"shortcut icon\" href=\"";
         echo twig_escape_filter($this->env, (isset($context["_host "]) ? $context["_host "] : null), "html", null, true);
-        echo "img/favicon.ico\" type=\"image/x-icon\">
+        echo "img/assets/ico/nupali.ico\" type=\"image/x-icon\">
                     <link rel=\"icon\" href=\"";
         // line 34
         echo twig_escape_filter($this->env, (isset($context["_host"]) ? $context["_host"] : null), "html", null, true);
-        echo "img/favicon.ico\" type=\"image/x-icon\">
+        echo "img/assets/ico/nupali.ico\" type=\"image/x-icon\">
 
                     ";
         // line 37
-        echo "                    ";
-        // line 38
-        echo "                    <!-- =========================
+        echo "                    <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, (isset($context["_host"]) ? $context["_host"] : null), "html", null, true);
+        echo "css/styles.css\">
+                    <!-- =========================
                          STYLESHEETS
                     ============================== -->
                     <!-- BOOTSTRAP CSS -->
@@ -326,7 +327,7 @@ class __TwigTemplate_96a09ca85d48793d10ce58798e1237a0bb0c74b32ea0febc3ee7bf6a8b3
 
     public function getDebugInfo()
     {
-        return array (  318 => 122,  311 => 119,  309 => 118,  305 => 108,  301 => 107,  297 => 106,  293 => 105,  289 => 104,  285 => 103,  281 => 102,  277 => 101,  273 => 100,  269 => 99,  265 => 98,  261 => 97,  257 => 96,  252 => 95,  249 => 94,  245 => 92,  242 => 91,  238 => 88,  235 => 87,  231 => 85,  228 => 84,  224 => 81,  221 => 80,  215 => 63,  209 => 60,  203 => 57,  199 => 56,  195 => 55,  191 => 54,  187 => 53,  183 => 52,  173 => 45,  167 => 42,  161 => 38,  159 => 37,  154 => 34,  149 => 33,  147 => 32,  145 => 31,  142 => 30,  135 => 26,  132 => 25,  124 => 68,  122 => 67,  119 => 65,  117 => 30,  113 => 28,  111 => 25,  108 => 24,  103 => 21,  96 => 17,  92 => 16,  83 => 9,  80 => 8,  73 => 122,  70 => 121,  68 => 94,  65 => 93,  63 => 91,  60 => 90,  58 => 89,  55 => 87,  53 => 86,  50 => 84,  47 => 82,  45 => 80,  41 => 78,  39 => 73,  37 => 8,  28 => 1,);
+        return array (  319 => 122,  312 => 119,  310 => 118,  306 => 108,  302 => 107,  298 => 106,  294 => 105,  290 => 104,  286 => 103,  282 => 102,  278 => 101,  274 => 100,  270 => 99,  266 => 98,  262 => 97,  258 => 96,  253 => 95,  250 => 94,  246 => 92,  243 => 91,  239 => 88,  236 => 87,  232 => 85,  229 => 84,  225 => 81,  222 => 80,  216 => 63,  210 => 60,  204 => 57,  200 => 56,  196 => 55,  192 => 54,  188 => 53,  184 => 52,  174 => 45,  168 => 42,  159 => 37,  154 => 34,  149 => 33,  147 => 32,  145 => 31,  142 => 30,  135 => 26,  132 => 25,  124 => 68,  122 => 67,  119 => 65,  117 => 30,  113 => 28,  111 => 25,  108 => 24,  103 => 21,  96 => 17,  92 => 16,  83 => 9,  80 => 8,  73 => 122,  70 => 121,  68 => 94,  65 => 93,  63 => 91,  60 => 90,  58 => 89,  55 => 87,  53 => 86,  50 => 84,  47 => 82,  45 => 80,  41 => 78,  39 => 73,  37 => 8,  28 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -361,11 +362,11 @@ class __TwigTemplate_96a09ca85d48793d10ce58798e1237a0bb0c74b32ea0febc3ee7bf6a8b3
 /*                 {% block links %}*/
 /*                     {# FAVICON #}*/
 /*                     {# Place your favicon.ico in the img directory #}*/
-/*                     <link rel="shortcut icon" href="{{ _host }}img/favicon.ico" type="image/x-icon">*/
-/*                     <link rel="icon" href="{{ _host }}img/favicon.ico" type="image/x-icon">*/
+/*                     <link rel="shortcut icon" href="{{ _host }}img/assets/ico/nupali.ico" type="image/x-icon">*/
+/*                     <link rel="icon" href="{{ _host }}img/assets/ico/nupali.ico" type="image/x-icon">*/
 /* */
 /*                     {# CUSTOM STYLESHEET #}*/
-/*                     {#<link rel="stylesheet" href="{{ _host }}css/styles.css">#}*/
+/*                     <link rel="stylesheet" href="{{ _host }}css/styles.css">*/
 /*                     <!-- =========================*/
 /*                          STYLESHEETS*/
 /*                     ============================== -->*/
